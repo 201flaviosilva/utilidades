@@ -1,5 +1,3 @@
-// JS Utils
-
 // Numbers
 export const randomFloat = (min, max, precision = 2) => {
 	if (!max) {
