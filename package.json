@@ -1,0 +1,26 @@
+{
+  "name": "@201flaviosilva/utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "homepage": "https://gitlab.com/201flaviosilva/201flaviosilva-utils.js#readme",
+  "author": "201flaviosilva",
+  "license": "MIT",
+  "files": [
+    "src/index.js"
+  ],
+  "publishConfig": {
+    "@201flaviosilva:registry": " https://gitlab.com/api/v4/projects/35983470/packages/npm/"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/201flaviosilva/201flaviosilva-utils.js.git"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/201flaviosilva/201flaviosilva-utils.js/issues"
+  }
+}
