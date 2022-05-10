@@ -13,8 +13,8 @@ deploy:
 pages:
   stage: pages
   script:
+    - rm -rf public
     - mkdir public
     - cp -r ./docs public
-    - cp -r index.html public
   only:
     - main
