@@ -1,4 +1,17 @@
 // Numbers
+/**
+ * Return a random float number between the given values and the given precision
+ * 
+ * @example
+ * randomFloat(0, 1);
+ * randomFloat(-10, 0, 5);
+ * randomFloat(-550, 444);
+ * 
+ * @param {number} min - min value
+ * @param {number} max - max value
+ * @param {number} precision - the float precision
+ * @returns {number} - random number
+ */
 export const randomFloat = (min, max, precision = 2) => {
 	if (!max) {
 		max = min;
@@ -6,6 +19,7 @@ export const randomFloat = (min, max, precision = 2) => {
 	}
 	return parseFloat((Math.random() * (max - min) + min).toFixed(precision));
 }
+
 export const randomInt = (min, max) => { return Math.floor(randomFloat(min, max)); };
 
 // Colors
