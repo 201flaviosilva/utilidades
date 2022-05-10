@@ -13,12 +13,8 @@ deploy:
 pages:
   stage: pages
   script:
-    - npm install
-    - npm run build
     - mkdir public
     - cp -r ./docs public
-  artifacts:
-    paths:
-      - public
+    - cp -r index.html public
   only:
     - main

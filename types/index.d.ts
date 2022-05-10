@@ -1,4 +1,4 @@
-export function randomFloat(min: any, max: any, precision?: number): number;
+export function randomFloat(min: number, max: number, precision?: number): number;
 export function randomInt(min: any, max: any): number;
 export function randomColor(): string;
 export function randomColor0X(): string;
