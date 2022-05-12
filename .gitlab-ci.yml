@@ -17,7 +17,8 @@ pages:
   script:
     - rm -rf public
     - mkdir public
-    - cp -r ./docs public
+    - cp -r ./docs/@201flaviosilva public
+    - cp -r ./docs/index.html public
   artifacts:
     paths:
       - public
