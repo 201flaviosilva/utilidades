@@ -1,4 +1,3 @@
-// Numbers
 /**
  * Return a random float number between the given values and the given precision
  * 
@@ -22,20 +21,29 @@ export function randomFloat(min, max, precision = 2) {
 
 export function randomInt(min, max) { return Math.floor(randomFloat(min, max)); };
 
-// Colors
-export function randomColor() { return "#" + (Math.random() * 0xFFFFFF << 0).toString(16); }
-export function randomColor0X() { return `0x${Math.floor(Math.random() * 16777215).toString(16)}`; }
-export function randomRGBColor() { return `rgb(${randomNumber(255)}, ${randomNumber(255)}, ${randomNumber(255)})`; }
-export function randomRGBAColor() { return `rgb(${randomNumber(255)}, ${randomNumber(255)}, ${randomNumber(255)}, ${Math.random().toFixed(5)})`; }
-
-// Radians and Degrees
-export function radiansToDegrees(r) { return r * (180 / Math.PI); }
-export function degreesToRadians(d) { return d * (Math.PI / 180); }
-
-// Numbers
 export function sortAscending(arr) { return arr.sort((a, b) => a - b); }
 export function sortDescending(arr) { return arr.sort((a, b) => b - a); }
 export function formateScore(time) { return Number((time * 0.001).toFixed(0)); } // Formate Score by time
+
+// https://www.trysmudford.com/blog/linear-interpolation-functions/
+/**
+ * Return the value between 2 value based in a given percentage (decimal midpoint)
+ * 
+ * @example
+ * lerp(0, 100, 0)   // 0
+ * lerp(0, 100, 0.5) // 50
+ * lerp(0, 100, 1)   // 100
+
+ * @param {number} a - Minimum value
+ * @param {number} b - Maximum value
+ * @param {number} t - The value (decimal point)
+ * @returns {number} - The result of the function
+ * @see {@link https://en.wikipedia.org/wiki/Linear_interpolation}
+ */
+function lerp(a, b, t) { return a + (b - a) * t; }
+function clamp(a, min = 0, max = 1) { return Math.min(max, Math.max(min, a)); }
+function invlerp(x, y, a) { return clamp((a - x) / (y - x)); }
+function range(x1, y1, x2, y2, a) { return lerp(x2, y2, invlerp(x1, y1, a)); }
 
 /**
  * Re-maps a number from one range to another
@@ -50,6 +58,16 @@ export function formateScore(time) { return Number((time * 0.001).toFixed(0)); }
  * @returns {*} - value
  */
 export function map(value, x1, y1, x2, y2) { return (value - x1) * (y2 - x2) / (y1 - x1) + x2; }
+
+// Colors
+export function randomColor() { return "#" + (Math.random() * 0xFFFFFF << 0).toString(16); }
+export function randomColor0X() { return `0x${Math.floor(Math.random() * 16777215).toString(16)}`; }
+export function randomRGBColor() { return `rgb(${randomNumber(255)}, ${randomNumber(255)}, ${randomNumber(255)})`; }
+export function randomRGBAColor() { return `rgb(${randomNumber(255)}, ${randomNumber(255)}, ${randomNumber(255)}, ${Math.random().toFixed(5)})`; }
+
+// Radians and Degrees
+export function radiansToDegrees(r) { return r * (180 / Math.PI); }
+export function degreesToRadians(d) { return d * (Math.PI / 180); }
 
 // Points
 export function distanceTwoPoints(x1, y1, x2, y2) { return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2)); }
