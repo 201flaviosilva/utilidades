@@ -21,6 +21,50 @@ export function randomFloat(min, max, precision = 2) {
 
 export function randomInt(min, max) { return Math.floor(randomFloat(min, max)); };
 
+/**
+ * Check is the given number is a EVEN number
+ * 
+ * @example
+ * isEven(1); // false
+ * isEven(2); // true
+ * 
+ * @param {number} number - The number to check
+ * @returns {boolean}
+ */
+export function isEven(number) { return number % 2 == 0 }
+
+/**
+ * Check is the given number is a ODD number
+ * 
+ * @example
+ * isOdd(1); // true
+ * isOdd(2); // false
+ * 
+ * @param {number} number - The number to check
+ * @returns {boolean}
+ */
+export function isOdd(number) { return number % 2 == 1 }
+
+/**
+ * Check is a number is multiple of other
+ * 
+ * @example
+ * isMultipleOf(1, 2); // false
+ * isMultipleOf(1, 1); // true
+ * isMultipleOf(10, 2); // true
+ * isMultipleOf(0, 2); // true
+ * isMultipleOf(0, 0); // false
+ * isMultipleOf(7, 21); // false
+ * isMultipleOf(100, 21); // false
+ * isMultipleOf(15, 5); // true
+ * isMultipleOf(14, 5); // false
+ * 
+ * @param {number} dividend - the number check is multiple
+ * @param {number} divisor - divisor number
+ * @returns {boolean}
+ */
+export function isMultipleOf(dividend, divisor) { return dividend % divisor == 0 }
+
 export function sortAscending(arr) { return arr.sort((a, b) => a - b); }
 export function sortDescending(arr) { return arr.sort((a, b) => b - a); }
 export function formateScore(time) { return Number((time * 0.001).toFixed(0)); } // Formate Score by time
