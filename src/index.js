@@ -65,6 +65,41 @@ export function isOdd(number) { return number % 2 == 1 }
  */
 export function isMultipleOf(dividend, divisor) { return dividend % divisor == 0 }
 
+/**
+ * Return a negative number based in the given number
+ * 
+ * @example
+ * makeNegative(10) // -10
+ * makeNegative(0) // 0
+ * makeNegative(-5) // -5
+ * 
+ * @param {number} number - The number you want to convert
+ * @returns {number} - a negative number
+ */
+export function makeNegative(number) { return Math.abs(number) * -1; };
+
+/**
+ * Convert a number to a binary
+ * 
+ * @example
+ * decimal2binary(42); // "101010"
+ * 
+ * @param {number} decimal - the number to be converted
+ * @returns {string} - conversion binary string
+ */
+export function decimal2Binary(decimal) { return Number(decimal).toString(2); }
+
+/**
+ * Convert a number/string to a decimal
+ * 
+ * @param {number|string} binary - the number/string to be converted
+ * @returns {number} - conversion decimal
+ */
+export function binary2Decimal(binary) {
+	if (typeof binary === "string") return parseInt(binary.split("").reverse().join(""), 2);
+	else if (typeof binary === "number") return parseInt(binary, 2);
+}
+
 export function sortAscending(arr) { return arr.sort((a, b) => a - b); }
 export function sortDescending(arr) { return arr.sort((a, b) => b - a); }
 export function formateScore(time) { return Number((time * 0.001).toFixed(0)); } // Formate Score by time
