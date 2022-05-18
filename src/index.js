@@ -138,6 +138,42 @@ function range(x1, y1, x2, y2, a) { return lerp(x2, y2, invlerp(x1, y1, a)); }
  */
 export function map(value, x1, y1, x2, y2) { return (value - x1) * (y2 - x2) / (y1 - x1) + x2; }
 
+/**
+ * Find lowest element from array of objects
+ * 
+ * @example
+ * const myArray = [{a: 1, b:100}, {a: 10, b:50}, {a: 0, b:200}]
+ * findLowArrObj(myArray, "b"); // {a: 10, b:50}
+ * findLowArrObj(myArray, "a"); // {a: 0, b: 200}
+ * 
+ * @param {Array} array - The array to search
+ * @param {string} prop - The property to find the lowest element
+ * @returns {Objects} - The lowest element in the array
+ */
+export function findLowArrObj(array, prop) {
+	const propValues = array.map((e) => e[prop]); // Get a new array only the props
+	const minPropValue = Math.min(...propValues); // Try to find the lowest value
+	return array.find((e) => e[prop] === minPropValue); // Find the lowest in the array
+}
+
+/**
+ * Find biggest element from array of objects
+ * 
+ * @example
+ * const myArray = [{a: 1, b:100}, {a: 10, b:50}, {a: 0, b:200}]
+ * findBigArrObj(myArray, "b"); // {a: 0, b:200}
+ * findBigArrObj(myArray, "a"); // {a: 10, b: 50}
+ * 
+ * @param {Array} array - The array to search
+ * @param {string} prop - The property to find the biggest element
+ * @returns {Objects} - The biggest element in the array
+ */
+export function findBigArrObj(array, prop) {
+	const propValues = array.map((e) => e[prop]); // Get a new array only the props
+	const minPropValue = Math.max(...propValues); // Try to find the biggest value
+	return array.find((e) => e[prop] === minPropValue); // Find the biggest in the array
+}
+
 // Colors
 export function randomColor() { return "#" + (Math.random() * 0xFFFFFF << 0).toString(16); }
 export function randomColor0X() { return `0x${Math.floor(Math.random() * 16777215).toString(16)}`; }
