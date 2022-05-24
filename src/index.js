@@ -6,12 +6,12 @@
  * randomFloat(-10, 0, 5);
  * randomFloat(-550, 444);
  * 
- * @param {number} min - min value
- * @param {number} max - max value
- * @param {number} precision - the float precision
- * @returns {number} - random number
+ * @param {number} [min=0] - min value
+ * @param {number} [max=1] - max value
+ * @param {number} [precision=2] - the float precision
+ * @returns {number} - random float number
  */
-export function randomFloat(min, max, precision = 2) {
+export function randomFloat(min = 0, max = 1, precision = 2) {
 	if (!max) {
 		max = min;
 		min = 0;
@@ -19,7 +19,33 @@ export function randomFloat(min, max, precision = 2) {
 	return parseFloat((Math.random() * (max - min) + min).toFixed(precision));
 }
 
+/**
+ * Return a random integer number between the given values and the given precision
+ * 
+ * @example
+ * randomInt(0, 1);
+ * randomInt(-10, 0);
+ * randomInt(-550, 444);
+ * 
+ * @param {number} min - min value
+ * @param {number} max - max value
+ * @returns {number} - random integer number
+ */
 export function randomInt(min, max) { return Math.floor(randomFloat(min, max)); };
+
+/**
+ * Return a random number between the given values and the given precision
+ * 
+ * @example
+ * randomNumber(0, 1);
+ * randomNumber(-10, 0, 5);
+ * randomNumber(-550, 444);
+ * 
+ * @param {number} min - min value
+ * @param {number} max - max value
+ * @returns {number} - random number
+ */
+export function randomNumber(min, max) { return randomFloat(min, max) };
 
 /**
  * Check is the given number is a EVEN number
@@ -92,6 +118,9 @@ export function decimal2Binary(decimal) { return Number(decimal).toString(2); }
 /**
  * Convert a number/string to a decimal
  * 
+ * @example
+ * binary2Decimal(101010); // 42
+ * 
  * @param {number|string} binary - the number/string to be converted
  * @returns {number} - conversion decimal
  */
@@ -100,43 +129,125 @@ export function binary2Decimal(binary) {
 	else if (typeof binary === "number") return parseInt(binary, 2);
 }
 
-export function sortAscending(arr) { return arr.sort((a, b) => a - b); }
-export function sortDescending(arr) { return arr.sort((a, b) => b - a); }
-export function formateScore(time) { return Number((time * 0.001).toFixed(0)); } // Formate Score by time
+/**
+ * Sort an array of number by ascending
+ * 
+ * @example
+ * const myArr = [10,4,2,7,1,0,11,4,2,3,5,8,4,3,0,6];
+ * const myNewSortedArr = sortAscending(myArr); // [0,0,1,2,2,3,3,4,4,4,5,6,7,8,10,11]
+ * 
+ * @param {number[]} arr - the array to sort
+ * @returns {number[]} A new Array sorted
+ */
+export function sortAscending(arr) { return [...arr].sort((a, b) => a - b); }
+
+/**
+ * Sort an array of number by descending
+ * 
+ * @example
+ * const myArr = [10,4,2,7,1,0,11,4,2,3,5,8,4,3,0,6];
+ * const myNewSortedArr = sortDescending(myArr); // [11,10,8,7,6,5,4,4,4,3,3,2,2,1,0,0]
+ * 
+ * @param {number[]} arr - the array to sort
+ * @returns {number[]} A new Array sorted
+ */
+export function sortDescending(arr) { return [...arr].sort((a, b) => b - a); }
 
 // https://www.trysmudford.com/blog/linear-interpolation-functions/
 /**
  * Return the value between 2 value based in a given percentage (decimal midpoint)
  * 
  * @example
- * lerp(0, 100, 0)   // 0
- * lerp(0, 100, 0.5) // 50
- * lerp(0, 100, 1)   // 100
+ * lerp(0, 0, 100); // 0
+ * lerp(0.5, 0, 100); // 50
+ * lerp(1, 0, 100); // 100
 
- * @param {number} a - Minimum value
- * @param {number} b - Maximum value
- * @param {number} t - The value (decimal point)
- * @returns {number} - The result of the function
+ * @param {number} value - The value (decimal point)
+ * @param {number} min - Minimum value
+ * @param {number} max - Maximum value
+ * @returns {number} The result of the function
  * @see {@link https://en.wikipedia.org/wiki/Linear_interpolation}
  */
-function lerp(a, b, t) { return a + (b - a) * t; }
-function clamp(a, min = 0, max = 1) { return Math.min(max, Math.max(min, a)); }
-function invlerp(x, y, a) { return clamp((a - x) / (y - x)); }
-function range(x1, y1, x2, y2, a) { return lerp(x2, y2, invlerp(x1, y1, a)); }
+export function lerp(value, min, max) { return min + (max - min) * value; }
+
+/**
+ * If the value is greater than the maximum, returns the maximum.
+ * If the value is less than the minimum, returns the minimum.
+ * If not, return the passed value.
+ * 
+ * @example
+ * clamp(-10, 0, 100); // 0
+ * clamp(0, 0, 100); // 0
+ * clamp(50, 0, 100); // 50
+ * clamp(100, 0, 100); // 100
+ * clamp(200, 0, 100); // 100
+ * 
+ * @param {number} value - The value to check
+ * @param {number} [min=0] - Minimum value
+ * @param {number} [max=1] - Maximum value
+ * @returns {number} The fixed value
+ */
+export function clamp(value, min = 0, max = 1) { return Math.min(max, Math.max(min, value)); }
+
+/**
+ * Determines where a value lies between two points.
+ * @see {@link https://docs.unity3d.com/ScriptReference/Mathf.InverseLerp.html}
+ * 
+ * @example
+ * invertedLerp(-10, 0, 10); // 0
+ * invertedLerp(0, 0, 10); // 0
+ * invertedLerp(5, 0, 10); // 0.5
+ * invertedLerp(10, 0, 10); // 1
+ * invertedLerp(100, 0, 10); // 1
+ * 
+ * @param {number} value - The point within the range you want to calculate.
+ * @param {number} start - The start of the range.
+ * @param {number} end - The end of the range.
+ * @returns {number} value between 0 and 1, representing where the "value" parameter falls within the range defined by start and end
+ */
+export function invertedLerp(value, start, end) { return clamp((value - start) / (end - start)); }
 
 /**
  * Re-maps a number from one range to another
- * 
  * @see {@link https://gist.github.com/xposedbones/75ebaef3c10060a3ee3b246166caab56#gistcomment-2951694}
  * 
- * @param {*} value 
- * @param {*} x1 
- * @param {*} y1 
- * @param {*} x2 
- * @param {*} y2 
- * @returns {*} - value
+ * @example
+ * //     value, range1, range2
+ * // map(value, x1, y1, x2, y2)
+ * map(-10, 0, 100, 0, 1000); // -100
+ * map(0, 0, 100, 0, 1000); // 0
+ * map(10, 0, 100, 0, 1000); // 100
+ * map(50, 0, 100, 0, 1000); // 500
+ * map(1000, 0, 100, 0, 1000) // 10000
+ * 
+ * @param {number} value 
+ * @param {number} start1 - Start of the range 1
+ * @param {number} end1 - End of the range 1
+ * @param {number} start2 - Start of the range 2
+ * @param {number} end2 - End of the range 2
+ * @returns {number} the value un the range
  */
-export function map(value, x1, y1, x2, y2) { return (value - x1) * (y2 - x2) / (y1 - x1) + x2; }
+export function map(value, start1, end1, start2, end2) { return (value - start1) * (end2 - start2) / (end1 - start1) + start2; }
+
+/**
+ * Return a array of number Between the 2 given values,
+ * 
+ * @example
+ * range(1, 5); // [ 1, 2, 3, 4, 5 ]
+ * range(0, 100, 10); // [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+ * range(0, 100, 100) // [0, 100]
+ * range(1, 100, 100) // [1]
+ * 
+ * @param {number} start - start point to add numbers
+ * @param {number} end - end point to stop adding numbers
+ * @param {number} [step=1] - The value to increment
+ * @returns {number} Array of number
+ */
+export function range(start, end, step = 1) {
+	const arr = [];
+	for (let i = start; i < end + 1; i += step) arr.push(i);
+	return arr;
+}
 
 /**
  * Find lowest element from array of objects
@@ -264,8 +375,22 @@ export function allCharactersSame(string) {
 	return true;
 }
 
-// Sort Objects by property
+/**
+ * Sort a array of objects in ascending order by property
+ * 
+ * @param {Array} arr - the array to sort
+ * @param {string} prop - the property base to sort
+ * @returns {Array} - a new sorted array by the given property
+ */
 export function sortAscendingObj(arr, prop) { return arr.sort((a, b) => a[prop] - b[prop]); }
+
+/**
+ * Sort a array of objects in descending order by property
+ * 
+ * @param {*} arr - the array to sort
+ * @param {*} prop - the property base to sort
+ * @returns {Array} - a new sorted array by the given property
+ */
 export function sortDescendingObj(arr, prop) { return arr.sort((a, b) => b[prop] - a[prop]); }
 
 // Get Max/Min from a Array of Objects
@@ -283,6 +408,7 @@ export function deleteAllChildDom(domElement) {
 	while (domElement.hasChildNodes()) {
 		domElement.removeChild(domElement.firstChild);
 	}
+	domElement.innerHTML = "";
 }
 
 /**
@@ -350,10 +476,10 @@ export function getUrlParameter(key) {
  * 		}
  * 	},
  * };
- * print(myObject, document.getElementById("myDomElement"));
+ * printObjectInDOM(myObject, document.getElementById("myDomElement"));
  * 
- * @param {*} object - JavaScript Object to print in the dom
- * @param {*?} [parent=document.body] - DOM element to print
+ * @param {Object} object - JavaScript Object to print in the dom
+ * @param {HTMLElement} [parent=document.body] - DOM element to print
  * @see {@link -  https://jsfiddle.net/201flaviosilva/mbnz3p7y/}
  */
 export function printObjectInDOM(object, parent = document.body) {
