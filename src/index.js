@@ -241,7 +241,7 @@ export function map(value, start1, end1, start2, end2) { return (value - start1)
  * @param {number} start - start point to add numbers
  * @param {number} end - end point to stop adding numbers
  * @param {number} [step=1] - The value to increment
- * @returns {number} Array of number
+ * @returns {number[]} Array of number
  */
 export function range(start, end, step = 1) {
 	const arr = [];
@@ -257,9 +257,9 @@ export function range(start, end, step = 1) {
  * findLowArrObj(myArray, "b"); // {a: 10, b:50}
  * findLowArrObj(myArray, "a"); // {a: 0, b: 200}
  * 
- * @param {Array} array - The array to search
+ * @param {Object[]} array - The array to search
  * @param {string} prop - The property to find the lowest element
- * @returns {Objects} - The lowest element in the array
+ * @returns {Object} - The lowest element in the array
  */
 export function findLowArrObj(array, prop) {
 	const propValues = array.map((e) => e[prop]); // Get a new array only the props
@@ -275,15 +275,150 @@ export function findLowArrObj(array, prop) {
  * findBigArrObj(myArray, "b"); // {a: 0, b:200}
  * findBigArrObj(myArray, "a"); // {a: 10, b: 50}
  * 
- * @param {Array} array - The array to search
+ * @param {Object[]} array - The array to search
  * @param {string} prop - The property to find the biggest element
- * @returns {Objects} - The biggest element in the array
+ * @returns {Object} - The biggest element in the array
  */
 export function findBigArrObj(array, prop) {
 	const propValues = array.map((e) => e[prop]); // Get a new array only the props
 	const minPropValue = Math.max(...propValues); // Try to find the biggest value
 	return array.find((e) => e[prop] === minPropValue); // Find the biggest in the array
 }
+
+/**
+ * Check if all Elements of the array are equal
+ * 
+ * @example
+ * allEqual([0,0,0,0]) // true
+ * allEqual([0,0,0,1]) // false
+ * allEqual([0,"a","a"]) // false
+ * allEqual([[1,1],[1,1]]) // true
+ * allEqual([[1,1],[1,0]]) // false
+ * allEqual([{a:"b",c:1},{a:"b"}]) // false
+ * allEqual([{a:"b",c:1},{a:"b",c:1}]) // true
+ * allEqual([{a:"b",c:1},{a:"b",c:1},{a:"c",c:1}]) // false
+ * allEqual([{a:"b",c:1},{a:"b",c:1},{a:"b",c:1}]) // true
+ * 
+ * @param {any} arr - the array to check all elements
+ * @returns {boolean} true if all elements of the array ara equal
+ */
+export const allEqual = arr => arr.every(v => JSON.stringify(v) === JSON.stringify(arr[0]));
+
+// logical
+/**
+ * Return the boolean inverse of the given value
+ * 
+ * @example
+ * not(true) // false
+ * not(false) // true
+ * not(0) // true
+ * not(1) // false
+ * not("") // true
+ * not("something") // false
+ * not([]) // false
+ * not({}) // false
+ * 
+ * @param {any} value - value to convert in boolean and convert
+ * @returns {boolean} converted value
+ */
+export function not(value) { return !value };
+
+/**
+ * Compare if both value are truthy.
+ * Return true if the values are truthy.
+ * 
+ * @example
+ * and(false, false); // false
+ * and(true, false); // false
+ * and(false, true); // false
+ * and(true, true); // true
+ * 
+ * @param {any} value1 - value 1 to compare
+ * @param {any} value2 - value 2 to compare
+ * @returns {boolean}
+ */
+export function and(value1, value2) { return !!value1 && !!value2 };
+
+/**
+ * Compare if one of the value are truthy.
+ * Return true if one are truthy.
+ * 
+ * @example
+ * or(false, false); // false
+ * or(true, false); // true
+ * or(false, true); // true
+ * or(true, true); // true
+ * 
+ * @param {any} value1 - value 1 to compare
+ * @param {any} value2 - value 1 to compare
+ * @returns {boolean}
+ */
+export function or(value1, value2) { return !!value1 || !!value2 };
+
+/**
+ * Return false if both values are truthy ou falsy.
+ * 
+ * @example
+ * xor(false, false); // false
+ * xor(true, false); // true
+ * xor(false, true); // true
+ * xor(true, true); // false
+ * 
+ * @param {any} value1 - value 1 to compare
+ * @param {any} value2 - value 2 to compare
+ * @returns {boolean}
+ */
+export function xor(value1, value2) { return !!value1 !== !!value2 };
+
+/**
+ * Inverse of the "and" function.
+ * Compare if one of the value are falsy.
+ * Return true if one are falsy.
+ * 
+ * @example
+ * nand(false, false); // true
+ * nand(true, false); // true
+ * nand(false, true); // true
+ * nand(true, true); // false
+ * 
+ * @param {any} value1 - value 1 to compare
+ * @param {any} value2 - value 2 to compare
+ * @returns {boolean}
+ */
+export function nand(value1, value2) { return !and(value1, value2) };
+
+/**
+ * Inverse of the "or" function.
+ * Compare if both values are falsy.
+ * Return true if both are falsy.
+ * 
+ * @example
+ * nor(false, false); // true
+ * nor(true, false); // false
+ * nor(false, true); // false
+ * nor(true, true); // false
+ * 
+ * @param {any} value1 - value 1 to compare
+ * @param {any} value2 - value 2 to compare
+ * @returns {boolean}
+ */
+export function nor(value1, value2) { return !or(value1, value2) };
+
+/**
+ * Inverse of the "xor" function.
+ * Return true if both values are truthy ou falsy.
+ * 
+ * @example
+ * xnor(false, false); // true
+ * xnor(true, false); // false
+ * xnor(false, true); // false
+ * xnor(true, true); // true
+ * 
+ * @param {any} value1 - value 1 to compare
+ * @param {any} value2 - value 2 to compare
+ * @returns {boolean}
+ */
+export function xnor(value1, value2) { return !xor(value1, value2) };
 
 // Colors
 export function randomColor() { return "#" + (Math.random() * 0xFFFFFF << 0).toString(16); }
