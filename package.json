@@ -7,7 +7,7 @@
   "author": "201flaviosilva",
   "license": "MIT",
   "files": [
-    "src/index.js",
+    "src/",
     "types/"
   ],
   "publishConfig": {
@@ -16,7 +16,7 @@
   "scripts": {
     "clear": "rm -rf types && rm -rf build",
     "jsDoc": "jsdoc -c jsdoc.conf.json",
-    "types": "npx -p typescript tsc src/index.js --declaration --allowJs --emitDeclarationOnly --outDir types",
+    "types": "npx -p typescript tsc src/*.js --declaration --allowJs --emitDeclarationOnly --outDir types",
     "build": "npm run clear && npm run jsDoc && npm run types"
   },
   "devDependencies": {
