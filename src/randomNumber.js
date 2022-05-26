@@ -12,4 +12,4 @@ import randomFloat from "./randomFloat";
  * @param {number} max - max value
  * @returns {number} - random number
  */
-export function randomNumber(min, max) { return randomFloat(min, max) };
+export default function randomNumber(min, max) { return randomFloat(min, max) };

@@ -1,13 +1,3 @@
-// Colors
-export default function exportFile() { return "#" + (Math.random() * 0xFFFFFF << 0).toString(16); }
-export default function randomColor0X() { return `0x${Math.floor(Math.random() * 16777215).toString(16)}`; }
-export default function randomRGBColor() { return `rgb(${randomNumber(255)}, ${randomNumber(255)}, ${randomNumber(255)})`; }
-export default function randomRGBAColor() { return `rgb(${randomNumber(255)}, ${randomNumber(255)}, ${randomNumber(255)}, ${Math.random().toFixed(5)})`; }
-
-// Radians and Degrees
-export default function radiansToDegrees(r) { return r * (180 / Math.PI); }
-export default function degreesToRadians(d) { return d * (Math.PI / 180); }
-
 // Points
 export default function distanceTwoPoints(x1, y1, x2, y2) { return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2)); }
 export default function distanceTwoPointsVector2(point1, point2) { return distanceTwoPoints(point1.x, point1.y, point2.x, point2.y); }
@@ -76,30 +66,3 @@ export default function rectangleCenter(x, y, width, height) { return { x: recta
 export default function rectangleCenterXFromBounds(rectangle) { return rectangleCenterX(rectangle.x, rectangle.width); }
 export default function rectangleCenterYFromBounds(rectangle) { return rectangleCenterY(rectangle.y, rectangle.height); }
 export default function rectangleCenterFromBounds(rectangle) { return rectangleCenter(rectangle.x, rectangle.y, rectangle.width, rectangle.height); }
-
-// String
-/**
- * Check if all characters are equal in a string
- */
-export default function allCharactersSame(string) {
-	for (let i = 1; i < string.length; i++) {
-		if (string[0] != string[i]) return false;
-	}
-	return true;
-}
-
-// Get Max/Min from a Array of Objects
-export default function getMinArrayObjects(arr, prop) { return Math.min.apply(Math, arr.map(o => o[prop])); }
-export default function getMaxArrayObjects(arr, prop) { return Math.max.apply(Math, arr.map(o => o[prop])); }
-
-// Date
-export default function getDateFormatted() {
-	const date = new Date();
-	return date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
-}
-
-// Eliminate all child elements of a choice parent element, for example: ul
-export default function deleteAllChildDom(domElement) {
-	while (domElement.hasChildNodes()) domElement.removeChild(domElement.firstChild);
-	domElement.innerHTML = "";
-}
