@@ -10,4 +10,4 @@
  * @param {string} prop - The property to find the lowest element
  * @returns {number} the lowest value in the array based in the given property
  */
-export default function getMinArrayObjects(arr, prop) { return Math.min.apply(Math, arr.map(o => o[prop])); }
+export function getMinArrayObjects(arr, prop) { return Math.min.apply(Math, arr.map(o => o[prop])); }

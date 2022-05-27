@@ -21,7 +21,7 @@
  * @param {HTMLElement} [parent=document.body] - DOM element to print
  * @see {@link -  https://jsfiddle.net/201flaviosilva/mbnz3p7y/}
  */
-export default function printObjectInDOM(object, parent = document.body) {
+export function printObjectInDOM(object, parent = document.body) {
 	const div = document.createElement("div");
 	div.innerHTML = _eachRecursive(object, Object.keys({ object })[0]);
 	parent.appendChild(div);

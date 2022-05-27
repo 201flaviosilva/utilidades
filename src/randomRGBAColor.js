@@ -10,4 +10,4 @@ import randomNumber from "./randomNumber";
  * @returns {string}
  */
 
-export default function randomRGBAColor() { return `rgba(${randomNumber(255)}, ${randomNumber(255)}, ${randomNumber(255)}, ${Math.random().toFixed(5)})`; }
+export function randomRGBAColor() { return `rgba(${randomNumber(255)}, ${randomNumber(255)}, ${randomNumber(255)}, ${Math.random().toFixed(5)})`; }

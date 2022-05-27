@@ -11,7 +11,7 @@
  * @param {number} [precision=2] - the float precision
  * @returns {number} - random float number
  */
-export default function randomFloat(min = 0, max = 1, precision = 2) {
+export function randomFloat(min = 0, max = 1, precision = 2) {
 	if (!max) {
 		max = min;
 		min = 0;

@@ -16,4 +16,4 @@
  * @param {number} divisor - divisor number
  * @returns {boolean}
  */
-export default function isMultipleOf(dividend, divisor) { return dividend % divisor == 0 }
+export function isMultipleOf(dividend, divisor) { return dividend % divisor == 0 }

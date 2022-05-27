@@ -10,7 +10,7 @@
  * @param {string} prop - The property to find the lowest element
  * @returns {Object} - The lowest element in the array
  */
-export default function findLowArrObj(array, prop) {
+export function findLowArrObj(array, prop) {
 	const propValues = array.map((e) => e[prop]); // Get a new array only the props
 	const minPropValue = Math.min(...propValues); // Try to find the lowest value
 	return array.find((e) => e[prop] === minPropValue); // Find the lowest in the array

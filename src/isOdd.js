@@ -8,4 +8,4 @@
  * @param {number} number - The number to check
  * @returns {boolean}
  */
-export default function isOdd(number) { return number % 2 == 1 }
+export function isOdd(number) { return number % 2 == 1 }

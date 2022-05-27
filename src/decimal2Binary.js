@@ -7,4 +7,4 @@
  * @param {number} decimal - the number to be converted
  * @returns {string} - conversion binary string
  */
-export default function decimal2Binary(decimal) { return Number(decimal).toString(2); }
+export function decimal2Binary(decimal) { return Number(decimal).toString(2); }

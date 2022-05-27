@@ -8,7 +8,7 @@
  * @param {string} key 
  * @returns {string} - Returns the value of the key
  */
-export default function getUrlParameter(key) {
+export function getUrlParameter(key) {
 	const urlSearchParams = new URLSearchParams(window.location.search);
 	const params = Object.fromEntries(urlSearchParams.entries());
 	return params[key];

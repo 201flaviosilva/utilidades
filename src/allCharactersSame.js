@@ -19,7 +19,7 @@
  * @param {string|Array} string - string to check
  * @returns {boolean}
  */
-export default function allCharactersSame(string) {
+export function allCharactersSame(string) {
 	for (let i = 1; i < string.length; i++) {
 		if (string[0] != string[i]) return false;
 	}

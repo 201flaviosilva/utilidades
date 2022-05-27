@@ -8,4 +8,4 @@
  * @param {number} number - The number to check
  * @returns {boolean}
  */
-export default function isEven(number) { return number % 2 == 0 }
+export function isEven(number) { return number % 2 == 0 }

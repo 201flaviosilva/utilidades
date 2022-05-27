@@ -12,4 +12,4 @@
  * @param {any} value2 - value 1 to compare
  * @returns {boolean}
  */
-export default function or(value1, value2) { return !!value1 || !!value2 };
+export function or(value1, value2) { return !!value1 || !!value2 };

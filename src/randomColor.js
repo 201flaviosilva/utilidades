@@ -7,4 +7,4 @@
  * 
  * @returns {string} a new random color
  */
-export default function randomColor() { return "#" + (Math.random() * 0xFFFFFF << 0).toString(16); }
+export function randomColor() { return "#" + (Math.random() * 0xFFFFFF << 0).toString(16); }

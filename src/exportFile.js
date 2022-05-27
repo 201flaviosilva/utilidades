@@ -6,7 +6,7 @@
  * @param {string} type - type of the exported file like "txt"
  * @returns {void}
  */
-export default function exportFile(data, filename, type) {
+export function exportFile(data, filename, type) {
 	const file = new Blob([data], { type: type });
 	if (window.navigator.msSaveOrOpenBlob) window.navigator.msSaveOrOpenBlob(file, filename);
 	else {

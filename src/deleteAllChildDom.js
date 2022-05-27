@@ -4,7 +4,7 @@
  * 
  * @param {HTMLElement} domElement - The HTML element to exclude all children
  */
-export default function deleteAllChildDom(domElement) {
+export function deleteAllChildDom(domElement) {
 	while (domElement.hasChildNodes()) domElement.removeChild(domElement.firstChild);
 	domElement.innerHTML = "";
 }

@@ -8,4 +8,4 @@
  * @param {number[]} arr - the array to sort
  * @returns {number[]} A new Array sorted
  */
-export default function sortAscending(arr) { return [...arr].sort((a, b) => a - b); }
+export function sortAscending(arr) { return [...arr].sort((a, b) => a - b); }

@@ -15,4 +15,4 @@ import and from "./and";
  * @param {any} value2 - value 2 to compare
  * @returns {boolean}
  */
-export default function nand(value1, value2) { return !and(value1, value2) };
+export function nand(value1, value2) { return !and(value1, value2) };

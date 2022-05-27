@@ -14,4 +14,4 @@ import xor from "./xor";
  * @param {any} value2 - value 2 to compare
  * @returns {boolean}
  */
-export default function xnor(value1, value2) { return !xor(value1, value2) };
+export function xnor(value1, value2) { return !xor(value1, value2) };

@@ -12,4 +12,4 @@
  * @returns {number} The result of the function
  * @see {@link https://en.wikipedia.org/wiki/Linear_interpolation}
  */
-export default function lerp(value, min, max) { return min + (max - min) * value; }
+export function lerp(value, min, max) { return min + (max - min) * value; }

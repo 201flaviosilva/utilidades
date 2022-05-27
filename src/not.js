@@ -14,4 +14,4 @@
  * @param {any} value - value to convert in boolean and convert
  * @returns {boolean} converted value
  */
-export default function not(value) { return !value };
+export function not(value) { return !value };

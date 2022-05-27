@@ -8,4 +8,4 @@
  * @param {number} d - the degrees value to convert in radians
  * @returns {number} converted the given degrees in radian
  */
-export default function degreesToRadians(d) { return d * (Math.PI / 180); }
+export function degreesToRadians(d) { return d * (Math.PI / 180); }

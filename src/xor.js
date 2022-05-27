@@ -11,4 +11,4 @@
  * @param {any} value2 - value 2 to compare
  * @returns {boolean}
  */
-export default function xor(value1, value2) { return !!value1 !== !!value2 };
+export function xor(value1, value2) { return !!value1 !== !!value2 };

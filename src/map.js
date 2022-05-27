@@ -18,4 +18,4 @@
  * @param {number} end2 - End of the range 2
  * @returns {number} the value un the range
  */
-export default function map(value, start1, end1, start2, end2) { return (value - start1) * (end2 - start2) / (end1 - start1) + start2; }
+export function map(value, start1, end1, start2, end2) { return (value - start1) * (end2 - start2) / (end1 - start1) + start2; }

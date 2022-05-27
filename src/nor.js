@@ -15,4 +15,4 @@ import or from "./or";
  * @param {any} value2 - value 2 to compare
  * @returns {boolean}
  */
-export default function nor(value1, value2) { return !or(value1, value2) };
+export function nor(value1, value2) { return !or(value1, value2) };

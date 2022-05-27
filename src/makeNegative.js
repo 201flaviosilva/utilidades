@@ -9,4 +9,4 @@
  * @param {number} number - The number you want to convert
  * @returns {number} - a negative number
  */
-export default function makeNegative(number) { return Math.abs(number) * -1; };
+export function makeNegative(number) { return Math.abs(number) * -1; };

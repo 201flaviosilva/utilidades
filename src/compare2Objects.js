@@ -9,4 +9,4 @@
  * @param {*} object2 - the second object/array to compare
  * @returns {boolean} - true if the two object are equal
  */
-export default function compare2Objects(object1, object2) { return JSON.stringify(object1) === JSON.stringify(object2); }
+export function compare2Objects(object1, object2) { return JSON.stringify(object1) === JSON.stringify(object2); }

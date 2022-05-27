@@ -9,4 +9,4 @@ import randomNumber from "./randomNumber";
  * 
  * @returns {string}
  */
-export default function randomRGBColor() { return `rgb(${randomNumber(255)}, ${randomNumber(255)}, ${randomNumber(255)})`; }
+export function randomRGBColor() { return `rgb(${randomNumber(255)}, ${randomNumber(255)}, ${randomNumber(255)})`; }

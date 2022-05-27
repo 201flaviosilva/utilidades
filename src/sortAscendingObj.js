@@ -5,4 +5,4 @@
  * @param {string} prop - the property base to sort
  * @returns {Array} - a new sorted array by the given property
  */
-export default function sortAscendingObj(arr, prop) { return [...arr].sort((a, b) => a[prop] - b[prop]); }
+export function sortAscendingObj(arr, prop) { return [...arr].sort((a, b) => a[prop] - b[prop]); }
