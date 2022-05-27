@@ -10,6 +10,10 @@
   },
   "plugins": ["plugins/markdown"],
   "templates": {
+    "systemName": "@flaviosilva/utilsjs",
+    "systemSummary": "Just simple utils for javascript :)",
+    "dateFormate": "D/M/YYYY",
+    "footer": "Source code: https://gitlab.com/201flaviosilva/utilsjs",
     "cleverLinks": true,
     "monospaceLinks": true
   },
@@ -18,6 +22,7 @@
     "package": "package.json",
     "recurse": true,
     "destination": "docs",
-    "readme": "README.md"
+    "readme": "README.md",
+    "template": "./node_modules/foodoc/template"
   }
 }

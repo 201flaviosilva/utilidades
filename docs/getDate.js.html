@@ -1,10 +1,10 @@
-<!-- start:readme.hbs -->
+<!-- start:source.tmpl.hbs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-		<title>@flaviosilva/utilsjs</title>
+		<title>getDate.js</title>
 		<!--[if lt IE 9]>
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -14,7 +14,7 @@
 		<link type="text/css" rel="stylesheet" href="css/template.min.css">
 		<script type="text/javascript">
 			window.TEMPLATE_OPTIONS = {"includeDate":true,"dateFormat":"Do MMM YYYY","systemName":"@flaviosilva/utilsjs","systemSummary":"Just simple utils for javascript :)","systemLogo":"","systemColor":"","navMembers":[{"kind":"class","title":"Classes","summary":"All documented classes."},{"kind":"external","title":"Externals","summary":"All documented external members."},{"kind":"global","title":"Globals","summary":"All documented globals."},{"kind":"mixin","title":"Mixins","summary":"All documented mixins."},{"kind":"interface","title":"Interfaces","summary":"All documented interfaces."},{"kind":"module","title":"Modules","summary":"All documented modules."},{"kind":"namespace","title":"Namespaces","summary":"All documented namespaces."},{"kind":"tutorial","title":"Tutorials","summary":"All available tutorials."}],"footer":"Source code: https://gitlab.com/201flaviosilva/utilsjs","copyright":"FooDoc Copyright © 2016 The contributors to the JSDoc3 and FooDoc projects.","linenums":true,"collapseSymbols":true,"inverseNav":true,"inlineNav":false,"outputSourceFiles":true,"sourceRootPath":null,"disablePackagePath":true,"outputSourcePath":false,"showTableOfContents":true,"showAccessFilter":true,"analytics":null,"methodHeadingReturns":true,"sort":"linenum, longname, version, since","search":true,"favicon":null,"stylesheets":[],"scripts":[],"monospaceLinks":true,"cleverLinks":true,"dateFormate":"D/M/YYYY"};
-			window.DOCLET_TOC_ENABLED = true;
+			window.DOCLET_TOC_ENABLED = false;
 			window.DOCLET_AFILTER_ENABLED = false;
 		</script>
 </head>
@@ -110,41 +110,158 @@
 	</header>
 	<!-- end:navbar.hbs -->		<div class="page-header">
 			<div class="container">
-				<span class="kind">readme</span>
-				<h1><span class="name">@flaviosilva/utilsjs</span></h1>
-				<div class="summary"><p>Just simple utils for javascript :)</p></div>			</div>
+				<span class="kind">source</span>
+				<h1><span class="name">getDate.js</span></h1>
+			</div>
 		</div>
 	<div class="container content">
 		<div class="row">
-			<div class="col-md-9 main-content">
-		<section class="readme-section">
-			<article><h1>201flaviosilva/UtilsJS</h1>
-<h2>Description</h2>
-<p>Just some simple JavaScript Utils. Some of the functions was create to solve a challenge in <a href="https://www.codewars.com/dashboard">Code Wars</a>.</p>
-<h2>Usage</h2>
-<h3>Create a <code>.npmrc</code></h3>
-<pre class="prettyprint source lang-sh"><code>echo @201flaviosilva:registry=https://gitlab.com/api/v4/projects/35983470/packages/npm/ >> .npmrc
+			<div class="col-md-12 main-content">
+		<section class="source-section">
+			<article></article>
+			<pre class="prettyprint source language-javascript line-numbers"><code class="language-javascript">/**
+ * Returns the number of milliseconds since midnight Jan 1 1970, and a specified date
+ * @see {@link https://www.w3schools.com/jsref/jsref_obj_date.asp}
+ * 
+ * @example
+ * getTime() // 1653573577063
+ * 
+ * @returns {number}
+ */
+export function getTime() { return new Date().getTime(); }
+
+/**
+ * Returns the current milliseconds (from 0-999)
+ * @see {@link https://www.w3schools.com/jsref/jsref_obj_date.asp}
+ * 
+ * @example
+ * getMilliseconds() // 134
+ * getMilliseconds() // 952
+ * 
+ * @returns {number} current milliseconds
+ */
+export function getMilliseconds() { return new Date().getMilliseconds(); }
+
+/**
+ * Returns the current seconds (from 0-59)
+ * @see {@link https://www.w3schools.com/jsref/jsref_obj_date.asp}
+ * 
+ * @example
+ * getSeconds() // 0
+ * getSeconds() // 24
+ * 
+ * @returns {number} current seconds
+ */
+export function getSeconds() { return new Date().getSeconds(); }
+
+/**
+ * Returns the current minutes (from 0-59)
+ * @see {@link https://www.w3schools.com/jsref/jsref_obj_date.asp}
+ * 
+ * @example
+ * getMinutes() // 0
+ * getMinutes() // 24
+ * 
+ * @returns {number} current minutes
+ */
+export function getMinutes() { return new Date().getMinutes(); }
+
+/**
+ * Returns the current hour (from 0-23)
+ * @see {@link https://www.w3schools.com/jsref/jsref_obj_date.asp}
+ * 
+ * @example
+ * getHours() // 4
+ * getHours() // 23
+ * 
+ * @returns {number} current hours
+ */
+export function getHours() { return new Date().getHours(); }
+
+/**
+ * Returns the day of the month (from 1-31)
+ * @see {@link https://www.w3schools.com/jsref/jsref_obj_date.asp}
+ * 
+ * @example
+ * getDay() // 1
+ * getDay() // 23
+ * getDay() // 31
+ * 
+ * @returns {number} current day
+ */
+export function getDay() { return new Date().getDate(); }
+
+/**
+ * Returns the current day of the week (from 1-7)
+ * @see {@link https://www.w3schools.com/jsref/jsref_obj_date.asp}
+ * 
+ * @example
+ * getWeekDay() // 1
+ * getWeekDay() // 5
+ * getWeekDay() // 7
+ * 
+ * @returns {number} current day of the week
+ */
+export function getWeekDay() { return new Date().getDay() + 1; }
+
+/**
+ * Returns the current week in the year
+ * 
+ * @example
+ * getWeek() // 21
+ * getWeek() // 50
+ * 
+ * @returns {number} current week in the year
+ */
+export function getWeek() {
+	const currentDate = new Date();
+	const startDate = new Date(currentDate.getFullYear(), 0, 1);
+	const days = Math.floor((currentDate - startDate) /
+		(24 * 60 * 60 * 1000));
+
+	return Math.ceil(days / 7);
+}
+
+/**
+ * Returns the month (from 1-12)
+ * @see {@link https://www.w3schools.com/jsref/jsref_obj_date.asp}
+ * 
+ * @example
+ * getDay() // 1
+ * getDay() // 6
+ * getDay() // 12
+ * 
+ * @returns {number} current month
+ */
+export function getMonth() { return new Date().getMonth() + 1; }
+
+/**
+ * Returns the year
+ * @see {@link https://www.w3schools.com/jsref/jsref_obj_date.asp}
+ * 
+ * @example
+ * getDay() // 1970
+ * getDay() // 2000
+ * getDay() // 2042
+ * 
+ * @returns {number} current year
+ */
+export function getYear() { return new Date().getFullYear(); }
+
+/**
+ * Return a string with a formatted date in Day-Month-Year system
+ * 
+ * @example
+ * getDateFormatted() // "1/1/2021"
+ * getDateFormatted() // "26/5/2022"
+ * getDateFormatted() // "25/12/2042"
+ * 
+ * @returns {string}
+ */
+export function getDateFormatted() { return getDay() + "/" + getMonth() + "/" + getYear(); }
 </code></pre>
-<p>This will create a file named as <code>.npmrc</code> and should contains something like:
-<code>@201flaviosilva:registry=https://gitlab.com/api/v4/projects/35983470/packages/npm/</code></p>
-<h3>Install Package</h3>
-<pre class="prettyprint source lang-sh"><code>npm i @201flaviosilva/utils
-</code></pre>
-<h2>Links</h2>
-<ul>
-<li><a href="https://201flaviosilva.gitlab.io/utilsjs/">WebPage</a>;</li>
-<li><a href="https://gitlab.com/201flaviosilva/utilsjs/-/packages">Package</a>;</li>
-<li><a href="https://gitlab.com/201flaviosilva/utilsjs/">GitLab</a>;
-<ul>
-<li><a href="https://gitlab.com/201flaviosilva/utilsjs/-/issues">Issues</a>;</li>
-</ul>
-</li>
-</ul></article>
 		</section>
 			</div>
-				<div class="col-md-3 side-content">
-					<nav class="toc hidden-print hidden-sm hidden-xs"></nav>
-				</div>
 		</div>
 	</div>
 	<footer>
@@ -177,4 +294,4 @@
 	
 </body>
 </html>
-<!-- end:readme.hbs -->
+<!-- end:source.tmpl.hbs -->

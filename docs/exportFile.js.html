@@ -1,10 +1,10 @@
-<!-- start:readme.hbs -->
+<!-- start:source.tmpl.hbs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-		<title>@flaviosilva/utilsjs</title>
+		<title>exportFile.js</title>
 		<!--[if lt IE 9]>
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -14,7 +14,7 @@
 		<link type="text/css" rel="stylesheet" href="css/template.min.css">
 		<script type="text/javascript">
 			window.TEMPLATE_OPTIONS = {"includeDate":true,"dateFormat":"Do MMM YYYY","systemName":"@flaviosilva/utilsjs","systemSummary":"Just simple utils for javascript :)","systemLogo":"","systemColor":"","navMembers":[{"kind":"class","title":"Classes","summary":"All documented classes."},{"kind":"external","title":"Externals","summary":"All documented external members."},{"kind":"global","title":"Globals","summary":"All documented globals."},{"kind":"mixin","title":"Mixins","summary":"All documented mixins."},{"kind":"interface","title":"Interfaces","summary":"All documented interfaces."},{"kind":"module","title":"Modules","summary":"All documented modules."},{"kind":"namespace","title":"Namespaces","summary":"All documented namespaces."},{"kind":"tutorial","title":"Tutorials","summary":"All available tutorials."}],"footer":"Source code: https://gitlab.com/201flaviosilva/utilsjs","copyright":"FooDoc Copyright © 2016 The contributors to the JSDoc3 and FooDoc projects.","linenums":true,"collapseSymbols":true,"inverseNav":true,"inlineNav":false,"outputSourceFiles":true,"sourceRootPath":null,"disablePackagePath":true,"outputSourcePath":false,"showTableOfContents":true,"showAccessFilter":true,"analytics":null,"methodHeadingReturns":true,"sort":"linenum, longname, version, since","search":true,"favicon":null,"stylesheets":[],"scripts":[],"monospaceLinks":true,"cleverLinks":true,"dateFormate":"D/M/YYYY"};
-			window.DOCLET_TOC_ENABLED = true;
+			window.DOCLET_TOC_ENABLED = false;
 			window.DOCLET_AFILTER_ENABLED = false;
 		</script>
 </head>
@@ -110,41 +110,42 @@
 	</header>
 	<!-- end:navbar.hbs -->		<div class="page-header">
 			<div class="container">
-				<span class="kind">readme</span>
-				<h1><span class="name">@flaviosilva/utilsjs</span></h1>
-				<div class="summary"><p>Just simple utils for javascript :)</p></div>			</div>
+				<span class="kind">source</span>
+				<h1><span class="name">exportFile.js</span></h1>
+			</div>
 		</div>
 	<div class="container content">
 		<div class="row">
-			<div class="col-md-9 main-content">
-		<section class="readme-section">
-			<article><h1>201flaviosilva/UtilsJS</h1>
-<h2>Description</h2>
-<p>Just some simple JavaScript Utils. Some of the functions was create to solve a challenge in <a href="https://www.codewars.com/dashboard">Code Wars</a>.</p>
-<h2>Usage</h2>
-<h3>Create a <code>.npmrc</code></h3>
-<pre class="prettyprint source lang-sh"><code>echo @201flaviosilva:registry=https://gitlab.com/api/v4/projects/35983470/packages/npm/ >> .npmrc
+			<div class="col-md-12 main-content">
+		<section class="source-section">
+			<article></article>
+			<pre class="prettyprint source language-javascript line-numbers"><code class="language-javascript">/**
+ * Create a file and auto downloads the file to user computer
+ * 
+ * @param {any} data - the content to export
+ * @param {string} filename - the name of the exported file
+ * @param {string} type - type of the exported file like "txt"
+ * @returns {void}
+ */
+export function exportFile(data, filename, type) {
+	const file = new Blob([data], { type: type });
+	if (window.navigator.msSaveOrOpenBlob) window.navigator.msSaveOrOpenBlob(file, filename);
+	else {
+		const a = document.createElement("a"),
+			url = URL.createObjectURL(file);
+		a.href = url;
+		a.download = filename;
+		document.body.appendChild(a);
+		a.click();
+		setTimeout(() => {
+			document.body.removeChild(a);
+			window.URL.revokeObjectURL(url);
+		}, 0);
+	}
+}
 </code></pre>
-<p>This will create a file named as <code>.npmrc</code> and should contains something like:
-<code>@201flaviosilva:registry=https://gitlab.com/api/v4/projects/35983470/packages/npm/</code></p>
-<h3>Install Package</h3>
-<pre class="prettyprint source lang-sh"><code>npm i @201flaviosilva/utils
-</code></pre>
-<h2>Links</h2>
-<ul>
-<li><a href="https://201flaviosilva.gitlab.io/utilsjs/">WebPage</a>;</li>
-<li><a href="https://gitlab.com/201flaviosilva/utilsjs/-/packages">Package</a>;</li>
-<li><a href="https://gitlab.com/201flaviosilva/utilsjs/">GitLab</a>;
-<ul>
-<li><a href="https://gitlab.com/201flaviosilva/utilsjs/-/issues">Issues</a>;</li>
-</ul>
-</li>
-</ul></article>
 		</section>
 			</div>
-				<div class="col-md-3 side-content">
-					<nav class="toc hidden-print hidden-sm hidden-xs"></nav>
-				</div>
 		</div>
 	</div>
 	<footer>
@@ -177,4 +178,4 @@
 	
 </body>
 </html>
-<!-- end:readme.hbs -->
+<!-- end:source.tmpl.hbs -->
