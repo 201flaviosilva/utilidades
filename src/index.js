@@ -17,6 +17,7 @@ import { getUrlParameter } from "./getUrlParameter";
 import { invertedLerp } from "./invertedLerp";
 import { isEven } from "./isEven";
 import { isMultipleOf } from "./isMultipleOf";
+import { isNarcissisticNumber } from "./isNarcissisticNumber";
 import { isOdd } from "./isOdd";
 import { lerp } from "./lerp";
 import { makeNegative } from "./makeNegative";
@@ -62,6 +63,7 @@ export {
 	invertedLerp,
 	isEven,
 	isMultipleOf,
+	isNarcissisticNumber,
 	isOdd,
 	lerp,
 	makeNegative,
