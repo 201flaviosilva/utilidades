@@ -1,4 +1,4 @@
-image: node:latest
+image: node:16
 
 stages:
   - deploy
@@ -9,12 +9,23 @@ deploy:
   script:
     - echo "//${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}">.npmrc
     - npm publish
+  only:
+    - main
 
 pages:
   stage: pages
   script:
+    # - rm -rf public
+    # - mkdir public
+    # - cp -r ./docs public
+    # -------
+    - npm install
+    - npm run jsDoc
     - rm -rf public
-    - mkdir public
     - cp -r ./docs public
+
+  artifacts:
+    paths:
+      - public
   only:
     - main
