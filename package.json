@@ -14,15 +14,20 @@
     "@201flaviosilva:registry": " https://gitlab.com/api/v4/projects/35983470/packages/npm/"
   },
   "scripts": {
-    "clear": "rm -rf types && rm -rf build",
+    "clear": "rm -rf types && rm -rf docs && rm -rf build",
     "jsDoc": "jsdoc -c jsdoc.conf.json",
     "types": "npx -p typescript tsc src/*.js --declaration --allowJs --emitDeclarationOnly --outDir types",
-    "build": "npm run clear && npm run jsDoc && npm run types"
+    "compile": "webpack --mode production",
+    "build": "npm run clear && npm run compile && npm run jsDoc && npm run types"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "babel-loader": "^8.2.5",
     "foodoc": "^0.0.9",
     "jsdoc": "^3.6.10",
-    "typescript": "^4.6.4"
+    "typescript": "^4.6.4",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2"
   },
   "keywords": [
     "utils",
