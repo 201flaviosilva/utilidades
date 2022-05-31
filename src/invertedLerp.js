@@ -1,4 +1,4 @@
-import clamp from "./clamp";
+import { clamp } from "./clamp.js";
 
 /**
  * Determines where a value lies between two points.

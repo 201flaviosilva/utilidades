@@ -1,4 +1,4 @@
-import randomFloat from "./randomFloat";
+import { randomFloat } from "./randomFloat.js";
 
 /**
  * Return a random number between the given values and the given precision

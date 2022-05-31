@@ -1,4 +1,4 @@
-import and from "./and";
+import { and } from "./and.js";
 
 /**
  * Inverse of the "and" function.

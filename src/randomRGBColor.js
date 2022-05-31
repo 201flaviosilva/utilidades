@@ -1,4 +1,4 @@
-import randomNumber from "./randomNumber";
+import { randomNumber } from "./randomNumber.js";
 
 /**
  * Export a random rgb color (red, green, blue)
