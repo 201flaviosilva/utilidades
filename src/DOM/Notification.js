@@ -28,17 +28,17 @@ const buttonDefaultStyle = {
 /**
  * Display a pop up im the DOM with the given text
  * 
+ * @example notification({ text: "notification" });
  * @example
- * notification({ text: "notification" });
- * 	notification({
- * 		text: "My nice text",
- * 		animated: false,
- * 		animationTime: 5,
- * 		closeButton: true,
- * 		endPosition: 250,
- * 		style: { border: "10px solid rgb(0, 255, 100)", },
- * 		textStyle: { textTransform: "uppercase", },
- * 		buttonStyle: { backgroundColor: "red" },
+ * notification({
+ * 	text: "My nice text",
+ * 	animated: false,
+ * 	animationTime: 5,
+ * 	closeButton: true,
+ * 	endPosition: 250,
+ * 	style: { border: "10px solid rgb(0, 255, 100)", },
+ * 	textStyle: { textTransform: "uppercase", },
+ * 	buttonStyle: { backgroundColor: "red" },
  * });
  * 
  * @param {Object} options - The options for the pop up
