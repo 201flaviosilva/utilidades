@@ -48,6 +48,7 @@ import { sortAscending } from "./sortAscending.js";
 import { sortAscendingObj } from "./sortAscendingObj.js";
 import { sortDescending } from "./sortDescending.js";
 import { sortDescendingObj } from "./sortDescendingObj.js";
+import { topDownCarMovimentation } from "./topDownCarMovimentation.js";
 import { xnor } from "./xnor.js";
 import { xor } from "./xor.js";
 
@@ -101,6 +102,7 @@ export {
 	sortAscendingObj,
 	sortDescending,
 	sortDescendingObj,
+	topDownCarMovimentation,
 	xnor,
 	xor
 };
