@@ -4,6 +4,8 @@ import { allCharactersSame } from "./allCharactersSame.js";
 import { allEqual } from "./allEqual.js";
 import { and } from "./and.js";
 import { binary2Decimal } from "./binary2Decimal.js";
+import { stringToCamelCase, camelCaseToNormal } from "./camelCase.js";
+import { stringToCapitalize, capitalizeToNormal } from "./capitalizeCase.js";
 import { clamp } from "./clamp.js";
 import { compare2Objects } from "./compare2Objects.js";
 import { decimal2Binary } from "./decimal2Binary.js";
@@ -16,11 +18,14 @@ import { getTime, getMilliseconds, getSeconds, getMinutes, getHours, getDay, get
 import { getMaxArrayObjects } from "./getMaxArrayObjects.js";
 import { getMinArrayObjects } from "./getMinArrayObjects.js";
 import { getUrlParameter } from "./getUrlParameter.js";
+import { getVersion } from "./getVersion.js";
 import { invertedLerp } from "./invertedLerp.js";
+import { invertSentence, invertWords } from "./invertText.js";
 import { isEven } from "./isEven.js";
 import { isMultipleOf } from "./isMultipleOf.js";
 import { isNarcissisticNumber } from "./isNarcissisticNumber.js";
 import { isOdd } from "./isOdd.js";
+import { stringToKebabCase, kebabCaseToNormal } from "./kebabCase.js";
 import { lerp } from "./lerp.js";
 import { makeNegative } from "./makeNegative.js";
 import { map } from "./map.js";
@@ -38,6 +43,7 @@ import { randomNumber } from "./randomNumber.js";
 import { randomRGBAColor } from "./randomRGBAColor.js";
 import { randomRGBColor } from "./randomRGBColor.js";
 import { range } from "./range.js";
+import { stringToSnakeCase, snakeCaseToNormal } from "./snakeCase.js";
 import { sortAscending } from "./sortAscending.js";
 import { sortAscendingObj } from "./sortAscendingObj.js";
 import { sortDescending } from "./sortDescending.js";
@@ -51,6 +57,8 @@ export {
 	allEqual,
 	and,
 	binary2Decimal,
+	stringToCamelCase, camelCaseToNormal,
+	stringToCapitalize, capitalizeToNormal,
 	clamp,
 	compare2Objects,
 	decimal2Binary,
@@ -63,11 +71,14 @@ export {
 	getMaxArrayObjects,
 	getMinArrayObjects,
 	getUrlParameter,
+	getVersion,
 	invertedLerp,
+	invertSentence, invertWords,
 	isEven,
 	isMultipleOf,
 	isNarcissisticNumber,
 	isOdd,
+	stringToKebabCase, kebabCaseToNormal,
 	lerp,
 	makeNegative,
 	map,
@@ -85,6 +96,7 @@ export {
 	randomRGBAColor,
 	randomRGBColor,
 	range,
+	stringToSnakeCase, snakeCaseToNormal,
 	sortAscending,
 	sortAscendingObj,
 	sortDescending,

@@ -10,7 +10,7 @@ module.exports = {
 		path: path.resolve("build"),
 		// filename: "utils.js",
 		filename: "utils.min.js",
-		libraryTarget: "window", // module/window // https://webpack.js.org/configuration/output/#outputlibrarytarget
+		libraryTarget: "window", // module/commonjs2/window // https://webpack.js.org/configuration/output/#outputlibrarytarget
 	},
 	module: {
 		rules: [
