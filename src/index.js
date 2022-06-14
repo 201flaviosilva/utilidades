@@ -3,6 +3,7 @@ import * as DOM from "./DOM/index.js";
 import { allCharactersSame } from "./allCharactersSame.js";
 import { allEqual } from "./allEqual.js";
 import { and } from "./and.js";
+import { average } from "./average.js";
 import { binary2Decimal } from "./binary2Decimal.js";
 import { stringToCamelCase, camelCaseToNormal } from "./camelCase.js";
 import { stringToCapitalize, capitalizeToNormal } from "./capitalizeCase.js";
@@ -10,7 +11,7 @@ import { clamp } from "./clamp.js";
 import { compare2Objects } from "./compare2Objects.js";
 import { decimal2Binary } from "./decimal2Binary.js";
 import { degreesToRadians } from "./degreesToRadians.js";
-import { deleteAllChildDom } from "./deleteAllChildDom.js";
+import { division } from "./division.js";
 import { exportFile } from "./exportFile.js";
 import { fibonacci, fibonacciUntil, fibonacciCustomSequence } from "./fibonacci.js";
 import { findBigArrObj } from "./findBigArrObj.js";
@@ -30,6 +31,7 @@ import { stringToKebabCase, kebabCaseToNormal } from "./kebabCase.js";
 import { lerp } from "./lerp.js";
 import { makeNegative } from "./makeNegative.js";
 import { map } from "./map.js";
+import { multiplication } from "./multiplication.js";
 import { nand } from "./nand.js";
 import { nor } from "./nor.js";
 import { not } from "./not.js";
@@ -46,6 +48,8 @@ import { range } from "./range.js";
 import { stringToSnakeCase, snakeCaseToNormal } from "./snakeCase.js";
 import { sortAscending } from "./sortAscending.js";
 import { sortAscendingObj } from "./sortAscendingObj.js";
+import { subtraction } from "./subtraction.js";
+import { sum } from "./sum.js";
 import { sortDescending } from "./sortDescending.js";
 import { sortDescendingObj } from "./sortDescendingObj.js";
 import { topDownCarMovimentation } from "./topDownCarMovimentation.js";
@@ -57,6 +61,7 @@ export {
 	allCharactersSame,
 	allEqual,
 	and,
+	average,
 	binary2Decimal,
 	stringToCamelCase, camelCaseToNormal,
 	stringToCapitalize, capitalizeToNormal,
@@ -64,7 +69,7 @@ export {
 	compare2Objects,
 	decimal2Binary,
 	degreesToRadians,
-	deleteAllChildDom,
+	division,
 	exportFile,
 	fibonacci, fibonacciUntil, fibonacciCustomSequence,
 	findBigArrObj,
@@ -84,6 +89,7 @@ export {
 	lerp,
 	makeNegative,
 	map,
+	multiplication,
 	nand,
 	nor,
 	not,
@@ -100,6 +106,8 @@ export {
 	stringToSnakeCase, snakeCaseToNormal,
 	sortAscending,
 	sortAscendingObj,
+	subtraction,
+	sum,
 	sortDescending,
 	sortDescendingObj,
 	topDownCarMovimentation,
