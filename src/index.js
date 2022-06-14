@@ -12,6 +12,7 @@ import { decimal2Binary } from "./decimal2Binary.js";
 import { degreesToRadians } from "./degreesToRadians.js";
 import { deleteAllChildDom } from "./deleteAllChildDom.js";
 import { exportFile } from "./exportFile.js";
+import { fibonacci, fibonacciUntil, fibonacciCustomSequence } from "./fibonacci.js";
 import { findBigArrObj } from "./findBigArrObj.js";
 import { findLowArrObj } from "./findLowArrObj.js";
 import { getTime, getMilliseconds, getSeconds, getMinutes, getHours, getDay, getWeekDay, getWeek, getMonth, getYear, getDateFormatted } from "./getDate.js";
@@ -33,7 +34,6 @@ import { nand } from "./nand.js";
 import { nor } from "./nor.js";
 import { not } from "./not.js";
 import { or } from "./or.js";
-import { printObjectInDOM } from "./printObjectInDOM.js";
 import { radiansToDegrees } from "./radiansToDegrees.js";
 import { randomColor } from "./randomColor.js";
 import { randomColor0X } from "./randomColor0X.js";
@@ -66,6 +66,7 @@ export {
 	degreesToRadians,
 	deleteAllChildDom,
 	exportFile,
+	fibonacci, fibonacciUntil, fibonacciCustomSequence,
 	findBigArrObj,
 	findLowArrObj,
 	getTime, getMilliseconds, getSeconds, getMinutes, getHours, getDay, getWeekDay, getWeek, getMonth, getYear, getDateFormatted,
@@ -87,7 +88,6 @@ export {
 	nor,
 	not,
 	or,
-	printObjectInDOM,
 	radiansToDegrees,
 	randomColor,
 	randomColor0X,
