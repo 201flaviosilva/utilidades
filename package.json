@@ -2,7 +2,7 @@
   "name": "201flaviosilva-utils",
   "version": "1.2.1",
   "description": "Just simple utils for javascript :)",
-  "main": "src/index.js",
+  "main": "build/utils.js",
   "homepage": "https://201flaviosilva.gitlab.io/utilsjs/",
   "author": "201flaviosilva",
   "license": "MIT",

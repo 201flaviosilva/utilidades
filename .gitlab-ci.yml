@@ -2,7 +2,6 @@ image: node:16
 
 stages:
   - doc
-  - publish
 
 doc:
   stage: doc
@@ -19,13 +18,5 @@ doc:
   artifacts:
     paths:
       - public
-  only:
-    - release
-
-publish:
-  stage: publish
-  script:
-    - echo "//${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}">.npmrc
-    - npm publish
   only:
     - release
