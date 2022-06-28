@@ -3,6 +3,8 @@ import * as DOM from "./DOM/index.js";
 import { allCharactersSame } from "./allCharactersSame.js";
 import { allEqual } from "./allEqual.js";
 import { and } from "./and.js";
+import { arrayMoveLeft } from "./arrayMoveLeft.js";
+import { arrayMoveRight } from "./arrayMoveRight.js";
 import { average } from "./average.js";
 import { binary2Decimal } from "./binary2Decimal.js";
 import { stringToCamelCase, camelCaseToNormal } from "./camelCase.js";
@@ -61,6 +63,8 @@ export {
 	allCharactersSame,
 	allEqual,
 	and,
+	arrayMoveLeft,
+	arrayMoveRight,
 	average,
 	binary2Decimal,
 	stringToCamelCase, camelCaseToNormal,

@@ -19,4 +19,4 @@ doc:
     paths:
       - public
   only:
-    - release
+    - main
