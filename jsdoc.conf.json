@@ -10,19 +10,26 @@
   },
   "plugins": ["plugins/markdown"],
   "templates": {
-    "systemName": "@flaviosilva/utilsjs",
-    "systemSummary": "Just simple utils for javascript :)",
-    "dateFormate": "D/M/YYYY",
-    "footer": "Source code: https://gitlab.com/201flaviosilva/utilsjs",
     "cleverLinks": true,
     "monospaceLinks": true
   },
   "opts": {
+    "destination": "docs/",
     "encoding": "utf8",
-    "package": "package.json",
+    "verbose": true,
     "recurse": true,
-    "destination": "docs",
     "readme": "README.md",
-    "template": "./node_modules/foodoc/template"
+    "template": "node_modules/clean-jsdoc-theme",
+    "theme_opts": {
+      "theme": "dark",
+      "title": "201flaviosilva-utils",
+      "menu": [
+        {
+          "title": "GitLab",
+          "link": "https://gitlab.com/201flaviosilva/utilsjs",
+          "target": "_blank"
+        }
+      ]
+    }
   }
 }

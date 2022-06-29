@@ -1,15 +1,11 @@
 image: node:16
 
 stages:
-  - doc
+  - pages
 
-doc:
-  stage: doc
+pages:
+  stage: pages
   script:
-    # - rm -rf public
-    # - mkdir public
-    # - cp -r ./docs public
-    # -------
     - npm install
     - npm run jsDoc
     - rm -rf public
