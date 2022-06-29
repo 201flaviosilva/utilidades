@@ -3,13 +3,11 @@ const path = require("path");
 module.exports = {
 	mode: "production",
 	entry: "./src/index.js",
-	// optimization: { minimize: false, },
-	optimization: { minimize: true, },
+	optimization: { minimize: true, }, // false/true
 	experiments: { outputModule: true, },
 	output: {
 		path: path.resolve("build"),
-		// filename: "utils.js",
-		filename: "utils.min.js",
+		filename: "utils.min.js", // "utils.js"/"utils.min.js"
 		libraryTarget: "window", // module/commonjs2/window // https://webpack.js.org/configuration/output/#outputlibrarytarget
 	},
 	module: {

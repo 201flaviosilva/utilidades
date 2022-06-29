@@ -41,13 +41,21 @@ __webpack_require__.d(__webpack_exports__, {
   "allCharactersSame": () => (/* reexport */ allCharactersSame),
   "allEqual": () => (/* reexport */ allEqual),
   "and": () => (/* reexport */ and),
+  "arrayMoveLeft": () => (/* reexport */ arrayMoveLeft),
+  "arrayMoveRight": () => (/* reexport */ arrayMoveRight),
+  "average": () => (/* reexport */ average),
   "binary2Decimal": () => (/* reexport */ binary2Decimal),
+  "camelCaseToNormal": () => (/* reexport */ camelCaseToNormal),
+  "capitalizeToNormal": () => (/* reexport */ capitalizeToNormal),
   "clamp": () => (/* reexport */ clamp),
   "compare2Objects": () => (/* reexport */ compare2Objects),
   "decimal2Binary": () => (/* reexport */ decimal2Binary),
   "degreesToRadians": () => (/* reexport */ degreesToRadians),
-  "deleteAllChildDom": () => (/* reexport */ deleteAllChildDom),
+  "division": () => (/* reexport */ division),
   "exportFile": () => (/* reexport */ exportFile),
+  "fibonacci": () => (/* reexport */ fibonacci),
+  "fibonacciCustomSequence": () => (/* reexport */ fibonacciCustomSequence),
+  "fibonacciUntil": () => (/* reexport */ fibonacciUntil),
   "findBigArrObj": () => (/* reexport */ findBigArrObj),
   "findLowArrObj": () => (/* reexport */ findLowArrObj),
   "getDateFormatted": () => (/* reexport */ getDateFormatted),
@@ -61,22 +69,26 @@ __webpack_require__.d(__webpack_exports__, {
   "getSeconds": () => (/* reexport */ getSeconds),
   "getTime": () => (/* reexport */ getTime),
   "getUrlParameter": () => (/* reexport */ getUrlParameter),
+  "getVersion": () => (/* reexport */ getVersion),
   "getWeek": () => (/* reexport */ getWeek),
   "getWeekDay": () => (/* reexport */ getWeekDay),
   "getYear": () => (/* reexport */ getYear),
+  "invertSentence": () => (/* reexport */ invertSentence),
+  "invertWords": () => (/* reexport */ invertWords),
   "invertedLerp": () => (/* reexport */ invertedLerp),
   "isEven": () => (/* reexport */ isEven),
   "isMultipleOf": () => (/* reexport */ isMultipleOf),
   "isNarcissisticNumber": () => (/* reexport */ isNarcissisticNumber),
   "isOdd": () => (/* reexport */ isOdd),
+  "kebabCaseToNormal": () => (/* reexport */ kebabCaseToNormal),
   "lerp": () => (/* reexport */ lerp),
   "makeNegative": () => (/* reexport */ makeNegative),
   "map": () => (/* reexport */ map),
+  "multiplication": () => (/* reexport */ multiplication),
   "nand": () => (/* reexport */ nand),
   "nor": () => (/* reexport */ nor),
   "not": () => (/* reexport */ not),
   "or": () => (/* reexport */ or),
-  "printObjectInDOM": () => (/* reexport */ printObjectInDOM),
   "radiansToDegrees": () => (/* reexport */ radiansToDegrees),
   "randomColor": () => (/* reexport */ randomColor),
   "randomColor0X": () => (/* reexport */ randomColor0X),
@@ -86,10 +98,18 @@ __webpack_require__.d(__webpack_exports__, {
   "randomRGBAColor": () => (/* reexport */ randomRGBAColor),
   "randomRGBColor": () => (/* reexport */ randomRGBColor),
   "range": () => (/* reexport */ range),
+  "snakeCaseToNormal": () => (/* reexport */ snakeCaseToNormal),
   "sortAscending": () => (/* reexport */ sortAscending),
   "sortAscendingObj": () => (/* reexport */ sortAscendingObj),
   "sortDescending": () => (/* reexport */ sortDescending),
   "sortDescendingObj": () => (/* reexport */ sortDescendingObj),
+  "stringToCamelCase": () => (/* reexport */ stringToCamelCase),
+  "stringToCapitalize": () => (/* reexport */ stringToCapitalize),
+  "stringToKebabCase": () => (/* reexport */ stringToKebabCase),
+  "stringToSnakeCase": () => (/* reexport */ stringToSnakeCase),
+  "subtraction": () => (/* reexport */ subtraction),
+  "sum": () => (/* reexport */ sum),
+  "topDownCarMovimentation": () => (/* reexport */ topDownCarMovimentation),
   "xnor": () => (/* reexport */ xnor),
   "xor": () => (/* reexport */ xor)
 });
@@ -98,10 +118,24 @@ __webpack_require__.d(__webpack_exports__, {
 var DOM_namespaceObject = {};
 __webpack_require__.r(DOM_namespaceObject);
 __webpack_require__.d(DOM_namespaceObject, {
-  "notification": () => (notification)
+  "deleteAllChildDom": () => (deleteAllChildDom),
+  "notification": () => (notification),
+  "printObjectInDOM": () => (printObjectInDOM)
 });
 
-;// CONCATENATED MODULE: ./src/DOM/Notification.js
+;// CONCATENATED MODULE: ./src/DOM/deleteAllChildDom.js
+/**
+ * Eliminate all child elements of a choice parent element.
+ * For example: delete all dom <li> from a <ul>.
+ * 
+ * @param {HTMLElement} domElement - The HTML element to exclude all children
+ */
+function deleteAllChildDom(domElement) {
+  while (domElement.hasChildNodes()) domElement.removeChild(domElement.firstChild);
+
+  domElement.innerHTML = "";
+}
+;// CONCATENATED MODULE: ./src/DOM/notification.js
 const defaultStyle = {
   minWidth: "80%",
   position: "fixed",
@@ -223,7 +257,54 @@ function notification({
 
   parent.appendChild(popUp);
 }
+;// CONCATENATED MODULE: ./src/DOM/printObjectInDOM.js
+/**
+ * Print JavaScript Object In HTML Dom
+ * 
+ * @example
+ * const myObject = {
+ * 	name: "Sistema Solar",
+ * 	numberStarts: 1,
+ * 	terra: {
+ * 		speed: 29.783,
+ * 		moons: ["Lua"],
+ * 		temperature: {
+ * 			min: 93.2,
+ * 			max: 57.8,
+ * 			average: 14,
+ * 		}
+ * 	},
+ * };
+ * printObjectInDOM(myObject, document.getElementById("myDomElement"));
+ * 
+ * @param {Object} object - JavaScript Object to print in the dom
+ * @param {HTMLElement} [parent=document.body] - DOM element to print
+ * @see {@link -  https://jsfiddle.net/201flaviosilva/mbnz3p7y/}
+ */
+function printObjectInDOM(object, parent = document.body) {
+  const div = document.createElement("div");
+  div.innerHTML = _eachRecursive(object, Object.keys({
+    object
+  })[0]);
+  parent.appendChild(div);
+} // Function to run Recursively in all proprieties of the object
+
+function _eachRecursive(obj, parentKey = "Object") {
+  let html = "";
+  html += `<details><summary>${parentKey}</summary><div style="border: 1px solid black;padding: 4px;">`;
+
+  for (let key in obj) {
+    const validObject = typeof obj[key] === "object" && obj[key] !== null && !Array.isArray(obj[key]);
+    const validArray = Array.isArray(obj[key]) && obj[key].length > 0;
+    if (validObject) html += _eachRecursive(obj[key], key);else if (validArray) html += _eachRecursive(obj[key], key);else html += "<li>" + key + ": " + obj[key] + "</li>";
+  }
+
+  html += `</div class=""></details>`;
+  return html;
+}
 ;// CONCATENATED MODULE: ./src/DOM/index.js
+
+
 
 
 ;// CONCATENATED MODULE: ./src/allCharactersSame.js
@@ -296,6 +377,101 @@ function and(value1, value2) {
   return !!value1 && !!value2;
 }
 ;
+;// CONCATENATED MODULE: ./src/arrayMoveLeft.js
+/**
+ * @description
+ * Move an array element to the left
+ * 
+ * @example arrayMoveLeft([1,2,3,4,5]); // [5,1,2,3,4]
+ * @example arrayMoveLeft([1,2,3,4,5], 2); // [4,5,1,2,3]
+ * @example arrayMoveLeft(["a","b","c","d","e"], 7) // ["d","e","a","b","c"]
+ * @example arrayMoveLeft(["a","b"], 3) // ["b","a"]
+ * 
+ * @param {any[]} array - The array to move
+ * @param {number} times - The number of times to move the array
+ * @returns {any[]}
+ */
+function arrayMoveLeft(array = [], times = 1) {
+  for (let t = 0; t < times; t++) {
+    let last = array[0]; // temp variable to store last changed value
+
+    for (let i = 1; i < array.length; i++) {
+      const tempValue = array[i]; // temp variable to store the current value
+
+      array[i] = last; // update the value in the current position
+
+      last = tempValue; // update the last changed value
+    }
+
+    array[0] = last; // put the last changed value in the first position
+  }
+
+  return array;
+}
+;// CONCATENATED MODULE: ./src/arrayMoveRight.js
+/**
+ * @description
+ * Move an array element to the right
+ * 
+ * @example arrayMoveRight([1,2,3,4,5]); // [2,3,4,5,1]
+ * @example arrayMoveRight([1,2,3,4,5], 2); // [3,4,5,1,2]
+ * @example arrayMoveRight(["a","b","c","d","e"], 7) // ["c","d","e","a","b"]
+ * @example arrayMoveRight(["a","b"], 3) // ["b","a"]
+ * 
+ * @param {any[]} array - The array to move
+ * @param {number} times - The number of times to move the array
+ * @returns {any[]}
+ */
+function arrayMoveRight(array = [], times = 1) {
+  for (let t = 0; t < times; t++) {
+    let last = array[array.length - 1];
+
+    for (let i = array.length - 2; i >= 0; i--) {
+      const tempValue = array[i];
+      array[i] = last;
+      last = tempValue;
+    }
+
+    array[array.length - 1] = last;
+  }
+
+  return array;
+}
+;// CONCATENATED MODULE: ./src/sum.js
+/**
+ * Calculates a sum of all givens numbers
+ * 
+ * @example sum(1,1); // 2
+ * @example sum(1,2,-5,2.4,-6.5); // -6.1
+ * @example sum(1,2,3,4,5,6,7,8,9,0); // 45
+ * @example sum(-1,2,3,4,5,6,7,8,-9); // 25
+ * 
+ * @param  {...number} numbers - the numbers to sum
+ * @returns {number}
+ */
+function sum(...numbers) {
+  return numbers.reduce((acc, curr) => acc + curr, 0);
+}
+;// CONCATENATED MODULE: ./src/average.js
+
+/**
+ * Calculates a average of all givens numbers
+ * 
+ * @example average(1); // 1
+ * @example average(1,2); // 1.5
+ * @example average(5,4,3,6,7,3,1,8); // 4.625
+ * @example average(1,2,-5,2.4,-6.5,0.5); // -0.9333333333333332
+ * @example average(1,2,3,4,5,6,7,8,9); // 5
+ * @example average(-1,2,3,4,5,6,7,8,-9); // 2.7777777777777777
+ * 
+ * @param  {...number} numbers - the numbers to average
+ * @returns {number}
+ */
+
+function average(...numbers) {
+  if (!numbers.length) return 0;
+  return sum(...numbers) / numbers.length;
+}
 ;// CONCATENATED MODULE: ./src/binary2Decimal.js
 /**
  * Convert a number/string to a decimal
@@ -308,6 +484,69 @@ function and(value1, value2) {
  */
 function binary2Decimal(binary) {
   if (typeof binary === "string") return parseInt(binary.split("").reverse().join(""), 2);else if (typeof binary === "number") return parseInt(binary, 2);
+}
+;// CONCATENATED MODULE: ./src/camelCase.js
+/**
+ * Change a given text to a camelCase text based
+ * @see {@link https://en.wikipedia.org/wiki/Camel_case}
+ * 
+ * @example stringToCamelCase("beep"); // beep
+ * @example stringToCamelCase("Beep"); // beep
+ * @example stringToCamelCase("beep boop"); // beepBoop
+ * @example stringToCamelCase("beep Boop"); // beepBoop
+ * 
+ * @param {string} str - the text to transform
+ * @returns {string}
+ */
+function stringToCamelCase(str) {
+  return str.replace(/\s(.)/g, $1 => $1.toUpperCase());
+}
+/**
+ * Change a given camelCase text to a normal text
+ * @see {@link https://en.wikipedia.org/wiki/Camel_case}
+ * 
+ * @example camelCaseToNormal("beep"); // beep
+ * @example camelCaseToNormal("Beep"); // beep
+ * @example camelCaseToNormal("beep boop"); // boop beep
+ * @example camelCaseToNormal("Beep Boop"); // boop beep
+ * 
+ * @param {string} str - the text to transform
+ * @returns {string}
+ */
+
+function camelCaseToNormal(str) {
+  return str.replace(/([A-Z])/g, $1 => " " + $1.toLowerCase());
+}
+;// CONCATENATED MODULE: ./src/capitalizeCase.js
+/**
+ * Change a given text to a Capitalize base text.
+ * @see {@link https://en.wikipedia.org/wiki/Capitalization}
+ * 
+ * @example stringToCapitalize("beep"); // Beep
+ * @example stringToCapitalize("Beep"); // Beep
+ * @example stringToCapitalize("beep boop"); // Beep boop
+ * @example stringToCapitalize("beep Boop"); // Beep Boop
+ * 
+ * @param {string} str - the text to transform
+ * @returns {string}
+ */
+function stringToCapitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+/**
+ * Change a given capitalized text to a normal text
+ * 
+ * @example capitalizeToNormal("beep"); // beep
+ * @example capitalizeToNormal("Beep"); // beep
+ * @example capitalizeToNormal("beep boop"); // beep boop
+ * @example capitalizeToNormal("beep Boop"); // beep Boop
+ * 
+ * @param {string} str - the text to transform
+ * @returns {string}
+ */
+
+function capitalizeToNormal(str) {
+  return str.charAt(0).toLowerCase() + str.slice(1);
 }
 ;// CONCATENATED MODULE: ./src/clamp.js
 /**
@@ -372,17 +611,28 @@ function decimal2Binary(decimal) {
 function degreesToRadians(d) {
   return d * (Math.PI / 180);
 }
-;// CONCATENATED MODULE: ./src/deleteAllChildDom.js
+;// CONCATENATED MODULE: ./src/division.js
 /**
- * Eliminate all child elements of a choice parent element.
- * For example: delete all dom <li> from a <ul>.
+ * Calculates a division of all givens numbers
  * 
- * @param {HTMLElement} domElement - The HTML element to exclude all children
+ * @example division(1); // 1
+ * @example division(1,2); // 0.5
+ * @example division(1000,10) // 100
+ * @example division(20,10,5); // 0.4
+ * @example division(1,2,-5,2.4,-6.5,0.5); // 0.012820512820512822
+ * 
+ * @param  {...number} numbers - the numbers to division
+ * @returns {number}
  */
-function deleteAllChildDom(domElement) {
-  while (domElement.hasChildNodes()) domElement.removeChild(domElement.firstChild);
+function division(...numbers) {
+  if (!numbers.length) return 0;else if (numbers.length === 1) return numbers[0];
+  let result = numbers[0];
 
-  domElement.innerHTML = "";
+  for (let i = 1; i < numbers.length; i++) {
+    result /= numbers[i];
+  }
+
+  return result;
 }
 ;// CONCATENATED MODULE: ./src/exportFile.js
 /**
@@ -409,6 +659,74 @@ function exportFile(data, filename, type) {
       window.URL.revokeObjectURL(url);
     }, 0);
   }
+}
+;// CONCATENATED MODULE: ./src/fibonacci.js
+/**
+ * Runs the fibonacci sequence for the given times
+ * 
+ * @see {@link https://pt.wikipedia.org/wiki/Sequ%C3%AAncia_de_Fibonacci}
+ * 
+ * @example fibonacci(2); // [0,1]
+ * @example fibonacci(5); // [0,1,1,2,3]
+ * @example fibonacci(10); // [0,1,1,2,3,5,8,13,21,34]
+ * 
+ * @param {number} times - number of times to run
+ * @returns {number[]}
+ */
+function fibonacci(times = 20) {
+  const sequence = [0, 1];
+
+  while (sequence.length < times) {
+    sequence.push(sequence[sequence.length - 2] + sequence[sequence.length - 1]);
+  }
+
+  return sequence;
+}
+/**
+ * Runs the fibonacci sequence until the maximum given number
+ * 
+ * @example fibonacciUntil(2); // [0,1,1]
+ * @example fibonacciUntil(5); // [0,1,1,2,3]
+ * @example fibonacciUntil(100); // [0,1,1,2,3,5,8,13,21,34,55,89]
+ * 
+ * @param {number} max - max number to get
+ * @returns {number[]}
+ */
+
+function fibonacciUntil(max = 100) {
+  const sequence = [0, 1];
+
+  do {
+    const calc = sequence[sequence.length - 2] + sequence[sequence.length - 1];
+    if (calc >= max) return sequence;
+    sequence.push(sequence[sequence.length - 2] + sequence[sequence.length - 1]);
+  } while (sequence[sequence.length - 1] < max);
+}
+/**
+ * Create a fibonacci sequence starts and end with a given values
+ * 
+ * @example fibonacciCustomSequence(5, 20); // [5,10,15,25]
+ * @example fibonacciCustomSequence(10, 120); // [10,20,30,50,80,130]
+ * @example fibonacciCustomSequence(50); // [50,100,150]
+ * 
+ * @param {number} start - number to start the sequence
+ * @param {number} end - max number to stop
+ * @returns {number[]}
+ */
+
+function fibonacciCustomSequence(start = 1, end = 100) {
+  const sequence = [];
+  let lastNumber = 0;
+  let currentNumber = start;
+
+  while (currentNumber <= end) {
+    const next = currentNumber + lastNumber;
+    lastNumber = currentNumber;
+    currentNumber = next;
+    sequence.push(currentNumber);
+  }
+
+  return sequence;
 }
 ;// CONCATENATED MODULE: ./src/findBigArrObj.js
 /**
@@ -649,13 +967,30 @@ function getMinArrayObjects(arr, prop) {
  * URL: http://localhost:8080/?name=Silva
  * getUrlParameter("name"); // Silva
  * 
- * @param {string} key 
- * @returns {string} - Returns the value of the key
+ * @param {string} key - The key of the query parameter
+ * @returns {string} Returns the value of the key
  */
 function getUrlParameter(key) {
   const urlSearchParams = new URLSearchParams(window.location.search);
   const params = Object.fromEntries(urlSearchParams.entries());
   return params[key];
+}
+;// CONCATENATED MODULE: ./package.json
+const package_namespaceObject = {"i8":"1.2.1"};
+;// CONCATENATED MODULE: ./src/getVersion.js
+
+/**
+ * @description 
+ * Returns the current version of the library
+ * 
+ * @example
+ * getVersion(); // "1.0.5
+ * 
+ * @returns {String}
+ */
+
+function getVersion() {
+  return package_namespaceObject.i8;
 }
 ;// CONCATENATED MODULE: ./src/invertedLerp.js
 
@@ -678,6 +1013,36 @@ function getUrlParameter(key) {
 
 function invertedLerp(value, start, end) {
   return clamp((value - start) / (end - start));
+}
+;// CONCATENATED MODULE: ./src/invertText.js
+/**
+ * Invert word of a given text
+ * 
+ * @example invertSentence("beep"); // beep
+ * @example invertSentence("Beep"); // beep
+ * @example invertSentence("Beep Boop"); // Boop Beep
+ * @example invertSentence("beep boop 1 20"); // 20 1 boop beep
+ * 
+ * @param {string} str - the text to transform
+ * @returns {string}
+ */
+function invertSentence(str) {
+  return str.split(" ").reverse().join(" ");
+}
+/**
+ * Invert all letters from a given text
+ * 
+ * @example invertWords("beep"); // peeb
+ * @example invertWords("Beep"); // peeB
+ * @example invertWords("Beep Boop"); // pooB peeB
+ * @example invertWords("beep boop 1 20"); // 02 1 poob peeb
+ * 
+ * @param {string} str - the text to transform
+ * @returns {string}
+ */
+
+function invertWords(str) {
+  return str.split("").reverse().join("");
 }
 ;// CONCATENATED MODULE: ./src/isEven.js
 /**
@@ -763,6 +1128,36 @@ function isNarcissisticNumber(n) {
 function isOdd(number) {
   return number % 2 == 1;
 }
+;// CONCATENATED MODULE: ./src/kebabCase.js
+/**
+ * Change a given text to a kebab-case base text.
+ * 
+ * @example stringToSnakeCase("beep"); // beep
+ * @example stringToSnakeCase("Beep"); // beep
+ * @example stringToSnakeCase("beep boop"); // beep-boop
+ * @example stringToSnakeCase("Beep Boop"); // Beep-Boop
+ * 
+ * @param {string} str - the text to transform
+ * @returns {string}
+ */
+function stringToKebabCase(str) {
+  return str.replaceAll(" ", "-");
+}
+/**
+ * Change a given kebab-case text to a normal text
+ * 
+ * @example kebabCaseToNormal("beep"); // beep
+ * @example kebabCaseToNormal("Beep"); // beep
+ * @example kebabCaseToNormal("beep-boop"); // beep boop
+ * @example kebabCaseToNormal("Beep-Boop"); // Beep Boop
+ * 
+ * @param {string} str - the text to transform
+ * @returns {string}
+ */
+
+function kebabCaseToNormal(str) {
+  return str.replaceAll("-", " ");
+}
 ;// CONCATENATED MODULE: ./src/lerp.js
 /**
  * Return the value between 2 value based in a given percentage (decimal midpoint)
@@ -820,6 +1215,21 @@ function makeNegative(number) {
  */
 function map(value, start1, end1, start2, end2) {
   return (value - start1) * (end2 - start2) / (end1 - start1) + start2;
+}
+;// CONCATENATED MODULE: ./src/multiplication.js
+/**
+ * Calculates a multiplication of all givens numbers
+ * 
+ * @example multiplication(1,2); // 2
+ * @example multiplication(1,2,-5,2.4,-6.5,0.5); // 78
+ * @example multiplication(1,2,3,4,5,6,7,8,9,0); // 0
+ * @example multiplication(-1,2,3,4,5,6,7,8,-9); // 362880
+ * 
+ * @param  {...number} numbers - the numbers to multiplication
+ * @returns {number}
+ */
+function multiplication(...numbers) {
+  return numbers.reduce((acc, curr) => acc * curr, 1);
 }
 ;// CONCATENATED MODULE: ./src/nand.js
 
@@ -905,51 +1315,6 @@ function not(value) {
   return !value;
 }
 ;
-;// CONCATENATED MODULE: ./src/printObjectInDOM.js
-/**
- * Print JavaScript Object In HTML Dom
- * 
- * @example
- * const myObject = {
- * 	name: "Sistema Solar",
- * 	numberStarts: 1,
- * 	terra: {
- * 		speed: 29.783,
- * 		moons: ["Lua"],
- * 		temperature: {
- * 			min: 93.2,
- * 			max: 57.8,
- * 			average: 14,
- * 		}
- * 	},
- * };
- * printObjectInDOM(myObject, document.getElementById("myDomElement"));
- * 
- * @param {Object} object - JavaScript Object to print in the dom
- * @param {HTMLElement} [parent=document.body] - DOM element to print
- * @see {@link -  https://jsfiddle.net/201flaviosilva/mbnz3p7y/}
- */
-function printObjectInDOM(object, parent = document.body) {
-  const div = document.createElement("div");
-  div.innerHTML = _eachRecursive(object, Object.keys({
-    object
-  })[0]);
-  parent.appendChild(div);
-} // Function to run Recursively in all proprieties of the object
-
-function _eachRecursive(obj, parentKey = "Object") {
-  let html = "";
-  html += `<details><summary>${parentKey}</summary><div style="border: 1px solid black;padding: 4px;">`;
-
-  for (let key in obj) {
-    const validObject = typeof obj[key] === "object" && obj[key] !== null && !Array.isArray(obj[key]);
-    const validArray = Array.isArray(obj[key]) && obj[key].length > 0;
-    if (validObject) html += _eachRecursive(obj[key], key);else if (validArray) html += _eachRecursive(obj[key], key);else html += "<li>" + key + ": " + obj[key] + "</li>";
-  }
-
-  html += `</div class=""></details>`;
-  return html;
-}
 ;// CONCATENATED MODULE: ./src/radiansToDegrees.js
 /**
  * Convert the given radians value in degrees
@@ -1084,11 +1449,10 @@ function randomRGBColor() {
 /**
  * Return a array of number Between the 2 given values,
  * 
- * @example
- * range(1, 5); // [ 1, 2, 3, 4, 5 ]
- * range(0, 100, 10); // [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
- * range(0, 100, 100) // [0, 100]
- * range(1, 100, 100) // [1]
+ * @example range(1, 5); // [ 1, 2, 3, 4, 5 ]
+ * @example range(0, 100, 10); // [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+ * @example range(0, 100, 100) // [0, 100]
+ * @example range(1, 100, 100) // [1]
  * 
  * @param {number} start - start point to add numbers
  * @param {number} end - end point to stop adding numbers
@@ -1101,6 +1465,38 @@ function range(start, end, step = 1) {
   for (let i = start; i < end + 1; i += step) arr.push(i);
 
   return arr;
+}
+;// CONCATENATED MODULE: ./src/snakeCase.js
+/**
+ * Change a given text to a snake_case base text.
+ * @see {@link https://en.wikipedia.org/wiki/Snake_case}
+ * 
+ * @example stringToSnakeCase("beep"); // beep
+ * @example stringToSnakeCase("Beep"); // Beep
+ * @example stringToSnakeCase("beep boop"); // beep_boop
+ * @example stringToSnakeCase("Beep Boop"); // Beep_Boop
+ * 
+ * @param {string} str - the text to transform
+ * @returns {string}
+ */
+function stringToSnakeCase(str) {
+  return str.replace(/\s/g, "_").replace(/([A-Z])/g, $1 => "_" + $1.toLowerCase());
+}
+/**
+ * Change a given snake_case text to a normal text
+ * @see {@link https://en.wikipedia.org/wiki/Snake_case}
+ * 
+ * @example snakeCaseToNormal("beep"); // beep
+ * @example snakeCaseToNormal("Beep"); // beep
+ * @example snakeCaseToNormal("beep_boop"); // beep boop
+ * @example snakeCaseToNormal("Beep_Boop"); // Beep Boop
+ * 
+ * @param {string} str - the text to transform
+ * @returns {string}
+ */
+
+function snakeCaseToNormal(str) {
+  return str.replace(/_/g, " ").replace(/([A-Z])/g, $1 => " " + $1.toLowerCase());
 }
 ;// CONCATENATED MODULE: ./src/sortAscending.js
 /**
@@ -1127,6 +1523,29 @@ function sortAscending(arr) {
 function sortAscendingObj(arr, prop) {
   return [...arr].sort((a, b) => a[prop] - b[prop]);
 }
+;// CONCATENATED MODULE: ./src/subtraction.js
+/**
+ * Calculates a subtraction of all givens numbers
+ * 
+ * @example subtraction(1); // 1
+ * @example subtraction(1,2); // -1
+ * @example subtraction(1,2,-5,2.4,-6.5,0.5); // 7.6
+ * @example subtraction(1,2,3,4,5,6,7,8,9,0); // -43
+ * @example subtraction(-1,2,3,4,5,6,7,8,-9); // -27
+ * 
+ * @param  {...number} numbers - the numbers to subtraction
+ * @returns {number}
+ */
+function subtraction(...numbers) {
+  if (!numbers.length) return 0;else if (numbers.length === 1) return numbers[0];
+  let result = numbers[0];
+
+  for (let i = 1; i < numbers.length; i++) {
+    result -= numbers[i];
+  }
+
+  return result;
+}
 ;// CONCATENATED MODULE: ./src/sortDescending.js
 /**
  * Sort an array of number by descending
@@ -1151,6 +1570,93 @@ function sortDescending(arr) {
  */
 function sortDescendingObj(arr, prop) {
   return [...arr].sort((a, b) => b[prop] - a[prop]);
+}
+;// CONCATENATED MODULE: ./src/topDownCarMovimentation.js
+
+/**
+ * Updates a position, rotation and speed of a car in the top down view
+ * 
+ * Algorithm based in {@link https://www.youtube.com/watch?v=Rs_rAxEsAvI}
+ * @see {@link https://www.youtube.com/watch?v=Rs_rAxEsAvI}
+ * 
+ * @param {Object} state - the current state of the car
+ * @param {Object} state.keys - the objet with the input keys
+ * @param {boolean} [state.keys.forward=false] true if the forward key is pressed
+ * @param {boolean} [state.keys.left=false] true if the left key is pressed
+ * @param {boolean} [state.keys.right=false] true if the right key is pressed
+ * @param {boolean} [state.keys.reverse=false] true if the reverse key is pressed
+ * @param {number} state.x - current x position of the car
+ * @param {number} state.y - current y position of the car
+ * @param {number} state.speed - current car speed
+ * @param {number} state.acceleration - acceleration value per update
+ * @param {number} [state.maxSpeed=Infinity] - the limit speed of the car
+ * @param {number} [state.friction=0] - friction of the car (0 to 1)
+ * @param {number} state.rotation - current car rotation
+ * @param {number} state.rotationSpeed - car rotation speed
+ * @param {Object} state.bounds - limits the maximum position on the axes
+ * @param {Object} state.bounds.x - limits the maximum position in the x axis
+ * @param {number} [state.bounds.x.min=-Infinity] - minimum limit on the x axis
+ * @param {number} [state.bounds.x.max=Infinity] - max limit on the x axis
+ * @param {Object} state.bounds.y - limits the maximum position in the y axis
+ * @param {number} [state.bounds.y.min=-Infinity] - minimum limit on the y axis
+ * @param {number} [state.bounds.y.max=Infinity] - max limit on the y axis
+ * @returns {Object}
+ */
+
+function topDownCarMovimentation({
+  keys = {
+    forward: false,
+    left: false,
+    right: false,
+    reverse: false
+  },
+  x,
+  y,
+  speed,
+  acceleration,
+  maxSpeed = Infinity,
+  friction = 0,
+  rotation,
+  rotationSpeed,
+  bounds = {
+    x: {
+      min: -Infinity,
+      max: Infinity
+    },
+    y: {
+      min: -Infinity,
+      max: Infinity
+    }
+  }
+}) {
+  // Add Speed
+  if (keys.forward) speed += acceleration;else if (keys.reverse) speed -= acceleration; // Limit Speed
+
+  const reverseForce = Number(keys.reverse) + 1; // if the forward and reverse are pressed at the same time
+
+  if (speed > maxSpeed) speed = maxSpeed / reverseForce;else if (speed < -maxSpeed / 2) speed = -maxSpeed / 2; // Friction
+
+  if (speed > 0) speed -= friction;else if (speed < 0) speed += friction;
+  if (Math.abs(speed) < friction) speed = 0; // if the speed is less than the friction, set it to 0
+  // Rotation
+
+  if (speed) {
+    const flip = speed > 0 ? 1 : -1; // Check if the forward or reverse
+
+    if (keys.left) rotation -= rotationSpeed * flip;
+    if (keys.right) rotation += rotationSpeed * flip;
+  } // Update position
+
+
+  const newX = x + Math.sin(rotation) * speed;
+  const newY = y - Math.cos(rotation) * speed; // Check if the car is out of bounds and return values
+
+  return {
+    x: clamp(newX, bounds.x.min, bounds.x.max),
+    y: clamp(newY, bounds.y.min, bounds.y.max),
+    speed,
+    rotation
+  };
 }
 ;// CONCATENATED MODULE: ./src/xor.js
 /**
@@ -1192,6 +1698,19 @@ function xnor(value1, value2) {
 }
 ;
 ;// CONCATENATED MODULE: ./src/index.js
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

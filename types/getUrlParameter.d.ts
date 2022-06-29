@@ -5,7 +5,7 @@
  * URL: http://localhost:8080/?name=Silva
  * getUrlParameter("name"); // Silva
  *
- * @param {string} key
- * @returns {string} - Returns the value of the key
+ * @param {string} key - The key of the query parameter
+ * @returns {string} Returns the value of the key
  */
 export function getUrlParameter(key: string): string;
