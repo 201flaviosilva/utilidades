@@ -8,20 +8,24 @@
   "license": "MIT",
   "files": [
     "src/",
-    "types/"
+    "types/",
+    "package.json",
+    "README.md"
   ],
   "scripts": {
     "clear": "rm -rf types && rm -rf docs && rm -rf build",
     "jsDoc": "jsdoc -c jsdoc.conf.json",
     "types": "npx -p typescript tsc src/*.js --declaration --allowJs --emitDeclarationOnly --outDir types",
     "compile": "webpack --mode production",
-    "build": "npm run clear && npm run compile && npm run jsDoc && npm run types",
+    "compile:css": "css-minify -d src/CSS/ -o build",
+    "build": "npm run clear && npm run compile && npm run compile:css && npm run jsDoc && npm run types",
     "bump": "np  --no-tests"
   },
   "devDependencies": {
     "@babel/core": "^7.18.2",
     "babel-loader": "^8.2.5",
     "clean-jsdoc-theme": "^4.0.7",
+    "css-minify": "^2.0.0",
     "jsdoc": "^3.6.10",
     "np": "^7.6.1",
     "typescript": "^4.6.4",
