@@ -1,3 +1,33 @@
+export class Fibonacci {
+	constructor() {
+		this.lastNumber = 0;
+		this.currentNumber = 1;
+		this.sequence = [0];
+	}
+
+	next() {
+		const x = this.currentNumber + this.lastNumber;
+		this.lastNumber = this.currentNumber;
+		this.currentNumber = x;
+
+		this.sequence.push(x);
+
+		return this.currentNumber;
+	}
+
+	before() {
+		if (this.sequence.length > 1) {
+			this.lastNumber = this.currentNumber - this.lastNumber;
+			this.currentNumber = this.currentNumber - this.lastNumber;
+
+			this.sequence.pop();
+
+			return this.currentNumber;
+		}
+	}
+}
+
+
 /**
  * Runs the fibonacci sequence for the given times
  * 
@@ -10,7 +40,7 @@
  * @param {number} times - number of times to run
  * @returns {number[]}
  */
-export function fibonacci(times = 20) {
+export function fibonacciSequence(times = 20) {
 	const sequence = [0, 1];
 	while (sequence.length < times) {
 		sequence.push(sequence[sequence.length - 2] + sequence[sequence.length - 1]);

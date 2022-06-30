@@ -15,7 +15,7 @@ import { decimal2Binary } from "./decimal2Binary.js";
 import { degreesToRadians } from "./degreesToRadians.js";
 import { division } from "./division.js";
 import { exportFile } from "./exportFile.js";
-import { fibonacci, fibonacciUntil, fibonacciCustomSequence } from "./fibonacci.js";
+import { Fibonacci, fibonacciSequence, fibonacciUntil, fibonacciCustomSequence } from "./Fibonacci.js";
 import { findBigArrObj } from "./findBigArrObj.js";
 import { findLowArrObj } from "./findLowArrObj.js";
 import { getTime, getMilliseconds, getSeconds, getMinutes, getHours, getDay, getWeekDay, getWeek, getMonth, getYear, getDateFormatted } from "./getDate.js";
@@ -75,7 +75,7 @@ export {
 	degreesToRadians,
 	division,
 	exportFile,
-	fibonacci, fibonacciUntil, fibonacciCustomSequence,
+	Fibonacci, fibonacciSequence, fibonacciUntil, fibonacciCustomSequence,
 	findBigArrObj,
 	findLowArrObj,
 	getTime, getMilliseconds, getSeconds, getMinutes, getHours, getDay, getWeekDay, getWeek, getMonth, getYear, getDateFormatted,
