@@ -1,8 +1,9 @@
 /**
  * @class Fibonacci
  * @classdesc
- * A algorithm to work fibonacci
+ * A algorithm to work fibonacci.
  * 
+ * Example: {@link https://codesandbox.io/s/201flaviosilva-utils-fibonacci-cnbxyv}
  * @see {@link https://pt.wikipedia.org/wiki/Sequ%C3%AAncia_de_Fibonacci}
  * 
  * @example new Fibonacci();

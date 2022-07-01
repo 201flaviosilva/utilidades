@@ -1,4 +1,4 @@
-import { Fibonacci } from "../../../../src/Fibonacci.js";
+import { Fibonacci } from "../../../src/Fibonacci.js";
 
 const f = new Fibonacci();
 

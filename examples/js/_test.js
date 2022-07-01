@@ -1,4 +1,4 @@
-import { allCharactersSame } from "../../../src/index.js";
+import { Fibonacci } from "../../src/index.js";
 // import { allCharactersSame } from "../../../src/allCharactersSame.js";
 
-console.log(allCharactersSame("beep"));
+console.log(new Fibonacci());

@@ -1,4 +1,4 @@
-import { version } from "../package.json"
+import pck from "../package.json" assert { type: "json" };
 
 /**
  * @description 
@@ -9,4 +9,4 @@ import { version } from "../package.json"
  * 
  * @returns {String}
  */
-export function getVersion() { return version; }
+export function getVersion() { return pck.version; }
