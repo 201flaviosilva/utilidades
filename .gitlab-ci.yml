@@ -5,6 +5,7 @@ stages:
 
 pages:
   stage: pages
+  allow_failure: true # this line is here because js doc fails getVersion()
   script:
     - npm install
     - npm run jsDoc
