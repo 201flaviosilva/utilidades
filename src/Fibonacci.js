@@ -1,3 +1,14 @@
+/**
+ * @class Fibonacci
+ * @classdesc
+ * A algorithm to work fibonacci
+ * 
+ * @see {@link https://pt.wikipedia.org/wiki/Sequ%C3%AAncia_de_Fibonacci}
+ * 
+ * @example new Fibonacci();
+ * 
+ * @constructor
+ */
 export class Fibonacci {
 	constructor() {
 		this.lastNumber = 0;
@@ -5,6 +16,14 @@ export class Fibonacci {
 		this.sequence = [0];
 	}
 
+	/**
+	 * Return the next number in the fibonacci sequence
+	 * 
+	 * @example new Fibonacci().next(); // 1
+	 * 
+	 * @returns {number}
+	 * @memberof Fibonacci
+	 */
 	next() {
 		const x = this.currentNumber + this.lastNumber;
 		this.lastNumber = this.currentNumber;
@@ -15,6 +34,18 @@ export class Fibonacci {
 		return this.currentNumber;
 	}
 
+	/**
+	 * Return the next number in the fibonacci sequence
+	 * 
+	 * @example
+	 * const f = new Fibonacci()
+	 * f.next(); // 1
+	 * f.next(); // 2
+	 * f.before() // 1
+	 * 
+	 * @returns {number}
+	 * @memberof Fibonacci
+	 */
 	before() {
 		if (this.sequence.length > 1) {
 			this.lastNumber = this.currentNumber - this.lastNumber;
@@ -26,7 +57,6 @@ export class Fibonacci {
 		}
 	}
 }
-
 
 /**
  * Runs the fibonacci sequence for the given times

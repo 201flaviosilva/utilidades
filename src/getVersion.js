@@ -5,7 +5,7 @@ import { version } from "../package.json"
  * Returns the current version of the library
  * 
  * @example
- * getVersion(); // "1.0.5
+ * getVersion(); // "1.2.4
  * 
  * @returns {String}
  */
