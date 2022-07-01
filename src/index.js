@@ -50,6 +50,7 @@ import { randomNumber } from "./randomNumber.js";
 import { randomRGBAColor } from "./randomRGBAColor.js";
 import { randomRGBColor } from "./randomRGBColor.js";
 import { range } from "./range.js";
+import { rockPaperScissor } from "./rockPaperScissor.js";
 import { stringToScreamingSnakeCase, screamingSnakeCaseToNormal } from "./screamingSnakeCase.js";
 import { stringToSnakeCase, snakeCaseToNormal } from "./snakeCase.js";
 import { sortAscending } from "./sortAscending.js";
@@ -114,6 +115,7 @@ export {
 	randomRGBAColor,
 	randomRGBColor,
 	range,
+	rockPaperScissor,
 	stringToScreamingSnakeCase, screamingSnakeCaseToNormal,
 	stringToSnakeCase, snakeCaseToNormal,
 	sortAscending,
