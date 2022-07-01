@@ -16,6 +16,7 @@ import { degreesToRadians } from "./degreesToRadians.js";
 import { division } from "./division.js";
 import { exportFile } from "./exportFile.js";
 import { Fibonacci, fibonacciSequence, fibonacciUntil, fibonacciCustomSequence } from "./Fibonacci.js";
+import { FIFO } from "./FIFO.js";
 import { findBigArrObj } from "./findBigArrObj.js";
 import { findLowArrObj } from "./findLowArrObj.js";
 import { getTime, getMilliseconds, getSeconds, getMinutes, getHours, getDay, getWeekDay, getWeek, getMonth, getYear, getDateFormatted } from "./getDate.js";
@@ -31,6 +32,7 @@ import { isNarcissisticNumber } from "./isNarcissisticNumber.js";
 import { isOdd } from "./isOdd.js";
 import { stringToKebabCase, kebabCaseToNormal } from "./kebabCase.js";
 import { lerp } from "./lerp.js";
+import { LIFO } from "./LIFO.js";
 import { makeNegative } from "./makeNegative.js";
 import { map } from "./map.js";
 import { multiplication } from "./multiplication.js";
@@ -77,6 +79,7 @@ export {
 	division,
 	exportFile,
 	Fibonacci, fibonacciSequence, fibonacciUntil, fibonacciCustomSequence,
+	FIFO,
 	findBigArrObj,
 	findLowArrObj,
 	getTime, getMilliseconds, getSeconds, getMinutes, getHours, getDay, getWeekDay, getWeek, getMonth, getYear, getDateFormatted,
@@ -92,6 +95,7 @@ export {
 	isOdd,
 	stringToKebabCase, kebabCaseToNormal,
 	lerp,
+	LIFO,
 	makeNegative,
 	map,
 	multiplication,
