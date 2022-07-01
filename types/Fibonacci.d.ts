@@ -10,7 +10,7 @@
  * @param {number} times - number of times to run
  * @returns {number[]}
  */
-export function fibonacci(times?: number): number[];
+export function fibonacciSequence(times?: number): number[];
 /**
  * Runs the fibonacci sequence until the maximum given number
  *
@@ -34,3 +34,41 @@ export function fibonacciUntil(max?: number): number[];
  * @returns {number[]}
  */
 export function fibonacciCustomSequence(start?: number, end?: number): number[];
+/**
+ * @class Fibonacci
+ * @classdesc
+ * A algorithm to work fibonacci
+ *
+ * @see {@link https://pt.wikipedia.org/wiki/Sequ%C3%AAncia_de_Fibonacci}
+ *
+ * @example new Fibonacci();
+ *
+ * @constructor
+ */
+export class Fibonacci {
+    lastNumber: number;
+    currentNumber: number;
+    sequence: number[];
+    /**
+     * Return the next number in the fibonacci sequence
+     *
+     * @example new Fibonacci().next(); // 1
+     *
+     * @returns {number}
+     * @memberof Fibonacci
+     */
+    next(): number;
+    /**
+     * Return the next number in the fibonacci sequence
+     *
+     * @example
+     * const f = new Fibonacci()
+     * f.next(); // 1
+     * f.next(); // 2
+     * f.before() // 1
+     *
+     * @returns {number}
+     * @memberof Fibonacci
+     */
+    before(): number;
+}

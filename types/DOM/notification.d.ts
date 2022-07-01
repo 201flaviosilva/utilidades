@@ -25,6 +25,9 @@
  * @param {Object} options.buttonStyle - the style for the close button
  * @param {HTMLElement} options.parent - parent to create the pop up
  * @returns {void}
+ *
+ * @function notification
+ * @memberof DOM
  */
 export function notification({ text, animated, animationTime, closeButton, endPosition, style, textStyle, buttonStyle, parent, }: {
     text: string;

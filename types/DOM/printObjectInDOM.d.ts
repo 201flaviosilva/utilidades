@@ -20,5 +20,8 @@
  * @param {Object} object - JavaScript Object to print in the dom
  * @param {HTMLElement} [parent=document.body] - DOM element to print
  * @see {@link -  https://jsfiddle.net/201flaviosilva/mbnz3p7y/}
+ *
+ * @function printObjectInDOM
+ * @memberof DOM
  */
 export function printObjectInDOM(object: any, parent?: HTMLElement): void;
