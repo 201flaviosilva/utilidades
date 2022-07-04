@@ -1,6 +1,8 @@
 /**
  * Display a pop up im the DOM with the given text
  *
+ * Example: {@link https://codesandbox.io/s/201flaviosilva-utils-notification-g3nk0v}
+ *
  * @example notification({ text: "notification" });
  * @example
  * notification({
