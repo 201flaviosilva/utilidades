@@ -4,14 +4,29 @@
 Just some simple JavaScript Utils. Some of the functions was create to solve a challenge in [Code Wars](https://www.codewars.com/dashboard).
 
 ## Usage
-### Install Package
+
+### Using NPM (Recommend)
+#### Install Package
 ```sh
 npm i 201flaviosilva-utils
 ```
 
-### Import to the project
+#### Import to the project
 ```js
-import {randomNumber} from "201flaviosilva-utils";
+import { randomNumber } from "201flaviosilva-utils";
+
+console.log(randomNumber(1, 20));
+```
+
+### Using CDN (jsdelivr)
+```html
+<script src="https://cdn.jsdelivr.net/npm/201flaviosilva-utils@1.2.5/build/utils.min.js"></script>
+<script src="./your-js-file.js"></script>
+```
+
+```js
+// ./your-js-file.js
+console.log(randomNumber(1, 20));
 ```
 
 ## Available Commands
