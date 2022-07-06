@@ -123,3 +123,19 @@ export function fibonacciCustomSequence(start = 1, end = 100) {
 
 	return sequence;
 }
+
+
+/**
+ * A other way to solve the fibonacci sequence, with recursion.
+ * 
+ * @example recursiveFibonacci(5); // 5
+ * @example recursiveFibonacci(8); // 21
+ * @example recursiveFibonacci(10); // 55
+ * 
+ * @param {number} terms - number of terms
+ * @returns {number}
+ */
+export function recursiveFibonacci(terms) {
+	if (terms <= 1) return terms;
+	return recursiveFibonacci(terms - 1) + recursiveFibonacci(terms - 2);
+}

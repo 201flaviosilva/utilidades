@@ -16,7 +16,7 @@ import { degreesToRadians } from "./degreesToRadians.js";
 import { division } from "./division.js";
 import { EventSystem, EventSystemInstance } from "./EventSystem.js";
 import { exportFile } from "./exportFile.js";
-import { Fibonacci, fibonacciSequence, fibonacciUntil, fibonacciCustomSequence } from "./Fibonacci.js";
+import { Fibonacci, fibonacciSequence, fibonacciUntil, fibonacciCustomSequence, recursiveFibonacci } from "./Fibonacci.js";
 import { FIFO } from "./FIFO.js";
 import { findBigArrObj } from "./findBigArrObj.js";
 import { findLowArrObj } from "./findLowArrObj.js";
@@ -81,7 +81,7 @@ export {
 	division,
 	EventSystem, EventSystemInstance,
 	exportFile,
-	Fibonacci, fibonacciSequence, fibonacciUntil, fibonacciCustomSequence,
+	Fibonacci, fibonacciSequence, fibonacciUntil, fibonacciCustomSequence, recursiveFibonacci,
 	FIFO,
 	findBigArrObj,
 	findLowArrObj,

@@ -1,7 +1,7 @@
 # 201flaviosilva-UtilsJS
 
 ## Description
-Just some simple JavaScript Utils. Some of the functions was create to solve a challenge in [Code Wars](https://www.codewars.com/dashboard).
+Just some simple JavaScript Utils.
 
 ## Usage
 

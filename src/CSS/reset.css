@@ -33,8 +33,10 @@ textarea {
 button,
 a,
 label,
+input,
 select,
-option {
+option,
+textarea {
   cursor: pointer;
 }
 
