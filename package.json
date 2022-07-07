@@ -11,7 +11,8 @@
     "src/",
     "types/",
     "package.json",
-    "README.md"
+    "README.md",
+    "CHANGELOG.md"
   ],
   "scripts": {
     "clear": "rm -rf types && rm -rf docs && rm -rf build",
