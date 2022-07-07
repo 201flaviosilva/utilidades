@@ -3,6 +3,7 @@ import * as DOM from "./DOM/index.js";
 import { allCharactersSame } from "./allCharactersSame.js";
 import { allEqual } from "./allEqual.js";
 import { and } from "./and.js";
+import { arrayChoice } from "./arrayChoice.js";
 import { arrayMoveLeft } from "./arrayMoveLeft.js";
 import { arrayMoveRight } from "./arrayMoveRight.js";
 import { average } from "./average.js";
@@ -49,6 +50,7 @@ import { randomInt } from "./randomInt.js";
 import { randomNumber } from "./randomNumber.js";
 import { randomRGBAColor } from "./randomRGBAColor.js";
 import { randomRGBColor } from "./randomRGBColor.js";
+import { randomString } from "./randomString.js";
 import { range } from "./range.js";
 import { rockPaperScissor } from "./rockPaperScissor.js";
 import { stringToScreamingSnakeCase, screamingSnakeCaseToNormal } from "./screamingSnakeCase.js";
@@ -68,6 +70,7 @@ export {
 	allCharactersSame,
 	allEqual,
 	and,
+	arrayChoice,
 	arrayMoveLeft,
 	arrayMoveRight,
 	average,
@@ -114,6 +117,7 @@ export {
 	randomNumber,
 	randomRGBAColor,
 	randomRGBColor,
+	randomString,
 	range,
 	rockPaperScissor,
 	stringToScreamingSnakeCase, screamingSnakeCaseToNormal,
