@@ -1,5 +1,3 @@
-import { randomFloat } from "./randomFloat.js";
-
 /**
  * Return a random integer number between the given values and the given precision
  * 
@@ -10,6 +8,12 @@ import { randomFloat } from "./randomFloat.js";
  * 
  * @param {number} min - min value
  * @param {number} max - max value
- * @returns {number} - random integer number
+ * @returns {number} random integer number
  */
-export function randomInt(min, max) { return Math.floor(randomFloat(min, max)); };
+export function randomInt(min, max) {
+	if (!max) {
+		max = min;
+		min = 0;
+	}
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+};
