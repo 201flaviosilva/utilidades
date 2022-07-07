@@ -6,11 +6,13 @@ import { and } from "./and.js";
 import { arrayChoice } from "./arrayChoice.js";
 import { arrayMoveLeft } from "./arrayMoveLeft.js";
 import { arrayMoveRight } from "./arrayMoveRight.js";
+import { arrayShuffle } from "./arrayShuffle.js";
 import { average } from "./average.js";
 import { binary2Decimal } from "./binary2Decimal.js";
 import { stringToCamelCase, camelCaseToNormal } from "./camelCase.js";
 import { stringToCapitalize, capitalizeToNormal } from "./capitalizeCase.js";
 import { clamp } from "./clamp.js";
+import { clone } from "./clone.js";
 import { compare2Objects } from "./compare2Objects.js";
 import { decimal2Binary } from "./decimal2Binary.js";
 import { degreesToRadians } from "./degreesToRadians.js";
@@ -73,11 +75,13 @@ export {
 	arrayChoice,
 	arrayMoveLeft,
 	arrayMoveRight,
+	arrayShuffle,
 	average,
 	binary2Decimal,
 	stringToCamelCase, camelCaseToNormal,
 	stringToCapitalize, capitalizeToNormal,
 	clamp,
+	clone,
 	compare2Objects,
 	decimal2Binary,
 	degreesToRadians,
