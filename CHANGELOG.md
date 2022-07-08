@@ -21,6 +21,7 @@ straightforward as possible.
 - [Array Shuffle](https://gitlab.com/201flaviosilva/utilsjs/-/commit/1d9b11083ee4d4493c3d17cb71e514f389b04e0e) #48;
  
 ### Changed
+- Vector2 - fixed some formulas and add new functions
  
 ### Fixed
  
