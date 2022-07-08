@@ -1,6 +1,6 @@
 {
   "name": "201flaviosilva-utils",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Just simple utils for javascript :)",
   "main": "src/index.js",
   "homepage": "https://201flaviosilva.gitlab.io/utilsjs/",
