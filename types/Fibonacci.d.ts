@@ -35,6 +35,17 @@ export function fibonacciUntil(max?: number): number[];
  */
 export function fibonacciCustomSequence(start?: number, end?: number): number[];
 /**
+ * A other way to solve the fibonacci sequence, with recursion.
+ *
+ * @example recursiveFibonacci(5); // 5
+ * @example recursiveFibonacci(8); // 21
+ * @example recursiveFibonacci(10); // 55
+ *
+ * @param {number} terms - number of terms
+ * @returns {number}
+ */
+export function recursiveFibonacci(terms: number): number;
+/**
  * @class Fibonacci
  * @classdesc
  * A algorithm to work fibonacci.

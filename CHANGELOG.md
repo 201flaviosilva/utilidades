@@ -8,10 +8,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 This file was based on [this template](https://gist.github.com/juampynr/4c18214a8eb554084e21d6e288a18a2c).
  
-## [Unreleased] - dd-mm-yyy
+
+## [1.2.7] - 08-07-2022
  
-Here we write upgrading notes for brands. It's a team effort to make them as
-straightforward as possible.
+### Added
+ 
+### Changed
+ 
+ ### Fixed
+
+ #### Breaking Changes
+
+## [1.2.6] - 08-07-2022
  
 ### Added
 - [recursiveFibonacci](https://gitlab.com/201flaviosilva/utilsjs/-/commit/04dc0aaf31690f39e37f110ce8e6d9e0df56803c);
@@ -22,8 +30,6 @@ straightforward as possible.
  
 ### Changed
 - Vector2 - fixed some formulas and add new functions
- 
-### Fixed
  
 ## [1.2.5] - 04-07-2022
 
