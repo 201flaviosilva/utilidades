@@ -61,6 +61,7 @@ import { sortAscending } from "./sortAscending.js";
 import { sortAscendingObj } from "./sortAscendingObj.js";
 import { subtraction } from "./subtraction.js";
 import { sum } from "./sum.js";
+import { toggleFullScreen } from "./toggleFullScreen.js";
 import { sortDescending } from "./sortDescending.js";
 import { sortDescendingObj } from "./sortDescendingObj.js";
 import { topDownCarMovimentation } from "./topDownCarMovimentation.js";
@@ -130,6 +131,7 @@ export {
 	sortAscendingObj,
 	subtraction,
 	sum,
+	toggleFullScreen,
 	sortDescending,
 	sortDescendingObj,
 	topDownCarMovimentation,
