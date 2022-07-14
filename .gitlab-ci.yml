@@ -11,6 +11,7 @@ pages:
     - npm run jsDoc
     - rm -rf public
     - cp -r ./docs public
+    - cp -r ./examples public/examples
 
   artifacts:
     paths:
