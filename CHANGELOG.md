@@ -8,17 +8,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 This file was based on [this template](https://gist.github.com/juampynr/4c18214a8eb554084e21d6e288a18a2c).
  
-
-## [1.2.7] - 08-07-2022
- 
+## [1.2.7] - 15-07-2022
 ### Added
- 
-### Changed
- 
- ### Fixed
-
- #### Breaking Changes
-
+ - [Full Screen](https://gitlab.com/201flaviosilva/utilsjs/-/commit/cedd102ff36ffd712d0d20be30f21b9003253027) #41;
+ - [arrayRandom](https://gitlab.com/201flaviosilva/utilsjs/-/commit/cbdb864e76c5b7d8379352f3524a6a1d85f171fb);
+ - 
 ## [1.2.6] - 08-07-2022
  
 ### Added
