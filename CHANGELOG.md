@@ -7,6 +7,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 This file was based on [this template](https://gist.github.com/juampynr/4c18214a8eb554084e21d6e288a18a2c).
+
+## [1.2.8] - 00-07-2022
+ 
+### Added
+
+### Changed
+ 
+ ### Fixed
+- randomInt - Fix return a number between the given min and max;
+- arrayChoice - Fixed not returning the last element;
+ #### Breaking Changes
+
  
 ## [1.2.7] - 15-07-2022
 ### Added

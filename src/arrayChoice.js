@@ -12,5 +12,5 @@ import { randomInt } from "./randomInt";
  * @returns {any}
  */
 export function arrayChoice(array) {
-	return array[randomInt(array.length - 1)];
+	return array[randomInt(array.length)];
 }
