@@ -18,6 +18,7 @@ This file was based on [this template](https://gist.github.com/juampynr/4c18214a
 - randomInt - Fix return a number between the given min and max;
 - arrayChoice - Fixed not returning the last element;
  #### Breaking Changes
+ - rockPaperScissor - move to /Games #60;
 
  
 ## [1.2.7] - 15-07-2022
