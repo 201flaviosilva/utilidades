@@ -11,6 +11,7 @@ This file was based on [this template](https://gist.github.com/juampynr/4c18214a
 ## [1.2.8] - 00-07-2022
  
 ### Added
+- KeyboardManager - A basic keyboard checker if the key is pressed #3;
 
 ### Changed
  

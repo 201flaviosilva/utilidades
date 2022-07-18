@@ -1,4 +1,5 @@
 import { deleteAllChildDom } from "./deleteAllChildDom.js";
+import { KeyboardManager, KeyboardManagerInstance, KEYS } from "./KeyboardManager.js";
 import { notification } from "./notification.js";
 import { printObjectInDOM } from "./printObjectInDOM.js";
 
@@ -8,6 +9,7 @@ import { printObjectInDOM } from "./printObjectInDOM.js";
  */
 export {
 	deleteAllChildDom,
+	KeyboardManager, KeyboardManagerInstance, KEYS,
 	notification,
 	printObjectInDOM,
 };
