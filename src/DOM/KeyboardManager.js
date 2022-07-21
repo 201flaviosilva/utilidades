@@ -2,7 +2,7 @@ import { EventSystem } from "../EventSystem.js";
 
 /**
  * Keys code for the keyboard
- * @memberof DOM.KEYS
+ * @memberof DOM
  */
 export const KEYS = {
 	enter: 13,
@@ -68,8 +68,8 @@ export class KeyboardManager {
 		/**
 		 * All pressed keys will appear here
 		 * 
-		 * @example console.log(this.isPressed["left"]);
-		 * @example console.log(this.isPressed[this.getNameByKeyCode(37)]);
+		 * @example console.log(DOM.KeyboardManagerInstance.isPressed["left"]);
+		 * @example console.log(DOM.KeyboardManagerInstance.isPressed[DOM.KeyboardManagerInstance.getNameByKeyCode(37)]);
 		 * 
 		 * @memberof DOM.KeyboardManager
 		 */
