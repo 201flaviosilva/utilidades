@@ -11,9 +11,12 @@ This file was based on [this template](https://gist.github.com/juampynr/4c18214a
 ## [1.2.8] - 00-07-2022
  
 ### Added
-- KeyboardManager - A basic keyboard checker if the key is pressed #3;
+- (DOM) KeyboardManager - A basic keyboard manager (like check if the key is pressed) #3;
+- (DOM) MouseManager - A basic mouse manager (like check if a button is pressed) #4;
 
 ### Changed
+- moved random numbers functions to the randomNumber.js file;
+- moved random colors functions to the randomColor.js file;
  
  ### Fixed
 - randomInt - Fix return a number between the given min and max;
@@ -21,7 +24,7 @@ This file was based on [this template](https://gist.github.com/juampynr/4c18214a
 - isObjectEmpty - Check is the given object is empty;
 
  #### Breaking Changes
- - rockPaperScissor - move to /Games #60;
+ - rockPaperScissor - move to /Games folder #60;
 
 ## [1.2.7] - 15-07-2022
 ### Added

@@ -46,13 +46,8 @@ import { nor } from "./nor.js";
 import { not } from "./not.js";
 import { or } from "./or.js";
 import { radiansToDegrees } from "./radiansToDegrees.js";
-import { randomColor } from "./randomColor.js";
-import { randomColor0X } from "./randomColor0X.js";
-import { randomFloat } from "./randomFloat.js";
-import { randomInt } from "./randomInt.js";
-import { randomNumber } from "./randomNumber.js";
-import { randomRGBAColor } from "./randomRGBAColor.js";
-import { randomRGBColor } from "./randomRGBColor.js";
+import { randomColor, randomColor0X, randomRGBColor, randomRGBAColor } from "./randomColor.js";
+import { randomNumber, randomInt, randomFloat } from "./randomNumber.js";
 import { randomString } from "./randomString.js";
 import { range } from "./range.js";
 import { stringToScreamingSnakeCase, screamingSnakeCaseToNormal } from "./screamingSnakeCase.js";
@@ -116,13 +111,8 @@ export {
 	not,
 	or,
 	radiansToDegrees,
-	randomColor,
-	randomColor0X,
-	randomFloat,
-	randomInt,
-	randomNumber,
-	randomRGBAColor,
-	randomRGBColor,
+	randomColor, randomColor0X, randomRGBColor, randomRGBAColor,
+	randomNumber, randomInt, randomFloat,
 	randomString,
 	range,
 	stringToScreamingSnakeCase, screamingSnakeCaseToNormal,
