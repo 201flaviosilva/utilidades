@@ -13,6 +13,7 @@ This file was based on [this template](https://gist.github.com/juampynr/4c18214a
 ### Added
 - (DOM) KeyboardManager - A basic keyboard manager (like check if the key is pressed) #3;
 - (DOM) MouseManager - A basic mouse manager (like check if a button is pressed) #4;
+- divideEvenly - Returns a array with the dived evenly between the two numbers #55;
 
 ### Changed
 - moved random numbers functions to the randomNumber.js file;
