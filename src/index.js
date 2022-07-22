@@ -18,6 +18,7 @@ import { compare2Objects } from "./compare2Objects.js";
 import { decimal2Binary } from "./decimal2Binary.js";
 import { degreesToRadians } from "./degreesToRadians.js";
 import { division } from "./division.js";
+import { divideEvenly } from "./divideEvenly.js";
 import { EventSystem, EventSystemInstance } from "./EventSystem.js";
 import { exportFile } from "./exportFile.js";
 import { Fibonacci, fibonacciSequence, fibonacciUntil, fibonacciCustomSequence, recursiveFibonacci } from "./Fibonacci.js";
@@ -83,6 +84,7 @@ export {
 	decimal2Binary,
 	degreesToRadians,
 	division,
+	divideEvenly,
 	EventSystem, EventSystemInstance,
 	exportFile,
 	Fibonacci, fibonacciSequence, fibonacciUntil, fibonacciCustomSequence, recursiveFibonacci,
