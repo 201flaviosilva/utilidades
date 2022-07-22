@@ -1,3 +1,11 @@
+/**
+ * Returns the most repeated number
+ * 
+ * @example mode(1,2,2,3,4) // 2
+ * 
+ * @param  {...any} numbers - the numbers to get the median
+ * @returns {number}
+ */
 export function mode(...numbers) {
 	const mode = {};
 	let max = 0;

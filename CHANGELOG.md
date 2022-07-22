@@ -1,4 +1,3 @@
-
 # Change Log
 
 ## Description
@@ -11,25 +10,39 @@ This file was based on [this template](https://gist.github.com/juampynr/4c18214a
 
 ----
 ## [1.2.0 - More Functions](https://gitlab.com/201flaviosilva/utilsjs/-/milestones/2)
-### [1.2.8] - 00-07-2022
- 
-#### Added
-- (DOM) KeyboardManager - A basic keyboard manager (like check if the key is pressed) #3;
-- (DOM) MouseManager - A basic mouse manager (like check if a button is pressed) #4;
-- divideEvenly - Returns a array with the dived evenly between the two numbers #55;
 
-#### Changed
-- moved random numbers functions to the randomNumber.js file;
-- moved random colors functions to the randomColor.js file;
+## [1.2.9] - 29-07-2022
  
- #### Fixed
-- randomInt - Fix return a number between the given min and max;
-- arrayChoice - Fixed not returning the last element;
-- isObjectEmpty - Check is the given object is empty;
+### Added
+
+### Changed
+ 
+ ### Fixed
 
  #### Breaking Changes
- - rockPaperScissor - move to /Games folder #60;
- - exportFile - move to /DOM folder;
+
+### [1.2.8] - 22-07-2022
+ 
+#### Added
+- [(DOM) KeyboardManager - A basic keyboard manager (like check if the key is pressed)](https://gitlab.com/201flaviosilva/utilsjs/-/commit/985b59849d66b1d00b5e5660f66e1fb8c87eaad4) #3;
+- [(DOM) MouseManager - A basic mouse manager (like check if a button is pressed)](https://gitlab.com/201flaviosilva/utilsjs/-/commit/caa9e7bd9c1fe82280a0abf13b61b488ac792a60) #4;
+- [divideEvenly - Returns a array with the dived evenly between the two numbers](https://gitlab.com/201flaviosilva/utilsjs/-/commit/95da63534f0a346cc82041303ef991e2bb2d0973) #55;
+- [isObjectEmpty - check if a array is empty](https://gitlab.com/201flaviosilva/utilsjs/-/commit/6d5a1c55256c2663c5d3ece18c6bc360b5fd4b1d);
+- [Median - Returns the median of the givens numbers](https://gitlab.com/201flaviosilva/utilsjs/-/commit/fd8bd65ca24ac7696db29b1c76a25fbd69273a65) #53;
+- [Mode](https://gitlab.com/201flaviosilva/utilsjs/-/commit/fd8bd65ca24ac7696db29b1c76a25fbd69273a65) #53;
+
+#### Changed
+- [moved random numbers functions to the randomNumber.js file;](https://gitlab.com/201flaviosilva/utilsjs/-/commit/b46c29d9c16641781f018746a0037afe0dcec83a)
+- [moved random colors functions to the randomColor.js file](https://gitlab.com/201flaviosilva/utilsjs/-/commit/b46c29d9c16641781f018746a0037afe0dcec83a);
+ 
+ #### Fixed
+- [randomInt - Fix return a number between the given min and max;](https://gitlab.com/201flaviosilva/utilsjs/-/commit/9e250dbcad6044a1e1b669a2d77bfd45df64060e)
+- [arrayChoice - Fixed not returning the last element](https://gitlab.com/201flaviosilva/utilsjs/-/commit/9e250dbcad6044a1e1b669a2d77bfd45df64060e);
+- [isObjectEmpty - Check is the given object is empty](https://gitlab.com/201flaviosilva/utilsjs/-/commit/6d5a1c55256c2663c5d3ece18c6bc360b5fd4b1d);
+
+ #### Breaking Changes
+ - [rockPaperScissor - move to /Games folder](https://gitlab.com/201flaviosilva/utilsjs/-/commit/29b31bdc1fd60790e071d0429b4790f9d5a9d082) #60;
+ - [exportFile - move to /DOM folder](https://gitlab.com/201flaviosilva/utilsjs/-/commit/fd8bd65ca24ac7696db29b1c76a25fbd69273a65);
 
 ### [1.2.7] - 15-07-2022
 #### Added
