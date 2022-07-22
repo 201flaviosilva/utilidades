@@ -20,7 +20,6 @@ import { degreesToRadians } from "./degreesToRadians.js";
 import { division } from "./division.js";
 import { divideEvenly } from "./divideEvenly.js";
 import { EventSystem, EventSystemInstance } from "./EventSystem.js";
-import { exportFile } from "./exportFile.js";
 import { Fibonacci, fibonacciSequence, fibonacciUntil, fibonacciCustomSequence, recursiveFibonacci } from "./Fibonacci.js";
 import { FIFO } from "./FIFO.js";
 import { findBigArrObj } from "./findBigArrObj.js";
@@ -32,15 +31,16 @@ import { getUrlParameter } from "./getUrlParameter.js";
 import { getVersion } from "./getVersion.js";
 import { invertedLerp } from "./invertedLerp.js";
 import { invertSentence, invertWords } from "./invertText.js";
-import { isEven } from "./isEven.js";
+import { isEven, isOdd } from "./isEvenOdd.js";
 import { isMultipleOf } from "./isMultipleOf.js";
 import { isNarcissisticNumber } from "./isNarcissisticNumber.js";
-import { isOdd } from "./isOdd.js";
 import { stringToKebabCase, kebabCaseToNormal } from "./kebabCase.js";
 import { lerp } from "./lerp.js";
 import { LIFO } from "./LIFO.js";
 import { makeNegative } from "./makeNegative.js";
 import { map } from "./map.js";
+import { median } from "./median.js";
+import { mode } from "./mode.js";
 import { multiplication } from "./multiplication.js";
 import { nand } from "./nand.js";
 import { nor } from "./nor.js";
@@ -86,7 +86,6 @@ export {
 	division,
 	divideEvenly,
 	EventSystem, EventSystemInstance,
-	exportFile,
 	Fibonacci, fibonacciSequence, fibonacciUntil, fibonacciCustomSequence, recursiveFibonacci,
 	FIFO,
 	findBigArrObj,
@@ -98,7 +97,7 @@ export {
 	getVersion,
 	invertedLerp,
 	invertSentence, invertWords,
-	isEven,
+	isEven, isOdd,
 	isMultipleOf,
 	isNarcissisticNumber,
 	isOdd,
@@ -107,6 +106,8 @@ export {
 	LIFO,
 	makeNegative,
 	map,
+	median,
+	mode,
 	multiplication,
 	nand,
 	nor,
