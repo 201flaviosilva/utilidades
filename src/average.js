@@ -1,7 +1,7 @@
 import { sum } from "./sum.js";
 
 /**
- * Calculates a average of all givens numbers
+ * Calculates a average/mean of all givens numbers
  * 
  * @example average(1); // 1
  * @example average(1,2); // 1.5
