@@ -1,4 +1,11 @@
 import { deleteAllChildDom } from "./deleteAllChildDom.js";
+import { exportFile } from "./exportFile.js";
+import { KeyboardManager } from "./KeyboardManager.js";
+import { KeyboardManagerInstance } from "./KeyboardManager.js";
+import { KEYS } from "./KeyboardManager.js";
+import { MouseManager } from "./MouseManager.js";
+import { MouseManagerInstance } from "./MouseManager.js";
+import { MouseButton } from "./MouseManager.js";
 import { notification } from "./notification.js";
 import { printObjectInDOM } from "./printObjectInDOM.js";
-export { deleteAllChildDom, notification, printObjectInDOM };
+export { deleteAllChildDom, exportFile, KeyboardManager, KeyboardManagerInstance, KEYS, MouseManager, MouseManagerInstance, MouseButton, notification, printObjectInDOM };

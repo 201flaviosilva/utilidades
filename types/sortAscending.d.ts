@@ -6,6 +6,7 @@
  * const myNewSortedArr = sortAscending(myArr); // [0,0,1,2,2,3,3,4,4,4,5,6,7,8,10,11]
  *
  * @param {number[]} arr - the array to sort
+ * @param {boolean} [changeArr=false] - if true will change the original array
  * @returns {number[]} A new Array sorted
  */
-export function sortAscending(arr: number[]): number[];
+export function sortAscending(arr: number[], changeArr?: boolean): number[];

@@ -100,7 +100,6 @@ export {
 	isEven, isOdd,
 	isMultipleOf,
 	isNarcissisticNumber,
-	isOdd,
 	stringToKebabCase, kebabCaseToNormal,
 	lerp,
 	LIFO,
