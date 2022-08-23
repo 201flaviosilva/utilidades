@@ -7,8 +7,6 @@ import { and } from "./and.js";
 import { arrayChoice } from "./arrayChoice.js";
 import { arrayFindBigObject } from "./arrayFindBigObject.js";
 import { arrayFindLowObject } from "./arrayFindLowObject.js";
-import { arrayGetMaxObjects } from "./arrayGetMaxObjects.js";
-import { arrayGetMinObjects } from "./arrayGetMinObjects.js";
 import { arrayMoveLeft, arrayMoveRight } from "./arrayMove.js";
 import { arrayShuffle } from "./arrayShuffle.js";
 import { arraySortAscending } from "./arraySortAscending.js";
