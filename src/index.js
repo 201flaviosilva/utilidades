@@ -61,6 +61,7 @@ import { toggleFullScreen } from "./toggleFullScreen.js";
 import { sortDescending } from "./sortDescending.js";
 import { sortDescendingObj } from "./sortDescendingObj.js";
 import { topDownCarMovimentation } from "./topDownCarMovimentation.js";
+import { Vector2 } from "./Vector2.js";
 import { xnor } from "./xnor.js";
 import { xor } from "./xor.js";
 
@@ -127,6 +128,7 @@ export {
 	sortDescending,
 	sortDescendingObj,
 	topDownCarMovimentation,
+	Vector2,
 	xnor,
 	xor
 };
