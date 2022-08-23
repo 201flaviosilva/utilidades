@@ -5,9 +5,14 @@ import { allCharactersSame } from "./allCharactersSame.js";
 import { allEqual } from "./allEqual.js";
 import { and } from "./and.js";
 import { arrayChoice } from "./arrayChoice.js";
-import { arrayMoveLeft } from "./arrayMoveLeft.js";
-import { arrayMoveRight } from "./arrayMoveRight.js";
+import { arrayFindBigObject } from "./arrayFindBigObject.js";
+import { arrayFindLowObject } from "./arrayFindLowObject.js";
+import { arrayMoveLeft, arrayMoveRight } from "./arrayMove.js";
 import { arrayShuffle } from "./arrayShuffle.js";
+import { arraySortAscending } from "./arraySortAscending.js";
+import { arraySortAscendingObject } from "./arraySortAscendingObject.js";
+import { arraySortDescending } from "./arraySortDescending.js";
+import { arraySortDescendingObject } from "./arraySortDescendingObject.js";
 import { average } from "./average.js";
 import { binary2Decimal } from "./binary2Decimal.js";
 import { stringToCamelCase, camelCaseToNormal } from "./camelCase.js";
@@ -22,11 +27,7 @@ import { divideEvenly } from "./divideEvenly.js";
 import { EventSystem, EventSystemInstance } from "./EventSystem.js";
 import { Fibonacci, fibonacciSequence, fibonacciUntil, fibonacciCustomSequence, recursiveFibonacci } from "./Fibonacci.js";
 import { FIFO } from "./FIFO.js";
-import { findBigArrObj } from "./findBigArrObj.js";
-import { findLowArrObj } from "./findLowArrObj.js";
 import { getTime, getMilliseconds, getSeconds, getMinutes, getHours, getDay, getWeekDay, getWeek, getMonth, getYear, getDateFormatted } from "./getDate.js";
-import { getMaxArrayObjects } from "./getMaxArrayObjects.js";
-import { getMinArrayObjects } from "./getMinArrayObjects.js";
 import { getUrlParameter } from "./getUrlParameter.js";
 import { getVersion } from "./getVersion.js";
 import { invertedLerp } from "./invertedLerp.js";
@@ -53,13 +54,9 @@ import { randomString } from "./randomString.js";
 import { range } from "./range.js";
 import { stringToScreamingSnakeCase, screamingSnakeCaseToNormal } from "./screamingSnakeCase.js";
 import { stringToSnakeCase, snakeCaseToNormal } from "./snakeCase.js";
-import { sortAscending } from "./sortAscending.js";
-import { sortAscendingObj } from "./sortAscendingObj.js";
 import { subtraction } from "./subtraction.js";
 import { sum } from "./sum.js";
 import { toggleFullScreen } from "./toggleFullScreen.js";
-import { sortDescending } from "./sortDescending.js";
-import { sortDescendingObj } from "./sortDescendingObj.js";
 import { topDownCarMovimentation } from "./topDownCarMovimentation.js";
 import { Vector2 } from "./Vector2.js";
 import { xnor } from "./xnor.js";
@@ -72,9 +69,14 @@ export {
 	allEqual,
 	and,
 	arrayChoice,
-	arrayMoveLeft,
-	arrayMoveRight,
+	arrayFindBigObject,
+	arrayFindLowObject,
+	arrayGetMaxObjects,
+	arrayGetMinObjects,
+	arrayMoveLeft, arrayMoveRight,
 	arrayShuffle,
+	arraySortAscending, arraySortAscendingObject,
+	arraySortDescending, arraySortDescendingObject,
 	average,
 	binary2Decimal,
 	stringToCamelCase, camelCaseToNormal,
@@ -89,11 +91,7 @@ export {
 	EventSystem, EventSystemInstance,
 	Fibonacci, fibonacciSequence, fibonacciUntil, fibonacciCustomSequence, recursiveFibonacci,
 	FIFO,
-	findBigArrObj,
-	findLowArrObj,
 	getTime, getMilliseconds, getSeconds, getMinutes, getHours, getDay, getWeekDay, getWeek, getMonth, getYear, getDateFormatted,
-	getMaxArrayObjects,
-	getMinArrayObjects,
 	getUrlParameter,
 	getVersion,
 	invertedLerp,
@@ -120,13 +118,9 @@ export {
 	range,
 	stringToScreamingSnakeCase, screamingSnakeCaseToNormal,
 	stringToSnakeCase, snakeCaseToNormal,
-	sortAscending,
-	sortAscendingObj,
 	subtraction,
 	sum,
 	toggleFullScreen,
-	sortDescending,
-	sortDescendingObj,
 	topDownCarMovimentation,
 	Vector2,
 	xnor,
