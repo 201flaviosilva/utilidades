@@ -21,3 +21,16 @@ export function stringToScreamingSnakeCase(str) { return str.replaceAll(" ", "_"
  * @returns {string}
  */
 export function screamingSnakeCaseToNormal(str) { return str.replaceAll("_", " ").toLowerCase(); }
+
+
+/**
+ * Change a given text to a SCREAMING_SNAKE_CASE base text.
+ * 
+ * Use {@link screamingSnakeCaseToNormal} function
+ * 
+ * @see {@link screamingSnakeCaseToNormal}
+ * 
+ * 
+ * @deprecated
+ */
+export function screamingSnakeCaseToNormalDeprecated(str) { return str.split("_").map(s => s.toLocaleLowerCase()).join(" "); }
