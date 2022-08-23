@@ -9,8 +9,7 @@ import { arrayFindBigObject } from "./arrayFindBigObject.js";
 import { arrayFindLowObject } from "./arrayFindLowObject.js";
 import { arrayGetMaxObjects } from "./arrayGetMaxObjects.js";
 import { arrayGetMinObjects } from "./arrayGetMinObjects.js";
-import { arrayMoveLeft } from "./arrayMoveLeft.js";
-import { arrayMoveRight } from "./arrayMoveRight.js";
+import { arrayMoveLeft, arrayMoveRight } from "./arrayMove.js";
 import { arrayShuffle } from "./arrayShuffle.js";
 import { arraySortAscending } from "./arraySortAscending.js";
 import { arraySortAscendingObject } from "./arraySortAscendingObject.js";
@@ -76,11 +75,9 @@ export {
 	arrayFindLowObject,
 	arrayGetMaxObjects,
 	arrayGetMinObjects,
-	arrayMoveLeft,
-	arrayMoveRight,
+	arrayMoveLeft, arrayMoveRight,
 	arrayShuffle,
-	arraySortAscending, ;
-	arraySortAscendingObject,
+	arraySortAscending, arraySortAscendingObject,
 	arraySortDescending, arraySortDescendingObject,
 	average,
 	binary2Decimal,
