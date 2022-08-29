@@ -71,8 +71,6 @@ export {
 	arrayChoice,
 	arrayFindBigObject,
 	arrayFindLowObject,
-	arrayGetMaxObjects,
-	arrayGetMinObjects,
 	arrayMoveLeft, arrayMoveRight,
 	arrayShuffle,
 	arraySortAscending, arraySortAscendingObject,
