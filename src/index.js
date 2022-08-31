@@ -51,6 +51,7 @@ import { radiansToDegrees } from "./radiansToDegrees.js";
 import { randomColor, randomColor0X, randomRGBColor, randomRGBAColor } from "./randomColor.js";
 import { randomNumber, randomInt, randomFloat } from "./randomNumber.js";
 import { randomString } from "./randomString.js";
+import { randomWalk1D, randomWalk2D, randomWalk3D } from "./randomWalk.js";
 import { range } from "./range.js";
 import { stringToScreamingSnakeCase, screamingSnakeCaseToNormal } from "./screamingSnakeCase.js";
 import { stringToSnakeCase, snakeCaseToNormal } from "./snakeCase.js";
@@ -113,6 +114,7 @@ export {
 	randomColor, randomColor0X, randomRGBColor, randomRGBAColor,
 	randomNumber, randomInt, randomFloat,
 	randomString,
+	randomWalk1D, randomWalk2D, randomWalk3D,
 	range,
 	stringToScreamingSnakeCase, screamingSnakeCaseToNormal,
 	stringToSnakeCase, snakeCaseToNormal,
