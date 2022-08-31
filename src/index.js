@@ -15,6 +15,7 @@ import { arraySortDescending } from "./arraySortDescending.js";
 import { arraySortDescendingObject } from "./arraySortDescendingObject.js";
 import { average } from "./average.js";
 import { binary2Decimal } from "./binary2Decimal.js";
+import { BinarySearchTree, BinarySearchTreeInstance } from "./BinarySearchTree.js";
 import { stringToCamelCase, camelCaseToNormal } from "./camelCase.js";
 import { stringToCapitalize, capitalizeToNormal } from "./capitalizeCase.js";
 import { clamp } from "./clamp.js";
@@ -78,6 +79,7 @@ export {
 	arraySortDescending, arraySortDescendingObject,
 	average,
 	binary2Decimal,
+	BinarySearchTree, BinarySearchTreeInstance,
 	stringToCamelCase, camelCaseToNormal,
 	stringToCapitalize, capitalizeToNormal,
 	clamp,
