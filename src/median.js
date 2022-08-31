@@ -1,5 +1,5 @@
 import { isEven } from "./isEvenOdd";
-import { sortAscending } from "./sortAscending";
+import { arraySortAscending } from "./arraySortAscending";
 
 /**
  * Returns the median of the givens numbers
@@ -17,7 +17,7 @@ export function median(...numbers) {
 	const { length } = numbers;
 	if (!length) return 0;
 
-	sortAscending(numbers);
+	arraySortAscending(numbers, true);
 
 	if (isEven(length)) return (numbers[length / 2 - 1] + numbers[length / 2]) / 2;
 	return numbers[(length - 1) / 2];
