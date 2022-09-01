@@ -16,10 +16,17 @@ This file was based on [this template](https://gist.github.com/juampynr/4c18214a
 ### Added
 
 ### Changed
+- ["Skip" zones in range](https://gitlab.com/201flaviosilva/utilsjs/-/commit/b0d7a1d585f194c093ba22f621ebf71a0d5ce793) #68;
  
- ### Fixed
+### Fixed
 
- #### Breaking Changes
+### Breaking Changes
+ - `findBigArrObj` and `getMaxArrayObjects` change to `arrayFindBigObject` #74;
+ - `findLowArrObj` and `getMinArrayObjects` change to `arrayFindLowObject` #74;
+ - `sortAscending` change to `arraySortAscending` #74;
+ - `sortAscendingObj` change to `arraySortAscendingObject` #74;
+ - `sortDescending` change to `arraySortDescending` #74;
+ - `sortDescendingObj` change to `arraySortDescendingObject` #74;
 
 ### [1.2.8] - 22-07-2022
  
@@ -35,12 +42,12 @@ This file was based on [this template](https://gist.github.com/juampynr/4c18214a
 - [moved random numbers functions to the randomNumber.js file;](https://gitlab.com/201flaviosilva/utilsjs/-/commit/b46c29d9c16641781f018746a0037afe0dcec83a)
 - [moved random colors functions to the randomColor.js file](https://gitlab.com/201flaviosilva/utilsjs/-/commit/b46c29d9c16641781f018746a0037afe0dcec83a);
  
- #### Fixed
+#### Fixed
 - [randomInt - Fix return a number between the given min and max;](https://gitlab.com/201flaviosilva/utilsjs/-/commit/9e250dbcad6044a1e1b669a2d77bfd45df64060e)
 - [arrayChoice - Fixed not returning the last element](https://gitlab.com/201flaviosilva/utilsjs/-/commit/9e250dbcad6044a1e1b669a2d77bfd45df64060e);
 - [isObjectEmpty - Check is the given object is empty](https://gitlab.com/201flaviosilva/utilsjs/-/commit/6d5a1c55256c2663c5d3ece18c6bc360b5fd4b1d);
 
- #### Breaking Changes
+#### Breaking Changes
  - [rockPaperScissor - move to /Games folder](https://gitlab.com/201flaviosilva/utilsjs/-/commit/29b31bdc1fd60790e071d0429b4790f9d5a9d082) #60;
  - [exportFile - move to /DOM folder](https://gitlab.com/201flaviosilva/utilsjs/-/commit/fd8bd65ca24ac7696db29b1c76a25fbd69273a65);
 
