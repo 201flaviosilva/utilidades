@@ -20,3 +20,14 @@ export function stringToScreamingSnakeCase(str: string): string;
  * @returns {string}
  */
 export function screamingSnakeCaseToNormal(str: string): string;
+/**
+ * Change a given text to a SCREAMING_SNAKE_CASE base text.
+ *
+ * Use {@link screamingSnakeCaseToNormal} function
+ *
+ * @see {@link screamingSnakeCaseToNormal}
+ *
+ *
+ * @deprecated
+ */
+export function screamingSnakeCaseToNormalDeprecated(str: any): any;

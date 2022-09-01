@@ -21,7 +21,7 @@
     "compile": "webpack --mode production",
     "compile:css": "css-minify -d src/CSS/ -o build",
     "build": "npm run clear && npm run compile && npm run compile:css && npm run jsDoc && npm run types",
-    "bump": "npm run build && np  --no-tests"
+    "bump": "npm run build && np --no-tests"
   },
   "devDependencies": {
     "@babel/core": "^7.18.13",

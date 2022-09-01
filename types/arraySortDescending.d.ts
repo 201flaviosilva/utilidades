@@ -8,4 +8,4 @@
  * @param {number[]} arr - the array to sort
  * @returns {number[]} A new Array sorted
  */
-export function sortDescending(arr: number[]): number[];
+export function arraySortDescending(arr: number[]): number[];
