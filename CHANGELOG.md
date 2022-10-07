@@ -11,7 +11,18 @@ This file was based on [this template](https://gist.github.com/juampynr/4c18214a
 ----
 ## [1.2.0 - More Functions](https://gitlab.com/201flaviosilva/utilsjs/-/milestones/2)
 
-## [1.2.9] - 29-07-2022
+## [1.2.10] - 00-09-2022
+ 
+### Added
+
+### Changed
+ 
+### Fixed
+
+#### Breaking Changes
+
+
+## [1.2.9] - 02-09-2022
  
 ### Added
 - [Random Walk](https://gitlab.com/201flaviosilva/utilsjs/-/commit/56eebcaac033c05401140c4418b54e9579fb8d38) #46;
