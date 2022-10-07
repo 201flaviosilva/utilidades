@@ -42,7 +42,7 @@ console.log(randomNumber(1, 20));
 | `npm run bump`    | Update lib in the npm                                             |
 
 ## Links
-- [WebPage](https://201flaviosilva.gitlab.io/utilsjs/);
+- [WebPage](https://201flaviosilva-labs.github.io/javascript-utils/);
 - [Package](https://www.npmjs.com/package/201flaviosilva-utils);
 - [GitLab](https://gitlab.com/201flaviosilva/utilsjs/);
   - [Wiki](https://gitlab.com/201flaviosilva/utilsjs/-/wikis);
