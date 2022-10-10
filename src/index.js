@@ -10,7 +10,6 @@ import { arrayFindBigObject } from "./arrayFindBigObject.js";
 import { arrayFindLowObject } from "./arrayFindLowObject.js";
 import { arrayIsSorted } from "./arrayIsSorted.js";
 import { arrayMoveLeft, arrayMoveRight } from "./arrayMove.js";
-import { arrayNewSort } from "./arrayNewSort.js";
 import { arrayShuffle } from "./arrayShuffle.js";
 import { arraySortAscending } from "./arraySortAscending.js";
 import { arraySortAscendingObject } from "./arraySortAscendingObject.js";
@@ -80,7 +79,6 @@ export {
 	arrayFindLowObject,
 	arrayIsSorted,
 	arrayMoveLeft, arrayMoveRight,
-	arrayNewSort,
 	arrayShuffle,
 	arraySortAscending, arraySortAscendingObject,
 	arraySortDescending, arraySortDescendingObject,

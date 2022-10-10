@@ -24,20 +24,19 @@
     "bump": "npm run build && np --no-tests"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.13",
+    "@babel/core": "^7.19.3",
     "@babel/plugin-syntax-import-assertions": "^7.18.6",
     "babel-loader": "^8.2.5",
-    "clean-jsdoc-theme": "^4.1.7",
+    "clean-jsdoc-theme": "^4.1.8",
     "css-minify": "^2.0.0",
     "jsdoc": "^3.6.11",
     "np": "^7.6.2",
-    "typescript": "^4.8.2",
+    "typescript": "^4.8.4",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0"
   },
   "keywords": [
-    "utils",
-    "javascript"
+    "utils"
   ],
   "repository": {
     "type": "git",

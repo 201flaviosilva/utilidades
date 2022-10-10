@@ -16,7 +16,7 @@ export function arrayShuffle(array) {
 	const shuffled = [];
 
 	while (copy.length) {
-		const index = randomInt(copy.length - 1);
+		const index = randomInt(copy.length);
 		shuffled.push(copy[index]);
 		copy.splice(index, 1);
 	}

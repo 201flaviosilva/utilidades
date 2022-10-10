@@ -20,7 +20,7 @@ console.log(randomNumber(1, 20));
 
 ### Using CDN (jsdelivr)
 ```html
-<script src="https://cdn.jsdelivr.net/npm/201flaviosilva-utils@1.2.7/build/utils.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/201flaviosilva-utils@1.2.9/build/utils.min.js"></script>
 <script src="./your-js-file.js"></script>
 ```
 
@@ -44,11 +44,11 @@ console.log(randomNumber(1, 20));
 ## Links
 - [WebPage](https://201flaviosilva-labs.github.io/javascript-utils/);
 - [Package](https://www.npmjs.com/package/201flaviosilva-utils);
-- [GitLab](https://gitlab.com/201flaviosilva/utilsjs/);
-  - [Wiki](https://gitlab.com/201flaviosilva/utilsjs/-/wikis);
-	- [Issues](https://gitlab.com/201flaviosilva/utilsjs/-/issues);
-	- [Snippets (More Utils)](https://gitlab.com/201flaviosilva/utilsjs/-/snippets);
-	- [Versions](https://gitlab.com/201flaviosilva/utilsjs/-/releases);
+- [GitHub](https://github.com/201flaviosilva-labs/javascript-utils);
+  - [Wiki](https://github.com/201flaviosilva-labs/javascript-utils/wiki);
+	- [Issues](https://github.com/201flaviosilva-labs/javascript-utils/issues);
+	- [Snippets (More Utils)](https://github.com/201flaviosilva-labs/javascript-utils/tree/main/snippets);
+	- [Releases](https://github.com/201flaviosilva-labs/javascript-utils/releases);
 
 ## Examples
 - [Code Sandbox](https://codesandbox.io/examples/package/201flaviosilva-utils);
