@@ -23,7 +23,6 @@
  * @param {string} player2 - the player 2 option
  * @returns {number}
  */
-
 export function rockPaperScissor(player1, player2) {
 	if (player1 === player2) return 0;
 	else if (

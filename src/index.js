@@ -1,13 +1,16 @@
 import * as DOM from "./DOM/index.js";
 import * as Games from "./Games/index.js";
+import * as SortingAlgorithms from "./SortingAlgorithms/index.js";
 
 import { allCharactersSame } from "./allCharactersSame.js";
-import { allEqual } from "./allEqual.js";
 import { and } from "./and.js";
+import { arrayAllEqual } from "./arrayAllEqual.js";
 import { arrayChoice } from "./arrayChoice.js";
 import { arrayFindBigObject } from "./arrayFindBigObject.js";
 import { arrayFindLowObject } from "./arrayFindLowObject.js";
+import { arrayIsSorted } from "./arrayIsSorted.js";
 import { arrayMoveLeft, arrayMoveRight } from "./arrayMove.js";
+import { arrayNewSort } from "./arrayNewSort.js";
 import { arrayShuffle } from "./arrayShuffle.js";
 import { arraySortAscending } from "./arraySortAscending.js";
 import { arraySortAscendingObject } from "./arraySortAscendingObject.js";
@@ -67,13 +70,17 @@ import { xor } from "./xor.js";
 export {
 	DOM,
 	Games,
+	SortingAlgorithms,
+
 	allCharactersSame,
-	allEqual,
 	and,
+	arrayAllEqual,
 	arrayChoice,
 	arrayFindBigObject,
 	arrayFindLowObject,
+	arrayIsSorted,
 	arrayMoveLeft, arrayMoveRight,
+	arrayNewSort,
 	arrayShuffle,
 	arraySortAscending, arraySortAscendingObject,
 	arraySortDescending, arraySortDescendingObject,
