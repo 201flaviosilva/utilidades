@@ -1,4 +1,10 @@
 /**
+ * @typedef {Object} Point
+ * @property {number} x - The X Coordinate
+ * @property {number} y - The Y Coordinate
+ */
+
+/**
  * Calculates de position (x,y) of a object based in the angle and distance
  * 
  * @example
@@ -9,7 +15,7 @@
  * @param {Object} [origin] - origin position to analyze
  * @param {number} [origin.x=0] - x axis value
  * @param {number} [origin.y=0] - y axis value
- * @returns {{x: number y: number}} the x and y position
+ * @returns {Point} position {x:number,y:number} the x and y position
  */
 export function getPositionWithAngleDistance(angle, distance, origin = { x: 0, y: 0 }) {
 	return {
