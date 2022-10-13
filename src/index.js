@@ -31,6 +31,7 @@ import { EventSystem, EventSystemInstance } from "./EventSystem.js";
 import { Fibonacci, fibonacciSequence, fibonacciUntil, fibonacciCustomSequence, recursiveFibonacci } from "./Fibonacci.js";
 import { FIFO } from "./FIFO.js";
 import { getTime, getMilliseconds, getSeconds, getMinutes, getHours, getDay, getWeekDay, getWeek, getMonth, getYear, getDateFormatted } from "./getDate.js";
+import { getPositionWithAngleDistance } from "./getPositionWithAngleDistance.js";
 import { getUrlParameter } from "./getUrlParameter.js";
 import { getVersion } from "./getVersion.js";
 import { invertedLerp } from "./invertedLerp.js";
@@ -98,6 +99,7 @@ export {
 	Fibonacci, fibonacciSequence, fibonacciUntil, fibonacciCustomSequence, recursiveFibonacci,
 	FIFO,
 	getTime, getMilliseconds, getSeconds, getMinutes, getHours, getDay, getWeekDay, getWeek, getMonth, getYear, getDateFormatted,
+	getPositionWithAngleDistance,
 	getUrlParameter,
 	getVersion,
 	invertedLerp,
