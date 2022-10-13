@@ -39,6 +39,7 @@ import { invertSentence, invertWords } from "./invertText.js";
 import { isEven, isOdd } from "./isEvenOdd.js";
 import { isMultipleOf } from "./isMultipleOf.js";
 import { isNarcissisticNumber } from "./isNarcissisticNumber.js";
+import { isFalsy, isTruthy } from "./isTruthyFalsy.js";
 import { stringToKebabCase, kebabCaseToNormal } from "./kebabCase.js";
 import { lerp } from "./lerp.js";
 import { LIFO } from "./LIFO.js";
@@ -107,6 +108,7 @@ export {
 	isEven, isOdd,
 	isMultipleOf,
 	isNarcissisticNumber,
+	isFalsy, isTruthy,
 	stringToKebabCase, kebabCaseToNormal,
 	lerp,
 	LIFO,
