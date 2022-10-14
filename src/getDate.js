@@ -1,4 +1,41 @@
 /**
+ * Returns the date
+ * @see {@link https://www.w3schools.com/jsref/jsref_obj_date.asp}
+ * 
+ * @example
+ * getDate() // {
+		time: 1653573577063,
+		milliseconds: 134,
+		seconds: 24,
+		minutes: 24,
+		hours: 15,
+		day: 31,
+		weekDay: 7,
+		week: 50,
+		month: 5,
+		year: 2022,
+		dateFormatted: "1/1/2021",
+	}
+ * 
+ * @returns {Object}
+ */
+export function getDate() {
+	return {
+		time: getTime(),
+		milliseconds: getMilliseconds(),
+		seconds: getSeconds(),
+		minutes: getMinutes(),
+		hours: getHours(),
+		day: getDay(),
+		weekDay: getWeekDay(),
+		week: getWeek(),
+		month: getMonth(),
+		year: getYear(),
+		dateFormatted: getDateFormatted(),
+	}
+}
+
+/**
  * Returns the number of milliseconds since midnight Jan 1 1970, and a specified date
  * @see {@link https://www.w3schools.com/jsref/jsref_obj_date.asp}
  * 

@@ -7,6 +7,9 @@
  * 
  * @param {HTMLElement} element - the DOM element to put in full screen
  * @returns {void}
+ * 
+ * @function toggleFullScreen
+ * @memberof DOM
  */
 export function toggleFullScreen(element = document.documentElement) {
 	if (!document.fullscreenElement) element.requestFullscreen();

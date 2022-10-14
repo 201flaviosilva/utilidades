@@ -30,7 +30,7 @@ import { divideEvenly } from "./divideEvenly.js";
 import { EventSystem, EventSystemInstance } from "./EventSystem.js";
 import { Fibonacci, fibonacciSequence, fibonacciUntil, fibonacciCustomSequence, recursiveFibonacci } from "./Fibonacci.js";
 import { FIFO } from "./FIFO.js";
-import { getTime, getMilliseconds, getSeconds, getMinutes, getHours, getDay, getWeekDay, getWeek, getMonth, getYear, getDateFormatted } from "./getDate.js";
+import { getDate } from "./getDate.js"; // import { getTime, getMilliseconds, getSeconds, getMinutes, getHours, getDay, getWeekDay, getWeek, getMonth, getYear, getDateFormatted } from "./getDate.js";
 import { getPositionWithAngleDistance } from "./getPositionWithAngleDistance.js";
 import { getUrlParameter } from "./getUrlParameter.js";
 import { getVersion } from "./getVersion.js";
@@ -62,7 +62,6 @@ import { stringToScreamingSnakeCase, screamingSnakeCaseToNormal } from "./scream
 import { stringToSnakeCase, snakeCaseToNormal } from "./snakeCase.js";
 import { subtraction } from "./subtraction.js";
 import { sum } from "./sum.js";
-import { toggleFullScreen } from "./toggleFullScreen.js";
 import { topDownCarMovimentation } from "./topDownCarMovimentation.js";
 import { Vector2 } from "./Vector2.js";
 import { xnor } from "./xnor.js";
@@ -99,7 +98,7 @@ export {
 	EventSystem, EventSystemInstance,
 	Fibonacci, fibonacciSequence, fibonacciUntil, fibonacciCustomSequence, recursiveFibonacci,
 	FIFO,
-	getTime, getMilliseconds, getSeconds, getMinutes, getHours, getDay, getWeekDay, getWeek, getMonth, getYear, getDateFormatted,
+	getDate, // getTime, getMilliseconds, getSeconds, getMinutes, getHours, getDay, getWeekDay, getWeek, getMonth, getYear, getDateFormatted,
 	getPositionWithAngleDistance,
 	getUrlParameter,
 	getVersion,
@@ -131,7 +130,6 @@ export {
 	stringToSnakeCase, snakeCaseToNormal,
 	subtraction,
 	sum,
-	toggleFullScreen,
 	topDownCarMovimentation,
 	Vector2,
 	xnor,

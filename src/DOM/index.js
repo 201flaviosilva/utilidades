@@ -4,6 +4,7 @@ import { KeyboardManager, KeyboardManagerInstance, KEYS } from "./KeyboardManage
 import { MouseManager, MouseManagerInstance, MouseButton } from "./MouseManager.js";
 import { notification } from "./notification.js";
 import { printObjectInDOM } from "./printObjectInDOM.js";
+import { toggleFullScreen } from "./toggleFullScreen.js";
 
 /**
  * Utils for DOM
@@ -16,4 +17,5 @@ export {
 	MouseManager, MouseManagerInstance, MouseButton,
 	notification,
 	printObjectInDOM,
+	toggleFullScreen,
 };
