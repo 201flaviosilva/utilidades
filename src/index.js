@@ -3,7 +3,6 @@ import * as Games from "./Games/index.js";
 import * as SortingAlgorithms from "./SortingAlgorithms/index.js";
 
 import { allCharactersSame } from "./allCharactersSame.js";
-import { and } from "./and.js";
 import { arrayAllEqual } from "./arrayAllEqual.js";
 import { arrayChoice } from "./arrayChoice.js";
 import { arrayFindBigObject } from "./arrayFindBigObject.js";
@@ -42,16 +41,13 @@ import { isNarcissisticNumber } from "./isNarcissisticNumber.js";
 import { isFalsy, isTruthy } from "./isTruthyFalsy.js";
 import { stringToKebabCase, kebabCaseToNormal } from "./kebabCase.js";
 import { lerp } from "./lerp.js";
+import { and, or, xor } from "./logicalOperators.js";
 import { LIFO } from "./LIFO.js";
 import { makeNegative } from "./makeNegative.js";
 import { map } from "./map.js";
 import { median } from "./median.js";
 import { mode } from "./mode.js";
 import { multiplication } from "./multiplication.js";
-import { nand } from "./nand.js";
-import { nor } from "./nor.js";
-import { not } from "./not.js";
-import { or } from "./or.js";
 import { radiansToDegrees } from "./radiansToDegrees.js";
 import { randomColor, randomColor0X, randomRGBColor, randomRGBAColor } from "./randomColor.js";
 import { randomNumber, randomInt, randomFloat } from "./randomNumber.js";
@@ -64,16 +60,20 @@ import { subtraction } from "./subtraction.js";
 import { sum } from "./sum.js";
 import { topDownCarMovimentation } from "./topDownCarMovimentation.js";
 import { Vector2 } from "./Vector2.js";
-import { xnor } from "./xnor.js";
-import { xor } from "./xor.js";
 
 export {
 	DOM,
 	Games,
 	SortingAlgorithms,
 
+	BinarySearchTree, BinarySearchTreeInstance,
+	EventSystem, EventSystemInstance,
+	Fibonacci, fibonacciSequence, fibonacciUntil, fibonacciCustomSequence, recursiveFibonacci,
+	FIFO,
+	LIFO,
+	Vector2,
+
 	allCharactersSame,
-	and,
 	arrayAllEqual,
 	arrayChoice,
 	arrayFindBigObject,
@@ -85,7 +85,6 @@ export {
 	arraySortDescending, arraySortDescendingObject,
 	average,
 	binary2Decimal,
-	BinarySearchTree, BinarySearchTreeInstance,
 	stringToCamelCase, camelCaseToNormal,
 	stringToCapitalize, capitalizeToNormal,
 	clamp,
@@ -95,9 +94,6 @@ export {
 	degreesToRadians,
 	division,
 	divideEvenly,
-	EventSystem, EventSystemInstance,
-	Fibonacci, fibonacciSequence, fibonacciUntil, fibonacciCustomSequence, recursiveFibonacci,
-	FIFO,
 	getDate, // getTime, getMilliseconds, getSeconds, getMinutes, getHours, getDay, getWeekDay, getWeek, getMonth, getYear, getDateFormatted,
 	getPositionWithAngleDistance,
 	getUrlParameter,
@@ -110,16 +106,12 @@ export {
 	isFalsy, isTruthy,
 	stringToKebabCase, kebabCaseToNormal,
 	lerp,
-	LIFO,
+	and, or, xor, // logicalOperators
 	makeNegative,
 	map,
 	median,
 	mode,
 	multiplication,
-	nand,
-	nor,
-	not,
-	or,
 	radiansToDegrees,
 	randomColor, randomColor0X, randomRGBColor, randomRGBAColor,
 	randomNumber, randomInt, randomFloat,
@@ -131,7 +123,4 @@ export {
 	subtraction,
 	sum,
 	topDownCarMovimentation,
-	Vector2,
-	xnor,
-	xor
 };
