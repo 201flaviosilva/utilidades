@@ -9,6 +9,9 @@
  * 
  * @param  {...number} numbers - the numbers to division
  * @returns {number}
+ * 
+ * @function division
+ * @memberof Maths
  */
 export function division(...numbers) {
 	if (!numbers.length) return 0;

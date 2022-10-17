@@ -11,5 +11,8 @@
  * @param {number} max - Maximum value
  * @returns {number} The result of the function
  * @see {@link https://en.wikipedia.org/wiki/Linear_interpolation}
+ * 
+ * @function lerp
+ * @memberof Maths
  */
 export function lerp(value, min, max) { return min + (max - min) * value; }

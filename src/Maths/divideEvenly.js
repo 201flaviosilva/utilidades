@@ -9,6 +9,9 @@
  * @param {number} [max=10] The maximum value to return.
  * @param {number} [numberDivisions=5] The number of divisions to use.
  * @returns {number[]} An array of evenly spaced numbers.
+ * 
+ * @function divideEvenly
+ * @memberof Maths
  */
 export function divideEvenly(min = 0, max = 10, numberDivisions = 5) {
 	const result = [];

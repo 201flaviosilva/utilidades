@@ -13,6 +13,9 @@
  * @param {number} [step=1] - The value to increment
  * @param {number[]} [skip=[]] - The values to skip
  * @returns {number[]} Array of number
+ * 
+ * @function range
+ * @memberof Maths
  */
 export function range(start, end, step = 1, skip = []) {
 	const arr = [];

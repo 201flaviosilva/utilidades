@@ -1,3 +1,4 @@
+import { bogoSort } from "./bogoSort.js";
 import { selectionSort } from "./selectionSort.js";
 
 /**
@@ -9,5 +10,6 @@ import { selectionSort } from "./selectionSort.js";
  * @namespace SortingAlgorithms
  */
 export {
+	bogoSort,
 	selectionSort,
 };

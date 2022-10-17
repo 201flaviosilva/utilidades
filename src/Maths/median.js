@@ -1,5 +1,5 @@
 import { isEven } from "./isEvenOdd";
-import { arraySortAscending } from "./arraySortAscending";
+import { arraySortAscending } from "../arraySortAscending";
 
 /**
  * Returns the median of the givens numbers
@@ -12,6 +12,9 @@ import { arraySortAscending } from "./arraySortAscending";
  * 
  * @param  {...number} numbers - the numbers to get the median
  * @returns {number}
+ * 
+ * @function median
+ * @memberof Maths
  */
 export function median(...numbers) {
 	const { length } = numbers;

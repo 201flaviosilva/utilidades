@@ -16,6 +16,9 @@
  * @param {number} [origin.x=0] - x axis value
  * @param {number} [origin.y=0] - y axis value
  * @returns {Point} position {x:number,y:number} the x and y position
+ * 
+ * @function getPositionWithAngleDistance
+ * @memberof Maths
  */
 export function getPositionWithAngleDistance(angle, distance, origin = { x: 0, y: 0 }) {
 	return {

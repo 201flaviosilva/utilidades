@@ -12,6 +12,9 @@ import { sum } from "./sum.js";
  * 
  * @param  {...number} numbers - the numbers to average
  * @returns {number}
+ * 
+ * @function average
+ * @memberof Maths
  */
 export function average(...numbers) {
 	if (!numbers.length) return 0;

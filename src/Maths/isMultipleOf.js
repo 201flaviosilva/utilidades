@@ -15,5 +15,8 @@
  * @param {number} dividend - the number check is multiple
  * @param {number} divisor - divisor number
  * @returns {boolean}
+ * 
+ * @function isMultipleOf
+ * @memberof Maths
  */
 export function isMultipleOf(dividend, divisor) { return dividend % divisor == 0 }

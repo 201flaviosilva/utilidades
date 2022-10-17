@@ -20,6 +20,9 @@
  * 
  * @param {number} n - number to check if a narcissistic
  * @returns {boolean}
+ * 
+ * @function isNarcissisticNumber
+ * @memberof Maths
  */
 export function isNarcissisticNumber(n) {
 	const stringN = String(n);
