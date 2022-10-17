@@ -8,6 +8,9 @@
  * 
  * @param  {...number} numbers - the numbers to sum
  * @returns {number}
+ * 
+ * @function sum
+ * @memberof Maths
  */
 export function sum(...numbers) {
 	return numbers.reduce((acc, curr) => acc + curr, 0);

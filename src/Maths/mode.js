@@ -5,6 +5,9 @@
  * 
  * @param  {...number} numbers - the numbers to get the median
  * @returns {number}
+ * 
+ * @function mode
+ * @memberof Maths
  */
 export function mode(...numbers) {
 	const mode = {};

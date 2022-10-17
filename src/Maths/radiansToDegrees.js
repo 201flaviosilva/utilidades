@@ -7,5 +7,8 @@
  * 
  * @param {number} r - radians value to convert in degrees
  * @returns {number} converted the given radian in degrees
+ * 
+ * @function radiansToDegrees
+ * @memberof Maths
  */
 export function radiansToDegrees(r) { return r * (180 / Math.PI); }

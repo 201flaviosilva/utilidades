@@ -9,6 +9,9 @@
  * 
  * @param  {...number} numbers - the numbers to subtraction
  * @returns {number}
+ * 
+ * @function subtraction
+ * @memberof Maths
  */
 export function subtraction(...numbers) {
 	if (!numbers.length) return 0;

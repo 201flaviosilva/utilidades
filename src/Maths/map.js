@@ -17,5 +17,8 @@
  * @param {number} start2 - Start of the range 2
  * @param {number} end2 - End of the range 2
  * @returns {number} the value un the range
+ * 
+ * @function map
+ * @memberof Maths
  */
 export function map(value, start1, end1, start2, end2) { return (value - start1) * (end2 - start2) / (end1 - start1) + start2; }

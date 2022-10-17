@@ -15,5 +15,8 @@ import { clamp } from "./clamp.js";
  * @param {number} start - The start of the range.
  * @param {number} end - The end of the range.
  * @returns {number} value between 0 and 1, representing where the "value" parameter falls within the range defined by start and end
+ * 
+ * @function invertedLerp
+ * @memberof Maths
  */
 export function invertedLerp(value, start, end) { return clamp((value - start) / (end - start)); }

@@ -14,5 +14,8 @@
  * @param {number} [min=0] - Minimum value
  * @param {number} [max=1] - Maximum value
  * @returns {number} The fixed value
+ * 
+ * @function clamp
+ * @memberof Maths
  */
 export function clamp(value, min = 0, max = 1) { return Math.min(max, Math.max(min, value)); }

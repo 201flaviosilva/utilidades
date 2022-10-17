@@ -8,6 +8,9 @@
  * 
  * @param  {...number} numbers - the numbers to multiplication
  * @returns {number}
+ * 
+ * @function multiplication
+ * @memberof Maths
  */
 export function multiplication(...numbers) {
 	return numbers.reduce((acc, curr) => acc * curr, 1);

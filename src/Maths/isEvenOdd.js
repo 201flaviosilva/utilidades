@@ -7,6 +7,9 @@
  * 
  * @param {number} number - The number to check
  * @returns {boolean}
+ * 
+ * @function isEven
+ * @memberof Maths
  */
 export function isEven(number) { return number % 2 == 0 }
 
@@ -19,5 +22,8 @@ export function isEven(number) { return number % 2 == 0 }
  * 
  * @param {number} number - The number to check
  * @returns {boolean}
+ * 
+ * @function isOdd
+ * @memberof Maths
  */
 export function isOdd(number) { return number % 2 == 1 }
