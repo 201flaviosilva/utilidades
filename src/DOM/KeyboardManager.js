@@ -61,6 +61,13 @@ export const KEYS = {
  * const { left } = DOM.KeyboardManagerInstance.keys;
  * if (DOM.KeyboardManagerInstance.isKeyPressed(left)) console.log("Left");
  * 
+ * @example
+ * import { DOM } from "201flaviosilva-labs";
+ * const { KEYS, KeyboardManager, KeyboardManagerInstance } = DOM;
+ * setInterval(() => console.log(KeyboardManagerInstance.isKeyPressed(KEYS.a)), 100);
+ * KeyboardManagerInstance.events.on("keyDown-left", () => console.log("down-left"));
+ * KeyboardManagerInstance.events.on("keyUp-up", () => console.log(`up-${KEYS.up}`));
+ * 
  * @memberof DOM
  */
 export class KeyboardManager {

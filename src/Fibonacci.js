@@ -7,6 +7,11 @@
  * @see {@link https://pt.wikipedia.org/wiki/Sequ%C3%AAncia_de_Fibonacci}
  * 
  * @example new Fibonacci();
+ * @example
+ *	import { Fibonacci } from "201flaviosilva-utils";
+ *	const f = new Fibonacci();
+ *	for (i = 0; i < 10; i++) console.log(f.next()); // 1,2,3,5,8,13,21,34,55,89
+ *	for (i = 0; i < 5; i++) console.log(f.before()); // 55,34,21,13,8
  * 
  * @constructor
  */

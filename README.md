@@ -42,7 +42,7 @@ console.log(randomNumber(1, 20));
 | `npm run bump`    | Update lib in the npm                                             |
 
 ## Links
-- [WebPage](https://201flaviosilva-labs.github.io/javascript-utils/);
+- [WebPage (Documentation)](https://201flaviosilva-labs.github.io/javascript-utils/);
 - [Package](https://www.npmjs.com/package/201flaviosilva-utils);
 - [GitHub](https://github.com/201flaviosilva-labs/javascript-utils);
   - [Wiki](https://github.com/201flaviosilva-labs/javascript-utils/wiki);
@@ -52,3 +52,4 @@ console.log(randomNumber(1, 20));
 
 ## Examples
 - [Code Sandbox](https://codesandbox.io/examples/package/201flaviosilva-utils);
+- [GitHub Repositories](https://github.com/201flaviosilva-labs/javascript-utils/network/dependents);
