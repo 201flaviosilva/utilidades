@@ -1,5 +1,5 @@
 import { isEven } from "./isEvenOdd";
-import { arraySortAscending } from "../arraySortAscending";
+import { arraySortAscending } from "../Array/arraySortAscending";
 
 /**
  * Returns the median of the givens numbers

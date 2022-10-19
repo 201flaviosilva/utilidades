@@ -33,6 +33,7 @@ This file was based on [this template](https://gist.github.com/juampynr/4c18214a
 - [Move `toggleFullScreen` to `DOM/toggleFullScreen`](https://github.com/201flaviosilva-labs/javascript-utils/commit/2c0e9f8d293c68f36e9297b70c18321678e40921);
 - [Only export `getDate` function from `getDate` file](https://github.com/201flaviosilva-labs/javascript-utils/commit/2c0e9f8d293c68f36e9297b70c18321678e40921);
 - [Removed `nand`, `nor`, `not` and `xnor`](https://github.com/201flaviosilva-labs/javascript-utils/commit/2473d089c7a699650abfce108425ee0d479ce7e7) #88;
+- [Move array functions to a folder](https://github.com/201flaviosilva-labs/javascript-utils/pull/92/commits/237cbf42f22131dd83c5126107f21b32ce33e232) #89;
 
 
 ## [1.2.9] - 02-09-2022

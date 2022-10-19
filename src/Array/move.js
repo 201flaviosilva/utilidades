@@ -2,16 +2,16 @@
  * @description
  * Move an array element to the right
  * 
- * @example arrayMoveLeft([1,2,3,4,5]); // [5,1,2,3,4]
- * @example arrayMoveLeft([1,2,3,4,5], 2); // [4,5,1,2,3]
- * @example arrayMoveLeft(["a","b","c","d","e"], 7) // ["d","e","a","b","c"]
- * @example arrayMoveLeft(["a","b"], 3) // ["b","a"]
+ * @example moveLeft([1,2,3,4,5]); // [5,1,2,3,4]
+ * @example moveLeft([1,2,3,4,5], 2); // [4,5,1,2,3]
+ * @example moveLeft(["a","b","c","d","e"], 7) // ["d","e","a","b","c"]
+ * @example moveLeft(["a","b"], 3) // ["b","a"]
  * 
  * @param {any[]} array - The array to move
  * @param {number} times - The number of times to move the array
  * @returns {any[]}
  */
-export function arrayMoveLeft(array = [], times = 1) {
+export function moveLeft(array = [], times = 1) {
 	for (let t = 0; t < times; t++) {
 
 		let last = array[array.length - 1];
@@ -30,16 +30,16 @@ export function arrayMoveLeft(array = [], times = 1) {
  * @description
  * Move an array element to the left
  * 
-* @example arrayMoveRight([1,2,3,4,5]); // [2,3,4,5,1]
- * @example arrayMoveRight([1,2,3,4,5], 2); // [3,4,5,1,2]
- * @example arrayMoveRight(["a","b","c","d","e"], 7) // ["c","d","e","a","b"]
- * @example arrayMoveRight(["a","b"], 3) // ["b","a"]
+* @example moveRight([1,2,3,4,5]); // [2,3,4,5,1]
+ * @example moveRight([1,2,3,4,5], 2); // [3,4,5,1,2]
+ * @example moveRight(["a","b","c","d","e"], 7) // ["c","d","e","a","b"]
+ * @example moveRight(["a","b"], 3) // ["b","a"]
  * 
  * @param {any[]} array - The array to move
  * @param {number} times - The number of times to move the array
  * @returns {any[]}
  */
-export function arrayMoveRight(array = [], times = 1) {
+export function moveRight(array = [], times = 1) {
 	for (let t = 0; t < times; t++) {
 
 		let last = array[0]; // temp variable to store last changed value

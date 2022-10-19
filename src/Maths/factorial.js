@@ -12,6 +12,9 @@
  * 
  * @param {number} number - the number to factoring
  * @returns {number} the result
+ * 
+ * @function factorial
+ * @memberof Maths
  */
 export function factorial(number) {
 	if (number <= 1) return number;

@@ -1,20 +1,10 @@
+import * as Array from "./Array/index.js";
 import * as DOM from "./DOM/index.js";
 import * as Games from "./Games/index.js";
 import * as Maths from "./Maths/index.js";
 import * as SortingAlgorithms from "./SortingAlgorithms/index.js";
 
 import { allCharactersSame } from "./allCharactersSame.js";
-import { arrayAllEqual } from "./arrayAllEqual.js";
-import { arrayChoice } from "./arrayChoice.js";
-import { arrayFindBigObject } from "./arrayFindBigObject.js";
-import { arrayFindLowObject } from "./arrayFindLowObject.js";
-import { arrayIsSorted } from "./arrayIsSorted.js";
-import { arrayMoveLeft, arrayMoveRight } from "./arrayMove.js";
-import { arrayShuffle } from "./arrayShuffle.js";
-import { arraySortAscending } from "./arraySortAscending.js";
-import { arraySortAscendingObject } from "./arraySortAscendingObject.js";
-import { arraySortDescending } from "./arraySortDescending.js";
-import { arraySortDescendingObject } from "./arraySortDescendingObject.js";
 import { binary2Decimal } from "./binary2Decimal.js";
 import { BinarySearchTree, BinarySearchTreeInstance } from "./BinarySearchTree.js";
 import { stringToCamelCase, camelCaseToNormal } from "./camelCase.js";
@@ -43,6 +33,7 @@ import { topDownCarMovimentation } from "./topDownCarMovimentation.js";
 import { Vector2 } from "./Vector2.js";
 
 export {
+	Array,
 	DOM,
 	Games,
 	Maths,
@@ -56,15 +47,6 @@ export {
 	Vector2,
 
 	allCharactersSame,
-	arrayAllEqual,
-	arrayChoice,
-	arrayFindBigObject,
-	arrayFindLowObject,
-	arrayIsSorted,
-	arrayMoveLeft, arrayMoveRight,
-	arrayShuffle,
-	arraySortAscending, arraySortAscendingObject,
-	arraySortDescending, arraySortDescendingObject,
 	binary2Decimal,
 	stringToCamelCase, camelCaseToNormal,
 	stringToCapitalize, capitalizeToNormal,

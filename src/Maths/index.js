@@ -3,6 +3,7 @@ import { clamp } from "./clamp.js";
 import { degreesToRadians } from "./degreesToRadians.js";
 import { divideEvenly } from "./divideEvenly.js";
 import { division } from "./division.js";
+import { factorial } from "./factorial.js";
 import { getPositionWithAngleDistance } from "./getPositionWithAngleDistance.js";
 import { isEven, isOdd } from "./isEvenOdd.js";
 import { invertedLerp } from "./invertedLerp.js";
@@ -30,6 +31,7 @@ export {
 	degreesToRadians,
 	divideEvenly,
 	division,
+	factorial,
 	getPositionWithAngleDistance,
 	invertedLerp,
 	isEven, isOdd,
