@@ -4,7 +4,6 @@ import { findBigObject } from "./findBigObject.js";
 import { findLowObject } from "./findLowObject.js";
 import { isSorted } from "./isSorted.js";
 import { moveLeft, moveRight } from "./Move.js";
-import { random } from "./random.js";
 import { shuffle } from "./shuffle.js";
 import { sortAscending } from "./sortAscending.js";
 import { sortAscendingObject } from "./sortAscendingObject.js";
@@ -18,7 +17,6 @@ export {
 	findLowObject,
 	isSorted,
 	moveLeft, moveRight,
-	random,
 	shuffle,
 	sortAscending, sortAscendingObject,
 	sortDescending, sortDescendingObject,
