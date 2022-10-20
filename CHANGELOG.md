@@ -40,6 +40,7 @@ This file was based on [this template](https://gist.github.com/juampynr/4c18214a
 - [Removed `nand`, `nor`, `not` and `xnor`](https://github.com/201flaviosilva-labs/javascript-utils/commit/2473d089c7a699650abfce108425ee0d479ce7e7) #88;
 - [Move array functions to a folder](https://github.com/201flaviosilva-labs/javascript-utils/pull/92/commits/237cbf42f22131dd83c5126107f21b32ce33e232) #89;
 - [Move date function to device folder/namespace](https://github.com/201flaviosilva-labs/javascript-utils/pull/95/commits/c81f718f9497adc9f69f057950f7594b12dfa52d);
+- [Removed Games](1974e18a0fc36d9648715786b8144e2b3b37e3be);
 
 
 ## [1.2.9] - 02-09-2022
