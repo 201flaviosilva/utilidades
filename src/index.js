@@ -1,4 +1,5 @@
 import * as Array from "./Array/index.js";
+import * as Device from "./Device/index.js";
 import * as DOM from "./DOM/index.js";
 import * as Games from "./Games/index.js";
 import * as Maths from "./Maths/index.js";
@@ -15,7 +16,6 @@ import { decimal2Binary } from "./decimal2Binary.js";
 import { EventSystem, EventSystemInstance } from "./EventSystem.js";
 import { Fibonacci, fibonacciSequence, fibonacciUntil, fibonacciCustomSequence, recursiveFibonacci } from "./Fibonacci.js";
 import { FIFO } from "./FIFO.js";
-import { getDate } from "./getDate.js"; // import { getTime, getMilliseconds, getSeconds, getMinutes, getHours, getDay, getWeekDay, getWeek, getMonth, getYear, getDateFormatted } from "./getDate.js";
 import { getUrlParameter } from "./getUrlParameter.js";
 import { getVersion } from "./getVersion.js";
 import { invertSentence, invertWords } from "./invertText.js";
@@ -34,6 +34,7 @@ import { Vector2 } from "./Vector2.js";
 
 export {
 	Array,
+	Device,
 	DOM,
 	Games,
 	Maths,
@@ -53,7 +54,6 @@ export {
 	clone,
 	compare2Objects,
 	decimal2Binary,
-	getDate, // getTime, getMilliseconds, getSeconds, getMinutes, getHours, getDay, getWeekDay, getWeek, getMonth, getYear, getDateFormatted,
 	getUrlParameter,
 	getVersion,
 	invertSentence, invertWords,
