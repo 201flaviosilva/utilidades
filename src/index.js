@@ -1,7 +1,6 @@
 import * as Array from "./Array/index.js";
 import * as Device from "./Device/index.js";
 import * as DOM from "./DOM/index.js";
-import * as Games from "./Games/index.js";
 import * as Maths from "./Maths/index.js";
 import * as SortingAlgorithms from "./SortingAlgorithms/index.js";
 
@@ -36,7 +35,6 @@ export {
 	Array,
 	Device,
 	DOM,
-	Games,
 	Maths,
 	SortingAlgorithms,
 
