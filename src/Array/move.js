@@ -10,6 +10,9 @@
  * @param {any[]} array - The array to move
  * @param {number} times - The number of times to move the array
  * @returns {any[]}
+ * 
+ * @function moveLeft
+ * @memberof Array
  */
 export function moveLeft(array = [], times = 1) {
 	for (let t = 0; t < times; t++) {
@@ -38,6 +41,9 @@ export function moveLeft(array = [], times = 1) {
  * @param {any[]} array - The array to move
  * @param {number} times - The number of times to move the array
  * @returns {any[]}
+ * 
+ * @function moveRight
+ * @memberof Array
  */
 export function moveRight(array = [], times = 1) {
 	for (let t = 0; t < times; t++) {

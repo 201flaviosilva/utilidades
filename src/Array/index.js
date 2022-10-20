@@ -10,6 +10,11 @@ import { sortAscendingObject } from "./sortAscendingObject.js";
 import { sortDescending } from "./sortDescending.js";
 import { sortDescendingObject } from "./sortDescendingObject.js";
 
+/**
+ * Functions utils for arrays
+ * 
+ * @namespace Array
+ */
 export {
 	allEqual,
 	choice,

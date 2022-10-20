@@ -12,6 +12,9 @@
  * @param {string} prop - The property to find the biggest element
  * @param {boolean} [returnOnlyValue=false] - If true only returns the value of the given property with the biggest value
  * @returns {any|number} - The biggest element in the array
+ * 
+ * @function findBigObject
+ * @memberof Array
  */
 export function findBigObject(array, prop, returnOnlyValue = false) {
 	const biggest = Math.max(...array.map(o => o[prop]));
@@ -24,6 +27,9 @@ export function findBigObject(array, prop, returnOnlyValue = false) {
  * @param {Object[]} array - The array to search
  * @param {string} prop - The property to find the biggest element
  * @returns {Object} - The biggest element in the array
+ * 
+ * @function findBigObjectDeprecated
+ * @memberof Array
  * @deprecated
  */
 export function findBigObjectDeprecated(array, prop) {

@@ -12,6 +12,9 @@
  * @param {string} prop - The property to find the lowest element
  * @param {boolean} [returnOnlyValue=false] - If true only returns the value of the given property with the lowest value
  * @returns {Object} - The lowest element in the array
+ * 
+ * @function findLowObject
+ * @memberof Array
  */
 
 export function findLowObject(array, prop, returnOnlyValue = false) {
@@ -25,6 +28,9 @@ export function findLowObject(array, prop, returnOnlyValue = false) {
  * @param {Object[]} array - The array to search
  * @param {string} prop - The property to find the lowest element
  * @returns {Object} - The lowest element in the array
+ * 
+ * @function findLowObjectDeprecated
+ * @memberof Array
  * @deprecated
  */
 export function findLowObjectDeprecated(array, prop) {

@@ -1,4 +1,4 @@
-import { arrayShuffle, arrayIsSorted } from "../index";
+import { arrayShuffle, arrayIsSorted } from "../Array/index.js";
 
 /**
  * Sort given array using the Selection Sort algorithm
@@ -6,6 +6,7 @@ import { arrayShuffle, arrayIsSorted } from "../index";
  * 
  * @param {number[]} arr - The array to sort
  * @returns {number[]} the given array, sorted using the Selection Sort algorithm
+ * 
  * @function bogoSort
  * @memberof SortingAlgorithms
  */
