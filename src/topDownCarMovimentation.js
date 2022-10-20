@@ -1,4 +1,4 @@
-import { clamp } from "../Maths/clamp.js";
+import { clamp } from "./Maths/clamp.js";
 
 /**
  * Updates a position, rotation and speed of a car in the top down view

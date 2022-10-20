@@ -12,6 +12,16 @@ export namespace MouseButton {
  * const { x, y } = mouse;
  * console.log(x, y);
  *
+ * @example
+ * import { DOM } from "201flaviosilva-labs";
+ * const { MouseManager, MouseManagerInstance, MouseButton, } = DOM
+ * const beepDiv = document.getElementById("MyDiv");
+ * const mouse = new MouseManager(true);
+ * setInterval(() => console.log(mouse.getPosition(beepDiv)), 1000);
+ * MouseManagerInstance.events.on("buttonDown-left", () => console.log("down -> left"));
+ * MouseManagerInstance.events.on("buttonDown-right", () => console.log("up -> right"));
+
+ *
  * @param {Boolean} [preventDefault=false] - Prevent the Default behavior on press right button
  * @memberof DOM
  */

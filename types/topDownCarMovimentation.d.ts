@@ -4,6 +4,8 @@
  * Algorithm based in {@link https://www.youtube.com/watch?v=Rs_rAxEsAvI}
  * @see {@link https://www.youtube.com/watch?v=Rs_rAxEsAvI}
  *
+ * @see example -> {@link https://codesandbox.io/s/top-down-car-movimentation-sobjn0?file=/src/index.js}
+ *
  * @param {Object} state - the current state of the car
  * @param {Object} state.keys - the objet with the input keys
  * @param {boolean} [state.keys.forward=false] true if the forward key is pressed

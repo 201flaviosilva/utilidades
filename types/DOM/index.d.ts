@@ -8,4 +8,5 @@ import { MouseManagerInstance } from "./MouseManager.js";
 import { MouseButton } from "./MouseManager.js";
 import { notification } from "./notification.js";
 import { printObjectInDOM } from "./printObjectInDOM.js";
-export { deleteAllChildDom, exportFile, KeyboardManager, KeyboardManagerInstance, KEYS, MouseManager, MouseManagerInstance, MouseButton, notification, printObjectInDOM };
+import { toggleFullScreen } from "./toggleFullScreen.js";
+export { deleteAllChildDom, exportFile, KeyboardManager, KeyboardManagerInstance, KEYS, MouseManager, MouseManagerInstance, MouseButton, notification, printObjectInDOM, toggleFullScreen };
