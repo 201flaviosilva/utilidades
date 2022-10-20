@@ -10,6 +10,9 @@ import { randomInt } from "../randomNumber";
  * 
  * @param {any[]} array - the array to select a random item
  * @returns {any}
+ * 
+ * @function choice
+ * @memberof Array
  */
 export function choice(array) {
 	return array[randomInt(array.length)];

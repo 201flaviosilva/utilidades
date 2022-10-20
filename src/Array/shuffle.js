@@ -13,6 +13,9 @@ import { clone } from "../clone";
  * @param {any[]} array - the array with the items to randomize
  * @param {boolean} mutateOriginal - the array with the items to randomize
  * @returns {any[]}
+ * 
+ * @function shuffle
+ * @memberof Array
  */
 export function shuffle(array, mutateOriginal = true) {
 	if (mutateOriginal) return array.sort(() => Math.random() - 0.5);

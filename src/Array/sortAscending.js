@@ -8,6 +8,9 @@
  * @param {number[]} arr - the array to sort
  * @param {boolean} [changeArr=false] - if true will change the original array
  * @returns {number[]} A new Array sorted
+ * 
+ * @function sortAscending
+ * @memberof Array
  */
 export function sortAscending(arr, changeArr = false) {
 	if (!changeArr) return [...arr].sort((a, b) => a - b);

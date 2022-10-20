@@ -20,6 +20,11 @@ This file was based on [this template](https://gist.github.com/juampynr/4c18214a
 - [Get Position With Angle Distance](https://github.com/201flaviosilva-labs/javascript-utils/commit/80b83a7f35508d9997fb95bf2b6af066b8b4e553);
 - [Is Falsy](https://github.com/201flaviosilva-labs/javascript-utils/commit/25b13f2b7fc66c01e6709ac8adee2e57f79fc5fd) #84;
 - [Is Truthy](https://github.com/201flaviosilva-labs/javascript-utils/commit/25b13f2b7fc66c01e6709ac8adee2e57f79fc5fd) #84;
+- [getBrowser](https://github.com/201flaviosilva-labs/javascript-utils/pull/95/commits/c81f718f9497adc9f69f057950f7594b12dfa52d) - Returns the browser name #44;
+- [getBrowserVersion](https://github.com/201flaviosilva-labs/javascript-utils/pull/95/commits/c81f718f9497adc9f69f057950f7594b12dfa52d) - Returns the browser version #44;
+- [getOS](https://github.com/201flaviosilva-labs/javascript-utils/pull/95/commits/c81f718f9497adc9f69f057950f7594b12dfa52d) - Returns the OS name #44;
+- [getOSVersion](https://github.com/201flaviosilva-labs/javascript-utils/pull/95/commits/c81f718f9497adc9f69f057950f7594b12dfa52d) - Returns the OS version #44;
+- [isMobile](https://github.com/201flaviosilva-labs/javascript-utils/pull/95/commits/c81f718f9497adc9f69f057950f7594b12dfa52d) - Check if is in a mobile device #44;
 
 ### Changed
 - [Add more examples to the functions](https://github.com/201flaviosilva-labs/javascript-utils/commit/06c75f5b84da32b9af4521eab48afc3d4982a8aa);
@@ -34,6 +39,7 @@ This file was based on [this template](https://gist.github.com/juampynr/4c18214a
 - [Only export `getDate` function from `getDate` file](https://github.com/201flaviosilva-labs/javascript-utils/commit/2c0e9f8d293c68f36e9297b70c18321678e40921);
 - [Removed `nand`, `nor`, `not` and `xnor`](https://github.com/201flaviosilva-labs/javascript-utils/commit/2473d089c7a699650abfce108425ee0d479ce7e7) #88;
 - [Move array functions to a folder](https://github.com/201flaviosilva-labs/javascript-utils/pull/92/commits/237cbf42f22131dd83c5126107f21b32ce33e232) #89;
+- [Move date function to device folder/namespace](https://github.com/201flaviosilva-labs/javascript-utils/pull/95/commits/c81f718f9497adc9f69f057950f7594b12dfa52d);
 
 
 ## [1.2.9] - 02-09-2022

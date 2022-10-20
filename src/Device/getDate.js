@@ -18,6 +18,9 @@
 	}
  * 
  * @returns {Object}
+ * 
+ * @function getDate
+ * @memberof Device
  */
 export function getDate() {
 	return {
@@ -43,6 +46,9 @@ export function getDate() {
  * getTime() // 1653573577063
  * 
  * @returns {number}
+ * 
+ * @function getTime
+ * @memberof Device
  */
 export function getTime() { return new Date().getTime(); }
 
@@ -55,6 +61,9 @@ export function getTime() { return new Date().getTime(); }
  * getMilliseconds() // 952
  * 
  * @returns {number} current milliseconds
+ * 
+ * @function getMilliseconds
+ * @memberof Device
  */
 export function getMilliseconds() { return new Date().getMilliseconds(); }
 
@@ -67,6 +76,9 @@ export function getMilliseconds() { return new Date().getMilliseconds(); }
  * getSeconds() // 24
  * 
  * @returns {number} current seconds
+ * 
+ * @function getSeconds
+ * @memberof Device
  */
 export function getSeconds() { return new Date().getSeconds(); }
 
@@ -79,6 +91,9 @@ export function getSeconds() { return new Date().getSeconds(); }
  * getMinutes() // 24
  * 
  * @returns {number} current minutes
+ * 
+ * @function getMinutes
+ * @memberof Device
  */
 export function getMinutes() { return new Date().getMinutes(); }
 
@@ -91,6 +106,9 @@ export function getMinutes() { return new Date().getMinutes(); }
  * getHours() // 23
  * 
  * @returns {number} current hours
+ * 
+ * @function getHours
+ * @memberof Device
  */
 export function getHours() { return new Date().getHours(); }
 
@@ -104,6 +122,9 @@ export function getHours() { return new Date().getHours(); }
  * getDay() // 31
  * 
  * @returns {number} current day
+ * 
+ * @function getDay
+ * @memberof Device
  */
 export function getDay() { return new Date().getDate(); }
 
@@ -117,6 +138,9 @@ export function getDay() { return new Date().getDate(); }
  * getWeekDay() // 7
  * 
  * @returns {number} current day of the week
+ * 
+ * @function getWeekDay
+ * @memberof Device
  */
 export function getWeekDay() { return new Date().getDay() + 1; }
 
@@ -128,6 +152,9 @@ export function getWeekDay() { return new Date().getDay() + 1; }
  * getWeek() // 50
  * 
  * @returns {number} current week in the year
+ * 
+ * @function getWeek
+ * @memberof Device
  */
 export function getWeek() {
 	const currentDate = new Date();
@@ -148,6 +175,9 @@ export function getWeek() {
  * getDay() // 12
  * 
  * @returns {number} current month
+ * 
+ * @function getMonth
+ * @memberof Device
  */
 export function getMonth() { return new Date().getMonth() + 1; }
 
@@ -161,6 +191,9 @@ export function getMonth() { return new Date().getMonth() + 1; }
  * getDay() // 2042
  * 
  * @returns {number} current year
+ * 
+ * @function getYear
+ * @memberof Device
  */
 export function getYear() { return new Date().getFullYear(); }
 
@@ -173,5 +206,8 @@ export function getYear() { return new Date().getFullYear(); }
  * getDateFormatted() // "25/12/2042"
  * 
  * @returns {string}
+ * 
+ * @function getDateFormatted
+ * @memberof Device
  */
 export function getDateFormatted() { return getDay() + "/" + getMonth() + "/" + getYear(); }

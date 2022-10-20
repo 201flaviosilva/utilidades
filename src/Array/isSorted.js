@@ -12,6 +12,9 @@
  * 
  * @param {any} arr - the array to check
  * @returns {boolean} true if the array is sorted
+ * 
+ * @function isSorted
+ * @memberof Array
  */
 export function isSorted(arr = []) {
 	for (let i = 0; i < arr.length - 1; i++) {

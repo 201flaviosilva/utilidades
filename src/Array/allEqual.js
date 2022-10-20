@@ -14,5 +14,8 @@
  * 
  * @param {any} arr - the array to check all elements
  * @returns {boolean} true if all elements of the array ara equal
+ * 
+ * @function allEqual
+ * @memberof Array
  */
 export function allEqual(arr) { return arr.every(v => JSON.stringify(v) === JSON.stringify(arr[0])); };
