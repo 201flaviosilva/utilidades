@@ -18,6 +18,7 @@ import { FIFO } from "./FIFO.js";
 import { getUrlParameter } from "./getUrlParameter.js";
 import { getVersion } from "./getVersion.js";
 import { invertSentence, invertWords } from "./invertText.js";
+import { isObjectEmpty } from "./isObjectEmpty.js";
 import { isFalsy, isTruthy } from "./isTruthyFalsy.js";
 import { stringToKebabCase, kebabCaseToNormal } from "./kebabCase.js";
 import { and, or, xor } from "./logicalOperators.js";
@@ -55,6 +56,7 @@ export {
 	getUrlParameter,
 	getVersion,
 	invertSentence, invertWords,
+	isObjectEmpty,
 	isFalsy, isTruthy,
 	stringToKebabCase, kebabCaseToNormal,
 	and, or, xor, // logicalOperators
