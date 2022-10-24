@@ -36,7 +36,7 @@ export function randomInt(min, max) {
 		max = min;
 		min = 0;
 	}
-	return Math.floor(min + Math.random() * (max - min));
+	return Math.round(min + Math.random() * (max - min));
 };
 
 /**
