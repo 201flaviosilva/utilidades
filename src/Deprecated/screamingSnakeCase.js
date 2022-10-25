@@ -8,6 +8,10 @@
  * 
  * @param {string} str - the text to transform
  * @returns {string}
+ * 
+ * @function stringToScreamingSnakeCase
+ * @memberof Deprecated
+ * @deprecated
  */
 export function stringToScreamingSnakeCase(str) { return str.replaceAll(" ", "_").toUpperCase(); }
 
@@ -19,6 +23,10 @@ export function stringToScreamingSnakeCase(str) { return str.replaceAll(" ", "_"
  * 
  * @param {string} str - the text to transform
  * @returns {string}
+ * 
+ * @function screamingSnakeCaseToNormal
+ * @memberof Deprecated
+ * @deprecated
  */
 export function screamingSnakeCaseToNormal(str) { return str.replaceAll("_", " ").toLowerCase(); }
 
@@ -31,6 +39,8 @@ export function screamingSnakeCaseToNormal(str) { return str.replaceAll("_", " "
  * @see {@link screamingSnakeCaseToNormal}
  * 
  * 
+ * @function screamingSnakeCaseToNormalDeprecated
+ * @memberof Deprecated
  * @deprecated
  */
 export function screamingSnakeCaseToNormalDeprecated(str) { return str.split("_").map(s => s.toLocaleLowerCase()).join(" "); }

@@ -9,6 +9,10 @@
  * 
  * @param {string} str - the text to transform
  * @returns {string}
+ * 
+ * @function stringToSnakeCase
+ * @memberof Deprecated
+ * @deprecated
  */
 export function stringToSnakeCase(str) { return str.replace(/\s/g, "_").replace(/([A-Z])/g, ($1) => "_" + $1.toLowerCase()); }
 
@@ -23,5 +27,9 @@ export function stringToSnakeCase(str) { return str.replace(/\s/g, "_").replace(
  * 
  * @param {string} str - the text to transform
  * @returns {string}
+ * 
+ * @function snakeCaseToNormal
+ * @memberof Deprecated
+ * @deprecated
  */
 export function snakeCaseToNormal(str) { return str.replace(/_/g, " ").replace(/([A-Z])/g, ($1) => " " + $1.toLowerCase()); }

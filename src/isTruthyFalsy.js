@@ -36,20 +36,20 @@ export function isFalsy(value) {
  * @see {@link https://developer.mozilla.org/en-US/docs/Glossary/Truthy}
  * 
  * @example
- * isFalsy(false) // false
- * isFalsy("") // false
- * isFalsy(0) // false
- * isFalsy([]) // false
- * isFalsy({}) // false
- * isFalsy(null) // false
- * isFalsy(undefined) // false
- * isFalsy(NaN) // false
+ * isTruthy(false) // false
+ * isTruthy("") // false
+ * isTruthy(0) // false
+ * isTruthy([]) // false
+ * isTruthy({}) // false
+ * isTruthy(null) // false
+ * isTruthy(undefined) // false
+ * isTruthy(NaN) // false
 
- * isFalsy("beep") // true
- * isFalsy(1) // true
- * isFalsy({dog:"Lua"}) // true
- * isFalsy(["Snoopy","Ninica","Lua"]) // true
- * isFalsy(console) // true
+ * isTruthy("beep") // true
+ * isTruthy(1) // true
+ * isTruthy({dog:"Lua"}) // true
+ * isTruthy(["Snoopy","Ninica","Lua"]) // true
+ * isTruthy(console) // true
  * 
  * @param {*} value - the value to check
  * @returns {boolean}

@@ -11,6 +11,9 @@
  * 
  * @param {any[]} initState - The initial state
  * @constructor
+ * 
+ * @memberof Deprecated
+ * @deprecated
  */
 export class FIFO {
 	constructor(initState = []) {

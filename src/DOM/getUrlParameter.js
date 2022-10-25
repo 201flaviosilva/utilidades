@@ -7,6 +7,9 @@
  * 
  * @param {string} key - The key of the query parameter
  * @returns {string} Returns the value of the key
+ * 
+ * @function getUrlParameter
+ * @memberof DOM
  */
 export function getUrlParameter(key) {
 	const urlSearchParams = new URLSearchParams(window.location.search);

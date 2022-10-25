@@ -8,6 +8,10 @@
  * 
  * @param {string} str - the text to transform
  * @returns {string}
+ * 
+ * @function stringToKebabCase
+ * @memberof Deprecated
+ * @deprecated
  */
 export function stringToKebabCase(str) { return str.replaceAll(" ", "-"); }
 
@@ -21,5 +25,9 @@ export function stringToKebabCase(str) { return str.replaceAll(" ", "-"); }
  * 
  * @param {string} str - the text to transform
  * @returns {string}
+ * 
+ * @function kebabCaseToNormal
+ * @memberof Deprecated
+ * @deprecated
  */
 export function kebabCaseToNormal(str) { return str.replaceAll("-", " "); }

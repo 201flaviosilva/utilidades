@@ -9,6 +9,10 @@
  * 
  * @param {string} str - the text to transform
  * @returns {string}
+ * 
+ * @function stringToCamelCase
+ * @memberof Deprecated
+ * @deprecated
  */
 export function stringToCamelCase(str) { return str.replace(/\s(.)/g, ($1) => $1.toUpperCase()); }
 
@@ -23,5 +27,9 @@ export function stringToCamelCase(str) { return str.replace(/\s(.)/g, ($1) => $1
  * 
  * @param {string} str - the text to transform
  * @returns {string}
+ * 
+ * @function camelCaseToNormal
+ * @memberof Deprecated
+ * @deprecated
  */
 export function camelCaseToNormal(str) { return str.replace(/([A-Z])/g, ($1) => " " + $1.toLowerCase()); }

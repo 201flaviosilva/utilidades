@@ -9,6 +9,10 @@
  * 
  * @param {string} str - the text to transform
  * @returns {string}
+ * 
+ * @function stringToCapitalize
+ * @memberof Deprecated
+ * @deprecated
  */
 export function stringToCapitalize(str) { return str.charAt(0).toUpperCase() + str.slice(1); }
 
@@ -22,5 +26,9 @@ export function stringToCapitalize(str) { return str.charAt(0).toUpperCase() + s
  * 
  * @param {string} str - the text to transform
  * @returns {string}
+ * 
+ * @function capitalizeToNormal
+ * @memberof Deprecated
+ * @deprecated
  */
 export function capitalizeToNormal(str) { return str.charAt(0).toLowerCase() + str.slice(1); }
