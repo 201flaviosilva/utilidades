@@ -2,6 +2,7 @@ import * as Array from "./Array/index.js";
 import * as Device from "./Device/index.js";
 import * as DOM from "./DOM/index.js";
 import * as Maths from "./Maths/index.js";
+import * as Physics from "./Physics/index.js";
 import * as SortingAlgorithms from "./SortingAlgorithms/index.js";
 
 import { allCharactersSame } from "./allCharactersSame.js";
@@ -20,7 +21,6 @@ import { randomColor, randomColor0X, randomRGBColor, randomRGBAColor } from "./r
 import { randomNumber, randomInt, randomFloat } from "./randomNumber.js";
 import { randomString } from "./randomString.js";
 import { randomWalk1D, randomWalk2D, randomWalk3D } from "./randomWalk.js";
-import { topDownCarMovimentation } from "./topDownCarMovimentation.js";
 import { reverseString } from "./reverseString.js";
 import { Vector2 } from "./Vector2.js";
 
@@ -29,6 +29,7 @@ export {
 	Device,
 	DOM,
 	Maths,
+	Physics,
 	SortingAlgorithms,
 
 	BinarySearchTree, BinarySearchTreeInstance,
@@ -50,5 +51,4 @@ export {
 	randomString,
 	randomWalk1D, randomWalk2D, randomWalk3D,
 	reverseString,
-	topDownCarMovimentation,
 };

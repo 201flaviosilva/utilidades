@@ -22,7 +22,7 @@
     "jsDoc": "jsdoc -c jsdoc.conf.json",
     "types": "npx -p typescript tsc src/*.js --declaration --allowJs --emitDeclarationOnly --outDir types",
     "compile": "webpack --mode production",
-    "compile:css": "css-minify -d src/CSS/ -o build",
+    "compile:css": "css-minify -d src/CSSFreeStyle/ -o build",
     "build": "npm run clear && npm run compile && npm run compile:css && npm run jsDoc && npm run types",
     "bump": "npm run build && np"
   },
