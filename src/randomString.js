@@ -1,5 +1,4 @@
-import { randomInt } from "./randomNumber";
-
+import { choice } from "./Array/index.js";
 
 /**
  * Generates a random string, with capital and small letters, numbers and symbols
@@ -35,7 +34,7 @@ export function randomString(options = {
 	let generatedString = "";
 
 	for (let i = 0; i < options.numberCharacters; i++) {
-		generatedString += stringOptions[randomInt(0, stringOptions.length - 1)];
+		generatedString += choice(stringOptions);
 	}
 
 	return generatedString;
