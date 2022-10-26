@@ -1,3 +1,4 @@
+import * as Device from "./Device/index.js";
 import { deleteAllChildDom } from "./deleteAllChildDom.js";
 import { exportFile } from "./exportFile.js";
 import { KeyboardManager, KeyboardManagerInstance, KEYS } from "./KeyboardManager.js";
@@ -11,6 +12,8 @@ import { toggleFullScreen } from "./toggleFullScreen.js";
  * @namespace DOM
  */
 export {
+	Device,
+
 	deleteAllChildDom,
 	exportFile,
 	KeyboardManager, KeyboardManagerInstance, KEYS,
