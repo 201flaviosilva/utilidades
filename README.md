@@ -11,6 +11,11 @@ Just some simple JavaScript Utils.
 npm i 201flaviosilva-utils
 ```
 
+or
+```sh
+npm i https://github.com/201flaviosilva-labs/javascript-utils#v1.2.10
+```
+
 #### Import to the project
 ```js
 import { randomNumber } from "201flaviosilva-utils";

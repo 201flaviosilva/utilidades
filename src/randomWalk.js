@@ -49,7 +49,7 @@ export function randomWalk(
 		y: { min: -Infinity, max: Infinity, },
 		z: { min: -Infinity, max: Infinity, },
 	}) {
-	if (numberOfAxes = 1) {
 
+	if (numberOfAxes === 3) {
 	}
 }

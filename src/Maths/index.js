@@ -14,6 +14,7 @@ import { makeNegative } from "./makeNegative.js";
 import { map } from "./map.js";
 import { median } from "./median.js";
 import { mode } from "./mode.js";
+import { percentage } from "./percentage.js";
 import { multiplication } from "./multiplication.js";
 import { radiansToDegrees } from "./radiansToDegrees.js";
 import { range } from "./range.js";
@@ -42,6 +43,7 @@ export {
 	map,
 	median,
 	mode,
+	percentage,
 	multiplication,
 	radiansToDegrees,
 	range,

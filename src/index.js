@@ -1,5 +1,4 @@
 import * as Array from "./Array/index.js";
-import * as Deprecated from "./Deprecated/index.js";
 import * as Device from "./Device/index.js";
 import * as DOM from "./DOM/index.js";
 import * as Maths from "./Maths/index.js";
@@ -27,7 +26,6 @@ import { Vector2 } from "./Vector2.js";
 
 export {
 	Array,
-	Deprecated,
 	Device,
 	DOM,
 	Maths,

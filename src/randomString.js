@@ -27,12 +27,12 @@ export function randomString(options = {
 	const symbols = ["!", "\"", "@", "#", "€", "$", "£", "%", "‰", "&", "¶", "/", "(", "[", ")", "]", "=", "≠", "'", "?", "+", "*",];
 
 	let stringOptions = [];
-	stringOptions = options.capital ? [...stringOptions, ...capital] : [...stringOptions]
-	stringOptions = options.small ? [...stringOptions, ...small] : [...stringOptions]
-	stringOptions = options.numbers ? [...stringOptions, ...numbers] : [...stringOptions]
-	stringOptions = options.symbols ? [...stringOptions, ...symbols] : [...stringOptions]
+	stringOptions = options.capital ? [...stringOptions, ...capital] : [...stringOptions];
+	stringOptions = options.small ? [...stringOptions, ...small] : [...stringOptions];
+	stringOptions = options.numbers ? [...stringOptions, ...numbers] : [...stringOptions];
+	stringOptions = options.symbols ? [...stringOptions, ...symbols] : [...stringOptions];
 
-	let generatedString = ""
+	let generatedString = "";
 
 	for (let i = 0; i < options.numberCharacters; i++) {
 		generatedString += stringOptions[randomInt(0, stringOptions.length - 1)];
