@@ -1,4 +1,4 @@
-import { randomInt } from "./randomNumber";
+import { randomInt } from "./randomNumber.mjs";
 
 
 /**

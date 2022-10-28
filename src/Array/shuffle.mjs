@@ -1,5 +1,5 @@
-import { randomInt } from "../randomNumber";
-import { clone } from "../clone";
+import { randomInt } from "../randomNumber.mjs";
+import { clone } from "../clone.mjs";
 
 /**
  * This function will randomize the position of the array items. (change the original array!)

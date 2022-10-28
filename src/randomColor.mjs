@@ -1,4 +1,4 @@
-import { randomInt } from "./randomNumber.js";
+import { randomInt } from "./randomNumber.mjs";
 
 /**
  * Returns a random color hexadecimal

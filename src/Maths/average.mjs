@@ -1,4 +1,4 @@
-import { sum } from "./sum.js";
+import { sum } from "./sum.mjs";
 
 /**
  * Calculates a average/mean of all givens numbers
