@@ -8,6 +8,7 @@ import { binary2Decimal } from "./binary2Decimal.js";
 import { BinarySearchTree, BinarySearchTreeInstance } from "./BinarySearchTree.js";
 import { stringToCamelCase, camelCaseToNormal } from "./camelCase.js";
 import { stringToCapitalize, capitalizeToNormal } from "./capitalizeCase.js";
+import { choiceTrend } from "./choiceTrend.js";
 import { clone } from "./clone.js";
 import { compare2Objects } from "./compare2Objects.js";
 import { decimal2Binary } from "./decimal2Binary.js";
@@ -48,6 +49,7 @@ export {
 	binary2Decimal,
 	stringToCamelCase, camelCaseToNormal,
 	stringToCapitalize, capitalizeToNormal,
+	choiceTrend,
 	clone,
 	compare2Objects,
 	decimal2Binary,

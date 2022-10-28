@@ -18,7 +18,9 @@
     "clear": "rm -rf types && rm -rf docs && rm -rf build",
     "jsDoc": "jsdoc -c jsdoc.conf.json",
     "types": "npx -p typescript tsc src/*.js --declaration --allowJs --emitDeclarationOnly --outDir types",
-    "compile": "webpack --mode production",
+    "compile": "npm run compile:browser && npm run compile:node && npm run compile:css",
+    "compile:browser": "webpack --mode production --config ./scripts/webpack-browser.config.js",
+    "compile:node": "webpack --mode production --config ./scripts/webpack-node.config.js",
     "compile:css": "css-minify -d src/CSS/ -o build",
     "build": "npm run clear && npm run compile && npm run compile:css && npm run jsDoc && npm run types",
     "bump": "npm run build && np --no-tests"
