@@ -19,7 +19,7 @@ One way to do that it’s cloning the repository, opening a new terminal, and pa
 
 (You need to have git installed on your machine)
 ```sh
-git clone https://gitlab.com/201flaviosilva/utilsjs.git
+git clone https://github.com/201flaviosilva-labs/javascript-utils.git
 ```
 
 ### Install the decencies
@@ -38,7 +38,9 @@ npm install
 
 ## Step 1 - webpack.config.js
 
-In the file tree you'll find a `webpack.config.js` file, open and you will find a configuration more or less similar to the one below.
+If you want you can open the project in any code editor, I recommend [VS Code](https://code.visualstudio.com/).
+
+In the file tree you'll find a `scripts/webpack.config.js` file, open and you will find a configuration more or less similar to the one below.
 
 ```javascript
 const path = require("path");
@@ -94,6 +96,6 @@ In the property `libraryTarget` you'll find the target of the library.
 
 ## Step 3 - Build
 
-Finally, you'll need to run the command `npm run compile` in the terminal.
+Finally, you'll need to run the command `webpack --mode production --config ./scripts/webpack.config.js` in the terminal.
 
 Check your folder tree, and in the folder build you'll find the file build file with the name of the file you've changed in the configuration.

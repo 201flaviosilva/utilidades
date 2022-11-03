@@ -1,5 +1,4 @@
 import * as Array from "./Array/index.js";
-import * as Device from "./Device/index.js";
 import * as DOM from "./DOM/index.js";
 import * as Maths from "./Maths/index.js";
 import * as SortingAlgorithms from "./SortingAlgorithms/index.js";
@@ -9,9 +8,11 @@ import { binary2Decimal } from "./binary2Decimal.js";
 import { BinarySearchTree, BinarySearchTreeInstance } from "./BinarySearchTree.js";
 import { stringToCamelCase, camelCaseToNormal } from "./camelCase.js";
 import { stringToCapitalize, capitalizeToNormal } from "./capitalizeCase.js";
+import { choiceTrend } from "./choiceTrend.js";
 import { clone } from "./clone.js";
 import { compare2Objects } from "./compare2Objects.js";
 import { decimal2Binary } from "./decimal2Binary.js";
+import { getDate } from "./getDate.js"; // getTime, getMilliseconds, getSeconds, getMinutes, getHours, getDay, getWeekDay, getWeek, getMonth, getYear, getDateFormatted 
 import { EventSystem, EventSystemInstance } from "./EventSystem.js";
 import { Fibonacci, fibonacciSequence, fibonacciUntil, fibonacciCustomSequence, recursiveFibonacci } from "./Fibonacci.js";
 import { FIFO } from "./FIFO.js";
@@ -33,7 +34,6 @@ import { Vector2 } from "./Vector2.js";
 
 export {
 	Array,
-	Device,
 	DOM,
 	Maths,
 	SortingAlgorithms,
@@ -49,9 +49,11 @@ export {
 	binary2Decimal,
 	stringToCamelCase, camelCaseToNormal,
 	stringToCapitalize, capitalizeToNormal,
+	choiceTrend,
 	clone,
 	compare2Objects,
 	decimal2Binary,
+	getDate,
 	getUrlParameter,
 	getVersion,
 	invertSentence, invertWords,
