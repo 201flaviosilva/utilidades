@@ -13,10 +13,13 @@ export class Node {
 
 /**
  * @class BinarySearchTree
- * @classdesc
+ * @classdesc 
  * Starts a Binary Search Tree algorithm
  * 
+ * Online example {@link https://8jn8z1.csb.app/}
+ * 
  * @see{@link https://en.wikipedia.org/wiki/Binary_search_tree}
+ * 
  * 
  * @example 
  * const bst = new BinarySearchTree();
@@ -27,9 +30,10 @@ export class Node {
  * @constructor
  */
 export class BinarySearchTree {
-	constructor() {
+	constructor(startValue) {
 		this.root = null;
 		this.count = 0;
+		if (startValue !== undefined) this.add(startValue);
 	}
 
 	/**
@@ -101,7 +105,7 @@ export class BinarySearchTree {
 	 * - If no value is passed, it will start from the root;
 	 * 
 	 * @param {number} value - the value to start searching
-	 * @returns {number} smaller value
+	 * @returns {number|undefined} smaller value
 	 * @memberof BinarySearchTree
 	 */
 	smaller(value) {
@@ -109,7 +113,7 @@ export class BinarySearchTree {
 		let current = this.search(value || this.root.value);
 		do {
 			if (current.left === null) { // No more Smaller number
-				return current;
+				return current.value;
 			} else {
 				current = current.left;
 			}
@@ -123,7 +127,7 @@ export class BinarySearchTree {
 	 * - If no value is passed, it will start from the root;
 	 * 
 	 * @param {number} value - the value to start searching
-	 * @returns {number} largest value
+	 * @returns {number|undefined} largest value
 	 * @memberof BinarySearchTree
 	 */
 	larger(value) {
@@ -131,7 +135,7 @@ export class BinarySearchTree {
 		let current = this.search(value || this.root.value);
 		do {
 			if (current.right === null) { // No more Larger number
-				return current;
+				return current.value;
 			} else {
 				current = current.right;
 			}
@@ -143,14 +147,12 @@ export class BinarySearchTree {
 	 * - If the number exists, return its node
 	 * 
 	 * @param {number} value - the value to find
-	 * @returns {boolean|Node} if the value is in the Tree
+	 * @returns {Node} if the value is in the Tree
 	 * @memberof BinarySearchTree
 	 */
 	search(value) {
-		if (typeof value !== "number") {
-			console.error("Value need to be a number!");
-			return false;
-		}
+		if (!this.root) return;
+		if (typeof value !== "number") throw new Error("Value need to be a number!");
 
 		let current = this.root;
 		while (current) {
@@ -179,29 +181,25 @@ export class BinarySearchTree {
 		if (!node) return false;
 
 		if (node.left === null && node.right === null) { // No child
-			if (node.parent.left.value === node.value) {
-				node.parent.left = null;
-			} else {
-				node.parent.right = null;
-			}
+			if (node.parent.left?.value === node.value) node.parent.left = null;
+			else node.parent.right = null;
 
 		} else if ((node.left !== null && node.right === null) || (node.left === null && node.right !== null)) { // One Child
 			const fixChildNode = node.left || node.right;
 			fixChildNode.parent = node.parent;
-			if (node.parent.left.value === node.value) {
-				node.parent.left = fixChildNode;
-			} else {
-				node.parent.right = fixChildNode;
-			}
+
+			if (node.parent.left?.value === node.value) node.parent.left = fixChildNode;
+			else node.parent.right = fixChildNode;
 
 		} else if (node.left !== null && node.right !== null) { // Two children
-			let currentNode = node.right;
-			currentNode = this.smaller(currentNode.value);
-			node.value = currentNode.value;
-			currentNode.parent.left = null;
+			const biggestNode = this.search(this.larger(node.left.value));
 
+			if (biggestNode.value === node.left.value) node.left = null;
+			else biggestNode.parent.right = null;
 
-		} else console.error("Error deleting value"); // Error
+			node.value = biggestNode.value;
+
+		} else throw new Error("Error deleting value");
 	}
 }
 

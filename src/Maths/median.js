@@ -1,5 +1,5 @@
-import { isEven } from "./isEvenOdd";
-import { sortAscending } from "../Array/sortAscending";
+import { isEven } from "./isEvenOdd.js";
+import { sortAscending } from "../Array/sortAscending.js";
 
 /**
  * Returns the median of the givens numbers

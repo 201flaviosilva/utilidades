@@ -1,4 +1,4 @@
-import { randomInt } from "../randomNumber";
+import { randomInt } from "../randomNumber.js";
 
 /**
  * Returns a random item from the array
