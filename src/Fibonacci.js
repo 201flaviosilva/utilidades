@@ -17,8 +17,31 @@
  */
 export class Fibonacci {
 	constructor() {
-		this.lastNumber = 0;
-		this.currentNumber = 1;
+		/**
+		 * Used as helper value to calculate the next number.
+		 * 
+		 * Used to save the last valeu
+		 * 
+		 * @type {number}
+		 * @private
+		 */
+		this._lastNumber = 0;
+
+		/**
+		 * Used as helper value to calculate the next number.
+		 * 
+		 * Used to save the next valeu
+		 * 
+		 * @type {number[]}
+		 * @private
+		 */
+		this._currentNumber = 1;
+
+		/**
+		 * Contains the current state of the sequence
+		 * 
+		 * @type {number[]}
+		 */
 		this.sequence = [0];
 	}
 
@@ -31,13 +54,13 @@ export class Fibonacci {
 	 * @memberof Fibonacci
 	 */
 	next() {
-		const x = this.currentNumber + this.lastNumber;
-		this.lastNumber = this.currentNumber;
-		this.currentNumber = x;
+		const x = this._currentNumber + this._lastNumber;
+		this._lastNumber = this._currentNumber;
+		this._currentNumber = x;
 
 		this.sequence.push(x);
 
-		return this.currentNumber;
+		return this._currentNumber;
 	}
 
 	/**
@@ -54,12 +77,12 @@ export class Fibonacci {
 	 */
 	before() {
 		if (this.sequence.length > 1) {
-			this.lastNumber = this.currentNumber - this.lastNumber;
-			this.currentNumber = this.currentNumber - this.lastNumber;
+			this._lastNumber = this._currentNumber - this._lastNumber;
+			this._currentNumber = this._currentNumber - this._lastNumber;
 
 			this.sequence.pop();
 
-			return this.currentNumber;
+			return this._currentNumber;
 		}
 	}
 }
@@ -129,7 +152,6 @@ export function fibonacciCustomSequence(start = 1, end = 100) {
 	return sequence;
 }
 
-
 /**
  * A other way to solve the fibonacci sequence, with recursion.
  * 
@@ -140,7 +162,7 @@ export function fibonacciCustomSequence(start = 1, end = 100) {
  * @param {number} terms - number of terms
  * @returns {number}
  */
-export function recursiveFibonacci(terms) {
+export function recursiveFibonacci(terms = 10) {
 	if (terms <= 1) return terms;
 	return recursiveFibonacci(terms - 1) + recursiveFibonacci(terms - 2);
 }
