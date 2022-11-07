@@ -1,3 +1,4 @@
+import { negative } from "./Maths/negative.js";
 /**
  * @class Vector2
  * @classdesc
@@ -7,11 +8,11 @@
  * @see {@link https://github.com/photonstorm/phaser/blob/v3.51.0/src/math/Vector2.js}
  * @see {@link https://docs.unity3d.com/ScriptReference/Vector2.html}
  * 
- * @param {number} x - the x value
- * @param {number} [y=x] y - the x value
+ * @param {number|object} [x=0] - the x value
+ * @param {number} [y=x] y - the y value
  * 
- * @example new Vector2(56, 78);
- * @example Vector2.zero();
+ * @example new Vector2(56, 78); // (56, 78)
+ * @example Vector2.zero(); // (0,0)
  * 
  * @constructor
  */
@@ -35,45 +36,31 @@ export class Vector2 {
 		 */
 		this.y = 0;
 
-		if (typeof x === "object") {
-			this.x = x.x || 0;
-			this.y = x.y || 0;
-		} else {
-			if (y === undefined) { y = x; }
-
-			this.x = x || 0;
-			this.y = y || 0;
-		}
+		this.set(x, y);
 	}
 
 	/**
 	 * Set x and y components of an existing Vector2.
 	 * 
 	 * @example new Vector2(1, 2).set(3, 4); // (3, 4)
+	 * @example new Vector2(1, 2).set({5.-10}); // (5, -10)
+	 * @example new Vector2(1, 2).set(new Vector2(-100, 55)); // (-100, 5)
 	 * 
-	 * @param {number} x - the new X value
-	 * @param {number} [y=x] y - the new Y value
+	 * @param {number|Vector2} [x=0] - the new X value
+	 * @param {number} [y=x] - the new Y value
+	 * @return {Vector2} This Vector2
 	 * @memberof Vector2
 	 */
 	set(x = 0, y = x) {
-		this.x = x;
-		this.y = y;
-	}
+		if (typeof x === "object") {
+			this.x = x.x || 0;
+			this.y = x.y || 0;
+		} else {
+			this.x = x || 0;
+			this.y = y || 0;
+		}
 
-	/**
-	 * Update this vector based on the given one
-	 * 
-	 * @example new Vector2(1, 2).set(new Vector2(3, 4)); // (3, 4)
-	 * @example 
-	 * const myVector = new Vector2(1, 2);
-	 * myVector.setVector(myVector.add(new Vector2(5))); // (6, 7)
-	 * 
-	 * @param {Vector2} vector - the vector to update this one
-	 * @memberof Vector2
-	 */
-	setVector(vector) {
-		this.x = vector.x;
-		this.y = vector.y;
+		return this;
 	}
 
 	/**
@@ -85,22 +72,6 @@ export class Vector2 {
 	 * @memberof Vector2
 	 */
 	clone() { return new Vector2(this.x, this.y); }
-
-	/**
-	 * Copy the value off the given Vector2 and change in this Vector2
-	 * 
-	 * @example new Vector2(0, 0).copy(new Vector2(1, 2)) // (1, 2)
-	 * 
-	 * @param {Vector2} vector2 - the vector to copy the values
-	 * @returns {Vector} This Vector2
-	 * @memberof Vector2
-	 */
-	copy(vector2) {
-		this.x = vector2.x || 0;
-		this.y = vector2.y || 0;
-
-		return this;
-	}
 
 	/**
 	 * Add the values of this vector 2 with the values of the given vector2
@@ -181,7 +152,7 @@ export class Vector2 {
 	}
 
 	/**
-	 * Dot Product of two vectors.
+	 * Dot product of two vectors.
 	 * 
 	 * @example new Vector2(10,5).dot(new Vector2(5)); // 75
 	 * 
@@ -189,10 +160,14 @@ export class Vector2 {
 	 * @returns {number}
 	 * @memberof Vector2
 	 */
-	dot(vector) { return (this.x * vector.x + this.y + vector.y); }
+	dot(vector) { return (this.x * vector.x + this.y * vector.y); }
 
 	/**
-	 * Linearly interpolates between vectors A and B by t. t = 0 returns A, t = 1 returns B
+	 * Linearly interpolates between vectors A and B by t. 
+	 * 
+	 * t = 0 returns A;
+	 * 
+	 * t = 1 returns B;
 	 * 
 	 * @param {Vector2} vector - the vector to interpolate
 	 * @param {number} t - time
@@ -227,7 +202,11 @@ export class Vector2 {
 	 * @returns {number}
 	 * @memberof Vector2
 	 */
-	distance(vector) { return Math.sqrt(this.distanceSqr(vector)); }
+	distance(vector) {
+		const deltaX = this.x - vector.x;
+		const deltaY = this.y - vector.y;
+		return (deltaX * deltaX + deltaY * deltaY);
+	}
 
 	/**
 	 * Returns the squared distance between this vector and a given vector.
@@ -236,29 +215,37 @@ export class Vector2 {
 	 * @returns {number}
 	 * @memberof Vector2
 	 */
-	distanceSqr(vector) {
-		const deltaX = this.x - vector.x;
-		const deltaY = this.y - vector.y;
-		return (deltaX * deltaX + deltaY * deltaY);
-	}
+	distanceSqrt(vector) { return Math.sqrt(this.distance(vector)); }
 
 	/**
 	 * Returns this vector with a magnitude of 1 (Read Only).
 	 * 
-	 * @returns {Vector2}
+	 * @returns {Vector2} this vector
 	 * @memberof Vector2
 	 */
 	normalize() {
 		const mag = this.magnitude();
-		const vector = this.clone();
+
 		if (Math.abs(mag) < 1e-9) {
-			vector.x = 0;
-			vector.y = 0;
+			this.x = 0;
+			this.y = 0;
 		} else {
-			vector.x /= mag;
-			vector.y /= mag;
+			this.x /= mag;
+			this.y /= mag;
 		}
-		return vector;
+
+		return this;
+	}
+
+	/**
+	 * Calculate the angle between this Vector and the given Vector.
+	 * 
+	 * @param {Vector2} vector - the vector to get the angle
+	 * @returns {number} the result in radians
+	 * @memberof Vector2
+	 */
+	diferenceAngle(vector) {
+		return Math.atan2(vector.y - this.y, vector.x - this.x);
 	}
 
 	/**
@@ -338,6 +325,20 @@ export class Vector2 {
 	absolute() {
 		this.x = Math.abs(this.x);
 		this.y = Math.abs(this.y);
+		return this;
+	}
+
+	/**
+	 * Change the values to negative values
+	 * 
+	 * @example new Vector2(-1, 5).negative() // (-1, -5)
+	 * 
+	 * @returns {Vector2} This Vector2.
+	 * @memberof Vector2
+	 */
+	negative() {
+		this.x = negative(this.x);
+		this.y = negative(this.y);
 		return this;
 	}
 
