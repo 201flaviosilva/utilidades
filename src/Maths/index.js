@@ -16,6 +16,7 @@ import { median } from "./median.js";
 import { mode } from "./mode.js";
 import { percentage } from "./percentage.js";
 import { multiplication } from "./multiplication.js";
+import { negative } from "./negative.js";
 import { radiansToDegrees } from "./radiansToDegrees.js";
 import { range } from "./range.js";
 import { subtraction } from "./subtraction.js";
@@ -45,6 +46,7 @@ export {
 	mode,
 	percentage,
 	multiplication,
+	negative,
 	radiansToDegrees,
 	range,
 	subtraction,
