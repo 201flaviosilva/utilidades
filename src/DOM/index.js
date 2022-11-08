@@ -1,3 +1,4 @@
+import * as Device from "./Device/index.js";
 import { deleteAllChildDom } from "./deleteAllChildDom.js";
 import { exportFile } from "./exportFile.js";
 import { getUrlParameter } from "./getUrlParameter.js";
@@ -12,6 +13,8 @@ import { toggleFullScreen } from "./toggleFullScreen.js";
  * @namespace DOM
  */
 export {
+	Device,
+
 	deleteAllChildDom,
 	exportFile,
 	getUrlParameter,

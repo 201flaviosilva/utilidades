@@ -9,11 +9,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 This file was based on [this template](https://gist.github.com/juampynr/4c18214a8eb554084e21d6e288a18a2c).
 
 ----
+## [1.3 - Tests and monorepo](https://github.com/201flaviosilva-labs/javascript-utils/milestone/4)
+
+### [1.3.0] - 00-11-2022
+ 
+#### Added
+
+#### Changed
+
+#### Fixed
+
+#### Breaking Changes
+
+
 ## [1.2.0 - More Functions](https://github.com/201flaviosilva-labs/javascript-utils/milestone/2)
 
-## [1.2.10] - 21-10-2022
+### [1.2.10] - 21-10-2022
  
-### Added
+#### Added
 - [Add some Sorting Algorithm](https://github.com/201flaviosilva-labs/javascript-utils/commit/5d248aa08a3f4de28843aa5c788bfe9cc55f9fda);
 - [Array New Sort](https://github.com/201flaviosilva-labs/javascript-utils/commit/9260d39f2d567705d09aa0ee2b69fec2a429b3c2) - Return a new array sorted based in the given one;
 - [Array Is Sorted](https://github.com/201flaviosilva-labs/javascript-utils/commit/9260d39f2d567705d09aa0ee2b69fec2a429b3c2) - Check if the array is sorted;
@@ -26,11 +39,11 @@ This file was based on [this template](https://gist.github.com/juampynr/4c18214a
 - [getOSVersion](https://github.com/201flaviosilva-labs/javascript-utils/commit/c81f718f9497adc9f69f057950f7594b12dfa52d) - Returns the OS version #44;
 - [isMobile](https://github.com/201flaviosilva-labs/javascript-utils/commit/c81f718f9497adc9f69f057950f7594b12dfa52d) - Check if is in a mobile device #44;
 
-### Changed
+#### Changed
 - [Add more examples to the functions](https://github.com/201flaviosilva-labs/javascript-utils/commit/06c75f5b84da32b9af4521eab48afc3d4982a8aa);
 - [`and` and `or` can receive infinity args](https://github.com/201flaviosilva-labs/javascript-utils/commit/2473d089c7a699650abfce108425ee0d479ce7e7) #88;
  
-### Fixed
+#### Fixed
 
 #### Breaking Changes
 - Move project from GitLab to GitHub;
@@ -43,19 +56,19 @@ This file was based on [this template](https://gist.github.com/juampynr/4c18214a
 - [Removed Games](https://github.com/201flaviosilva-labs/javascript-utils/commit/40367810b608d5271f2795df44ec4e7dea02fd29);
 
 
-## [1.2.9] - 02-09-2022
+### [1.2.9] - 02-09-2022
  
-### Added
+#### Added
 - [Random Walk](https://github.com/201flaviosilva-labs/javascript-utils/commit/56eebcaac033c05401140c4418b54e9579fb8d38) #46;
 - [Binary Search Tree](https://github.com/201flaviosilva-labs/javascript-utils/commit/b141db4e7a0089a7c99a9ca8a70f7a37f73d59ef) #11;
 
-### Changed
+#### Changed
 - ["Skip" zones in range](https://github.com/201flaviosilva-labs/javascript-utils/commit/b0d7a1d585f194c093ba22f621ebf71a0d5ce793) #68;
  
-### Fixed
+#### Fixed
 - [Median](https://github.com/201flaviosilva-labs/javascript-utils/commit/bb9e8d4aba6f64cc6752b7f0853460c2edc03d74);
 
-### Breaking Changes
+#### Breaking Changes
  - `findBigArrObj` and `getMaxArrayObjects` change to `arrayFindBigObject` #74;
  - `findLowArrObj` and `getMinArrayObjects` change to `arrayFindLowObject` #74;
  - `sortAscending` change to `arraySortAscending` #74;
