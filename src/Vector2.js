@@ -1,4 +1,7 @@
+import { clamp } from "./Maths/clamp.js";
 import { negative } from "./Maths/negative.js";
+import { radiansToDegrees } from "./Maths/radiansToDegrees.js";
+
 /**
  * @class Vector2
  * @classdesc
@@ -92,7 +95,11 @@ export class Vector2 {
 	/**
 	 * Subtracts the values of vector 2 with the values of the given vector2
 	 * 
+	 * Normally used to get the distance between two vectors.
+	 * 
 	 * @example new Vector2(1,2).subtract(new Vector2(10)); // (-9, -8)
+	 * @example new Vector2(0).distanceVector(new Vector2(10, 5)); // (10, 5)
+	 * @example new Vector2(5, 10).distanceVector(new Vector2(10, 5)); // (5, -5)
 	 * 
 	 * @param {Vector2} vector - the vector to subtract
 	 * @returns {Vector2} This Vector2
@@ -163,46 +170,62 @@ export class Vector2 {
 	dot(vector) { return (this.x * vector.x + this.y * vector.y); }
 
 	/**
-	 * Linearly interpolates between vectors A and B by t. 
+	 * Linearly interpolates between current vector and the given vector by time. 
 	 * 
-	 * t = 0 returns A;
+	 * @example new Vector2(5,10).moveTowards(); // (0,0)
+	 * @example new Vector2(5,10).moveTowards(new Vector2(5, 10)); // (5,10)
+	 * @example new Vector2(5,10).moveTowards(new Vector2(5, 10), 0.5); // (7.5, 7.5)
 	 * 
-	 * t = 1 returns B;
-	 * 
-	 * @param {Vector2} vector - the vector to interpolate
-	 * @param {number} t - time
-	 * @returns {number}
+	 * @param {Vector2} target - the vector to interpolate
+	 * @param {number} step - step, distance of the target (between 0, and 1)
+	 * @returns {Vector2} this vector changed
 	 * @memberof Vector2
 	 */
-	moveTowards(vector, t) {
-		t = Math.min(t, 1); // still allow negative t
-		const diff = vector.subtract(this);
-		return this.add(diff.scale(t));
+	moveTowards(target = Vector2.zero(), step = 1) {
+		step = clamp(step, 0, 1);
+
+		const diff = target.subtract(this);
+		const diffSteep = diff.scale(step);
+		return this.add(diffSteep);
 	}
 
 	/**
-	 * Returns the length of this vector (Read Only).
-	 * @returns {number}
-	 * @memberof Vector2
-	 */
-	magnitude() { return Math.sqrt(this.magnitudeSqr()); }
-
-	/**
-	 * Returns the squared length of this vector (Read Only).
+	 * Returns the length of this vector.
+	 * 
+	 * @example new Vector2(0).magnitude(); // 0
+	 * @example new Vector2(1).magnitude(); // 2
+	 * @example new Vector2(2).magnitude(); // 8
+	 * @example new Vector2(5, 10).magnitude(); // 125
 	 * 
 	 * @returns {number}
 	 * @memberof Vector2
 	 */
-	magnitudeSqr() { return (this.x * this.x + this.y * this.y); }
+	magnitude() { return (this.x * this.x + this.y * this.y); }
+
+	/**
+	 * Returns the squared length of this vector.
+	 * 
+	 * @example new Vector2(0).magnitude(); // 0
+	 * @example new Vector2(1).magnitude(); // 1.4142135623730951
+	 * @example new Vector2(2).magnitude(); // 2.8284271247461903
+	 * @example new Vector2(5, 10).magnitude(); // 11.180339887498949
+	 * 
+	 * @returns {number}
+	 * @memberof Vector2
+	 */
+	magnitudeSqr() { return Math.sqrt(this.magnitude()); }
 
 	/**
 	 * Returns the distance between this vector and a given vector.
+	 * 
+	 * @example new Vector2(5, 10).distance(); // 125
+	 * @example new Vector2(5, 10).distance(new Vector2(100, 20))); // 9125
 	 * 
 	 * @param {Vector2} vector - the vector to compare
 	 * @returns {number}
 	 * @memberof Vector2
 	 */
-	distance(vector) {
+	distance(vector = Vector2.zero()) {
 		const deltaX = this.x - vector.x;
 		const deltaY = this.y - vector.y;
 		return (deltaX * deltaX + deltaY * deltaY);
@@ -211,6 +234,10 @@ export class Vector2 {
 	/**
 	 * Returns the squared distance between this vector and a given vector.
 	 * 
+	 * @example new Vector2(5, 10).distanceSqrt(); // 11.180339887498949
+	 * @example new Vector2(5, 10).distanceSqrt(new Vector2(100, 20)); // 95.524865872714
+	 * @example Vector2.zero().distanceSqrt(new Vector2(100, 20)); // 101.9803902718557
+	 * 
 	 * @param {Vector2} vector - the vector to compare
 	 * @returns {number}
 	 * @memberof Vector2
@@ -218,13 +245,17 @@ export class Vector2 {
 	distanceSqrt(vector) { return Math.sqrt(this.distance(vector)); }
 
 	/**
-	 * Returns this vector with a magnitude of 1 (Read Only).
+	 * Returns this vector with a magnitude of 1.
 	 * 
-	 * @returns {Vector2} this vector
+	 * @example new Vector2(5, 10).normalize()); // (0.4472135954999579, 0.8944271909999159)
+	 * @example new Vector2(1000, 123).normalize()); // (0.9925202644900105, 0.1220799925322713)
+	 * @example Vector2.zero().normalize()); // (0, 0)
+	 * 
+	 * @returns {Vector2} this vector normalized
 	 * @memberof Vector2
 	 */
 	normalize() {
-		const mag = this.magnitude();
+		const mag = this.distanceSqrt();
 
 		if (Math.abs(mag) < 1e-9) {
 			this.x = 0;
@@ -240,41 +271,44 @@ export class Vector2 {
 	/**
 	 * Calculate the angle between this Vector and the given Vector.
 	 * 
-	 * @param {Vector2} vector - the vector to get the angle
-	 * @returns {number} the result in radians
+	 * @example new Vector2(5, 10).diferenceAngle(new Vector2(5, 10)); // 0
+	 * @example new Vector2(1000, 123).diferenceAngle(new Vector2(5, 10)); // -173.52080244507272
+	 * @example Vector2.zero().diferenceAngle(new Vector2(90, 90)); // 45
+	 * 
+	 * @param {Vector2} target - the vector to get the angle
+	 * @returns {number} 
 	 * @memberof Vector2
 	 */
-	diferenceAngle(vector) {
-		return Math.atan2(vector.y - this.y, vector.x - this.x);
+	diferenceAngle(target) {
+		return radiansToDegrees(Math.atan2(target.y - this.y, target.x - this.x));
 	}
 
 	/**
-	 * Calculate the angle between this Vector and the positive x-axis, in radians.
+	 * Calculate the angle between this Vector and the positive x-axis.
 	 * 
 	 * @see {@link https://github.com/photonstorm/phaser/blob/v3.51.0/src/math/Vector2.js#L215}
 	 * 
-	 * @returns {number}
+	 * @returns {number} the result
 	 * @memberof Vector2
 	 */
 	angle() {
 		let angle = Math.atan2(this.y, this.x);
 		if (angle < 0) angle += 2 * Math.PI;
-		return angle;
+		return radiansToDegrees(angle);
 	}
 
 	/**
 	 * Return a new vector rotated
 	 * 
-	 * @param {number} alpha 
+	 * @param {number} [radians=0] the radians to rotate
 	 * @returns {Vector2}
 	 */
-	rotate(alpha) {
-		const cos = Math.cos(alpha);
-		const sin = Math.sin(alpha);
-		const vector = new Vector2();
-		vector.x = this.x * cos - this.y * sin;
-		vector.y = this.x * sin + this.y * cos;
-		return vector;
+	rotate(radians = 0) {
+		const cos = Math.cos(radians);
+		const sin = Math.sin(radians);
+		const x = this.x * cos - this.y * sin;
+		const y = this.x * sin + this.y * cos;
+		return this.set(x, y);
 	}
 
 	/**
@@ -286,15 +320,17 @@ export class Vector2 {
 	 * @returns {Vector2}
 	 * @memberof Vector2
 	 */
-	toPrecision(precision) {
-		const vector = this.clone();
-		vector.x = Number(vector.x.toFixed(precision));
-		vector.y = Number(vector.y.toFixed(precision));
-		return vector;
+	toPrecision(precision = 1) {
+		this.x = Number(this.x.toFixed(precision));
+		this.y = Number(this.y.toFixed(precision));
+		return this;
 	}
 
 	/**
 	 * Returns true if the given vector is exactly equal to this vector.
+	 * 
+	 * @example new Vector2(5, 10).equals(new Vector2(5, 10)); // true
+	 * @example new Vector2(10, 5).equals(new Vector2(5, 10)) // false
 	 * 
 	 * @param {Vector2} vector - the vector to compare
 	 * @returns {boolean}
@@ -308,18 +344,15 @@ export class Vector2 {
 	 * @returns {string}
 	 * @memberof Vector2
 	 */
-	toString() {
-		const vector = this.toPrecision(1);
-		return ("[" + vector.x + "; " + vector.y + "]");
-	}
+	toString() { return ("[" + this.x + "; " + this.y + "]"); }
 
 	/**
 	 * Change the values to absolute values
 	 * 
-	 * @example new Vector2(-1, 5).invert() // (1, 5)
+	 * @example new Vector2(-1, 5).absolute() // (1, 5)
 	 * 
 	 * @see {@link https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/abs}
-	 * @returns {Vector2} This Vector2.
+	 * @returns {Vector2} this Vector2 updated
 	 * @memberof Vector2
 	 */
 	absolute() {
@@ -343,6 +376,21 @@ export class Vector2 {
 	}
 
 	/**
+	 * Negate the `x` and `y` components of this Vector.
+	 * 
+	 * @example new Vector2(-1, 5).negate() // (1, 5)
+	 *
+	 * @return {Vector2} this Vector2
+	 * @memberof Vector2
+	 */
+	negate() {
+		this.x = this.x * -1;
+		this.y = this.y * -1;
+
+		return this;
+	}
+
+	/**
 	 * Invert the X and Y values of this Vector2
 	 * 
 	 * @example new Vector2(-1, 5).invert() // (5, -1)
@@ -359,20 +407,10 @@ export class Vector2 {
 	}
 
 	/**
-	 * Negate the `x` and `y` components of this Vector.
-	 *
-	 * @return {Vector2} this Vector2
-	 * @memberof Vector2
-	 */
-	negate() {
-		this.x = -this.x;
-		this.y = -this.y;
-
-		return this;
-	}
-
-	/**
 	 * Shorthand for writing Vector2(0, 0).
+	 * 
+	 * @example Vector2.zero()
+	 * 
 	 * @returns {Vector2}
 	 * @memberof Vector2
 	 */
@@ -380,6 +418,9 @@ export class Vector2 {
 
 	/**
 	 * Shorthand for writing Vector2(1, 1).
+	 *		* 
+		* 	 * @example Vector2.zero()
+		*
 	 * @returns {Vector2}
 	 * @memberof Vector2
 	 */
@@ -387,6 +428,9 @@ export class Vector2 {
 
 	/**
 		* Shorthand for writing Vector2(Infinity, Infinity).
+		*
+		* @example Vector2.zero()
+		*
 		* @returns {Vector2}
 		* @memberof Vector2
 		*/
@@ -394,27 +438,39 @@ export class Vector2 {
 
 	/**
 		* Shorthand for writing Vector2(-Infinity, -Infinity).
+		*
+		* @example Vector2.zero()
+		*
 		* @returns {Vector2}
 		* @memberof Vector2
 		*/
 	static negativeInfinity() { return new Vector2(-Infinity); }
 
 	/**
-		* Shorthand for writing Vector2(0, 1).
+		* Shorthand for writing Vector2(0, -1).
+		*
+		* @example Vector2.zero()
+		*
 		* @returns {Vector2}
 		* @memberof Vector2
 		*/
-	static up() { return new Vector2(0, 1); }
+	static up() { return new Vector2(0, -1); }
 
 	/**
-		* Shorthand for writing Vector2(0, -1).
+		* Shorthand for writing Vector2(0, 1).
+		*
+		* @example Vector2.zero()
+		*
 		* @returns {Vector2}
 		* @memberof Vector2
 		*/
-	static down() { return new Vector2(0, -1); }
+	static down() { return new Vector2(0, 1); }
 
 	/**
 		* Shorthand for writing Vector2(-1, 0).
+		*
+		* @example Vector2.zero()
+		*
 		* @returns {Vector2}
 		* @memberof Vector2
 		*/
@@ -422,6 +478,9 @@ export class Vector2 {
 
 	/**
 		* Shorthand for writing Vector2(1, 0).
+		*
+		* @example Vector2.zero()
+		*
 		* @returns {Vector2}
 		* @memberof Vector2
 		*/
