@@ -16,15 +16,15 @@
   ],
   "scripts": {
     "clear": "rm -rf types && rm -rf docs && rm -rf build",
-    "test": "jest --watchAll=true --config=jest.config.js",
-    "test:all": "jest",
+    "test": "jest",
+    "test:dev": "jest --watchAll=true --config=jest.config.js",
     "jsdoc": "jsdoc -c jsdoc.conf.json",
     "types": "npx -p typescript tsc src/*.js --declaration --allowJs --emitDeclarationOnly --outDir types",
     "compile": "npm run compile:browser && npm run compile:node",
     "compile:browser": "webpack --mode production --config ./scripts/webpack-browser.config.js",
     "compile:node": "webpack --mode production --config ./scripts/webpack-node.config.js",
     "build": "npm run clear && npm run compile && npm run jsdoc && npm run types",
-    "bump": "npm run build && np"
+    "bump": "npm run build && np --no-cleanup"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",
