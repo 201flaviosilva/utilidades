@@ -16,6 +16,7 @@ import { allCharactersSame } from "./allCharactersSame.js";
 import { binary2Decimal } from "./binary2Decimal.js";
 import { compare2Objects } from "./compare2Objects.js";
 import { decimal2Binary } from "./decimal2Binary.js";
+import { choiceTrend } from "./choiceTrend.js";
 import { clone } from "./clone.js";
 import { getDate } from "./getDate.js";
 import { getVersion } from "./getVersion.js";
