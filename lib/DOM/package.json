@@ -22,7 +22,9 @@
     "types": "npx -p typescript tsc src/*.js --declaration --allowJs --emitDeclarationOnly --outDir types",
     "compile": "webpack --mode production --config ./webpack.config.js",
     "build": "npm run clear && npm run compile && npm run jsdoc && npm run types",
-    "bump": "npm run build && np"
+    "bump": "npm run test && npm run build && npm version patch --force && npm publish",
+    "bump:minor": "npm run test && npm run build && npm version minor --force && npm publish",
+    "bump:major": "npm run test && npm run build && npm version major --force && npm publish"
   },
   "dependencies": {
     "201flaviosilva-utils": "^1.2.10"
