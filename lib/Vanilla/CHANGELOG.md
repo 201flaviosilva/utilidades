@@ -11,15 +11,19 @@ This file was based on [this template](https://gist.github.com/juampynr/4c18214a
 ----
 ## [1.3 - Tests and monorepo](https://github.com/201flaviosilva-labs/javascript-utils/milestone/4)
 
-### [1.3.0] - 00-11-2022
+### [1.3.2] - 00-01-2023
  
 #### Added
 
 #### Changed
 
 #### Fixed
+- Fixed multiple function based on the tests;
 
 #### Breaking Changes
+
+#### Removed
+- SortingAlgorithms - Moved sort function to the [play-code project](https://github.com/201flaviosilva-labs/play-code);
 
 
 ## [1.2.0 - More Functions](https://github.com/201flaviosilva-labs/javascript-utils/milestone/2)
