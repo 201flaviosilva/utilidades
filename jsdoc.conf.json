@@ -22,11 +22,11 @@
     "template": "node_modules/clean-jsdoc-theme",
     "theme_opts": {
       "theme": "dark",
-      "title": "201flaviosilva-utils",
+      "title": "Utilidades",
       "menu": [
         {
           "title": "GitHub",
-          "link": "https://github.com/201flaviosilva-labs/javascript-utils/",
+          "link": "https://github.com/201flaviosilva-labs/utilidades/",
           "target": "_blank"
         }
       ]

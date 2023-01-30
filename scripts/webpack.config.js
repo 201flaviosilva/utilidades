@@ -7,7 +7,7 @@ module.exports = {
 	experiments: { outputModule: true, },
 	output: {
 		path: path.resolve("build"),
-		filename: "utils.min.js", // "utils.js"/"utils.min.js"
+		filename: "utilidades.min.js", // "utilidades.js"/"utilidades.min.js"
 		libraryTarget: "commonjs2", // module/commonjs2/window // https://webpack.js.org/configuration/output/#outputlibrarytarget
 	},
 	module: {

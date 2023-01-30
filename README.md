@@ -1,4 +1,4 @@
-# 201flaviosilva-utils
+# Utilidades
 
 ## Description
 Just some simple JavaScript Utils.
@@ -8,24 +8,24 @@ Just some simple JavaScript Utils.
 ### Using NPM (Recommend)
 #### Install Package
 ```sh
-npm i 201flaviosilva-utils
+npm i utilidades
 ```
 
 or
 ```sh
-npm i https://github.com/201flaviosilva-labs/javascript-utils#v1.2.10
+npm i https://github.com/201flaviosilva-labs/utilidades#v1.3.2
 ```
 
 #### Import to the project
 ```js
-import { randomNumber } from "201flaviosilva-utils";
+import { randomNumber } from "utilidades";
 
 console.log(randomNumber(1, 20));
 ```
 
 ### Using CDN (jsdelivr)
 ```html
-<script src="https://cdn.jsdelivr.net/npm/201flaviosilva-utils@1.2.9/build/utils.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/utilidades@1.3.2/build/utils.min.js"></script>
 <script src="./your-js-file.js"></script>
 ```
 
@@ -47,14 +47,15 @@ console.log(randomNumber(1, 20));
 | `npm run bump`    | Update lib in the npm                                             |
 
 ## Links
-- [WebPage (Documentation)](https://201flaviosilva-labs.github.io/javascript-utils/);
-- [Package](https://www.npmjs.com/package/201flaviosilva-utils);
-- [GitHub](https://github.com/201flaviosilva-labs/javascript-utils);
-  - [Wiki](https://github.com/201flaviosilva-labs/javascript-utils/wiki);
-	- [Issues](https://github.com/201flaviosilva-labs/javascript-utils/issues);
-	- [Snippets (More Utils)](https://github.com/201flaviosilva-labs/javascript-utils/tree/main/snippets);
-	- [Releases](https://github.com/201flaviosilva-labs/javascript-utils/releases);
+- [WebPage (Documentation)](https://201flaviosilva-labs.github.io/utilidades/);
+- [Package](https://www.npmjs.com/package/utilidades);
+- [GitHub](https://github.com/201flaviosilva-labs/utilidades);
+  - [Wiki](https://github.com/201flaviosilva-labs/utilidades/wiki);
+	- [Issues](https://github.com/201flaviosilva-labs/utilidades/issues);
+	- [Snippets (More Utils)](https://github.com/201flaviosilva-labs/utilidades/tree/main/snippets);
+	- [Releases](https://github.com/201flaviosilva-labs/utilidades/releases);
 
 ## Examples
+- [Code Sandbox](https://codesandbox.io/examples/package/utilidades);
 - [Code Sandbox](https://codesandbox.io/examples/package/201flaviosilva-utils);
-- [GitHub Repositories](https://github.com/201flaviosilva-labs/javascript-utils/network/dependents);
+- [GitHub Repositories](https://github.com/201flaviosilva-labs/utilidades/network/dependents);

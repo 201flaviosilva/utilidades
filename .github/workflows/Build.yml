@@ -1,4 +1,4 @@
-name: Export Vanilla
+name: Export
 
 on:
   push:
@@ -24,11 +24,14 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
+      - name: Test
+        run: npm run test
+
       - name: Build
         run: npm run compile
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: "201flaviosilva-utils"
+          name: utilidades
           path: build

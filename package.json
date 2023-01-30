@@ -46,9 +46,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/201flaviosilva-labs/javascript-utils.git"
+    "url": "git+https://github.com/201flaviosilva-labs/utilidades.git"
   },
   "bugs": {
-    "url": "https://github.com/201flaviosilva-labs/javascript-utils/issues"
+    "url": "https://github.com/201flaviosilva-labs/utilidades/issues"
   }
 }

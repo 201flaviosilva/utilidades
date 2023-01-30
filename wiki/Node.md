@@ -7,13 +7,13 @@ How to use this library in node project:
 ### Instal the decency
 
 ```sh
-npm install 201flaviosilva-utils
+npm install utilidades
 ```
 
 ### Import
 
 ```js
-const { randomNumber } = require("201flaviosilva-utils/build/utils.min.cjs");
+const { randomNumber } = require("utilidades/build/utilidades.min.cjs");
 ```
 
 ### Use
