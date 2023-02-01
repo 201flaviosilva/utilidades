@@ -19,7 +19,7 @@ One way to do that it’s cloning the repository, opening a new terminal, and pa
 
 (You need to have git installed on your machine)
 ```sh
-git clone https://github.com/201flaviosilva-labs/javascript-utils.git
+git clone https://github.com/201flaviosilva-labs/utilidades.git
 ```
 
 ### Install the decencies
