@@ -1,28 +1,32 @@
 /**
- * Returns the most repeated number
+ * Returns the most repeated element in an array
  * 
- * @example mode(1,2,2,3,4) // 2
+ * @example 
+ * mode([1, 2, 2, 3, 4]); // 2
+ * mode(["apple", "banana", "banana", "cherry"]); // "banana"
  * 
- * @param  {...number} numbers - the numbers to get the median
- * @returns {number}
+ * @param  {Array} args - the elements to get the mode
+ * @returns {*}
  * 
  * @function mode
  * @memberof Maths
  */
-export function mode(...numbers) {
+export function mode(...args) {
+	if (args.length === 1) return args[0];
+
 	const mode = {};
-	let max = 0;
+	let max = args[0];
 	let count = 0;
 
-	for (let i = 0; i < numbers.length; i++) {
-		const num = numbers[i];
+	for (let i = 0; i < args.length; i++) {
+		const el = args[i];
 
-		if (mode[num]) mode[num]++;
-		else mode[num] = 1;
+		if (mode[el]) mode[el]++;
+		else mode[el] = 1;
 
-		if (count < mode[num]) {
-			max = num;
-			count = mode[num];
+		if (count < mode[el]) {
+			max = el;
+			count = mode[el];
 		}
 	}
 

@@ -1,13 +1,17 @@
 /**
- * Convertes the given number in a negative number
+ * Converts the given number to its negative equivalent, unless it's already negative or zero.
  * 
- * @example negative(5); // -5
- * @example negative(-35); // -35
+ * @example
+ * negative(10) // -10
+ * negative(0) // 0
+ * negative(-5) // -5
  * 
- * @param {number} num - number to convert
- * @returns {number} fixed number
+ * @param {number} number - The number to be converted
+ * @returns {number} - The negative equivalent of the input number, or 0 if the input was 0.
  * 
  * @function negative
  * @memberof Maths
  */
-export function negative(num) { return Math.abs(num) * -1; }
+export function negative(number) {
+	return number === 0 ? 0 : -Math.abs(number);
+};

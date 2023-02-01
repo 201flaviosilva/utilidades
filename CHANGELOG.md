@@ -14,6 +14,7 @@ This file was based on [this template](https://gist.github.com/juampynr/4c18214a
 ### [1.3.2] - 00-02-2023
  
 #### Added
+- Add tests to the code;
 
 #### Changed
 - Organize project;
