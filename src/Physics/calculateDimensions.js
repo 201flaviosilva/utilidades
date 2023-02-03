@@ -150,27 +150,13 @@ export function calcRectangleCenter(x, y, width, height) { return { x: calcRecta
 export function calcRectangleCenterXFromBounds(rectangle) { return calcRectangleCenterX(rectangle.x, rectangle.width); }
 
 /**
- * Calculates the center y-coordinate of a rectangle given its bounds.
- * 
- * @param {object} rectangle - An object with x, y, width, and height properties representing the bounds of the rectangle
- * 
- * @returns {number} The center y-coordinate of the rectangle
- * 
- * @example calcRectangleCenterYFromBounds({ x: 10, y: 10, width: 20, height: 20 }); // returns 15
- * 
- * @function calcRectangleCenterYFromBounds
- * @memberof Physics
- */
-export function calcRectangleCenterYFromBounds(rectangle) { return calcRectangleCenterY(rectangle.y, rectangle.height); }
-
-/**
  * Returns the Y-coordinate of the center of a rectangle, given the rectangle's bounds.
  * 
  * @param {object} rectangle - The rectangle's bounds, represented as an object with `y` and `height` properties.
  * @returns {number} The Y-coordinate of the center of the rectangle.
  * 
- * @example
- * calcRectangleCenterYFromBounds({ x: 10, y: 10, y: 10, height: 20 }); // 20
+ * @example calcRectangleCenterYFromBounds({ x: 10, y: 10, y: 10, height: 20 }); // 20
+ * @example calcRectangleCenterYFromBounds({ x: 10, y: 10, width: 20, height: 20 }); // returns 15
  * 
  * @function calcRectangleCenterYFromBounds
  * @memberof Physics

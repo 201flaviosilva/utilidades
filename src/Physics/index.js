@@ -11,9 +11,7 @@ import { topDownCarMovimentation } from "./topDownCarMovimentation.js";
  */
 export {
 	calcAngleBetweenRectangles, calcAngleBetweenRectanglesByCoordinates, calcAngleBetweenTwoPoints, calcAngleBetweenTwoPointsDegrees, calcAngleBetweenTwoPointsVector2, calcAngleBetweenTwoPointsVector2Degrees,
-
 	calcCircleArea, calcCirclePerimeter, calcRectangleArea, calcRectanglePerimeter, calcRectanglePerimeterByDimensions, calcRectangleCenter, calcRectangleCenterFromBounds, calcRectangleCenterX, calcRectangleCenterXFromBounds, calcRectangleCenterY, calcRectangleCenterYFromBounds, calcRectangleVertices, calcVerticesFromRectangleBounds,
-
 	calcDistanceBetweenCircles, calcDistanceBetweenCirclesByCoordinates, calcDistanceBetweenTwoPointObjects, calcDistanceBetweenTwoPoints, calcOverlapBetweenRectangles, calcOverlapBetweenRectanglesByCoordinates,
 
 	topDownCarMovimentation,
