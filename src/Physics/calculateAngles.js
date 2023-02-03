@@ -10,13 +10,13 @@ import { radiansToDegrees } from "../Maths/radiansToDegrees.js";
  * 
  * @returns {number} The angle between the two points, in radians.
  * 
- * @example getAngleBetweenTwoPoints(0, 0, 1, 1); // output: 0.7853981633974483 (approx. 45°)
- * @example getAngleBetweenTwoPoints(0, 0, 0, 1); // output: 1.5707963267948966 (approx. 90°)
+ * @example calcAngleBetweenTwoPoints(0, 0, 1, 1); // output: 0.7853981633974483 (approx. 45°)
+ * @example calcAngleBetweenTwoPoints(0, 0, 0, 1); // output: 1.5707963267948966 (approx. 90°)
  * 
  * @function getAngleBetweenTwoPoints
  * @memberof Physics
  */
-export function getAngleBetweenTwoPoints(x1, y1, x2, y2) { return Math.atan2(y2 - y1, x2 - x1); }
+export function calcAngleBetweenTwoPoints(x1, y1, x2, y2) { return Math.atan2(y2 - y1, x2 - x1); }
 
 /**
  * Calculates the angle between two points in a two-dimensional plane, given as instances of `Vector2`.
@@ -34,18 +34,18 @@ export function getAngleBetweenTwoPoints(x1, y1, x2, y2) { return Math.atan2(y2 
  * @example
  * const point1 = { x: 0, y: 0 };
  * const point2 = { x: 1, y: 1 };
- * getAngleBetweenTwoPointsVector2(point1, point2); // output: 0.7853981633974483 (approx. 45°)
+ * calcAngleBetweenTwoPointsVector2(point1, point2); // output: 0.7853981633974483 (approx. 45°)
  * 
  * @example
  * const point1 = { x: 0, y: 0 };
  * const point2 = { x: 0, y: 1 };
- * getAngleBetweenTwoPointsVector2(point1, point2); // output: 1.5707963267948966 (approx. 90°)
+ * calcAngleBetweenTwoPointsVector2(point1, point2); // output: 1.5707963267948966 (approx. 90°)
  * 
- * @function getAngleBetweenTwoPointsVector2
+ * @function calcAngleBetweenTwoPointsVector2
  * @memberof Physics
  */
-export function getAngleBetweenTwoPointsVector2(point1, point2) {
-	return getAngleBetweenTwoPoints(point1.x, point1.y, point2.x, point2.y);
+export function calcAngleBetweenTwoPointsVector2(point1, point2) {
+	return calcAngleBetweenTwoPoints(point1.x, point1.y, point2.x, point2.y);
 }
 
 /**
@@ -58,14 +58,14 @@ export function getAngleBetweenTwoPointsVector2(point1, point2) {
  * 
  * @returns {number} The angle between the two points, in degrees.
  * 
- * @example getAngleBetweenTwoPointsDegrees(0, 0, 1, 1); // output: 45
- * @example getAngleBetweenTwoPointsDegrees(0, 0, 0, 1); // output: 90
+ * @example calcAngleBetweenTwoPointsDegrees(0, 0, 1, 1); // output: 45
+ * @example calcAngleBetweenTwoPointsDegrees(0, 0, 0, 1); // output: 90
  * 
- * @function getAngleBetweenTwoPointsDegrees
+ * @function calcAngleBetweenTwoPointsDegrees
  * @memberof Physics
  */
-export function getAngleBetweenTwoPointsDegrees(x1, y1, x2, y2) {
-	return radiansToDegrees(getAngleBetweenTwoPoints(x1, y1, x2, y2));
+export function calcAngleBetweenTwoPointsDegrees(x1, y1, x2, y2) {
+	return radiansToDegrees(calcAngleBetweenTwoPoints(x1, y1, x2, y2));
 }
 
 /**
@@ -84,18 +84,18 @@ export function getAngleBetweenTwoPointsDegrees(x1, y1, x2, y2) {
  * @example
  * const point1 = { x: 0, y: 0 };
  * const point2 = { x: 1, y: 1 };
- * getAngleBetweenTwoPointsVector2Degrees(point1, point2); // output: 45
+ * calcAngleBetweenTwoPointsVector2Degrees(point1, point2); // output: 45
  * 
  * @example
  * const point1 = { x: 0, y: 0 };
  * const point2 = { x: 0, y: 1 };
- * getAngleBetweenTwoPointsVector2Degrees(point1, point2); // output: 90
+ * calcAngleBetweenTwoPointsVector2Degrees(point1, point2); // output: 90
  * 
- * @function getAngleBetweenTwoPointsVector2Degrees
+ * @function calcAngleBetweenTwoPointsVector2Degrees
  * @memberof Physics
  */
-export function getAngleBetweenTwoPointsVector2Degrees(point1, point2) {
-	return getAngleBetweenTwoPointsDegrees(point1.x, point1.y, point2.x, point2.y);
+export function calcAngleBetweenTwoPointsVector2Degrees(point1, point2) {
+	return calcAngleBetweenTwoPointsDegrees(point1.x, point1.y, point2.x, point2.y);
 }
 
 
@@ -120,17 +120,17 @@ export function getAngleBetweenTwoPointsVector2Degrees(point1, point2) {
  * @example
  * const rect1 = { x: 0, y: 0, width: 2, height: 2 };
  * const rect2 = { x: 2, y: 2, width: 2, height: 2 };
- * calculateAngleBetweenRectangles(rect1, rect2); // output: 0.7853981633974483
+ * calcAngleBetweenRectangles(rect1, rect2); // output: 0.7853981633974483
  * 
  * @example
  * const rect1 = { x: 0, y: 0, width: 2, height: 2 };
  * const rect2 = { x: 1, y: 2, width: 2, height: 2 };
- * calculateAngleBetweenRectangles(rect1, rect2); // output: 1.1071487177940904
+ * calcAngleBetweenRectangles(rect1, rect2); // output: 1.1071487177940904
  * 
- * @function calculateAngleBetweenRectangles
+ * @function calcAngleBetweenRectangles
  * @memberof Physics
  */
-export function calculateAngleBetweenRectangles(rect1, rect2) {
+export function calcAngleBetweenRectangles(rect1, rect2) {
 	const xOverlap = Math.min(rect1.x + rect1.width, rect2.x + rect2.width) - Math.max(rect1.x, rect2.x);
 	const yOverlap = Math.min(rect1.y + rect1.height, rect2.y + rect2.height) - Math.max(rect1.y, rect2.y);
 	return Math.atan2(yOverlap, xOverlap);
@@ -150,14 +150,14 @@ export function calculateAngleBetweenRectangles(rect1, rect2) {
  * 
  * @returns {number} The angle between the two rectangles.
  * 
- * @example calculateAngleBetweenRectanglesByCoordinates(0, 0, 10, 10, 20, 20, 20, 20); // Output: 45
- * @example calculateAngleBetweenRectanglesByCoordinates(10, 10, 10, 10, 30, 30, 20, 20); // Output: 30
+ * @example calcAngleBetweenRectanglesByCoordinates(0, 0, 10, 10, 20, 20, 20, 20); // Output: 45
+ * @example calcAngleBetweenRectanglesByCoordinates(10, 10, 10, 10, 30, 30, 20, 20); // Output: 30
  * 
- * @function calculateAngleBetweenRectanglesByCoordinates
+ * @function calcAngleBetweenRectanglesByCoordinates
  * @memberof Physics
  */
-export function calculateAngleBetweenRectanglesByCoordinates(x1, y1, width1, height1, x2, y2, width2, height2) {
-	return calculateAngleBetweenRectangles(
+export function calcAngleBetweenRectanglesByCoordinates(x1, y1, width1, height1, x2, y2, width2, height2) {
+	return calcAngleBetweenRectangles(
 		{ x: x1 + width1 / 2, y: y1 + height1 / 2, width: width1, height: height1 },
 		{ x: x2 + width2 / 2, y: y2 + height2 / 2, width: width2, height: height2 }
 	);

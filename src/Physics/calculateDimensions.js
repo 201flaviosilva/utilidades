@@ -5,13 +5,13 @@
  * 
  * @returns {number} The area of the circle.
  * 
- * @example calculateCircleArea(5); // Output: 78.53981633974483
- * @example calculateCircleArea(10); // Output: 314.1592653589793
+ * @example calcCircleArea(5); // Output: 78.53981633974483
+ * @example calcCircleArea(10); // Output: 314.1592653589793
  * 
- * @function calculateCircleArea
+ * @function calcCircleArea
  * @memberof Physics
  */
-export function calculateCircleArea(radius) { return Math.PI * radius * radius; }
+export function calcCircleArea(radius) { return Math.PI * radius * radius; }
 
 /**
  * Gets the area of a rectangle.
@@ -21,13 +21,13 @@ export function calculateCircleArea(radius) { return Math.PI * radius * radius; 
  * 
  * @returns {number} The area of the rectangle.
  * 
- * @example calculateRectangleArea(5, 10); // Output: 50
- * @example calculateRectangleArea(10, 20);
+ * @example calcRectangleArea(5, 10); // Output: 50
+ * @example calcRectangleArea(10, 20);
  * 
- * @function calculateRectangleArea
+ * @function calcRectangleArea
  * @memberof Physics
  */
-export function calculateRectangleArea(width, height) { return width * height; }
+export function calcRectangleArea(width, height) { return width * height; }
 
 
 /**
@@ -37,13 +37,13 @@ export function calculateRectangleArea(width, height) { return width * height; }
  * 
  * @returns {number} The perimeter of the circle.
  * 
- * @example calculateCirclePerimeter(5); // Output: 31.41592653589793
- * @example calculateCirclePerimeter(10); // Output: 62.83185307179586
+ * @example calcCirclePerimeter(5); // Output: 31.41592653589793
+ * @example calcCirclePerimeter(10); // Output: 62.83185307179586
  * 
- * @function calculateCirclePerimeter
+ * @function calcCirclePerimeter
  * @memberof Physics
  */
-export function calculateCirclePerimeter(radius) { return 2 * Math.PI * radius; }
+export function calcCirclePerimeter(radius) { return 2 * Math.PI * radius; }
 
 /**
  * Gets the perimeter of a rectangle.
@@ -53,13 +53,13 @@ export function calculateCirclePerimeter(radius) { return 2 * Math.PI * radius; 
  * 
  * @returns {number} The perimeter of the rectangle.
  * 
- * @example calculateRectanglePerimeterByDimensions(5, 10); // Output: 30
- * @example calculateRectanglePerimeterByDimensions(10, 20); // Output: 60
+ * @example calcRectanglePerimeterByDimensions(5, 10); // Output: 30
+ * @example calcRectanglePerimeterByDimensions(10, 20); // Output: 60
  * 
- * @function calculateRectanglePerimeterByDimensions
+ * @function calcRectanglePerimeterByDimensions
  * @memberof Physics
  */
-export function calculateRectanglePerimeterByDimensions(width, height) { return 2 * (width + height); }
+export function calcRectanglePerimeterByDimensions(width, height) { return 2 * (width + height); }
 
 /**
  * Gets the perimeter of a rectangle defined by its bounds.
@@ -74,17 +74,17 @@ export function calculateRectanglePerimeterByDimensions(width, height) { return 
  * 
  * @example
  * const rectangle = { x: 0, y: 0, width: 5, height: 10 }; 
- * calculateRectanglePerimeter(rectangle); // Output: 30
+ * calcRectanglePerimeter(rectangle); // Output: 30
  * 
  * @example
  * const rectangle = { x: 10, y: 20, width: 10, height: 20 }; 
- * calculateRectanglePerimeter(rectangle); // Output: 60
+ * calcRectanglePerimeter(rectangle); // Output: 60
  * 
- * @function calculateRectanglePerimeter
+ * @function calcRectanglePerimeter
  * @memberof Physics
  */
-export function calculateRectanglePerimeter(rectangle) {
-	return calculateRectanglePerimeterByDimensions(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+export function calcRectanglePerimeter(rectangle) {
+	return calcRectanglePerimeterByDimensions(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
 }
 
 
@@ -96,12 +96,12 @@ export function calculateRectanglePerimeter(rectangle) {
  * 
  * @returns {number} The center x-coordinate of the rectangle
  * 
- * @example getRectangleCenterX(10, 20); // returns 15
+ * @example calcRectangleCenterX(10, 20); // returns 15
  * 
- * @function getRectangleCenterX
+ * @function calcRectangleCenterX
  * @memberof Physics
  */
-export function getRectangleCenterX(x, width) { return x + width / 2; }
+export function calcRectangleCenterX(x, width) { return x + width / 2; }
 
 /**
  * Calculates the center y-coordinate of a rectangle given its y-coordinate and height.
@@ -111,12 +111,12 @@ export function getRectangleCenterX(x, width) { return x + width / 2; }
  * 
  * @returns {number} The center y-coordinate of the rectangle
  * 
- * @example getRectangleCenterY(10, 20); // returns 15
+ * @example calcRectangleCenterY(10, 20); // returns 15
  * 
- * @function getRectangleCenterY
+ * @function calcRectangleCenterY
  * @memberof Physics
  */
-export function getRectangleCenterY(y, height) { return y + height / 2; }
+export function calcRectangleCenterY(y, height) { return y + height / 2; }
 
 /**
  * Calculates the center coordinates of a rectangle given its x-coordinate, y-coordinate, width, and height.
@@ -128,12 +128,12 @@ export function getRectangleCenterY(y, height) { return y + height / 2; }
  * 
  * @returns {object} An object with x and y properties representing the center coordinates of the rectangle
  * 
- * @example getRectangleCenter(10, 10, 20, 20); // returns { x: 15, y: 15 }
+ * @example calcRectangleCenter(10, 10, 20, 20); // returns { x: 15, y: 15 }
  * 
- * @function getRectangleCenter
+ * @function calcRectangleCenter
  * @memberof Physics
  */
-export function getRectangleCenter(x, y, width, height) { return { x: getRectangleCenterX(x, width), y: getRectangleCenterY(y, height) }; }
+export function calcRectangleCenter(x, y, width, height) { return { x: calcRectangleCenterX(x, width), y: calcRectangleCenterY(y, height) }; }
 
 /**
  * Calculates the center x-coordinate of a rectangle given its bounds.
@@ -142,12 +142,12 @@ export function getRectangleCenter(x, y, width, height) { return { x: getRectang
  * 
  * @returns {number} The center x-coordinate of the rectangle
  * 
- * @example getRectangleCenterXFromBounds({ x: 10, y: 10, width: 20, height: 20 }); // returns 15
+ * @example calcRectangleCenterXFromBounds({ x: 10, y: 10, width: 20, height: 20 }); // returns 15
  * 
- * @function getRectangleCenterXFromBounds
+ * @function calcRectangleCenterXFromBounds
  * @memberof Physics
  */
-export function getRectangleCenterXFromBounds(rectangle) { return getRectangleCenterX(rectangle.x, rectangle.width); }
+export function calcRectangleCenterXFromBounds(rectangle) { return calcRectangleCenterX(rectangle.x, rectangle.width); }
 
 /**
  * Calculates the center y-coordinate of a rectangle given its bounds.
@@ -156,12 +156,12 @@ export function getRectangleCenterXFromBounds(rectangle) { return getRectangleCe
  * 
  * @returns {number} The center y-coordinate of the rectangle
  * 
- * @example getRectangleCenterYFromBounds({ x: 10, y: 10, width: 20, height: 20 }); // returns 15
+ * @example calcRectangleCenterYFromBounds({ x: 10, y: 10, width: 20, height: 20 }); // returns 15
  * 
- * @function getRectangleCenterYFromBounds
+ * @function calcRectangleCenterYFromBounds
  * @memberof Physics
  */
-export function getRectangleCenterYFromBounds(rectangle) { return getRectangleCenterY(rectangle.y, rectangle.height); }
+export function calcRectangleCenterYFromBounds(rectangle) { return calcRectangleCenterY(rectangle.y, rectangle.height); }
 
 /**
  * Returns the Y-coordinate of the center of a rectangle, given the rectangle's bounds.
@@ -170,13 +170,13 @@ export function getRectangleCenterYFromBounds(rectangle) { return getRectangleCe
  * @returns {number} The Y-coordinate of the center of the rectangle.
  * 
  * @example
- * getRectangleCenterYFromBounds({ x: 10, y: 10, y: 10, height: 20 }); // 20
+ * calcRectangleCenterYFromBounds({ x: 10, y: 10, y: 10, height: 20 }); // 20
  * 
- * @function getRectangleCenterYFromBounds
+ * @function calcRectangleCenterYFromBounds
  * @memberof Physics
  */
-export function getRectangleCenterYFromBounds(rectangle) {
-	return getRectangleCenterY(rectangle.y, rectangle.height);
+export function calcRectangleCenterYFromBounds(rectangle) {
+	return calcRectangleCenterY(rectangle.y, rectangle.height);
 }
 
 /**
@@ -187,13 +187,13 @@ export function getRectangleCenterYFromBounds(rectangle) {
  * 
  * @example
  * const rect = { x: 10, y: 10, width: 20, height: 20 };
- * getRectangleCenterFromBounds(rect); // { x: 20, y: 20 }
+ * calcRectangleCenterFromBounds(rect); // { x: 20, y: 20 }
  * 
- * @function getRectangleCenterFromBounds
+ * @function calcRectangleCenterFromBounds
  * @memberof Physics
  */
-export function getRectangleCenterFromBounds(rectangle) {
-	return getRectangleCenter(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+export function calcRectangleCenterFromBounds(rectangle) {
+	return calcRectangleCenter(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
 }
 
 /**
@@ -206,12 +206,12 @@ export function getRectangleCenterFromBounds(rectangle) {
  * 
  * @returns {Array} An array of objects that represent the vertices of the rectangle, where each object has properties 'x' and 'y'.
  * 
- * @example getRectangleVertices(0, 0, 2, 3); // [{x: 0, y: 0}, {x: 2, y: 0}, {x: 2, y: 3}, {x: 0, y: 3}]
+ * @example calcRectangleVertices(0, 0, 2, 3); // [{x: 0, y: 0}, {x: 2, y: 0}, {x: 2, y: 3}, {x: 0, y: 3}]
  * 
- * @function getRectangleVertices
+ * @function calcRectangleVertices
  * @memberof Physics
  */
-export function getRectangleVertices(x, y, width, height) {
+export function calcRectangleVertices(x, y, width, height) {
 	return [
 		{ x: x, y: y },
 		{ x: x + width, y: y },
@@ -227,9 +227,11 @@ export function getRectangleVertices(x, y, width, height) {
  * 
  * @returns {Array} An array of objects that represent the vertices of the rectangle, where each object has properties 'x' and 'y'.
  * 
- * @example getVerticesFromRectangleBounds({ x: 0, y: 0, width: 2, height: 3 }); // [{x: 0, y: 0}, {x: 2, y: 0}, {x: 2, y: 3}, {x: 0, y: 3}]
+ * @example calcVerticesFromRectangleBounds({ x: 0, y: 0, width: 2, height: 3 }); // [{x: 0, y: 0}, {x: 2, y: 0}, {x: 2, y: 3}, {x: 0, y: 3}]
  * 
- * @function getVerticesFromRectangleBounds
+ * @function calcVerticesFromRectangleBounds
  * @memberof Physics
  */
-export function getVerticesFromRectangleBounds(rectangle) { return getRectangleVertices(rectangle.x, rectangle.y, rectangle.width, rectangle.height); }
+export function calcVerticesFromRectangleBounds(rectangle) {
+	return calcRectangleVertices(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+}

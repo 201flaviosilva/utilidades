@@ -1,6 +1,6 @@
-import { calculateAngleBetweenRectangles, calculateAngleBetweenRectanglesByCoordinates, getAngleBetweenTwoPoints, getAngleBetweenTwoPointsDegrees, getAngleBetweenTwoPointsVector2, getAngleBetweenTwoPointsVector2Degrees } from "./calculateAngles.js";
-import { calculateCircleArea, calculateCirclePerimeter, calculateRectangleArea, calculateRectanglePerimeter, calculateRectanglePerimeterByDimensions, getRectangleCenter, getRectangleCenterFromBounds, getRectangleCenterX, getRectangleCenterXFromBounds, getRectangleCenterY, getRectangleCenterYFromBounds, getRectangleVertices, getVerticesFromRectangleBounds } from "./calculateDimensions.js";
-import { calculateDistanceBetweenCircles, calculateDistanceBetweenCirclesByCoordinates, calculateDistanceBetweenTwoPointObjects, calculateDistanceBetweenTwoPoints, calculateOverlapBetweenRectangles, calculateOverlapBetweenRectanglesByCoordinates } from "./calculateDistances.js";
+import { calcAngleBetweenRectangles, calcAngleBetweenRectanglesByCoordinates, calcAngleBetweenTwoPoints, calcAngleBetweenTwoPointsDegrees, calcAngleBetweenTwoPointsVector2, calcAngleBetweenTwoPointsVector2Degrees } from "./calculateAngles.js";
+import { calcCircleArea, calcCirclePerimeter, calcRectangleArea, calcRectangleCenter, calcRectangleCenterFromBounds, calcRectangleCenterX, calcRectangleCenterXFromBounds, calcRectangleCenterY, calcRectangleCenterYFromBounds, calcRectanglePerimeter, calcRectanglePerimeterByDimensions, calcRectangleVertices, calcVerticesFromRectangleBounds } from "./calculateDimensions.js";
+import { calcDistanceBetweenCircles, calcDistanceBetweenCirclesByCoordinates, calcDistanceBetweenTwoPointObjects, calcDistanceBetweenTwoPoints, calcOverlapBetweenRectangles, calcOverlapBetweenRectanglesByCoordinates } from "./calculateDistances.js";
 
 import { topDownCarMovimentation } from "./topDownCarMovimentation.js";
 
@@ -10,11 +10,11 @@ import { topDownCarMovimentation } from "./topDownCarMovimentation.js";
  * @namespace Physics
  */
 export {
-	calculateAngleBetweenRectangles, calculateAngleBetweenRectanglesByCoordinates, getAngleBetweenTwoPoints, getAngleBetweenTwoPointsDegrees, getAngleBetweenTwoPointsVector2, getAngleBetweenTwoPointsVector2Degrees,
+	calcAngleBetweenRectangles, calcAngleBetweenRectanglesByCoordinates, calcAngleBetweenTwoPoints, calcAngleBetweenTwoPointsDegrees, calcAngleBetweenTwoPointsVector2, calcAngleBetweenTwoPointsVector2Degrees,
 
-	calculateCircleArea, calculateCirclePerimeter, calculateRectangleArea, calculateRectanglePerimeter, calculateRectanglePerimeterByDimensions, getRectangleCenter, getRectangleCenterFromBounds, getRectangleCenterX, getRectangleCenterXFromBounds, getRectangleCenterY, getRectangleCenterYFromBounds, getRectangleVertices, getVerticesFromRectangleBounds,
+	calcCircleArea, calcCirclePerimeter, calcRectangleArea, calcRectanglePerimeter, calcRectanglePerimeterByDimensions, calcRectangleCenter, calcRectangleCenterFromBounds, calcRectangleCenterX, calcRectangleCenterXFromBounds, calcRectangleCenterY, calcRectangleCenterYFromBounds, calcRectangleVertices, calcVerticesFromRectangleBounds,
 
-	calculateDistanceBetweenCircles, calculateDistanceBetweenCirclesByCoordinates, calculateDistanceBetweenTwoPointObjects, calculateDistanceBetweenTwoPoints, calculateOverlapBetweenRectangles, calculateOverlapBetweenRectanglesByCoordinates,
+	calcDistanceBetweenCircles, calcDistanceBetweenCirclesByCoordinates, calcDistanceBetweenTwoPointObjects, calcDistanceBetweenTwoPoints, calcOverlapBetweenRectangles, calcOverlapBetweenRectanglesByCoordinates,
 
 	topDownCarMovimentation,
 };
