@@ -29,6 +29,9 @@ import { clamp } from "../Maths/clamp.js";
  * @param {number} [state.bounds.y.min=-Infinity] - the minimum y axis limit
  * @param {number} [state.bounds.y.max=Infinity] - the maximum y axis limit
  * @returns {Object}
+ * 
+ * @function topDownCarMovimentation
+ * @memberof Physics
  */
 export function topDownCarMovimentation({
 	keys = { forward: false, left: false, right: false, reverse: false },
