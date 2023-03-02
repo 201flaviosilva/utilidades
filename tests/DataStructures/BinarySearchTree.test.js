@@ -1,5 +1,6 @@
-import { BinarySearchTree, BinarySearchTreeInstance } from "../src/index";
-import { Node } from "../src/BinarySearchTree.js";
+import { Node } from "../../src/DataStructures/BinarySearchTree.js";
+import { DataStructures } from "../../src/index.js";
+const { BinarySearchTree, BinarySearchTreeInstance } = DataStructures;
 
 describe("BinarySearchTree.js", () => {
 	describe("BinarySearchTree", () => {
