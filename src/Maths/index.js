@@ -18,6 +18,7 @@ import { negative } from "./negative.js";
 import { percentage } from "./percentage.js";
 import { radiansToDegrees } from "./radiansToDegrees.js";
 import { range } from "./range.js";
+import { roundNumber } from "./roundNumber.js";
 import { subtraction } from "./subtraction.js";
 import { sum } from "./sum.js";
 
@@ -47,6 +48,7 @@ export {
 	negative,
 	radiansToDegrees,
 	range,
+	roundNumber,
 	subtraction,
 	sum,
 };

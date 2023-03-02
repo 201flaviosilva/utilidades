@@ -9,12 +9,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 This file was based on [this template](https://gist.github.com/juampynr/4c18214a8eb554084e21d6e288a18a2c).
 
 ----
-## [1.3 - Tests and monorepo](https://github.com/201flaviosilva-labs/utilidades/milestone/4)
+## [1.3 - Tests and some Data Structures](https://github.com/201flaviosilva-labs/utilidades/milestone/4)
 
-### [1.3.2] - 00-02-2023
+### [1.3.2] - 00-03-2023
  
 #### Added
 - Add tests to the code;
+- roundNumber function;
+- LinkedList;
 
 #### Changed
 - Organize project;
@@ -24,6 +26,7 @@ This file was based on [this template](https://gist.github.com/juampynr/4c18214a
 - Fixed multiple function based on the tests;
 
 #### Breaking Changes
+- Multiple files was organized!
 
 #### Removed
 - SortingAlgorithms - Moved sort function to the [play-code project](https://github.com/201flaviosilva-labs/play-code);
