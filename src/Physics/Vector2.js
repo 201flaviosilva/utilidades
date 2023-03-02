@@ -1,6 +1,6 @@
-import { clamp } from "./Maths/clamp.js";
-import { negative } from "./Maths/negative.js";
-import { radiansToDegrees } from "./Maths/radiansToDegrees.js";
+import { clamp } from "../Maths/clamp.js";
+import { negative } from "../Maths/negative.js";
+import { radiansToDegrees } from "../Maths/radiansToDegrees.js";
 
 /**
  * @class Vector2

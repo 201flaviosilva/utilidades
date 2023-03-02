@@ -3,6 +3,7 @@ import { calcCircleArea, calcCirclePerimeter, calcRectangleArea, calcRectangleCe
 import { calcDistanceBetweenCircles, calcDistanceBetweenCirclesByCoordinates, calcDistanceBetweenTwoPointObjects, calcDistanceBetweenTwoPoints, calcOverlapBetweenRectangles, calcOverlapBetweenRectanglesByCoordinates } from "./calculateDistances.js";
 
 import { topDownCarMovimentation } from "./topDownCarMovimentation.js";
+import { Vector2 } from "./Vector2.js";
 
 /**
  * Physics lib :)
@@ -15,5 +16,6 @@ export {
 	calcDistanceBetweenCircles, calcDistanceBetweenCirclesByCoordinates, calcDistanceBetweenTwoPointObjects, calcDistanceBetweenTwoPoints, calcOverlapBetweenRectangles, calcOverlapBetweenRectanglesByCoordinates,
 
 	topDownCarMovimentation,
+	Vector2,
 };
 
