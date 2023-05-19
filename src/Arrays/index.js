@@ -1,5 +1,6 @@
 import { allEqual } from "./allEqual.js";
 import { choice } from "./choice.js";
+import { chunk } from "./chunk.js";
 import { findBigObject } from "./findBigObject.js";
 import { findLowObject } from "./findLowObject.js";
 import { isSorted } from "./isSorted.js";
@@ -18,6 +19,7 @@ import { sortDescendingObject } from "./sortDescendingObject.js";
 export {
 	allEqual,
 	choice,
+	chunk,
 	findBigObject,
 	findLowObject,
 	isSorted,
