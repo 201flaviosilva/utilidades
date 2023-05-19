@@ -3,14 +3,15 @@ import * as DataStructures from "./DataStructures/index.js";
 import * as Maths from "./Maths/index.js";
 import * as Physics from "./Physics/index.js";
 
+import { EventSystem, EventSystemInstance } from "./EventSystem.js";
+import { Fibonacci, fibonacciCustomSequence, fibonacciSequence, fibonacciUntil, recursiveFibonacci } from "./Fibonacci.js";
 import { allCharactersSame } from "./allCharactersSame.js";
 import { binary2Decimal } from "./binary2Decimal.js";
 import { choiceTrend } from "./choiceTrend.js";
 import { clone } from "./clone.js";
 import { compare2Objects } from "./compare2Objects.js";
+import { MEGABYTE_IN_KILOBYTES } from "./constants.js";
 import { decimal2Binary } from "./decimal2Binary.js";
-import { EventSystem, EventSystemInstance } from "./EventSystem.js";
-import { Fibonacci, fibonacciCustomSequence, fibonacciSequence, fibonacciUntil, recursiveFibonacci } from "./Fibonacci.js";
 import { getDate } from "./getDate.js"; // getTime, getMilliseconds, getSeconds, getMinutes, getHours, getDay, getWeekDay, getWeek, getMonth, getYear, getDateFormatted 
 import { getVersion } from "./getVersion.js";
 import { isObjectEmpty } from "./isObjectEmpty.js";
@@ -28,9 +29,14 @@ export {
 	Maths,
 	Physics,
 
+	// Class
 	EventSystem, EventSystemInstance,
 	Fibonacci, fibonacciSequence, fibonacciUntil, fibonacciCustomSequence, recursiveFibonacci,
 
+	// Constants
+	MEGABYTE_IN_KILOBYTES,
+
+	// Functions
 	allCharactersSame,
 	binary2Decimal,
 	compare2Objects,
