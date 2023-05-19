@@ -19,6 +19,7 @@ This file was based on [this template](https://gist.github.com/juampynr/4c18214a
 - LinkedList;
 - MEGABYTE_IN_KILOBYTES;
 - Arrays/chunk;
+- Arrays/removeDuplicatesObj;
 
 #### Changed
 - Organize project;
