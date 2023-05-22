@@ -37,7 +37,7 @@ export class LinkedList {
 		return this;
 	}
 
-	// Add a new value to the END of the list
+	// ADD a new value to the END of the list
 	push(value) {
 		const newNode = new Node(value);
 		if (!this.head) {
@@ -52,7 +52,26 @@ export class LinkedList {
 		return this;
 	}
 
-	// Remove a value from the END of the list
+	// ADD a new value to the START of the list
+	unshift(value) {
+		const newNode = new Node(value);
+		newNode.next = this.head;
+		this.head = newNode;
+
+		if (!this.tail) this.tail = newNode;
+
+		this.size++;
+
+		return this;
+	}
+
+
+	// ADD a new value to the given index of the list
+	insert(value, index) {
+		return this;
+	}
+
+	// REMOVE a value from the END of the list
 	pop() {
 		if (!this.size) return undefined;
 
@@ -72,21 +91,17 @@ export class LinkedList {
 		return temp.value;
 	}
 
-	// Add a new value to the BEGINNING of the list
-	unshift(value) {
-		const newNode = new Node(value);
-		newNode.next = this.head;
-		this.head = newNode;
-
-		if (!this.tail) this.tail = newNode;
-
-		this.size++;
-
+	// REMOVE a value to the START of the list
+	shift() {
 		return this;
 	}
 
-	// Add a new value to the given index of the list
-	insert(value, index) {
+	// REMOVE a value in the given index of the list
+	remove(value, index) {
+		return this;
+	}
+
+	reverse() {
 		return this;
 	}
 

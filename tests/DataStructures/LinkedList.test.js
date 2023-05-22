@@ -60,6 +60,45 @@ describe("LinkedList.js", () => {
 			});
 		});
 
+		describe("unshift()", () => {
+			it("should add a new element at the start", () => {
+				const ll = new LinkedList(0);
+
+				ll.unshift(10);
+				expect(ll.size).toBe(2);
+				expect(ll.head.value).toBe(10);
+				expect(ll.tail.value).toBe(0);
+				expect(ll.tail.next).toBe(null);
+				expect(ll.toArray()).toEqual([10, 0]);
+
+				ll.unshift(20);
+				expect(ll.size).toBe(3);
+				expect(ll.head.value).toBe(20);
+				expect(ll.tail.value).toBe(0);
+				expect(ll.tail.next).toBe(null);
+				expect(ll.toArray()).toEqual([20, 10, 0]);
+			});
+
+			it("should add a new element if the list is empty", () => {
+				const ll = new LinkedList();
+				expect(ll.size).toBe(0);
+
+				ll.unshift(1);
+				expect(ll.size).toBe(1);
+				expect(ll.head.value).toBe(1);
+				expect(ll.tail.value).toBe(1);
+				expect(ll.tail.next).toBe(null);
+				expect(ll.toArray()).toEqual([1]);
+
+				ll.unshift(10);
+				expect(ll.size).toBe(2);
+				expect(ll.head.value).toBe(10);
+				expect(ll.tail.value).toBe(1);
+				expect(ll.tail.next).toBe(null);
+				expect(ll.toArray()).toEqual([10, 1]);
+			});
+		});
+
 		describe("pop()", () => {
 			it("remove the last element from the linked list", () => {
 				const ll = new LinkedList(100);
@@ -99,45 +138,6 @@ describe("LinkedList.js", () => {
 				expect(ll.head).toBe(null);
 				expect(ll.tail).toBe(null);
 				expect(ll.toArray()).toEqual([]);
-			});
-		});
-
-		describe("unshift()", () => {
-			it("should add a new element at the start", () => {
-				const ll = new LinkedList(0);
-
-				ll.unshift(10);
-				expect(ll.size).toBe(2);
-				expect(ll.head.value).toBe(10);
-				expect(ll.tail.value).toBe(0);
-				expect(ll.tail.next).toBe(null);
-				expect(ll.toArray()).toEqual([10, 0]);
-
-				ll.unshift(20);
-				expect(ll.size).toBe(3);
-				expect(ll.head.value).toBe(20);
-				expect(ll.tail.value).toBe(0);
-				expect(ll.tail.next).toBe(null);
-				expect(ll.toArray()).toEqual([20, 10, 0]);
-			});
-
-			it("should add a new element if the list is empty", () => {
-				const ll = new LinkedList();
-				expect(ll.size).toBe(0);
-
-				ll.unshift(1);
-				expect(ll.size).toBe(1);
-				expect(ll.head.value).toBe(1);
-				expect(ll.tail.value).toBe(1);
-				expect(ll.tail.next).toBe(null);
-				expect(ll.toArray()).toEqual([1]);
-
-				ll.unshift(10);
-				expect(ll.size).toBe(2);
-				expect(ll.head.value).toBe(10);
-				expect(ll.tail.value).toBe(1);
-				expect(ll.tail.next).toBe(null);
-				expect(ll.toArray()).toEqual([10, 1]);
 			});
 		});
 
