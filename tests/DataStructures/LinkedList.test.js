@@ -18,6 +18,13 @@ describe("LinkedList.js", () => {
 
 				expect(ll.size).toBe(1);
 			});
+
+			it("creates a new empty LinkedList", () => {
+				const ll = new LinkedList();
+				expect(ll.size).toBe(0);
+				expect(ll.head).toBe(null);
+				expect(ll.tail).toBe(null);
+			});
 		});
 
 		describe("clear()", () => {
@@ -95,6 +102,45 @@ describe("LinkedList.js", () => {
 			});
 		});
 
+		describe("unshift()", () => {
+			it("should add a new element at the start", () => {
+				const ll = new LinkedList(0);
+
+				ll.unshift(10);
+				expect(ll.size).toBe(2);
+				expect(ll.head.value).toBe(10);
+				expect(ll.tail.value).toBe(0);
+				expect(ll.tail.next).toBe(null);
+				expect(ll.toArray()).toEqual([10, 0]);
+
+				ll.unshift(20);
+				expect(ll.size).toBe(3);
+				expect(ll.head.value).toBe(20);
+				expect(ll.tail.value).toBe(0);
+				expect(ll.tail.next).toBe(null);
+				expect(ll.toArray()).toEqual([20, 10, 0]);
+			});
+
+			it("should add a new element if the list is empty", () => {
+				const ll = new LinkedList();
+				expect(ll.size).toBe(0);
+
+				ll.unshift(1);
+				expect(ll.size).toBe(1);
+				expect(ll.head.value).toBe(1);
+				expect(ll.tail.value).toBe(1);
+				expect(ll.tail.next).toBe(null);
+				expect(ll.toArray()).toEqual([1]);
+
+				ll.unshift(10);
+				expect(ll.size).toBe(2);
+				expect(ll.head.value).toBe(10);
+				expect(ll.tail.value).toBe(1);
+				expect(ll.tail.next).toBe(null);
+				expect(ll.toArray()).toEqual([10, 1]);
+			});
+		});
+
 		describe("toArray()", () => {
 			it("should return an array with the values of the linked list", () => {
 				const ll = new LinkedList(0);
@@ -103,8 +149,6 @@ describe("LinkedList.js", () => {
 				ll.push(30);
 
 				const result = ll.toArray();
-
-				console.log(result);
 
 				expect(Array.isArray(result)).toBe(true);
 				expect(result).toEqual([0, 10, 20, 30]);

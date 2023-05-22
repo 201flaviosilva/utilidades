@@ -1,3 +1,5 @@
+import { isValidNumber } from "../Maths";
+
 export class Node {
 	constructor(value) {
 		this.value = value;
@@ -7,10 +9,16 @@ export class Node {
 
 export class LinkedList {
 	constructor(value) {
-		const newNode = new Node(value);
-		this.head = newNode;
-		this.tail = newNode;
-		this.size = 1;
+		if (isValidNumber(value)) {
+			const newNode = new Node(value);
+			this.head = newNode;
+			this.tail = newNode;
+			this.size = 1;
+		} else {
+			this.head = null;
+			this.tail = null;
+			this.size = 0;
+		}
 	}
 
 	print() {
@@ -46,7 +54,7 @@ export class LinkedList {
 
 	// Remove a value from the END of the list
 	pop() {
-		if (this.size === 0) return undefined;
+		if (!this.size) return undefined;
 
 		let pre = this.head;
 		let temp = this.head;
@@ -56,7 +64,7 @@ export class LinkedList {
 		}
 
 		this.tail = pre;
-		pre.next = null;
+		this.tail.next = null;
 
 		this.size--;
 
@@ -66,6 +74,14 @@ export class LinkedList {
 
 	// Add a new value to the BEGINNING of the list
 	unshift(value) {
+		const newNode = new Node(value);
+		newNode.next = this.head;
+		this.head = newNode;
+
+		if (!this.tail) this.tail = newNode;
+
+		this.size++;
+
 		return this;
 	}
 
