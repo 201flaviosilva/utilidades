@@ -9,6 +9,7 @@ import { invertedLerp } from "./invertedLerp.js";
 import { isEven, isOdd } from "./isEvenOdd.js";
 import { isMultipleOf } from "./isMultipleOf.js";
 import { isNarcissisticNumber } from "./isNarcissisticNumber.js";
+import { isValidNumber } from "./isValidNumber.js";
 import { lerp } from "./lerp.js";
 import { map } from "./map.js";
 import { median } from "./median.js";
@@ -39,6 +40,7 @@ export {
 	isEven, isOdd,
 	isMultipleOf,
 	isNarcissisticNumber,
+	isValidNumber,
 	lerp,
 	map,
 	median,

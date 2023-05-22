@@ -15,11 +15,12 @@ This file was based on [this template](https://gist.github.com/juampynr/4c18214a
  
 #### Added
 - Add tests to the code;
-- roundNumber function;
-- LinkedList;
-- MEGABYTE_IN_KILOBYTES;
 - Arrays/chunk;
 - Arrays/removeDuplicatesObj;
+- DataStructures/LinkedList;
+- Maths/isValidNumber;
+- Maths/roundNumber;
+- MEGABYTE_IN_KILOBYTES;
 
 #### Changed
 - Organize project;
