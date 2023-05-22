@@ -93,7 +93,16 @@ export class LinkedList {
 
 	// REMOVE a value to the START of the list
 	shift() {
-		return this;
+		if (!this.size) return undefined;
+
+		const removedValue = this.head.value;
+
+		this.head = this.head.next;
+
+		this.size--;
+
+		if (this.size === 0) this.clear();
+		return removedValue;
 	}
 
 	// REMOVE a value in the given index of the list

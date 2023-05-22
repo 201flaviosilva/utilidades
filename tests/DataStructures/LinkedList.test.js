@@ -141,6 +141,42 @@ describe("LinkedList.js", () => {
 			});
 		});
 
+		describe("shift()", () => {
+			it("remove the first element from the linked list", () => {
+				const ll = new LinkedList(100);
+				ll.push(50);
+				ll.push(25);
+				ll.push(13);
+
+				expect(ll.shift()).toBe(100);
+				expect(ll.size).toBe(3);
+				expect(ll.head.value).toBe(50);
+				expect(ll.tail.value).toBe(13);
+				expect(ll.tail.next).toBe(null);
+				expect(ll.toArray()).toEqual([50, 25, 13]);
+
+				expect(ll.shift()).toBe(50);
+				expect(ll.size).toBe(2);
+				expect(ll.head.value).toBe(25);
+				expect(ll.tail.value).toBe(13);
+				expect(ll.tail.next).toBe(null);
+				expect(ll.toArray()).toEqual([25, 13]);
+
+				expect(ll.shift()).toBe(25);
+				expect(ll.size).toBe(1);
+				expect(ll.head.value).toBe(13);
+				expect(ll.tail.value).toBe(13);
+				expect(ll.tail.next).toBe(null);
+				expect(ll.toArray()).toEqual([13]);
+
+				expect(ll.pop()).toBe(13);
+				expect(ll.size).toBe(0);
+				expect(ll.head).toBe(null);
+				expect(ll.tail).toBe(null);
+				expect(ll.toArray()).toEqual([]);
+			});
+		});
+
 		describe("toArray()", () => {
 			it("should return an array with the values of the linked list", () => {
 				const ll = new LinkedList(0);
@@ -152,6 +188,25 @@ describe("LinkedList.js", () => {
 
 				expect(Array.isArray(result)).toBe(true);
 				expect(result).toEqual([0, 10, 20, 30]);
+			});
+		});
+
+		describe("End To End tests", () => {
+			test("all function of the linked list", () => {
+				const ll = new LinkedList();
+				expect(ll.toArray()).toEqual([]);
+
+				ll.push(100);
+				expect(ll.toArray()).toEqual([100]);
+
+				ll.pop();
+				expect(ll.toArray()).toEqual([]);
+
+				ll.unshift(50);
+				expect(ll.toArray()).toEqual([50]);
+
+				ll.shift();
+				expect(ll.toArray()).toEqual([]);
 			});
 		});
 	});
