@@ -57,6 +57,19 @@ export class LinkedList {
 		return true;
 	}
 
+	// ADD a new value to the START of the list
+	unshift(value) {
+		const newNode = new Node(value);
+		newNode.next = this.head;
+		this.head = newNode;
+
+		if (!this.tail) this.tail = newNode;
+
+		this.size++;
+
+		return this;
+	}
+
 	// ADD a new value to the END of the list
 	push(value) {
 		const newNode = new Node(value);
@@ -72,23 +85,23 @@ export class LinkedList {
 		return this;
 	}
 
-	// ADD a new value to the START of the list
-	unshift(value) {
-		const newNode = new Node(value);
-		newNode.next = this.head;
-		this.head = newNode;
-
-		if (!this.tail) this.tail = newNode;
-
-		this.size++;
-
-		return this;
-	}
-
-
 	// ADD a new value to the given index of the list
 	insert(value, index) {
 		return this;
+	}
+
+	// REMOVE a value to the START of the list
+	shift() {
+		if (!this.size) return undefined;
+
+		const removedValue = this.head.value;
+
+		this.head = this.head.next;
+
+		this.size--;
+
+		if (this.size === 0) this.clear();
+		return removedValue;
 	}
 
 	// REMOVE a value from the END of the list
@@ -109,20 +122,6 @@ export class LinkedList {
 
 		if (this.size === 0) this.clear();
 		return temp.value;
-	}
-
-	// REMOVE a value to the START of the list
-	shift() {
-		if (!this.size) return undefined;
-
-		const removedValue = this.head.value;
-
-		this.head = this.head.next;
-
-		this.size--;
-
-		if (this.size === 0) this.clear();
-		return removedValue;
 	}
 
 	// REMOVE a value in the given index of the list
