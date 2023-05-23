@@ -1,5 +1,3 @@
-import { isValidNumber } from "../Maths";
-
 export class Node {
 	constructor(value) {
 		this.value = value;
@@ -9,7 +7,7 @@ export class Node {
 
 export class LinkedList {
 	constructor(value) {
-		if (isValidNumber(value)) {
+		if (value !== undefined) {
 			const newNode = new Node(value);
 			this.head = newNode;
 			this.tail = newNode;
@@ -35,6 +33,20 @@ export class LinkedList {
 		this.tail = null;
 		this.size = 0;
 		return this;
+	}
+
+	get(index) {
+		if (index < 0 || index >= this.size) return undefined;
+
+		let count = 0;
+		let temp = this.head;
+		while (temp !== null) {
+			if (count === index) return temp.value;
+			temp = temp.next;
+			count++;
+		}
+
+		return temp; // Should never reach here
 	}
 
 	// ADD a new value to the END of the list

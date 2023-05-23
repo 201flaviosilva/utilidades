@@ -40,6 +40,50 @@ describe("LinkedList.js", () => {
 			});
 		});
 
+		describe("get()", () => {
+			it("should return value by the passed index", () => {
+				const ll = new LinkedList(100);
+				ll.push(20);
+				ll.push(30);
+
+				expect(ll.get(0)).toBe(100);
+				expect(ll.get(1)).toBe(20);
+				expect(ll.get(2)).toBe(30);
+			});
+
+			it("should return undefined in a empty list", () => {
+				const ll = new LinkedList();
+				expect(ll.get(0)).toBe(undefined);
+				expect(ll.get(1)).toBe(undefined);
+				expect(ll.get(10)).toBe(undefined);
+			});
+
+			it("should return undefined in a empty list", () => {
+				const ll = new LinkedList();
+				expect(ll.get(0)).toBe(undefined);
+				expect(ll.get(1)).toBe(undefined);
+				expect(ll.get(10)).toBe(undefined);
+			});
+
+			it("should return undefined if try to get a index less than 0 or greater than the list size", () => {
+				const ll = new LinkedList();
+				expect(ll.get(-1)).toBe(undefined);
+				expect(ll.get(-10)).toBe(undefined);
+			});
+
+			it("should return undefined if try to get a index greater than the list size", () => {
+				const ll = new LinkedList(10);
+				expect(ll.get(0)).toBe(10);
+				expect(ll.get(1)).toBe(undefined);
+				expect(ll.get(2)).toBe(undefined);
+
+				ll.push(25);
+				expect(ll.get(1)).toBe(25);
+				expect(ll.get(2)).toBe(undefined);
+				expect(ll.get(10)).toBe(undefined);
+			});
+		});
+
 		describe("push()", () => {
 			it("adds items to the end of the linked list", () => {
 				const ll = new LinkedList(100);
