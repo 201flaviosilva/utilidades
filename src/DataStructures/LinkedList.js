@@ -35,18 +35,26 @@ export class LinkedList {
 		return this;
 	}
 
-	get(index) {
+	get(index, returnNode = false) {
 		if (index < 0 || index >= this.size) return undefined;
 
 		let count = 0;
 		let temp = this.head;
 		while (temp !== null) {
-			if (count === index) return temp.value;
+			if (count === index) return returnNode ? temp : temp.value;
 			temp = temp.next;
 			count++;
 		}
 
 		return temp; // Should never reach here
+	}
+
+	set(index, value) {
+		const node = this.get(index, true);
+		if (!node) return false;
+
+		node.value = value;
+		return true;
 	}
 
 	// ADD a new value to the END of the list

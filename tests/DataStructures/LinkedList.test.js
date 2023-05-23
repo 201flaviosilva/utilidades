@@ -84,6 +84,42 @@ describe("LinkedList.js", () => {
 			});
 		});
 
+		describe("set()", () => {
+			it("should change a node value by the given index and new value", () => {
+				const ll = new LinkedList(100);
+				ll.push(20);
+				ll.push(30);
+				expect(ll.toArray()).toEqual([100, 20, 30]);
+
+				expect(ll.set(0, 500)).toBe(true);
+				expect(ll.toArray()).toEqual([500, 20, 30]);
+
+				expect(ll.set(2, 0)).toBe(true);
+				expect(ll.toArray()).toEqual([500, 20, 0]);
+
+				expect(ll.set(1, -50)).toBe(true);
+				expect(ll.toArray()).toEqual([500, -50, 0]);
+			});
+
+			it("should return false if the given index is out of bounds", () => {
+				const ll = new LinkedList();
+				expect(ll.toArray()).toEqual([]);
+
+				expect(ll.set(0, 500)).toBe(false);
+				expect(ll.toArray()).toEqual([]);
+
+				ll.push(42);
+				ll.set(0, 500);
+				expect(ll.toArray()).toEqual([500]);
+
+				expect(ll.set(-1, 1)).toBe(false);
+				expect(ll.toArray()).toEqual([500]);
+
+				expect(ll.set(100, 123)).toBe(false);
+				expect(ll.toArray()).toEqual([500]);
+			});
+		});
+
 		describe("push()", () => {
 			it("adds items to the end of the linked list", () => {
 				const ll = new LinkedList(100);
