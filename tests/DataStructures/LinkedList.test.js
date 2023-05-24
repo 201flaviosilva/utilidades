@@ -179,6 +179,46 @@ describe("LinkedList.js", () => {
 			});
 		});
 
+		describe("insert()", () => {
+			it("adds a new item in the list", () => {
+				const ll = new LinkedList(100);
+				ll.push(50);
+				ll.push(25);
+				ll.push(42);
+				ll.push(0);
+				ll.push(123);
+				expect(ll.toArray()).toEqual([100, 50, 25, 42, 0, 123]);
+
+				ll.insert(2, 55);
+				expect(ll.toArray()).toEqual([100, 50, 55, 25, 42, 0, 123]);
+
+				ll.insert(5, 5);
+				expect(ll.toArray()).toEqual([100, 50, 55, 25, 42, 5, 0, 123]);
+			});
+
+			it("should add a new item in the list at the start and a the end", () => {
+				const ll = new LinkedList();
+				ll.push(100);
+				ll.insert(0, 0);
+				ll.insert(2, 2);
+				expect(ll.toArray()).toEqual([0, 100, 2]);
+			});
+
+			it("should not add items if the index is not valid", () => {
+				const ll = new LinkedList(0);
+				ll.push(100);
+				ll.push(2);
+
+				expect(ll.insert(-1)).toBe(false);
+				expect(ll.insert(-10)).toBe(false);
+
+				expect(ll.insert(4)).toBe(false);
+				expect(ll.insert(10)).toBe(false);
+
+				expect(ll.toArray()).toEqual([0, 100, 2]);
+			});
+		});
+
 		describe("shift()", () => {
 			it("remove the first element from the linked list", () => {
 				const ll = new LinkedList(100);

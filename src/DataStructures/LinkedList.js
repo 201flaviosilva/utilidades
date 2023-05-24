@@ -86,7 +86,18 @@ export class LinkedList {
 	}
 
 	// ADD a new value to the given index of the list
-	insert(value, index) {
+	insert(index, value) {
+		if (index === 0) return this.unshift(value);
+		else if (index === this.size) return this.push(value);
+		else if (index < 0 || index > this.size) return false;
+
+		const newNode = new Node(value);
+		const temp = this.get(index - 1, true);
+
+		newNode.next = temp.next;
+		temp.next = newNode;
+
+		this.size++;
 		return this;
 	}
 
