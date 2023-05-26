@@ -13,7 +13,7 @@ npm i utilidades
 
 or
 ```sh
-npm i https://github.com/201flaviosilva-labs/utilidades#v1.3.2
+npm i https://github.com/201flaviosilva-labs/utilidades#v1.3.3
 ```
 
 #### Import to the project
@@ -25,7 +25,7 @@ console.log(randomNumber(1, 20));
 
 ### Using CDN (jsdelivr)
 ```html
-<script src="https://cdn.jsdelivr.net/npm/utilidades@1.3.2/build/utils.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/utilidades@1.3.3/build/utils.min.js"></script>
 <script src="./your-js-file.js"></script>
 ```
 
@@ -57,5 +57,6 @@ console.log(randomNumber(1, 20));
 
 ## Examples
 - [Code Sandbox](https://codesandbox.io/examples/package/utilidades);
-- [Code Sandbox](https://codesandbox.io/examples/package/201flaviosilva-utils);
+- [Code Sandbox](https://codesandbox.io/examples/package/utilidades);
+  - [Code Sandbox (old lib)](https://codesandbox.io/examples/package/201flaviosilva-utils);
 - [GitHub Repositories](https://github.com/201flaviosilva-labs/utilidades/network/dependents);

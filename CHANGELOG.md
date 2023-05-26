@@ -11,7 +11,18 @@ This file was based on [this template](https://gist.github.com/juampynr/4c18214a
 ----
 ## [1.3 - Tests and some Data Structures](https://github.com/201flaviosilva-labs/utilidades/milestone/4)
 
-### [1.3.2] - 00-06-2023
+### [1.3.3] - XX-XX-2023
+ 
+#### Added
+
+#### Removed
+
+#### Fixed/Updated
+
+#### Breaking Changes
+
+
+### [1.3.2] - 26-05-2023
  
 #### Added
 - Add tests to the code;
