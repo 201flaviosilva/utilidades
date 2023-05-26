@@ -350,6 +350,22 @@ describe("LinkedList.js", () => {
 			});
 		});
 
+		describe("reverse()", () => {
+			it("should reverse the linkedlist", () => {
+				const ll = new LinkedList(0);
+				ll.push(10);
+				ll.push(200);
+				ll.push(3000);
+
+				ll.reverse();
+
+				expect(ll.head.value).toBe(3000);
+				expect(ll.tail.value).toBe(0);
+
+				expect(ll.toArray()).toEqual([3000, 200, 10, 0]);
+			});
+		});
+
 		describe("toArray()", () => {
 			it("should return an array with the values of the linked list", () => {
 				const ll = new LinkedList(0);

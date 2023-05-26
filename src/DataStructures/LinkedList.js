@@ -151,6 +151,20 @@ export class LinkedList {
 	}
 
 	reverse() {
+		let temp = this.head;
+		this.head = this.tail;
+		this.tail = temp;
+
+		let prev = null;
+		let next = null;
+
+		for (let i = 0; i < this.size; i++) {
+			next = temp.next;
+			temp.next = prev;
+			prev = temp;
+			temp = next;
+		}
+
 		return this;
 	}
 
