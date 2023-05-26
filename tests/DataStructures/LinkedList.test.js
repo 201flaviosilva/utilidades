@@ -191,9 +191,11 @@ describe("LinkedList.js", () => {
 
 				ll.insert(2, 55);
 				expect(ll.toArray()).toEqual([100, 50, 55, 25, 42, 0, 123]);
+				expect(ll.size).toEqual(7);
 
 				ll.insert(5, 5);
 				expect(ll.toArray()).toEqual([100, 50, 55, 25, 42, 5, 0, 123]);
+				expect(ll.size).toEqual(8);
 			});
 
 			it("should add a new item in the list at the start and a the end", () => {
@@ -202,6 +204,7 @@ describe("LinkedList.js", () => {
 				ll.insert(0, 0);
 				ll.insert(2, 2);
 				expect(ll.toArray()).toEqual([0, 100, 2]);
+				expect(ll.size).toEqual(3);
 			});
 
 			it("should not add items if the index is not valid", () => {
@@ -209,13 +212,14 @@ describe("LinkedList.js", () => {
 				ll.push(100);
 				ll.push(2);
 
-				expect(ll.insert(-1)).toBe(false);
-				expect(ll.insert(-10)).toBe(false);
+				expect(ll.insert(-1, 999)).toBe(false);
+				expect(ll.insert(-10, 999)).toBe(false);
 
-				expect(ll.insert(4)).toBe(false);
-				expect(ll.insert(10)).toBe(false);
+				expect(ll.insert(4, 999)).toBe(false);
+				expect(ll.insert(10, 999)).toBe(false);
 
-				expect(ll.toArray()).toEqual([0, 100, 2]);
+				expect(ll.toArray()).not.toContain(999);
+				expect(ll.size).toEqual(3);
 			});
 		});
 
@@ -294,6 +298,55 @@ describe("LinkedList.js", () => {
 				expect(ll.head).toBe(null);
 				expect(ll.tail).toBe(null);
 				expect(ll.toArray()).toEqual([]);
+			});
+		});
+
+		describe("remove()", () => {
+			it("removes a item in the list by the index", () => {
+				const ll = new LinkedList(100);
+				ll.push(50);
+				ll.push(25);
+				ll.push(42);
+				ll.push(0);
+				ll.push(123);
+				expect(ll.toArray()).toEqual([100, 50, 25, 42, 0, 123]);
+
+				ll.remove(2);
+				expect(ll.toArray()).toEqual([100, 50, 42, 0, 123]);
+				expect(ll.size).toEqual(5);
+
+				ll.remove(3);
+				expect(ll.toArray()).toEqual([100, 50, 42, 123]);
+				expect(ll.size).toEqual(4);
+			});
+
+			it("should remove a item in the list at the start and a the end", () => {
+				const ll = new LinkedList(1);
+				ll.push(2);
+				ll.push(3);
+				ll.push(4);
+				ll.push(5);
+
+				ll.remove(4);
+				ll.remove(0);
+
+				expect(ll.toArray()).toEqual([2, 3, 4]);
+				expect(ll.size).toEqual(3);
+			});
+
+			it("should not remove any items if the index is not valid", () => {
+				const ll = new LinkedList(0);
+				ll.push(100);
+				ll.push(20);
+
+				expect(ll.remove(-1)).toBe(undefined);
+				expect(ll.remove(-10)).toBe(undefined);
+
+				expect(ll.remove(4)).toBe(undefined);
+				expect(ll.remove(10)).toBe(undefined);
+
+				expect(ll.toArray()).toEqual([0, 100, 20]);
+				expect(ll.size).toEqual(3);
 			});
 		});
 

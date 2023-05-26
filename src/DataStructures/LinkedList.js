@@ -136,8 +136,18 @@ export class LinkedList {
 	}
 
 	// REMOVE a value in the given index of the list
-	remove(value, index) {
-		return this;
+	remove(index) {
+		if (index === 0) return this.shift();
+		else if (index === this.size) return this.pop();
+		else if (index < 0 || index > this.size) return undefined;
+
+		const before = this.get(index - 1, true); // Element before to remove
+		const temp = before.next; // Current element to remove
+		before.next = temp.next;
+		temp.next = null;
+
+		this.size--;
+		return temp.value;
 	}
 
 	reverse() {
