@@ -5,4 +5,4 @@
 image: node:16
 
 tasks:
-  - init: npm install && npm run build
+  - init: npm install && npm run test:dev

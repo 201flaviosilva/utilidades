@@ -9,6 +9,7 @@ import { invertedLerp } from "./invertedLerp.js";
 import { isEven, isOdd } from "./isEvenOdd.js";
 import { isMultipleOf } from "./isMultipleOf.js";
 import { isNarcissisticNumber } from "./isNarcissisticNumber.js";
+import { isValidNumber } from "./isValidNumber.js";
 import { lerp } from "./lerp.js";
 import { map } from "./map.js";
 import { median } from "./median.js";
@@ -18,6 +19,7 @@ import { negative } from "./negative.js";
 import { percentage } from "./percentage.js";
 import { radiansToDegrees } from "./radiansToDegrees.js";
 import { range } from "./range.js";
+import { roundNumber } from "./roundNumber.js";
 import { subtraction } from "./subtraction.js";
 import { sum } from "./sum.js";
 
@@ -38,6 +40,7 @@ export {
 	isEven, isOdd,
 	isMultipleOf,
 	isNarcissisticNumber,
+	isValidNumber,
 	lerp,
 	map,
 	median,
@@ -47,6 +50,7 @@ export {
 	negative,
 	radiansToDegrees,
 	range,
+	roundNumber,
 	subtraction,
 	sum,
 };

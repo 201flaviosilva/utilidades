@@ -20,6 +20,6 @@ describe("Maths/subtraction.js", () => {
 	});
 
 	it("should return NaN if a non-number element is provided", () => {
-		expect(subtraction(1, 2, "a")).toBeNaN();
+		expect(() => subtraction(1, 2, "a")).toThrow();
 	});
 });

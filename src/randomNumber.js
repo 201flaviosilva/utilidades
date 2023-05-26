@@ -12,7 +12,7 @@
  * @returns {number} - random float number
  */
 export function randomFloat(min = 0, max = 1, precision = 2) {
-	if (!max) {
+	if (max === undefined) {
 		max = min;
 		min = 0;
 	}
@@ -32,7 +32,7 @@ export function randomFloat(min = 0, max = 1, precision = 2) {
  * @returns {number} random integer number
  */
 export function randomInt(min, max) {
-	if (!max) {
+	if (max === undefined) {
 		max = min;
 		min = 0;
 	}

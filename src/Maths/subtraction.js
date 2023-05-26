@@ -21,8 +21,7 @@ export function subtraction(...numbers) {
 	let result = numbers[0];
 	for (let i = 1; i < numbers.length; i++) {
 		if (typeof numbers[i] !== "number") {
-			console.error(`The element at position ${i} is not a number`);
-			return NaN;
+			throw new Error(`The element at position ${i} is not a number`);
 		}
 		result -= numbers[i];
 	}

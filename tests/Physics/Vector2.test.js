@@ -1,5 +1,6 @@
-import { Vector2 } from "../src/index";
-import { degreesToRadians } from "../src/Maths";
+import { Physics } from "../../src/index.js";
+import { degreesToRadians } from "../../src/Maths";
+const { Vector2 } = Physics;
 
 describe("Vector2.js", () => {
 	describe("constructor()", () => {
