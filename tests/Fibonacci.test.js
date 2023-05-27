@@ -1,4 +1,4 @@
-import { Fibonacci, fibonacciSequence, fibonacciUntil, fibonacciCustomSequence, recursiveFibonacci } from "../src/index";
+import { Fibonacci, fibonacciCustomSequence, fibonacciSequence, fibonacciUntil, recursiveFibonacci } from "./src/main";
 
 describe("Fibonacci.js", () => {
 	describe("Fibonacci Class", () => {

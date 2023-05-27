@@ -1,4 +1,4 @@
-import { Physics } from "../../src/index.js";
+import { Physics } from "./src/main";
 const { topDownCarMovimentation } = Physics;
 
 describe("Physics/topDownCarMovimentation.js", () => {

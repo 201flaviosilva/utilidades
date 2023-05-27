@@ -1,9 +1,10 @@
 /**
- * Represents a node in a linked list.
+ * @class LLNode
+ * @classdesc Represents a node in a linked list.
  * 
  * @memberof DataStructures
  */
-class LLNode {
+class Node {
 	/**
 	 * Creates a new Node instance.
 	 * @param {*} value - The value to be stored in the node.
@@ -26,7 +27,7 @@ class LinkedList {
 	 */
 	constructor(value) {
 		if (value !== undefined) {
-			const newNode = new LLNode(value);
+			const newNode = new Node(value);
 			this.head = newNode;
 			this.tail = newNode;
 			this.size = 1;
@@ -149,7 +150,7 @@ class LinkedList {
 	 * @memberof LinkedList
 	 */
 	unshift(value) {
-		const newNode = new LLNode(value);
+		const newNode = new Node(value);
 		newNode.next = this.head;
 		this.head = newNode;
 
@@ -175,7 +176,7 @@ class LinkedList {
 	 * @memberof LinkedList
 	 */
 	push(value) {
-		const newNode = new LLNode(value);
+		const newNode = new Node(value);
 		if (!this.head) {
 			this.head = newNode;
 			this.tail = newNode;
@@ -210,7 +211,7 @@ class LinkedList {
 		else if (index === this.size) return this.push(value);
 		else if (index < 0 || index > this.size) return false;
 
-		const newNode = new LLNode(value);
+		const newNode = new Node(value);
 		const temp = this.get(index - 1, true);
 
 		newNode.next = temp.next;
@@ -374,6 +375,6 @@ class LinkedList {
 }
 
 export {
-	LLNode,
+	Node as LLNode,
 	LinkedList,
 };

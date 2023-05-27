@@ -1,11 +1,11 @@
-import { choiceTrend } from "../src/index";
+import { choiceTrend } from "./src/main";
 
 describe("choiceTrend.js", () => {
 	beforeEach(() => {
-		jest.spyOn(global.Math, "random").mockReturnValue(0.5);
+		vitest.spyOn(global.Math, "random").mockReturnValue(0.5);
 	});
 	afterEach(() => {
-		jest.spyOn(global.Math, "random").mockRestore();
+		vitest.spyOn(global.Math, "random").mockRestore();
 	});
 
 	it("should return 1 for the defaults values", () => {

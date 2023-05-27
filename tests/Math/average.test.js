@@ -1,4 +1,4 @@
-import { Maths } from "../../src/index.js";
+import { Maths } from "./src/main";
 const { average } = Maths;
 
 describe("Maths/average.js", () => {

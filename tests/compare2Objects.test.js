@@ -1,4 +1,4 @@
-import { compare2Objects } from "../src/index";
+import { compare2Objects } from "./src/main";
 
 describe("compare2Objects.js", () => {
 	it("should return true for equals value", () => {

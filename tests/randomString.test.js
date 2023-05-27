@@ -1,4 +1,4 @@
-import { randomString } from "../src/index";
+import { randomString } from "./src/main";
 
 // TODO: use regex to check :)
 

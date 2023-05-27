@@ -1,4 +1,4 @@
-import { and, or, xor } from "../src/index";
+import { and, or, xor } from "./src/main";
 
 describe("logicalOperators.js", () => {
 	describe("and", () => {

@@ -1,12 +1,12 @@
-import { Arrays } from "../../src/index.js";
+import { Arrays } from "./src/main";
 const { choice } = Arrays;
 
 describe("Arrays/choice.js", () => {
 	beforeEach(() => {
-		jest.spyOn(global.Math, "random").mockReturnValue(0.1);
+		vitest.spyOn(global.Math, "random").mockReturnValue(0.1);
 	});
 	afterEach(() => {
-		jest.spyOn(global.Math, "random").mockRestore();
+		vitest.spyOn(global.Math, "random").mockRestore();
 	});
 
 	it("should return A", () => {

@@ -1,4 +1,4 @@
-import { randomWalk1D, randomWalk2D, randomWalk3D, randomWalk } from "../src/index";
+import { randomWalk1D, randomWalk2D, randomWalk3D, randomWalk } from "./src/main";
 
 // TODO: test this functions
 describe("randomWalk.js", () => {

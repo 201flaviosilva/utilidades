@@ -1,4 +1,4 @@
-import { isFalsy, isTruthy } from "../src/index";
+import { isFalsy, isTruthy } from "./src/main";
 
 describe("isTruthyFalsy.js", () => {
 	describe("isFalsy", () => {

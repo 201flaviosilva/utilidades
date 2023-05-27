@@ -1,4 +1,4 @@
-import { Maths } from "../../src/index.js";
+import { Maths } from "./src/main";
 const { isMultipleOf } = Maths;
 
 describe("Maths/isMultipleOf.js", () => {

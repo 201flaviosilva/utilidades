@@ -1,4 +1,4 @@
-import { randomColor, randomColor0X, randomRGBColor, randomRGBAColor } from "../src/index.js";
+import { randomColor, randomColor0X, randomRGBAColor, randomRGBColor } from "./src/main";
 
 describe("randomColor.js", () => {
 	describe("randomColor", () => {

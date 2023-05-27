@@ -1,4 +1,4 @@
-import { clone } from "../src/index";
+import { clone } from "./src/main";
 
 describe("clone.js", () => {
 	it("should return a new object with the same properties", () => {
