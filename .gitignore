@@ -1,6 +1,7 @@
 _ignore
 docs
 coverage
+package-lock.json
 
 # Logs
 logs

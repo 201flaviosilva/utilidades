@@ -2,11 +2,12 @@ import { Arrays } from "./src/main";
 const { choice } = Arrays;
 
 describe("Arrays/choice.js", () => {
+	let spy;
 	beforeEach(() => {
-		vitest.spyOn(global.Math, "random").mockReturnValue(0.1);
+		spy = vitest.spyOn(global.Math, "random").mockReturnValue(0.1);
 	});
 	afterEach(() => {
-		vitest.spyOn(global.Math, "random").mockRestore();
+		spy.mockRestore();
 	});
 
 	it("should return A", () => {
