@@ -1,4 +1,4 @@
-import { reverseString } from "../src/index";
+import { reverseString } from "./src/main";
 
 describe("reverseString.js", () => {
 	it("should return the same string but reversed", () => {

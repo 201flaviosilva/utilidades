@@ -1,4 +1,4 @@
-import { allCharactersSame } from "../src/index";
+import { allCharactersSame } from "./src/main";
 
 describe("allCharactersSame.js", () => {
 	test("if all characters of a string are equal", () => {

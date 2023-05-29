@@ -1,4 +1,4 @@
-import { Arrays } from "../../src/index.js";
+import { Arrays } from "./src/main";
 const { chunk } = Arrays;
 
 describe("Arrays/chunk.js", () => {

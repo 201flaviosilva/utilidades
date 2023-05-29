@@ -1,5 +1,5 @@
-import { Physics } from "../../src/index.js";
-import { degreesToRadians } from "../../src/Maths";
+import { Maths, Physics } from "./src/main";
+const { degreesToRadians } = Maths;
 const { Vector2 } = Physics;
 
 describe("Vector2.js", () => {

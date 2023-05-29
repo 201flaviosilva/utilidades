@@ -1,9 +1,10 @@
 /**
- * Represents a node in a linked list.
+ * @class LLNode
+ * @classdesc Represents a node in a linked list.
  *
  * @memberof DataStructures
  */
-export class LLNode {
+declare class Node {
     /**
      * Creates a new Node instance.
      * @param {*} value - The value to be stored in the node.
@@ -23,8 +24,8 @@ export class LinkedList {
      * @param {*} value - The value to initialize the list with (optional).
      */
     constructor(value: any);
-    head: LLNode;
-    tail: LLNode;
+    head: Node;
+    tail: Node;
     size: number;
     /**
      * Prints the values of the linked list.
@@ -219,3 +220,4 @@ export class LinkedList {
      */
     toArray(): any[];
 }
+export { Node as LLNode };

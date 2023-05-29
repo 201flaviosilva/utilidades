@@ -1,4 +1,4 @@
-import { Maths } from "../../src/index.js";
+import { Maths } from "./src/main";
 const { division } = Maths;
 
 describe("Maths/division.js", () => {

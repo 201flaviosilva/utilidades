@@ -1,5 +1,5 @@
-import * as utils from "../src/index";
-import { randomFloat, randomInt, randomNumber } from "../src/randomNumber";
+import * as utils from "./src/main";
+import { randomFloat, randomInt, randomNumber } from "./src/randomNumber";
 
 describe("randomNumber.js", () => {
 	describe("randomFloat", () => {

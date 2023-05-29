@@ -1,4 +1,4 @@
-import { binary2Decimal } from "../src/index";
+import { binary2Decimal } from "./src/main";
 
 describe("binary2Decimal.js", () => {
 	it("should return 42 for '101010'", () => {
