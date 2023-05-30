@@ -20,7 +20,7 @@ import { and, or, xor } from "./logicalOperators.js";
 import { randomColor, randomColor0X, randomRGBAColor, randomRGBColor } from "./randomColor.js";
 import { randomFloat, randomInt, randomNumber } from "./randomNumber.js";
 import { randomString } from "./randomString.js";
-import { randomWalk1D, randomWalk2D, randomWalk3D } from "./randomWalk.js";
+import { randomWalk } from "./randomWalk.js";
 import { reverseString } from "./reverseString.js";
 
 export {
@@ -51,7 +51,7 @@ export {
 	randomColor, randomColor0X, randomRGBColor, randomRGBAColor,
 	randomNumber, randomInt, randomFloat,
 	randomString,
-	randomWalk1D, randomWalk2D, randomWalk3D,
+	randomWalk,
 	reverseString,
 };
 

@@ -3,6 +3,7 @@ const { choice } = Arrays;
 
 describe("Arrays/choice.js", () => {
 	let spy;
+
 	beforeEach(() => {
 		spy = vitest.spyOn(global.Math, "random").mockReturnValue(0.1);
 	});
