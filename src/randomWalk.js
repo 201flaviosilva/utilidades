@@ -1,21 +1,25 @@
 /**
- * Perform a random walk in two dimensions.
+ * Generates a random walk in the specified dimension.
+ * 
+ * @example 
+ * randomWalk(100, 2); // [x, y] -> [3, -2]
+ * randomWalk(35, 3); // [x, y, z] -> [1, -5, 2]
  * 
  * @param {number} steps - The number of steps to take in the random walk.
- * @returns {{x: number, y: number}} - The final position after the random walk, with x and y coordinates.
+ * @param {number} dimension - The dimensionality of the random walk (1, 2, or 3).
+ * 
+ * @returns {number[]} The coordinates of the random walk in the specified dimension.
  */
-export function randomWalk(steps) {
-	let x = 0;
-	let y = 0;
+export function randomWalk(steps, dimension = 2) {
+	let position = new Array(dimension).fill(0);
 
 	for (let i = 0; i < steps; i++) {
 		const random = Math.random();
+		const axis = Math.floor(random * dimension);
 
-		if (random < 0.25) x++;
-		else if (random < 0.5) x--;
-		else if (random < 0.75) y++;
-		else y--;
+		if (random < 0.5) position[axis]++;
+		else position[axis]--;
 	}
 
-	return { x, y };
+	return position;
 }

@@ -11,22 +11,33 @@ describe("randomWalk.js", () => {
 		spy.mockRestore();
 	});
 
-	test("should return an object with x and y coordinates", () => {
-		const steps = 10;
-		const result = randomWalk(steps);
+	test("should generate a 1D random walk with the specified number of steps", () => {
+		const steps = 100;
+		const dimension = 1;
+		const walk = randomWalk(steps, dimension);
 
-		expect(result).toHaveProperty("x");
-		expect(result).toHaveProperty("y");
-
-		expect(typeof result.x).toBe("number");
-		expect(typeof result.y).toBe("number");
+		expect(walk.length).toBe(dimension);
+		expect(typeof walk[0]).toBe("number");
 	});
 
-	test("should return the correct final position after the specified number of steps", () => {
-		const steps = 10;
-		const result = randomWalk(steps);
+	test("should generate a 2D random walk with the specified number of steps", () => {
+		const steps = 100;
+		const dimension = 2;
+		const walk = randomWalk(steps, dimension);
 
-		expect(result.x).toBe(0);
-		expect(result.y).toBe(steps);
+		expect(walk.length).toBe(dimension);
+		expect(typeof walk[0]).toBe("number");
+		expect(typeof walk[1]).toBe("number");
+	});
+
+	test("should generate a 3D random walk with the specified number of steps", () => {
+		const steps = 100;
+		const dimension = 3;
+		const walk = randomWalk(steps, dimension);
+
+		expect(walk.length).toBe(dimension);
+		expect(typeof walk[0]).toBe("number");
+		expect(typeof walk[1]).toBe("number");
+		expect(typeof walk[2]).toBe("number");
 	});
 });
