@@ -6,8 +6,8 @@
   "author": "201flaviosilva",
   "license": "MIT",
   "type": "module",
-  "main": "./dist/counter.umd.cjs",
-  "module": "./dist/counter.js",
+  "main": "./dist/utilidades.umd.cjs",
+  "module": "./dist/utilidades.js",
   "types": "./types/main.d.ts",
   "scripts": {
     "clear": "rm -rf types && rm -rf docs && rm -rf build && rm -rf dist",
@@ -40,8 +40,8 @@
   ],
   "exports": {
     "types": "./types/main.d.ts",
-    "import": "./dist/counter.js",
-    "require": "./dist/counter.umd.cjs"
+    "import": "./dist/utilidades.js",
+    "require": "./dist/utilidades.umd.cjs"
   },
   "keywords": [
     "utils"

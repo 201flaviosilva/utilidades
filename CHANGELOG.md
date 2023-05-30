@@ -14,13 +14,12 @@ This file was based on [this template](https://gist.github.com/juampynr/4c18214a
 ### [1.3.3] - XX-XX-2023
  
 #### Added
-
-#### Removed
+- randomWalk function;
 
 #### Fixed/Updated
 
 #### Breaking Changes
-
+- Removed: randomWalk1d, randomWalk3d, randomWalk3d functions
 
 ### [1.3.2] - 26-05-2023
  
@@ -42,10 +41,7 @@ This file was based on [this template](https://gist.github.com/juampynr/4c18214a
 
 #### Breaking Changes
 - Multiple files was organized!
-
-#### Removed
-- SortingAlgorithms - Moved sort function to the [play-code project](https://github.com/201flaviosilva-labs/play-code);
-
+- Removed: SortingAlgorithms - Moved sort function to the [play-code project](https://github.com/201flaviosilva-labs/play-code);
 
 ## [1.2.0 - More Functions](https://github.com/201flaviosilva-labs/utilidades/milestone/2)
 
