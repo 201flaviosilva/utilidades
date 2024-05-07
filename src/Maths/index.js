@@ -6,6 +6,7 @@ import { division } from "./division.js";
 import { factorial } from "./factorial.js";
 import { getPositionWithAngleDistance } from "./getPositionWithAngleDistance.js";
 import { invertedLerp } from "./invertedLerp.js";
+import { isDecimal } from "./isDecimal.js";
 import { isEven, isOdd } from "./isEvenOdd.js";
 import { isMultipleOf } from "./isMultipleOf.js";
 import { isNarcissisticNumber } from "./isNarcissisticNumber.js";
@@ -37,6 +38,7 @@ export {
 	factorial,
 	getPositionWithAngleDistance,
 	invertedLerp,
+	isDecimal,
 	isEven, isOdd,
 	isMultipleOf,
 	isNarcissisticNumber,
