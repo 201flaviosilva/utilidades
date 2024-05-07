@@ -22,6 +22,7 @@ import { randomFloat, randomInt, randomNumber } from "./randomNumber.js";
 import { randomString } from "./randomString.js";
 import { randomWalk } from "./randomWalk.js";
 import { reverseString } from "./reverseString.js";
+import { sleep } from "./sleep.js";
 
 export {
 	Arrays,
@@ -53,5 +54,6 @@ export {
 	randomString,
 	randomWalk,
 	reverseString,
+	sleep,
 };
 
