@@ -378,6 +378,6 @@ class LinkedList {
 }
 
 export {
-	Node as LLNode,
-	LinkedList
+	LinkedList, Node
 };
+
