@@ -1,7 +1,8 @@
 // https://js-sdsl.org/#/README
 
 import { BinarySearchTree, BinarySearchTreeInstance } from "./BinarySearchTree.js";
-import { LinkedList } from "./LinkedList.js";
+import { Node as DLLNode, DoublyLinkedList } from "./DoublyLinkedList.js";
+import { Node as LLNode, LinkedList } from "./LinkedList.js";
 
 /**
  * Some data structure
@@ -9,6 +10,6 @@ import { LinkedList } from "./LinkedList.js";
  * @namespace DataStructures
  */
 export {
-	LinkedList,
-	BinarySearchTree, BinarySearchTreeInstance,
+	BinarySearchTree, BinarySearchTreeInstance, DLLNode, DoublyLinkedList, LLNode, LinkedList
 };
+

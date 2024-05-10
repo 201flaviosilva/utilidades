@@ -1,20 +1,19 @@
-import { LLNode } from "./src/DataStructures/LinkedList";
 import { DataStructures } from "./src/main";
-const { LinkedList } = DataStructures;
+const { LinkedList, LLNode: Node } = DataStructures;
 
-describe("LinkedList.js", () => {
+describe("DataStructures/LinkedList.js", () => {
 	describe("LinkedList", () => {
 		describe("constructor()", () => {
 			it("creates a new LinkedList", () => {
 				const ll = new LinkedList(100);
 
-				// expect(ll.head).toBeInstanceOf(LLNode); // TODO: fix this line
+				expect(ll.head).toBeInstanceOf(Node);
 				expect(ll.head.value).toBe(100);
-				expect(ll.head.next).toBe(null);
+				expect(ll.head.next).toBeNull();
 
-				// expect(ll.tail).toBeInstanceOf(LLNode); // TODO: fix this line
+				expect(ll.tail).toBeInstanceOf(Node);
 				expect(ll.tail.value).toBe(100);
-				expect(ll.tail.next).toBe(null);
+				expect(ll.tail.next).toBeNull();
 
 				expect(ll.size).toBe(1);
 			});
@@ -22,8 +21,8 @@ describe("LinkedList.js", () => {
 			it("creates a new empty LinkedList", () => {
 				const ll = new LinkedList();
 				expect(ll.size).toBe(0);
-				expect(ll.head).toBe(null);
-				expect(ll.tail).toBe(null);
+				expect(ll.head).toBeNull();
+				expect(ll.tail).toBeNull();
 			});
 		});
 
@@ -34,8 +33,8 @@ describe("LinkedList.js", () => {
 
 				ll.clear();
 
-				expect(ll.head).toBe(null);
-				expect(ll.tail).toBe(null);
+				expect(ll.head).toBeNull();
+				expect(ll.tail).toBeNull();
 				expect(ll.size).toBe(0);
 			});
 		});
@@ -128,14 +127,14 @@ describe("LinkedList.js", () => {
 				expect(ll.size).toBe(2);
 				expect(ll.head.value).toBe(10);
 				expect(ll.tail.value).toBe(0);
-				expect(ll.tail.next).toBe(null);
+				expect(ll.tail.next).toBeNull();
 				expect(ll.toArray()).toEqual([10, 0]);
 
 				ll.unshift(20);
 				expect(ll.size).toBe(3);
 				expect(ll.head.value).toBe(20);
 				expect(ll.tail.value).toBe(0);
-				expect(ll.tail.next).toBe(null);
+				expect(ll.tail.next).toBeNull();
 				expect(ll.toArray()).toEqual([20, 10, 0]);
 			});
 
@@ -147,14 +146,14 @@ describe("LinkedList.js", () => {
 				expect(ll.size).toBe(1);
 				expect(ll.head.value).toBe(1);
 				expect(ll.tail.value).toBe(1);
-				expect(ll.tail.next).toBe(null);
+				expect(ll.tail.next).toBeNull();
 				expect(ll.toArray()).toEqual([1]);
 
 				ll.unshift(10);
 				expect(ll.size).toBe(2);
 				expect(ll.head.value).toBe(10);
 				expect(ll.tail.value).toBe(1);
-				expect(ll.tail.next).toBe(null);
+				expect(ll.tail.next).toBeNull();
 				expect(ll.toArray()).toEqual([10, 1]);
 			});
 		});
@@ -234,27 +233,27 @@ describe("LinkedList.js", () => {
 				expect(ll.size).toBe(3);
 				expect(ll.head.value).toBe(50);
 				expect(ll.tail.value).toBe(13);
-				expect(ll.tail.next).toBe(null);
+				expect(ll.tail.next).toBeNull();
 				expect(ll.toArray()).toEqual([50, 25, 13]);
 
 				expect(ll.shift()).toBe(50);
 				expect(ll.size).toBe(2);
 				expect(ll.head.value).toBe(25);
 				expect(ll.tail.value).toBe(13);
-				expect(ll.tail.next).toBe(null);
+				expect(ll.tail.next).toBeNull();
 				expect(ll.toArray()).toEqual([25, 13]);
 
 				expect(ll.shift()).toBe(25);
 				expect(ll.size).toBe(1);
 				expect(ll.head.value).toBe(13);
 				expect(ll.tail.value).toBe(13);
-				expect(ll.tail.next).toBe(null);
+				expect(ll.tail.next).toBeNull();
 				expect(ll.toArray()).toEqual([13]);
 
 				expect(ll.pop()).toBe(13);
 				expect(ll.size).toBe(0);
-				expect(ll.head).toBe(null);
-				expect(ll.tail).toBe(null);
+				expect(ll.head).toBeNull();
+				expect(ll.tail).toBeNull();
 				expect(ll.toArray()).toEqual([]);
 			});
 		});
@@ -270,33 +269,33 @@ describe("LinkedList.js", () => {
 				expect(ll.size).toBe(3);
 				expect(ll.head.value).toBe(100);
 				expect(ll.tail.value).toBe(25);
-				expect(ll.tail.next).toBe(null);
+				expect(ll.tail.next).toBeNull();
 				expect(ll.toArray()).toEqual([100, 50, 25]);
 
 				expect(ll.pop()).toBe(25);
 				expect(ll.size).toBe(2);
 				expect(ll.head.value).toBe(100);
 				expect(ll.tail.value).toBe(50);
-				expect(ll.tail.next).toBe(null);
+				expect(ll.tail.next).toBeNull();
 				expect(ll.toArray()).toEqual([100, 50]);
 
 				expect(ll.pop()).toBe(50);
 				expect(ll.size).toBe(1);
 				expect(ll.head.value).toBe(100);
 				expect(ll.tail.value).toBe(100);
-				expect(ll.tail.next).toBe(null);
+				expect(ll.tail.next).toBeNull();
 				expect(ll.toArray()).toEqual([100]);
 
 				expect(ll.pop()).toBe(100);
 				expect(ll.size).toBe(0);
-				expect(ll.head).toBe(null);
-				expect(ll.tail).toBe(null);
+				expect(ll.head).toBeNull();
+				expect(ll.tail).toBeNull();
 				expect(ll.toArray()).toEqual([]);
 
 				expect(ll.pop()).toBe(undefined);
 				expect(ll.size).toBe(0);
-				expect(ll.head).toBe(null);
-				expect(ll.tail).toBe(null);
+				expect(ll.head).toBeNull();
+				expect(ll.tail).toBeNull();
 				expect(ll.toArray()).toEqual([]);
 			});
 		});

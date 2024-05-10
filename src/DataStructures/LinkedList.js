@@ -28,8 +28,8 @@ class LinkedList {
 	constructor(value) {
 		if (value !== undefined) {
 			const newNode = new Node(value);
-			this.head = newNode;
-			this.tail = newNode;
+			this.head = newNode; // first node to be added
+			this.tail = newNode; // last node to be added
 			this.size = 1;
 		} else {
 			this.head = null;
@@ -265,7 +265,7 @@ class LinkedList {
 	 * @memberof LinkedList
 	 */
 	pop() {
-		if (!this.size) return undefined;
+		if (this.size === 0) return undefined;
 
 		let pre = this.head;
 		let temp = this.head;
@@ -346,6 +346,9 @@ class LinkedList {
 		return this;
 	}
 
+	// TODO: Implement sort()
+	sort() { }
+
 	/**
 	 * Converts the linked list to an array.
 	 * 
@@ -375,6 +378,6 @@ class LinkedList {
 }
 
 export {
-	Node as LLNode,
-	LinkedList,
+	LinkedList, Node
 };
+

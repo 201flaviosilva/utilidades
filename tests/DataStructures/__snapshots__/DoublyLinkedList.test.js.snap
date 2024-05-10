@@ -1,0 +1,257 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DataStructures/DoublyLinkedList.js > DoublyLinkedList > Node > creates a new Node with a value 1`] = `
+Node {
+  "next": null,
+  "prev": null,
+  "value": 10,
+}
+`;
+
+exports[`DataStructures/DoublyLinkedList.js > DoublyLinkedList > constructor() > creates a new DoublyLinkedList, starting with a value 1`] = `
+DoublyLinkedList {
+  "head": Node {
+    "next": null,
+    "prev": null,
+    "value": 100,
+  },
+  "size": 1,
+  "tail": Node {
+    "next": null,
+    "prev": null,
+    "value": 100,
+  },
+}
+`;
+
+exports[`DataStructures/DoublyLinkedList.js > DoublyLinkedList > constructor() > creates a new DoublyLinkedList, starting with an array 1`] = `
+DoublyLinkedList {
+  "head": Node {
+    "next": Node {
+      "next": Node {
+        "next": null,
+        "prev": [Circular],
+        "value": 30,
+      },
+      "prev": [Circular],
+      "value": 20,
+    },
+    "prev": null,
+    "value": 10,
+  },
+  "size": 3,
+  "tail": Node {
+    "next": null,
+    "prev": Node {
+      "next": [Circular],
+      "prev": Node {
+        "next": [Circular],
+        "prev": null,
+        "value": 10,
+      },
+      "value": 20,
+    },
+    "value": 30,
+  },
+}
+`;
+
+exports[`DataStructures/DoublyLinkedList.js > DoublyLinkedList > constructor() > creates a new empty DoublyLinkedList 1`] = `
+DoublyLinkedList {
+  "head": null,
+  "size": 0,
+  "tail": null,
+}
+`;
+
+exports[`DataStructures/DoublyLinkedList.js > DoublyLinkedList > constructor() > creates a new empty DoublyLinkedList, starting with an empty array 1`] = `
+DoublyLinkedList {
+  "head": null,
+  "size": 0,
+  "tail": null,
+}
+`;
+
+exports[`DataStructures/DoublyLinkedList.js > DoublyLinkedList > pop() > should remove all the values from the list 1`] = `
+DoublyLinkedList {
+  "head": null,
+  "size": 0,
+  "tail": null,
+}
+`;
+
+exports[`DataStructures/DoublyLinkedList.js > DoublyLinkedList > pop() > should remove the last value from the list 1`] = `
+DoublyLinkedList {
+  "head": Node {
+    "next": Node {
+      "next": null,
+      "prev": [Circular],
+      "value": 20,
+    },
+    "prev": null,
+    "value": 10,
+  },
+  "size": 2,
+  "tail": Node {
+    "next": null,
+    "prev": Node {
+      "next": [Circular],
+      "prev": null,
+      "value": 10,
+    },
+    "value": 20,
+  },
+}
+`;
+
+exports[`DataStructures/DoublyLinkedList.js > DoublyLinkedList > remove() > should remove the node at the given index 1`] = `
+DoublyLinkedList {
+  "head": Node {
+    "next": Node {
+      "next": Node {
+        "next": Node {
+          "next": null,
+          "prev": [Circular],
+          "value": 50,
+        },
+        "prev": [Circular],
+        "value": 40,
+      },
+      "prev": [Circular],
+      "value": 20,
+    },
+    "prev": null,
+    "value": 10,
+  },
+  "size": 4,
+  "tail": Node {
+    "next": null,
+    "prev": Node {
+      "next": [Circular],
+      "prev": Node {
+        "next": [Circular],
+        "prev": Node {
+          "next": [Circular],
+          "prev": null,
+          "value": 10,
+        },
+        "value": 20,
+      },
+      "value": 40,
+    },
+    "value": 50,
+  },
+}
+`;
+
+exports[`DataStructures/DoublyLinkedList.js > DoublyLinkedList > set() > should change a node value by the given index and new value 1`] = `
+DoublyLinkedList {
+  "head": Node {
+    "next": Node {
+      "next": Node {
+        "next": null,
+        "prev": [Circular],
+        "value": 300,
+      },
+      "prev": [Circular],
+      "value": 200,
+    },
+    "prev": null,
+    "value": 100,
+  },
+  "size": 3,
+  "tail": Node {
+    "next": null,
+    "prev": Node {
+      "next": [Circular],
+      "prev": Node {
+        "next": [Circular],
+        "prev": null,
+        "value": 100,
+      },
+      "value": 200,
+    },
+    "value": 300,
+  },
+}
+`;
+
+exports[`DataStructures/DoublyLinkedList.js > DoublyLinkedList > shift() > should remove all the values from the list 1`] = `
+DoublyLinkedList {
+  "head": null,
+  "size": 0,
+  "tail": null,
+}
+`;
+
+exports[`DataStructures/DoublyLinkedList.js > DoublyLinkedList > shift() > should remove the first value from the list 1`] = `
+DoublyLinkedList {
+  "head": Node {
+    "next": Node {
+      "next": null,
+      "prev": [Circular],
+      "value": 30,
+    },
+    "prev": null,
+    "value": 20,
+  },
+  "size": 2,
+  "tail": Node {
+    "next": null,
+    "prev": Node {
+      "next": [Circular],
+      "prev": null,
+      "value": 20,
+    },
+    "value": 30,
+  },
+}
+`;
+
+exports[`DataStructures/DoublyLinkedList.js > DoublyLinkedList > unshift() > adds a new value to the start of the list 1`] = `
+DoublyLinkedList {
+  "head": Node {
+    "next": Node {
+      "next": Node {
+        "next": null,
+        "prev": [Circular],
+        "value": 30,
+      },
+      "prev": [Circular],
+      "value": 20,
+    },
+    "prev": null,
+    "value": 10,
+  },
+  "size": 3,
+  "tail": Node {
+    "next": null,
+    "prev": Node {
+      "next": [Circular],
+      "prev": Node {
+        "next": [Circular],
+        "prev": null,
+        "value": 10,
+      },
+      "value": 20,
+    },
+    "value": 30,
+  },
+}
+`;
+
+exports[`DataStructures/DoublyLinkedList.js > DoublyLinkedList > unshift() > should add a new value to the start of an empty list 1`] = `
+DoublyLinkedList {
+  "head": Node {
+    "next": null,
+    "prev": null,
+    "value": 10,
+  },
+  "size": 1,
+  "tail": Node {
+    "next": null,
+    "prev": null,
+    "value": 10,
+  },
+}
+`;
