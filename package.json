@@ -22,13 +22,13 @@
     "bump": "npm run build && np --no-cleanup --any-branch"
   },
   "devDependencies": {
-    "@vitest/coverage-c8": "^0.31.1",
-    "clean-jsdoc-theme": "^4.2.7",
-    "jsdoc": "^4.0.2",
-    "np": "^8.0.1",
-    "typescript": "^5.0.4",
-    "vite": "^4.3.9",
-    "vitest": "^0.31.1"
+    "@vitest/coverage-c8": "^0.31.4",
+    "clean-jsdoc-theme": "^4.3.0",
+    "jsdoc": "^4.0.3",
+    "np": "^8.0.4",
+    "typescript": "^5.4.5",
+    "vite": "^4.5.3",
+    "vitest": "^0.31.4"
   },
   "files": [
     "README.md",
