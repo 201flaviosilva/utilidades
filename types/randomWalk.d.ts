@@ -1,45 +1,13 @@
 /**
- * Returns a random value -1 or 1
+ * Generates a random walk in the specified dimension.
  *
- * @see {@link https://pt.wikipedia.org/wiki/Passeio_aleat%C3%B3rio}
+ * @example
+ * randomWalk(100, 2); // [x, y] -> [3, -2]
+ * randomWalk(35, 3); // [x, y, z] -> [1, -5, 2]
  *
- * @returns {number[]}
+ * @param {number} steps - The number of steps to take in the random walk.
+ * @param {number} dimension - The dimensionality of the random walk (1, 2, or 3).
+ *
+ * @returns {number[]} The coordinates of the random walk in the specified dimension.
  */
-export function randomWalk1D(): number[];
-/**
- * Return a changed random axis (x or y)
- *
- * @see {@link https://pt.wikipedia.org/wiki/Passeio_aleat%C3%B3rio}
- *
- * @returns {number[]}
- */
-export function randomWalk2D(): number[];
-/**
- * Return a changed random axis (x, y or z)
- *
- * @see {@link https://pt.wikipedia.org/wiki/Passeio_aleat%C3%B3rio}
- *
- * @returns {number[]}
- */
-export function randomWalk3D(): number[];
-export function randomWalk(numberOfAxes?: number, trend?: {
-    left: number;
-    right: number;
-    up: number;
-    down: number;
-    front: number;
-    backward: number;
-}, bounds?: {
-    x: {
-        min: number;
-        max: number;
-    };
-    y: {
-        min: number;
-        max: number;
-    };
-    z: {
-        min: number;
-        max: number;
-    };
-}): void;
+export function randomWalk(steps: number, dimension?: number): number[];

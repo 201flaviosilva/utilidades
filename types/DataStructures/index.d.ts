@@ -1,4 +1,7 @@
-import { LinkedList } from "./LinkedList.js";
 import { BinarySearchTree } from "./BinarySearchTree.js";
 import { BinarySearchTreeInstance } from "./BinarySearchTree.js";
-export { LinkedList, BinarySearchTree, BinarySearchTreeInstance };
+import { Node as DLLNode } from "./DoublyLinkedList.js";
+import { DoublyLinkedList } from "./DoublyLinkedList.js";
+import { Node as LLNode } from "./LinkedList.js";
+import { LinkedList } from "./LinkedList.js";
+export { BinarySearchTree, BinarySearchTreeInstance, DLLNode, DoublyLinkedList, LLNode, LinkedList };

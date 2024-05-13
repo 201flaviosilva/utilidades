@@ -1,19 +1,4 @@
 /**
- * @class LLNode
- * @classdesc Represents a node in a linked list.
- *
- * @memberof DataStructures
- */
-declare class Node {
-    /**
-     * Creates a new Node instance.
-     * @param {*} value - The value to be stored in the node.
-     */
-    constructor(value: any);
-    value: any;
-    next: any;
-}
-/**
  * Represents a linked list data structure.
  *
  * @memberof DataStructures
@@ -24,8 +9,8 @@ export class LinkedList {
      * @param {*} value - The value to initialize the list with (optional).
      */
     constructor(value: any);
-    head: Node;
-    tail: Node;
+    head: any;
+    tail: any;
     size: number;
     /**
      * Prints the values of the linked list.
@@ -203,6 +188,7 @@ export class LinkedList {
      * @memberof LinkedList
      */
     reverse(): LinkedList;
+    sort(): void;
     /**
      * Converts the linked list to an array.
      *
@@ -220,4 +206,18 @@ export class LinkedList {
      */
     toArray(): any[];
 }
-export { Node as LLNode };
+/**
+ * @class LLNode
+ * @classdesc Represents a node in a linked list.
+ *
+ * @memberof DataStructures
+ */
+export class Node {
+    /**
+     * Creates a new Node instance.
+     * @param {*} value - The value to be stored in the node.
+     */
+    constructor(value: any);
+    value: any;
+    next: any;
+}

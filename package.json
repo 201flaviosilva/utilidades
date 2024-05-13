@@ -43,6 +43,10 @@
     "import": "./dist/utilidades.js",
     "require": "./dist/utilidades.umd.cjs"
   },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
+  },
   "keywords": [
     "utils"
   ],

@@ -1,31 +1,31 @@
-function J(e) {
+function L(e) {
   return e.every((t) => JSON.stringify(t) === JSON.stringify(e[0]));
 }
-function Y(e = 0, t = 1, n = 2) {
+function J(e = 0, t = 1, n = 2) {
   return t === void 0 && (t = e, e = 0), parseFloat((Math.random() * (t - e) + e).toFixed(n));
 }
 function h(e, t) {
   return t === void 0 && (t = e, e = 0), Math.round(e + Math.random() * (t - e));
 }
-function ge(e, t) {
-  return Y(e, t);
+function pe(e, t) {
+  return J(e, t);
 }
 function N(e) {
   return e[h(e.length)];
 }
-function L(e, t = 1) {
+function Y(e, t = 1) {
   const n = [];
-  for (let r = 0; r < e.length; r += t)
-    n.push(e.slice(r, r + t));
+  for (let i = 0; i < e.length; i += t)
+    n.push(e.slice(i, i + t));
   return n;
 }
-function W(e, t, n = !1) {
-  const r = Math.max(...e.map((i) => i[t]));
-  return n ? r : e.find((i) => i[t] === r);
-}
 function G(e, t, n = !1) {
-  const r = Math.min(...e.map((i) => i[t]));
-  return n ? r : e.find((i) => i[t] === r);
+  const i = Math.max(...e.map((r) => r[t]));
+  return n ? i : e.find((r) => r[t] === i);
+}
+function W(e, t, n = !1) {
+  const i = Math.min(...e.map((r) => r[t]));
+  return n ? i : e.find((r) => r[t] === i);
 }
 function X(e = []) {
   for (let t = 0; t < e.length - 1; t++)
@@ -35,31 +35,31 @@ function X(e = []) {
 }
 function H(e = [], t = 1) {
   for (let n = 0; n < t; n++) {
-    let r = e[e.length - 1];
-    for (let i = e.length - 2; i >= 0; i--) {
-      const s = e[i];
-      e[i] = r, r = s;
+    let i = e[e.length - 1];
+    for (let r = e.length - 2; r >= 0; r--) {
+      const s = e[r];
+      e[r] = i, i = s;
     }
-    e[e.length - 1] = r;
+    e[e.length - 1] = i;
   }
   return e;
 }
 function K(e = [], t = 1) {
   for (let n = 0; n < t; n++) {
-    let r = e[0];
-    for (let i = 1; i < e.length; i++) {
-      const s = e[i];
-      e[i] = r, r = s;
+    let i = e[0];
+    for (let r = 1; r < e.length; r++) {
+      const s = e[r];
+      e[r] = i, i = s;
     }
-    e[0] = r;
+    e[0] = i;
   }
   return e;
 }
 function U(e, t) {
   const n = /* @__PURE__ */ new Set();
-  return e.filter((r) => {
-    const i = r[t];
-    return n.has(i) ? !1 : (n.add(i), !0);
+  return e.filter((i) => {
+    const r = i[t];
+    return n.has(r) ? !1 : (n.add(r), !0);
   });
 }
 function Q(e) {
@@ -68,38 +68,38 @@ function Q(e) {
 function V(e, t = !0) {
   if (t)
     return e.sort(() => Math.random() - 0.5);
-  const n = Q(e), r = [];
+  const n = Q(e), i = [];
   for (; n.length; ) {
-    const i = h(n.length);
-    r.push(n[i]), n.splice(i, 1);
+    const r = h(n.length);
+    i.push(n[r]), n.splice(r, 1);
   }
-  return r;
+  return i;
 }
-function D(e, t = !1) {
-  return t ? e.sort((n, r) => n - r) : [...e].sort((n, r) => n - r);
+function z(e, t = !1) {
+  return t ? e.sort((n, i) => n - i) : [...e].sort((n, i) => n - i);
 }
 function Z(e, t, n = !1) {
-  return n ? e.sort((r, i) => r[t] - i[t]) : [...e].sort((r, i) => r[t] - i[t]);
+  return n ? e.sort((i, r) => i[t] - r[t]) : [...e].sort((i, r) => i[t] - r[t]);
 }
 function tt(e, t = !1) {
-  return t ? e.sort((n, r) => r - n) : [...e].sort((n, r) => r - n);
+  return t ? e.sort((n, i) => i - n) : [...e].sort((n, i) => i - n);
 }
 function et(e, t, n = !1) {
-  return n ? e.sort((r, i) => i[t] - r[t]) : [...e].sort((r, i) => i[t] - r[t]);
+  return n ? e.sort((i, r) => r[t] - i[t]) : [...e].sort((i, r) => r[t] - i[t]);
 }
-const me = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const xe = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  allEqual: J,
+  allEqual: L,
   choice: N,
-  chunk: L,
-  findBigObject: W,
-  findLowObject: G,
+  chunk: Y,
+  findBigObject: G,
+  findLowObject: W,
   isSorted: X,
   moveLeft: H,
   moveRight: K,
   removeDuplicatesObj: U,
   shuffle: V,
-  sortAscending: D,
+  sortAscending: z,
   sortAscendingObject: Z,
   sortDescending: tt,
   sortDescendingObject: et
@@ -109,7 +109,7 @@ let nt = class {
     this.value = t, this.left = null, this.right = null, this.parent = null;
   }
 };
-class S {
+class D {
   constructor(t) {
     this.root = null, this.count = 0, t !== void 0 && this.add(t);
   }
@@ -150,21 +150,21 @@ class S {
       this.count++, this.root = n;
       return;
     }
-    let r = this.root;
-    for (; r; ) {
-      if (t === r.value)
+    let i = this.root;
+    for (; i; ) {
+      if (t === i.value)
         return;
-      if (r.value > t)
-        if (r.left === null) {
-          n.parent = r, r.left = n, this.count++;
+      if (i.value > t)
+        if (i.left === null) {
+          n.parent = i, i.left = n, this.count++;
           break;
         } else
-          r = r.left;
-      else if (r.right === null) {
-        n.parent = r, r.right = n, this.count++;
+          i = i.left;
+      else if (i.right === null) {
+        n.parent = i, i.right = n, this.count++;
         break;
       } else
-        r = r.right;
+        i = i.right;
     }
   }
   /**
@@ -243,15 +243,15 @@ class S {
    * @memberof BinarySearchTree
    */
   delete(t) {
-    var r, i;
+    var i, r;
     const n = this.search(t);
     if (!n)
       return !1;
     if (n.left === null && n.right === null)
-      ((r = n.parent.left) == null ? void 0 : r.value) === n.value ? n.parent.left = null : n.parent.right = null;
+      ((i = n.parent.left) == null ? void 0 : i.value) === n.value ? n.parent.left = null : n.parent.right = null;
     else if (n.left !== null && n.right === null || n.left === null && n.right !== null) {
       const s = n.left || n.right;
-      s.parent = n.parent, ((i = n.parent.left) == null ? void 0 : i.value) === n.value ? n.parent.left = s : n.parent.right = s;
+      s.parent = n.parent, ((r = n.parent.left) == null ? void 0 : r.value) === n.value ? n.parent.left = s : n.parent.right = s;
     } else if (n.left !== null && n.right !== null) {
       const s = this.search(this.larger(n.left.value));
       s.value === n.left.value ? n.left = null : s.parent.right = null, n.value = s.value;
@@ -259,7 +259,257 @@ class S {
       throw new Error("Error deleting value");
   }
 }
-const rt = new S();
+const it = new D();
+let d = class {
+  /**
+   * Creates a new Node instance.
+   * @param {*} value - The value to be stored in the node.
+   */
+  constructor(t) {
+    if (!t)
+      throw new Error("Node value cannot be undefined.");
+    this.value = t, this.next = null, this.prev = null;
+  }
+};
+class rt {
+  /**
+   * Creates a new DoublyLinkedList instance.
+   * 
+   * @example
+   * new DoublyLinkedList();
+   * new DoublyLinkedList("Beep");
+   * new DoublyLinkedList([10,20,30]);
+   * 
+   * @param {Array|*} value - The value to initialize the list with (optional).
+   */
+  constructor(t) {
+    this.head = null, this.tail = null, this.size = 0, Array.isArray(t) ? t.forEach((n) => this.push(n)) : t !== void 0 && this.push(t);
+  }
+  /**
+   * Prints the values of the linked list.
+   * 
+   * @example
+   * const dll = new DoublyLinkedList([10,20,30]);
+   * dll.print(); // 10,20,30
+   * 
+   * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
+   * 
+   * @memberof DoublyLinkedList
+   * @method print
+   */
+  print() {
+    let t = this.head;
+    for (; t !== null; )
+      console.log(t.value), t = t.next;
+    return this;
+  }
+  /**
+   * Clears the linked list.
+   * 
+   * @example
+   * const dll = new DoublyLinkedList([10,20,30]);
+   * dll.clear();
+   * dll.toArray(); // []
+   * 
+   * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
+   * 
+   * @memberof DoublyLinkedList
+   * @method clear
+   */
+  clear() {
+    return this.head = null, this.tail = null, this.size = 0, this;
+  }
+  /**
+   * Retrieves the value at the specified index in the linked list.
+   * 
+   * @example
+   * const dll = new DoublyLinkedList([10,20,30]);
+   * dll.get(1); // 20
+   * 
+   * @param {Number} index - The index of the value to retrieve.
+   * @param {Boolean} returnNode - Whether to return the Node or the value.
+   * @returns {Number|Node} The value at the specified index, or the Node if returnNode is true.
+   * 
+   * @memberof DoublyLinkedList
+   * @method get
+   */
+  get(t, n = !1) {
+    if (t < 0 || t >= this.size)
+      return;
+    let i = this.head;
+    if (t < this.size / 2)
+      for (let r = 0; r < t; r++)
+        i = i.next;
+    else {
+      i = this.tail;
+      for (let r = this.size - 1; r > t; r--)
+        i = i.prev;
+    }
+    return n ? i : i.value;
+  }
+  /**
+   * Sets the value at the specified index in the linked list.
+   * 
+   * @example
+   * const dll = new DoublyLinkedList([10,20,30]);
+   * dll.set(1, 0); // 0
+   * 
+   * @param {Number} index - The index of the value to set.
+   * @param {Number} value - The new value to set.
+   * @returns {Boolean} True if the value was set successfully, false otherwise.
+   * 
+   * @memberof DoublyLinkedList
+   * @method set
+   */
+  set(t, n) {
+    const i = this.get(t, !0);
+    return i ? (i.value = n, !0) : !1;
+  }
+  /**
+   * Adds a new value to the beginning of the linked list.
+   * 
+   * @example
+   * const dll = new DoublyLinkedList([10,20,30]);
+   * dll.unshift(0); // 0,10,20,30
+   * 
+   * @param {Number} value - The value to add.
+   * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
+   * 
+   * @memberof DoublyLinkedList
+   * @method unshift
+   */
+  unshift(t) {
+    if (!this.head)
+      return this.push(t);
+    const n = new d(t);
+    return n.next = this.head, this.head.prev = n, this.head = n, this.size++, this;
+  }
+  /**
+   * Adds a new value to the end of the linked list.
+   * 
+   * @example
+   * const dll = new DoublyLinkedList([10,20,30]);
+   * dll.push(40); // 10,20,30,40
+   * 
+   * @param {Number} value - The value to add.
+   * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
+   * 
+   * @memberof DoublyLinkedList
+   * @method push
+   */
+  push(t) {
+    const n = new d(t);
+    return this.head ? (this.tail.next = n, n.prev = this.tail, this.tail = n) : (this.head = n, this.tail = n), this.size++, this;
+  }
+  /**
+   * Inserts a new value at the specified index in the linked list.
+   * 
+   * @example
+   * const dll = new DoublyLinkedList([10,20,30]);
+   * dll.insert(1, 0); // 0,10,20,30
+   * 
+   * @param {Number} index - The index to insert the value at.
+   * @param {Number} value - The value to insert.
+   * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
+   * 
+   * @memberof DoublyLinkedList
+   * @method insert
+   */
+  insert(t, n) {
+    if (t === 0)
+      return this.unshift(n);
+    if (t === this.size)
+      return this.push(n);
+    if (t < 0 || t > this.size)
+      return !1;
+    const i = new d(n), r = this.get(t - 1, !0);
+    return i.prev = r, i.next = r.next, r.next.prev = i, r.next = i, this.size++, this;
+  }
+  /**
+   * Removes the value at the start of the linked list.
+   * 
+   * @example
+   * const dll = new DoublyLinkedList([10,20,30]);
+   * dll.shift(); // 20,30
+   * 
+   * @returns {Number} The value that was removed.
+   * 
+   * @memberof DoublyLinkedList
+   * @method shift
+   */
+  shift() {
+    if (this.size === 0)
+      return;
+    const t = this.head;
+    return this.size > 1 ? (this.head = this.head.next, this.head.prev = null, t.next = null, this.size--) : this.clear(), t.value;
+  }
+  /**
+   * Removes the value from the end of the linked list.
+   * 
+   * @example
+   * const dll = new DoublyLinkedList([10,20,30]);
+   * dll.pop(); // 10,20
+   * 
+   * @returns {Number} The value that was removed.
+   * 
+   * @memberof DoublyLinkedList
+   * @method pop
+   */
+  pop() {
+    if (this.size === 0)
+      return;
+    const t = this.tail;
+    return this.size > 1 ? (this.tail = this.tail.prev, this.tail.next = null, t.prev = null, this.size--) : this.clear(), t.value;
+  }
+  /**
+   * Removes the value at the given index of the linked list.
+   * 
+   * @example
+   * const dll = new DoublyLinkedList([10,20,30]);
+   * dll.remove(1); // 10,30
+   * 
+   * @param {Number} index - The index of the value to remove.
+   * @returns {Number} The value that was removed.
+   * 
+   * @memberof DoublyLinkedList
+   * @method remove
+   */
+  remove(t) {
+    if (t < 0 || t >= this.size)
+      return !1;
+    if (t === 0)
+      return this.shift();
+    if (t === this.size - 1)
+      return this.pop();
+    const n = this.get(t, !0), i = n.prev, r = n.next;
+    return i.next = r, r.prev = i, n.prev = null, n.next = null, this.size--, n.value;
+  }
+  // TODO: Implement reverse()
+  reverse() {
+  }
+  // TODO: Implement sort()
+  sort() {
+  }
+  /**
+   * Returns an array representation of the linked list.
+   * 
+   * @example
+   * const dll = new DoublyLinkedList([10,20,30]);
+   * dll.toArray(); // [10,20,30]
+   * 
+   * @returns {Array} The array representation of the linked list.
+   * 
+   * @memberof DoublyLinkedList
+   * @method toArray
+   */
+  toArray() {
+    const t = [];
+    let n = this.head;
+    for (; n !== null; )
+      t.push(n.value), n = n.next;
+    return t;
+  }
+}
 class g {
   /**
    * Creates a new Node instance.
@@ -269,17 +519,13 @@ class g {
     this.value = t, this.next = null;
   }
 }
-class it {
+class st {
   /**
    * Creates a new LinkedList instance.
    * @param {*} value - The value to initialize the list with (optional).
    */
   constructor(t) {
-    if (t !== void 0) {
-      const n = new g(t);
-      this.head = n, this.tail = n, this.size = 1;
-    } else
-      this.head = null, this.tail = null, this.size = 0;
+    this.head = null, this.tail = null, this.size = 0, Array.isArray(t) ? t.forEach((n) => this.push(n)) : t !== void 0 && this.push(t);
   }
   /**
    * Prints the values of the linked list.
@@ -332,13 +578,10 @@ class it {
   get(t, n = !1) {
     if (t < 0 || t >= this.size)
       return;
-    let r = 0, i = this.head;
-    for (; i !== null; ) {
-      if (r === t)
-        return n ? i : i.value;
-      i = i.next, r++;
-    }
-    return i;
+    let i = this.head;
+    for (let r = 0; r < t; r++)
+      i = i.next;
+    return n ? i : i.value;
   }
   /**
    * Sets the value at the specified index in the linked list.
@@ -358,8 +601,8 @@ class it {
    * @memberof LinkedList
    */
   set(t, n) {
-    const r = this.get(t, !0);
-    return r ? (r.value = n, !0) : !1;
+    const i = this.get(t, !0);
+    return i ? (i.value = n, !0) : !1;
   }
   /**
    * Adds a new value at the start of the linked list.
@@ -424,8 +667,8 @@ class it {
       return this.push(n);
     if (t < 0 || t > this.size)
       return !1;
-    const r = new g(n), i = this.get(t - 1, !0);
-    return r.next = i.next, i.next = r, this.size++, this;
+    const i = new g(n), r = this.get(t - 1, !0);
+    return i.next = r.next, r.next = i, this.size++, this;
   }
   /**
    * Removes the value at the start of the linked list.
@@ -464,7 +707,7 @@ class it {
    * @memberof LinkedList
    */
   pop() {
-    if (!this.size)
+    if (this.size === 0)
       return;
     let t = this.head, n = this.head;
     for (; n.next !== null; )
@@ -494,8 +737,8 @@ class it {
       return this.pop();
     if (t < 0 || t > this.size)
       return;
-    const n = this.get(t - 1, !0), r = n.next;
-    return n.next = r.next, r.next = null, this.size--, r.value;
+    const n = this.get(t - 1, !0), i = n.next;
+    return n.next = i.next, i.next = null, this.size--, i.value;
   }
   /**
    * Reverses the order of the linked list.
@@ -515,10 +758,13 @@ class it {
   reverse() {
     let t = this.head;
     this.head = this.tail, this.tail = t;
-    let n = null, r = null;
-    for (let i = 0; i < this.size; i++)
-      r = t.next, t.next = n, n = t, t = r;
+    let n = null, i = null;
+    for (let r = 0; r < this.size; r++)
+      i = t.next, t.next = n, n = t, t = i;
     return this;
+  }
+  // TODO: Implement sort()
+  sort() {
   }
   /**
    * Converts the linked list to an array.
@@ -543,39 +789,42 @@ class it {
     return t;
   }
 }
-const xe = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const be = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  BinarySearchTree: S,
-  BinarySearchTreeInstance: rt,
-  LinkedList: it
+  BinarySearchTree: D,
+  BinarySearchTreeInstance: it,
+  DLLNode: d,
+  DoublyLinkedList: rt,
+  LLNode: g,
+  LinkedList: st
 }, Symbol.toStringTag, { value: "Module" }));
-function O(...e) {
+function S(...e) {
   return e.reduce((t, n) => t + n, 0);
 }
-function st(...e) {
-  return e.length ? O(...e) / e.length : 0;
+function ut(...e) {
+  return e.length ? S(...e) / e.length : 0;
 }
 function a(e, t = 0, n = 1) {
   return Math.min(n, Math.max(t, e));
 }
-function ut(e) {
+function lt(e) {
   return e * (Math.PI / 180);
 }
 function ot(e = 0, t = 10, n = 5) {
-  const r = [], i = (t - e) / (n - 1);
+  const i = [], r = (t - e) / (n - 1);
   for (let s = 0; s < n; s++)
-    r.push(e + i * s);
-  return r;
+    i.push(e + r * s);
+  return i;
 }
-function lt(e = 3, t = 5) {
+function ht(e = 3, t = 5) {
   if (e <= 1)
     return [0];
   const n = [];
-  for (let r = 0; r < e; r++)
-    n.push(-t + r * (2 * t) / (e - 1));
+  for (let i = 0; i < e; i++)
+    n.push(-t + i * (2 * t) / (e - 1));
   return n;
 }
-function ht(...e) {
+function at(...e) {
   if (e.length) {
     if (e.length === 1)
       return e[0];
@@ -586,8 +835,8 @@ function ht(...e) {
     t /= e[n];
   return t;
 }
-function j(e) {
-  return e <= 1 ? e : e * j(e - 1);
+function O(e) {
+  return e <= 1 ? e : e * O(e - 1);
 }
 function ct(e, t, n = { x: 0, y: 0 }) {
   return {
@@ -595,72 +844,77 @@ function ct(e, t, n = { x: 0, y: 0 }) {
     y: t * Math.sin(e) + n.y
   };
 }
-function at(e, t, n) {
+function ft(e, t, n) {
   return a((e - t) / (n - t));
 }
-function B(e) {
+function dt(e) {
+  if (typeof e != "number" || isNaN(e) || !isFinite(e))
+    throw new Error("Input must be a finite number");
+  return e % 1 !== 0;
+}
+function j(e) {
   return e % 2 == 0;
 }
-function ft(e) {
+function gt(e) {
   return e % 2 == 1;
 }
-function dt(e, t) {
+function mt(e, t) {
   return e % t == 0;
 }
-function gt(e) {
+function yt(e) {
   const t = String(e);
   let n = 0;
-  for (let r = 0; r < t.length; r++)
-    n += Math.pow(t[r], t.length);
+  for (let i = 0; i < t.length; i++)
+    n += Math.pow(t[i], t.length);
   return n === e;
 }
-function mt(e) {
+function pt(e) {
   return typeof e == "number" && !isNaN(e);
 }
-function yt(e, t, n) {
+function xt(e, t, n) {
   return t + (n - t) * e;
 }
-function xt(e, t, n, r, i) {
-  return (e - t) * (i - r) / (n - t) + r;
+function wt(e, t, n, i, r) {
+  return (e - t) * (r - i) / (n - t) + i;
 }
-function pt(...e) {
+function vt(...e) {
   const { length: t } = e;
-  return t ? (D(e, !0), B(t) ? (e[t / 2 - 1] + e[t / 2]) / 2 : e[(t - 1) / 2]) : 0;
+  return t ? (z(e, !0), j(t) ? (e[t / 2 - 1] + e[t / 2]) / 2 : e[(t - 1) / 2]) : 0;
 }
-function wt(...e) {
+function bt(...e) {
   if (e.length === 1)
     return e[0];
   const t = {};
-  let n = e[0], r = 0;
-  for (let i = 0; i < e.length; i++) {
-    const s = e[i];
-    t[s] ? t[s]++ : t[s] = 1, r < t[s] && (n = s, r = t[s]);
+  let n = e[0], i = 0;
+  for (let r = 0; r < e.length; r++) {
+    const s = e[r];
+    t[s] ? t[s]++ : t[s] = 1, i < t[s] && (n = s, i = t[s]);
   }
   return n;
 }
-function bt(...e) {
+function Mt(...e) {
   return e.reduce((t, n) => t * n, 1);
 }
 function y(e) {
   return e === 0 ? 0 : -Math.abs(e);
 }
-function vt(e, t) {
+function Nt(e, t) {
   return 100 * e / t;
 }
 function m(e) {
   return e * (180 / Math.PI);
 }
-function Mt(e, t, n = 1, r = []) {
-  const i = [];
+function zt(e, t, n = 1, i = []) {
+  const r = [];
   for (let s = e; s < t + 1; s += n) {
-    let o = !1;
-    r.forEach(({ start: u, end: f }) => {
-      s >= u && s <= f && (o = !0);
-    }), o || i.push(s);
+    let l = !1;
+    i.forEach(({ start: u, end: c }) => {
+      s >= u && s <= c && (l = !0);
+    }), l || r.push(s);
   }
-  return i;
+  return r;
 }
-function Nt(e, t = 2) {
+function Dt(e, t = 2) {
   if (typeof e != "number")
     throw new TypeError("The `num` parameter must be a number");
   if (typeof t != "number")
@@ -670,7 +924,7 @@ function Nt(e, t = 2) {
   const n = e.toString().indexOf(".") + 1;
   return n > 0 && e.toString().substring(n).length > t ? parseFloat(e.toFixed(t)) : e;
 }
-function Dt(...e) {
+function St(...e) {
   if (e.length) {
     if (e.length === 1)
       return e[0];
@@ -684,156 +938,157 @@ function Dt(...e) {
   }
   return t;
 }
-const pe = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const Me = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  average: st,
+  average: ut,
   clamp: a,
-  degreesToRadians: ut,
+  degreesToRadians: lt,
   divideEvenly: ot,
-  divideEvenlyWithSpread: lt,
-  division: ht,
-  factorial: j,
+  divideEvenlyWithSpread: ht,
+  division: at,
+  factorial: O,
   getPositionWithAngleDistance: ct,
-  invertedLerp: at,
-  isEven: B,
-  isMultipleOf: dt,
-  isNarcissisticNumber: gt,
-  isOdd: ft,
-  isValidNumber: mt,
-  lerp: yt,
-  map: xt,
-  median: pt,
-  mode: wt,
-  multiplication: bt,
+  invertedLerp: ft,
+  isDecimal: dt,
+  isEven: j,
+  isMultipleOf: mt,
+  isNarcissisticNumber: yt,
+  isOdd: gt,
+  isValidNumber: pt,
+  lerp: xt,
+  map: wt,
+  median: vt,
+  mode: bt,
+  multiplication: Mt,
   negative: y,
-  percentage: vt,
+  percentage: Nt,
   radiansToDegrees: m,
-  range: Mt,
-  roundNumber: Nt,
-  subtraction: Dt,
-  sum: O
+  range: zt,
+  roundNumber: Dt,
+  subtraction: St,
+  sum: S
 }, Symbol.toStringTag, { value: "Module" }));
-function x(e, t, n, r) {
-  return Math.atan2(r - t, n - e);
-}
-function St(e, t) {
-  return x(e.x, e.y, t.x, t.y);
-}
-function T(e, t, n, r) {
-  return m(x(e, t, n, r));
+function p(e, t, n, i) {
+  return Math.atan2(i - t, n - e);
 }
 function Ot(e, t) {
+  return p(e.x, e.y, t.x, t.y);
+}
+function T(e, t, n, i) {
+  return m(p(e, t, n, i));
+}
+function jt(e, t) {
   return T(e.x, e.y, t.x, t.y);
 }
-function z(e, t) {
-  const n = Math.min(e.x + e.width, t.x + t.width) - Math.max(e.x, t.x), r = Math.min(e.y + e.height, t.y + t.height) - Math.max(e.y, t.y);
-  return Math.atan2(r, n);
+function B(e, t) {
+  const n = Math.min(e.x + e.width, t.x + t.width) - Math.max(e.x, t.x), i = Math.min(e.y + e.height, t.y + t.height) - Math.max(e.y, t.y);
+  return Math.atan2(i, n);
 }
-function jt(e, t, n, r, i, s, o, u) {
-  return z(
-    { x: e + n / 2, y: t + r / 2, width: n, height: r },
-    { x: i + o / 2, y: s + u / 2, width: o, height: u }
+function Tt(e, t, n, i, r, s, l, u) {
+  return B(
+    { x: e + n / 2, y: t + i / 2, width: n, height: i },
+    { x: r + l / 2, y: s + u / 2, width: l, height: u }
   );
 }
 function Bt(e) {
   return Math.PI * e * e;
 }
-function Tt(e, t) {
+function Et(e, t) {
   return e * t;
 }
-function zt(e) {
+function Ft(e) {
   return 2 * Math.PI * e;
 }
-function F(e, t) {
+function E(e, t) {
   return 2 * (e + t);
 }
-function Ft(e) {
-  return F(e.x, e.y, e.width, e.height);
+function At(e) {
+  return E(e.x, e.y, e.width, e.height);
 }
-function p(e, t) {
+function x(e, t) {
   return e + t / 2;
 }
 function w(e, t) {
   return e + t / 2;
 }
-function C(e, t, n, r) {
-  return { x: p(e, n), y: w(t, r) };
+function F(e, t, n, i) {
+  return { x: x(e, n), y: w(t, i) };
 }
 function Ct(e) {
-  return p(e.x, e.width);
+  return x(e.x, e.width);
 }
-function qt(e) {
+function It(e) {
   return w(e.y, e.height);
 }
-function Et(e) {
-  return C(e.x, e.y, e.width, e.height);
+function qt(e) {
+  return F(e.x, e.y, e.width, e.height);
 }
-function q(e, t, n, r) {
+function A(e, t, n, i) {
   return [
     { x: e, y: t },
     { x: e + n, y: t },
-    { x: e + n, y: t + r },
-    { x: e, y: t + r }
+    { x: e + n, y: t + i },
+    { x: e, y: t + i }
   ];
 }
-function It(e) {
-  return q(e.x, e.y, e.width, e.height);
+function Pt(e) {
+  return A(e.x, e.y, e.width, e.height);
 }
-function b(e, t, n, r) {
-  return Math.sqrt((e - n) * (e - n) + (t - r) * (t - r));
+function v(e, t, n, i) {
+  return Math.sqrt((e - n) * (e - n) + (t - i) * (t - i));
 }
-function Pt(e, t) {
-  return b(e.x, e.y, t.x, t.y);
+function Rt(e, t) {
+  return v(e.x, e.y, t.x, t.y);
 }
-function E(e, t) {
-  return b(e.x, e.y, t.x, t.y) - (e.radius + t.radius);
+function C(e, t) {
+  return v(e.x, e.y, t.x, t.y) - (e.radius + t.radius);
 }
-function Rt(e, t, n, r, i, s) {
-  return E(
+function _t(e, t, n, i, r, s) {
+  return C(
     { x: e, y: t, radius: n },
-    { x: r, y: i, radius: s }
+    { x: i, y: r, radius: s }
   );
 }
 function I(e, t) {
-  const n = Math.min(e.x + e.width, t.x + t.width) - Math.max(e.x, t.x), r = Math.min(e.y + e.height, t.y + t.height) - Math.max(e.y, t.y);
-  return n * r;
+  const n = Math.min(e.x + e.width, t.x + t.width) - Math.max(e.x, t.x), i = Math.min(e.y + e.height, t.y + t.height) - Math.max(e.y, t.y);
+  return n * i;
 }
-function _t(e, t, n, r, i, s, o, u) {
+function kt(e, t, n, i, r, s, l, u) {
   return I(
-    { x: e + n / 2, y: t + r / 2, width: n, height: r },
-    { x: i + o / 2, y: s + u / 2, width: o, height: u }
+    { x: e + n / 2, y: t + i / 2, width: n, height: i },
+    { x: r + l / 2, y: s + u / 2, width: l, height: u }
   );
 }
-function At({
+function $t({
   keys: e = { forward: !1, left: !1, right: !1, reverse: !1 },
   x: t,
   y: n,
-  speed: r,
-  acceleration: i,
+  speed: i,
+  acceleration: r,
   maxSpeed: s = 1 / 0,
-  friction: o = 0,
+  friction: l = 0,
   rotation: u,
-  rotationSpeed: f,
-  bounds: d = {
+  rotationSpeed: c,
+  bounds: f = {
     x: { min: -1 / 0, max: 1 / 0 },
     y: { min: -1 / 0, max: 1 / 0 }
   }
 }) {
-  e.forward ? r += i : e.reverse && (r -= i);
-  const A = Number(e.reverse) + 1;
-  if (r > s ? r = s / A : r < -s / 2 && (r = -s / 2), r > 0 ? r -= o : r < 0 && (r += o), Math.abs(r) < o && (r = 0), r) {
-    const v = r > 0 ? 1 : -1;
-    e.left && (u -= f * v), e.right && (u += f * v);
+  e.forward ? i += r : e.reverse && (i -= r);
+  const _ = Number(e.reverse) + 1;
+  if (i > s ? i = s / _ : i < -s / 2 && (i = -s / 2), i > 0 ? i -= l : i < 0 && (i += l), Math.abs(i) < l && (i = 0), i) {
+    const b = i > 0 ? 1 : -1;
+    e.left && (u -= c * b), e.right && (u += c * b);
   }
-  const k = t + Math.sin(u) * r, $ = n - Math.cos(u) * r;
+  const k = t + Math.sin(u) * i, $ = n - Math.cos(u) * i;
   return {
-    x: a(k, d.x.min, d.x.max),
-    y: a($, d.y.min, d.y.max),
-    speed: r,
+    x: a(k, f.x.min, f.x.max),
+    y: a($, f.y.min, f.y.max),
+    speed: i,
     rotation: u
   };
 }
-class l {
+class o {
   constructor(t = 0, n = t) {
     this.x = 0, this.y = 0, this.set(t, n);
   }
@@ -861,7 +1116,7 @@ class l {
    * @memberof Vector2
    */
   clone() {
-    return new l(this.x, this.y);
+    return new o(this.x, this.y);
   }
   /**
    * Add the values of this vector 2 with the values of the given vector2
@@ -949,10 +1204,10 @@ class l {
    * @returns {Vector2} this vector changed
    * @memberof Vector2
    */
-  moveTowards(t = l.zero(), n = 1) {
+  moveTowards(t = o.zero(), n = 1) {
     n = a(n, 0, 1);
-    const i = t.subtract(this).scale(n);
-    return this.add(i);
+    const r = t.subtract(this).scale(n);
+    return this.add(r);
   }
   /**
    * Returns the length of this vector.
@@ -992,9 +1247,9 @@ class l {
    * @returns {number}
    * @memberof Vector2
    */
-  distance(t = l.zero()) {
-    const n = this.x - t.x, r = this.y - t.y;
-    return n * n + r * r;
+  distance(t = o.zero()) {
+    const n = this.x - t.x, i = this.y - t.y;
+    return n * n + i * i;
   }
   /**
    * Returns the squared distance between this vector and a given vector.
@@ -1057,8 +1312,8 @@ class l {
    * @returns {Vector2}
    */
   rotate(t = 0) {
-    const n = Math.cos(t), r = Math.sin(t), i = this.x * n - this.y * r, s = this.x * r + this.y * n;
-    return this.set(i, s);
+    const n = Math.cos(t), i = Math.sin(t), r = this.x * n - this.y * i, s = this.x * i + this.y * n;
+    return this.set(r, s);
   }
   /**
    * Fix the precision to the given decimal places
@@ -1149,7 +1404,7 @@ class l {
    * @memberof Vector2
    */
   static zero() {
-    return new l(0);
+    return new o(0);
   }
   /**
    * Shorthand for writing Vector2(1, 1).
@@ -1160,7 +1415,7 @@ class l {
    * @memberof Vector2
    */
   static one() {
-    return new l(1);
+    return new o(1);
   }
   /**
   	* Shorthand for writing Vector2(Infinity, Infinity).
@@ -1171,7 +1426,7 @@ class l {
   	* @memberof Vector2
   	*/
   static positiveInfinity() {
-    return new l(1 / 0);
+    return new o(1 / 0);
   }
   /**
   	* Shorthand for writing Vector2(-Infinity, -Infinity).
@@ -1182,7 +1437,7 @@ class l {
   	* @memberof Vector2
   	*/
   static negativeInfinity() {
-    return new l(-1 / 0);
+    return new o(-1 / 0);
   }
   /**
   	* Shorthand for writing Vector2(0, -1).
@@ -1193,7 +1448,7 @@ class l {
   	* @memberof Vector2
   	*/
   static up() {
-    return new l(0, -1);
+    return new o(0, -1);
   }
   /**
   	* Shorthand for writing Vector2(0, 1).
@@ -1204,7 +1459,7 @@ class l {
   	* @memberof Vector2
   	*/
   static down() {
-    return new l(0, 1);
+    return new o(0, 1);
   }
   /**
   	* Shorthand for writing Vector2(-1, 0).
@@ -1215,7 +1470,7 @@ class l {
   	* @memberof Vector2
   	*/
   static left() {
-    return new l(-1, 0);
+    return new o(-1, 0);
   }
   /**
   	* Shorthand for writing Vector2(1, 0).
@@ -1226,7 +1481,7 @@ class l {
   	* @memberof Vector2
   	*/
   static right() {
-    return new l(1, 0);
+    return new o(1, 0);
   }
   /**
    * Creates a random vector with random normalized values
@@ -1234,40 +1489,40 @@ class l {
    * @returns {Vector2}
    */
   static random() {
-    return new l(Math.random(), Math.random());
+    return new o(Math.random(), Math.random());
   }
 }
-const we = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const Ne = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  Vector2: l,
-  calcAngleBetweenRectangles: z,
-  calcAngleBetweenRectanglesByCoordinates: jt,
-  calcAngleBetweenTwoPoints: x,
+  Vector2: o,
+  calcAngleBetweenRectangles: B,
+  calcAngleBetweenRectanglesByCoordinates: Tt,
+  calcAngleBetweenTwoPoints: p,
   calcAngleBetweenTwoPointsDegrees: T,
-  calcAngleBetweenTwoPointsVector2: St,
-  calcAngleBetweenTwoPointsVector2Degrees: Ot,
+  calcAngleBetweenTwoPointsVector2: Ot,
+  calcAngleBetweenTwoPointsVector2Degrees: jt,
   calcCircleArea: Bt,
-  calcCirclePerimeter: zt,
-  calcDistanceBetweenCircles: E,
-  calcDistanceBetweenCirclesByCoordinates: Rt,
-  calcDistanceBetweenTwoPointObjects: Pt,
-  calcDistanceBetweenTwoPoints: b,
+  calcCirclePerimeter: Ft,
+  calcDistanceBetweenCircles: C,
+  calcDistanceBetweenCirclesByCoordinates: _t,
+  calcDistanceBetweenTwoPointObjects: Rt,
+  calcDistanceBetweenTwoPoints: v,
   calcOverlapBetweenRectangles: I,
-  calcOverlapBetweenRectanglesByCoordinates: _t,
-  calcRectangleArea: Tt,
-  calcRectangleCenter: C,
-  calcRectangleCenterFromBounds: Et,
-  calcRectangleCenterX: p,
+  calcOverlapBetweenRectanglesByCoordinates: kt,
+  calcRectangleArea: Et,
+  calcRectangleCenter: F,
+  calcRectangleCenterFromBounds: qt,
+  calcRectangleCenterX: x,
   calcRectangleCenterXFromBounds: Ct,
   calcRectangleCenterY: w,
-  calcRectangleCenterYFromBounds: qt,
-  calcRectanglePerimeter: Ft,
-  calcRectanglePerimeterByDimensions: F,
-  calcRectangleVertices: q,
-  calcVerticesFromRectangleBounds: It,
-  topDownCarMovimentation: At
+  calcRectangleCenterYFromBounds: It,
+  calcRectanglePerimeter: At,
+  calcRectanglePerimeterByDimensions: E,
+  calcRectangleVertices: A,
+  calcVerticesFromRectangleBounds: Pt,
+  topDownCarMovimentation: $t
 }, Symbol.toStringTag, { value: "Module" }));
-class kt {
+class Lt {
   constructor() {
     this.events = {};
   }
@@ -1295,8 +1550,8 @@ class kt {
    * @memberof EventSystem
    */
   emit(t, ...n) {
-    this.has(t) && this.events[t].forEach((r) => {
-      r(...n);
+    this.has(t) && this.events[t].forEach((i) => {
+      i(...n);
     });
   }
   /**
@@ -1322,10 +1577,10 @@ class kt {
    * @memberof EventSystem
    */
   once(t, n) {
-    let r = (...i) => {
-      n(...i), this.off(t);
+    let i = (...r) => {
+      n(...r), this.off(t);
     };
-    this.on(t, r);
+    this.on(t, i);
   }
   /**
    * Remove all the events
@@ -1348,8 +1603,8 @@ class kt {
     return this.events[t] !== void 0;
   }
 }
-const be = new kt();
-class ve {
+const ze = new Lt();
+class De {
   constructor() {
     this._lastNumber = 0, this._currentNumber = 1, this.sequence = [0];
   }
@@ -1393,13 +1648,13 @@ class ve {
       return this._lastNumber = this._currentNumber - this._lastNumber, this._currentNumber = this._currentNumber - this._lastNumber, this.sequence.pop(), this._currentNumber;
   }
 }
-function Me(e = 20) {
+function Se(e = 20) {
   const t = [0, 1];
   for (; t.length < e; )
     t.push(t[t.length - 2] + t[t.length - 1]);
   return t;
 }
-function Ne(e = 100) {
+function Oe(e = 100) {
   const t = [0, 1];
   do {
     if (t[t.length - 2] + t[t.length - 1] >= e)
@@ -1407,153 +1662,158 @@ function Ne(e = 100) {
     t.push(t[t.length - 2] + t[t.length - 1]);
   } while (t[t.length - 1] < e);
 }
-function De(e = 1, t = 100) {
+function je(e = 1, t = 100) {
   const n = [];
-  let r = 0, i = e;
-  for (; i <= t; ) {
-    const s = i + r;
-    r = i, i = s, n.push(i);
+  let i = 0, r = e;
+  for (; r <= t; ) {
+    const s = r + i;
+    i = r, r = s, n.push(r);
   }
   return n;
 }
 function M(e = 10) {
   return e <= 1 ? e : M(e - 1) + M(e - 2);
 }
-function Se(e) {
+function Te(e) {
   for (let t = 1; t < e.length; t++)
     if (e[0] != e[t])
       return !1;
   return !0;
 }
-function Oe(e) {
+function Be(e) {
   if (typeof e == "string")
     return parseInt(e, 2);
 }
-function je(e = [0.25, 0.5, 0.25]) {
+function Ee(e = [0.25, 0.5, 0.25]) {
   let t = 0;
   const n = Math.random();
-  for (let r = 0; r < e.length; r++)
-    if (t += e[r], n <= t)
-      return r;
+  for (let i = 0; i < e.length; i++)
+    if (t += e[i], n <= t)
+      return i;
 }
-function Be(e, t) {
+function Fe(e, t) {
   return JSON.stringify(e) === JSON.stringify(t);
 }
-const Te = 1024;
-function ze(e) {
+const Ae = 1024;
+function Ce(e) {
   return Number(e).toString(2);
 }
-function Fe() {
+function Ie() {
   return {
-    time: $t(),
-    milliseconds: Jt(),
-    seconds: Yt(),
-    minutes: Lt(),
-    hours: Wt(),
-    day: P(),
-    weekDay: Gt(),
-    week: Xt(),
-    month: R(),
-    year: _(),
-    dateFormatted: Ht()
+    time: Jt(),
+    milliseconds: Yt(),
+    seconds: Gt(),
+    minutes: Wt(),
+    hours: Xt(),
+    day: q(),
+    weekDay: Ht(),
+    week: Kt(),
+    month: P(),
+    year: R(),
+    dateFormatted: Ut()
   };
 }
-function $t() {
+function Jt() {
   return (/* @__PURE__ */ new Date()).getTime();
 }
-function Jt() {
+function Yt() {
   return (/* @__PURE__ */ new Date()).getMilliseconds();
 }
-function Yt() {
+function Gt() {
   return (/* @__PURE__ */ new Date()).getSeconds();
 }
-function Lt() {
+function Wt() {
   return (/* @__PURE__ */ new Date()).getMinutes();
 }
-function Wt() {
+function Xt() {
   return (/* @__PURE__ */ new Date()).getHours();
 }
-function P() {
+function q() {
   return (/* @__PURE__ */ new Date()).getDate();
 }
-function Gt() {
+function Ht() {
   return (/* @__PURE__ */ new Date()).getDay() + 1;
 }
-function Xt() {
+function Kt() {
   const e = /* @__PURE__ */ new Date(), t = new Date(e.getFullYear(), 0, 1), n = Math.floor((e - t) / (24 * 60 * 60 * 1e3));
   return Math.ceil(n / 7);
 }
-function R() {
+function P() {
   return (/* @__PURE__ */ new Date()).getMonth() + 1;
 }
-function _() {
+function R() {
   return (/* @__PURE__ */ new Date()).getFullYear();
 }
-function Ht() {
-  return P() + "/" + R() + "/" + _();
+function Ut() {
+  return q() + "/" + P() + "/" + R();
 }
-const Kt = "utilidades", Ut = "1.3.2", Qt = "Just simple utils for javascript :)", Vt = "https://201flaviosilva-labs.github.io/utilidades/", Zt = "201flaviosilva", te = "MIT", ee = "module", ne = "./dist/counter.umd.cjs", re = "./dist/counter.js", ie = "./types/main.d.ts", se = {
+const Qt = "utilidades", Vt = "1.3.2", Zt = "Just simple utils for javascript :)", te = "https://201flaviosilva-labs.github.io/utilidades/", ee = "201flaviosilva", ne = "MIT", ie = "module", re = "./dist/utilidades.umd.cjs", se = "./dist/utilidades.js", ue = "./types/main.d.ts", le = {
   clear: "rm -rf types && rm -rf docs && rm -rf build && rm -rf dist",
   dev: "vite",
   test: "vitest --watch=false",
   "test:dev": "vitest",
+  coverage: "vitest run --coverage",
   jsdoc: "jsdoc -c jsdoc.conf.json",
   types: "npx -p typescript tsc src/*.js --declaration --allowJs --emitDeclarationOnly --outDir types",
   compile: "vite build",
   build: "npm run clear && npm run compile && npm run jsdoc && npm run types",
   bump: "npm run build && np --no-cleanup --any-branch"
-}, ue = {
-  "@vitest/coverage-c8": "^0.31.1",
-  "clean-jsdoc-theme": "^4.2.6",
-  jsdoc: "^4.0.2",
-  np: "^7.6.3",
-  typescript: "^4.9.5",
-  vite: "^4.0.4",
-  vitest: "^0.31.1"
-}, oe = [
+}, oe = {
+  "@vitest/coverage-c8": "^0.31.4",
+  "clean-jsdoc-theme": "^4.3.0",
+  jsdoc: "^4.0.3",
+  np: "^8.0.4",
+  typescript: "^5.4.5",
+  vite: "^4.5.3",
+  vitest: "^0.31.4"
+}, he = [
   "README.md",
   "CHANGELOG.md",
   "package.json",
   "dist",
   "types",
   "index.d.ts"
-], le = {
+], ae = {
   types: "./types/main.d.ts",
-  import: "./dist/counter.js",
-  require: "./dist/counter.umd.cjs"
-}, he = [
+  import: "./dist/utilidades.js",
+  require: "./dist/utilidades.umd.cjs"
+}, ce = {
+  node: ">=16.0.0",
+  npm: ">=7.0.0"
+}, fe = [
   "utils"
-], ce = {
+], de = {
   type: "git",
   url: "git+https://github.com/201flaviosilva-labs/utilidades.git"
-}, ae = {
+}, ge = {
   url: "https://github.com/201flaviosilva-labs/utilidades/issues"
-}, fe = {
-  name: Kt,
-  version: Ut,
-  description: Qt,
-  homepage: Vt,
-  author: Zt,
-  license: te,
-  type: ee,
-  main: ne,
-  module: re,
-  types: ie,
-  scripts: se,
-  devDependencies: ue,
-  files: oe,
-  exports: le,
-  keywords: he,
-  repository: ce,
-  bugs: ae
+}, me = {
+  name: Qt,
+  version: Vt,
+  description: Zt,
+  homepage: te,
+  author: ee,
+  license: ne,
+  type: ie,
+  main: re,
+  module: se,
+  types: ue,
+  scripts: le,
+  devDependencies: oe,
+  files: he,
+  exports: ae,
+  engines: ce,
+  keywords: fe,
+  repository: de,
+  bugs: ge
 };
-function Ce() {
-  return fe.version;
+function qe() {
+  return me.version;
 }
-function qe(e) {
+function Pe(e) {
   return Object.keys(e).length === 0;
 }
-function de(e) {
+function ye(e) {
   try {
     if (!e || typeof e == "object" && Object.keys(e).length == 0)
       return !0;
@@ -1562,98 +1822,100 @@ function de(e) {
   }
   return !1;
 }
-function Ee(e) {
-  return !de(e);
+function Re(e) {
+  return !ye(e);
 }
-function Ie(...e) {
+function _e(...e) {
   for (let t = 0; t < e.length; t++)
     if (!e[t])
       return !1;
   return !0;
 }
-function Pe(...e) {
+function ke(...e) {
   return !!e.find((t) => !!t);
 }
-function Re(e, t) {
+function $e(e, t) {
   return !!e != !!t;
 }
-function _e() {
+function Le() {
   return "#" + (Math.random() * 16777215 << 0).toString(16);
 }
-function Ae() {
+function Je() {
   return `0x${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
-function ke() {
+function Ye() {
   return `rgb(${h(255)}, ${h(255)}, ${h(255)})`;
 }
-function $e() {
+function Ge() {
   return `rgba(${h(255)}, ${h(255)}, ${h(255)}, ${Math.random().toFixed(5)})`;
 }
-function Je(e = {
+function We(e = {
   numberCharacters: 12,
   numbers: !0,
   symbols: !0,
   capital: !0,
   small: !0
 }) {
-  const t = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "y", "Z"], n = ["a", "b", "c", "d", "e", "f", "G", "H", "I", "J", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"], r = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"], i = ["!", '"', "@", "#", "€", "$", "£", "%", "‰", "&", "¶", "/", "(", "[", ")", "]", "=", "≠", "'", "?", "+", "*"];
+  const t = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "y", "Z"], n = ["a", "b", "c", "d", "e", "f", "G", "H", "I", "J", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"], i = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"], r = ["!", '"', "@", "#", "€", "$", "£", "%", "‰", "&", "¶", "/", "(", "[", ")", "]", "=", "≠", "'", "?", "+", "*"];
   let s = [];
-  s = e.capital ? [...s, ...t] : [...s], s = e.small ? [...s, ...n] : [...s], s = e.numbers ? [...s, ...r] : [...s], s = e.symbols ? [...s, ...i] : [...s];
-  let o = "";
+  s = e.capital ? [...s, ...t] : [...s], s = e.small ? [...s, ...n] : [...s], s = e.numbers ? [...s, ...i] : [...s], s = e.symbols ? [...s, ...r] : [...s];
+  let l = "";
   for (let u = 0; u < e.numberCharacters; u++)
-    o += N(s);
-  return o;
+    l += N(s);
+  return l;
 }
-function c() {
-  return [Math.random() < 0.5 ? -1 : 1];
+function Xe(e, t = 2) {
+  let n = new Array(t).fill(0);
+  for (let i = 0; i < e; i++) {
+    const r = Math.random(), s = Math.floor(r * t);
+    r < 0.5 ? n[s]++ : n[s]--;
+  }
+  return n;
 }
-function Ye() {
-  return Math.random() < 0.5 ? [...c(), 0] : [0, ...c()];
-}
-function Le() {
-  const e = Math.random();
-  return e < 0.333 ? [...c(), 0, 0] : e < 0.666 ? [0, ...c(), 0] : [0, 0, ...c()];
-}
-function We(e) {
+function He(e) {
   return e.split("").reverse().join("");
 }
+async function Ke(e = 1e3) {
+  if (typeof e != "number" || e < 0 || isNaN(e))
+    throw new Error("Time must be a non-negative number");
+  return new Promise((t) => setTimeout(t, e));
+}
 export {
-  me as Arrays,
-  xe as DataStructures,
-  kt as EventSystem,
-  be as EventSystemInstance,
-  ve as Fibonacci,
-  Te as MEGABYTE_IN_KILOBYTES,
-  pe as Maths,
-  we as Physics,
-  Se as allCharactersSame,
-  Ie as and,
-  Oe as binary2Decimal,
-  je as choiceTrend,
+  xe as Arrays,
+  be as DataStructures,
+  Lt as EventSystem,
+  ze as EventSystemInstance,
+  De as Fibonacci,
+  Ae as MEGABYTE_IN_KILOBYTES,
+  Me as Maths,
+  Ne as Physics,
+  Te as allCharactersSame,
+  _e as and,
+  Be as binary2Decimal,
+  Ee as choiceTrend,
   Q as clone,
-  Be as compare2Objects,
-  ze as decimal2Binary,
-  De as fibonacciCustomSequence,
-  Me as fibonacciSequence,
-  Ne as fibonacciUntil,
-  Fe as getDate,
-  Ce as getVersion,
-  de as isFalsy,
-  qe as isObjectEmpty,
-  Ee as isTruthy,
-  Pe as or,
-  _e as randomColor,
-  Ae as randomColor0X,
-  Y as randomFloat,
+  Fe as compare2Objects,
+  Ce as decimal2Binary,
+  je as fibonacciCustomSequence,
+  Se as fibonacciSequence,
+  Oe as fibonacciUntil,
+  Ie as getDate,
+  qe as getVersion,
+  ye as isFalsy,
+  Pe as isObjectEmpty,
+  Re as isTruthy,
+  ke as or,
+  Le as randomColor,
+  Je as randomColor0X,
+  J as randomFloat,
   h as randomInt,
-  ge as randomNumber,
-  $e as randomRGBAColor,
-  ke as randomRGBColor,
-  Je as randomString,
-  c as randomWalk1D,
-  Ye as randomWalk2D,
-  Le as randomWalk3D,
+  pe as randomNumber,
+  Ge as randomRGBAColor,
+  Ye as randomRGBColor,
+  We as randomString,
+  Xe as randomWalk,
   M as recursiveFibonacci,
-  We as reverseString,
-  Re as xor
+  He as reverseString,
+  Ke as sleep,
+  $e as xor
 };
