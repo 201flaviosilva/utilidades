@@ -1,3 +1,4 @@
+import { describe, expect, it, test } from "vitest";
 import { DataStructures } from "./src/main";
 const { LinkedList, LLNode: Node } = DataStructures;
 
@@ -41,120 +42,84 @@ describe("DataStructures/LinkedList.js", () => {
 
 		describe("get()", () => {
 			it("should return value by the passed index", () => {
-				const ll = new LinkedList(100);
-				ll.push(20);
-				ll.push(30);
+				const ll = new LinkedList([10, 20, 30]);
 
-				expect(ll.get(0)).toBe(100);
+				expect(ll.get(0)).toBe(10);
 				expect(ll.get(1)).toBe(20);
 				expect(ll.get(2)).toBe(30);
 			});
 
 			it("should return undefined in a empty list", () => {
 				const ll = new LinkedList();
-				expect(ll.get(0)).toBe(undefined);
-				expect(ll.get(1)).toBe(undefined);
-				expect(ll.get(10)).toBe(undefined);
+				expect(ll.get(0)).toBeUndefined();
+				expect(ll.get(1)).toBeUndefined();
+				expect(ll.get(10)).toBeUndefined();
 			});
 
-			it("should return undefined in a empty list", () => {
+			it("should return undefined if the index is out of bounds", () => {
+				const ll = new LinkedList([10, 20, 30]);
+
+				expect(ll.get(-1)).toBeUndefined();
+				expect(ll.get(3)).toBeUndefined();
+			});
+
+			it("should return undefined if the list is empty", () => {
 				const ll = new LinkedList();
-				expect(ll.get(0)).toBe(undefined);
-				expect(ll.get(1)).toBe(undefined);
-				expect(ll.get(10)).toBe(undefined);
-			});
-
-			it("should return undefined if try to get a index less than 0 or greater than the list size", () => {
-				const ll = new LinkedList();
-				expect(ll.get(-1)).toBe(undefined);
-				expect(ll.get(-10)).toBe(undefined);
-			});
-
-			it("should return undefined if try to get a index greater than the list size", () => {
-				const ll = new LinkedList(10);
-				expect(ll.get(0)).toBe(10);
-				expect(ll.get(1)).toBe(undefined);
-				expect(ll.get(2)).toBe(undefined);
-
-				ll.push(25);
-				expect(ll.get(1)).toBe(25);
-				expect(ll.get(2)).toBe(undefined);
-				expect(ll.get(10)).toBe(undefined);
+				expect(ll.get(0)).toBeUndefined();
 			});
 		});
 
 		describe("set()", () => {
 			it("should change a node value by the given index and new value", () => {
-				const ll = new LinkedList(100);
-				ll.push(20);
-				ll.push(30);
-				expect(ll.toArray()).toEqual([100, 20, 30]);
+				const ll = new LinkedList([10, 20, 30]);
 
-				expect(ll.set(0, 500)).toBe(true);
-				expect(ll.toArray()).toEqual([500, 20, 30]);
+				expect(ll.set(0, 100)).toBe(true);
+				expect(ll.set(1, 200)).toBe(true);
+				expect(ll.set(2, 300)).toBe(true);
 
-				expect(ll.set(2, 0)).toBe(true);
-				expect(ll.toArray()).toEqual([500, 20, 0]);
-
-				expect(ll.set(1, -50)).toBe(true);
-				expect(ll.toArray()).toEqual([500, -50, 0]);
+				expect(ll.toArray()).toEqual([100, 200, 300]);
 			});
 
 			it("should return false if the given index is out of bounds", () => {
+				const ll = new LinkedList([10, 20, 30]);
+				expect(ll.set(3, 500)).toBe(false);
+				expect(ll.set(-1, 500)).toBe(false);
+			});
+
+			it("should return false if the list is empty", () => {
 				const ll = new LinkedList();
-				expect(ll.toArray()).toEqual([]);
-
 				expect(ll.set(0, 500)).toBe(false);
-				expect(ll.toArray()).toEqual([]);
-
-				ll.push(42);
-				ll.set(0, 500);
-				expect(ll.toArray()).toEqual([500]);
-
-				expect(ll.set(-1, 1)).toBe(false);
-				expect(ll.toArray()).toEqual([500]);
-
-				expect(ll.set(100, 123)).toBe(false);
-				expect(ll.toArray()).toEqual([500]);
 			});
 		});
 
 		describe("unshift()", () => {
 			it("should add a new element at the start", () => {
-				const ll = new LinkedList(0);
+				const ll = new LinkedList([10, 20, 30]);
 
-				ll.unshift(10);
-				expect(ll.size).toBe(2);
-				expect(ll.head.value).toBe(10);
-				expect(ll.tail.value).toBe(0);
-				expect(ll.tail.next).toBeNull();
-				expect(ll.toArray()).toEqual([10, 0]);
-
-				ll.unshift(20);
-				expect(ll.size).toBe(3);
-				expect(ll.head.value).toBe(20);
-				expect(ll.tail.value).toBe(0);
-				expect(ll.tail.next).toBeNull();
-				expect(ll.toArray()).toEqual([20, 10, 0]);
+				ll.unshift(5);
+				expect(ll.size).toBe(4);
+				expect(ll.head.value).toBe(5);
+				expect(ll.head.next.value).toBe(10);
+				expect(ll.tail.value).toBe(30);
+				expect(ll.toArray()).toEqual([5, 10, 20, 30]);
 			});
 
 			it("should add a new element if the list is empty", () => {
 				const ll = new LinkedList();
-				expect(ll.size).toBe(0);
-
-				ll.unshift(1);
-				expect(ll.size).toBe(1);
-				expect(ll.head.value).toBe(1);
-				expect(ll.tail.value).toBe(1);
-				expect(ll.tail.next).toBeNull();
-				expect(ll.toArray()).toEqual([1]);
 
 				ll.unshift(10);
-				expect(ll.size).toBe(2);
+				expect(ll.size).toBe(1);
 				expect(ll.head.value).toBe(10);
-				expect(ll.tail.value).toBe(1);
-				expect(ll.tail.next).toBeNull();
-				expect(ll.toArray()).toEqual([10, 1]);
+				expect(ll.head.next).toBeNull();
+				expect(ll.tail.value).toBe(10);
+
+				expect(ll.toArray()).toEqual([10]);
+			});
+
+			it("should return the current list", () => {
+				const ll = new LinkedList();
+
+				expect(ll.unshift(10)).toBeInstanceOf(LinkedList);
 			});
 		});
 
@@ -179,78 +144,87 @@ describe("DataStructures/LinkedList.js", () => {
 		});
 
 		describe("insert()", () => {
-			it("adds a new item in the list", () => {
-				const ll = new LinkedList(100);
-				ll.push(50);
-				ll.push(25);
-				ll.push(42);
-				ll.push(0);
-				ll.push(123);
-				expect(ll.toArray()).toEqual([100, 50, 25, 42, 0, 123]);
+			it("should insert a new value at the given index", () => {
+				const ll = new LinkedList([10, 20, 30]);
+				expect(ll.insert(1, 40)).toBeInstanceOf(LinkedList);
 
-				ll.insert(2, 55);
-				expect(ll.toArray()).toEqual([100, 50, 55, 25, 42, 0, 123]);
-				expect(ll.size).toEqual(7);
-
-				ll.insert(5, 5);
-				expect(ll.toArray()).toEqual([100, 50, 55, 25, 42, 5, 0, 123]);
-				expect(ll.size).toEqual(8);
+				expect(ll.size).toBe(4);
+				expect(ll.toArray()).toEqual([10, 40, 20, 30]);
 			});
 
-			it("should add a new item in the list at the start and a the end", () => {
+			it("should insert a new value at the middle of the list", () => {
+				const ll = new LinkedList([1, 3]);
+				expect(ll.insert(1, 2)).toBeInstanceOf(LinkedList);
+
+				expect(ll.get(1)).toBe(2);
+			});
+
+			it("should insert a new value at the start of the list", () => {
+				const ll = new LinkedList([10, 20, 30]);
+				ll.insert(0, 40);
+
+				expect(ll.size).toBe(4);
+				expect(ll.toArray()).toEqual([40, 10, 20, 30]);
+			});
+
+			it("should insert a new value at the end of the list", () => {
+				const ll = new LinkedList([10, 20, 30]);
+				ll.insert(3, 40);
+
+				expect(ll.size).toBe(4);
+				expect(ll.toArray()).toEqual([10, 20, 30, 40]);
+			});
+
+			it("should insert a new in a empty list", () => {
 				const ll = new LinkedList();
-				ll.push(100);
-				ll.insert(0, 0);
-				ll.insert(2, 2);
-				expect(ll.toArray()).toEqual([0, 100, 2]);
-				expect(ll.size).toEqual(3);
+				ll.insert(0, 10);
+
+				expect(ll.size).toBe(1);
+				expect(ll.toArray()).toEqual([10]);
 			});
 
-			it("should not add items if the index is not valid", () => {
-				const ll = new LinkedList(0);
-				ll.push(100);
-				ll.push(2);
-
-				expect(ll.insert(-1, 999)).toBe(false);
-				expect(ll.insert(-10, 999)).toBe(false);
-
-				expect(ll.insert(4, 999)).toBe(false);
-				expect(ll.insert(10, 999)).toBe(false);
-
-				expect(ll.toArray()).not.toContain(999);
-				expect(ll.size).toEqual(3);
+			it("should return false if the given index is out of bounds", () => {
+				const ll = new LinkedList([10, 20, 30]);
+				expect(ll.insert(4, 500)).toBe(false);
+				expect(ll.insert(-1, 500)).toBe(false);
+				expect(ll.size).toBe(3);
 			});
 		});
 
 		describe("shift()", () => {
 			it("remove the first element from the linked list", () => {
-				const ll = new LinkedList(100);
-				ll.push(50);
-				ll.push(25);
-				ll.push(13);
+				const ll = new LinkedList([10, 20, 30]);
 
-				expect(ll.shift()).toBe(100);
-				expect(ll.size).toBe(3);
-				expect(ll.head.value).toBe(50);
-				expect(ll.tail.value).toBe(13);
-				expect(ll.tail.next).toBeNull();
-				expect(ll.toArray()).toEqual([50, 25, 13]);
-
-				expect(ll.shift()).toBe(50);
+				expect(ll.shift()).toBe(10);
 				expect(ll.size).toBe(2);
-				expect(ll.head.value).toBe(25);
-				expect(ll.tail.value).toBe(13);
-				expect(ll.tail.next).toBeNull();
-				expect(ll.toArray()).toEqual([25, 13]);
+				expect(ll.head.value).toBe(20);
+				expect(ll.head.next.value).toBe(30);
+				expect(ll.tail.value).toBe(30);
+				expect(ll.toArray()).toEqual([20, 30]);
+			});
 
-				expect(ll.shift()).toBe(25);
-				expect(ll.size).toBe(1);
-				expect(ll.head.value).toBe(13);
-				expect(ll.tail.value).toBe(13);
-				expect(ll.tail.next).toBeNull();
-				expect(ll.toArray()).toEqual([13]);
+			it("should clear the list if it's the last node", () => {
+				const ll = new LinkedList(10);
 
-				expect(ll.pop()).toBe(13);
+				expect(ll.shift()).toBe(10);
+				expect(ll.size).toBe(0);
+				expect(ll.head).toBeNull();
+				expect(ll.tail).toBeNull();
+				expect(ll.toArray()).toEqual([]);
+			});
+
+			it("should return undefined if the list is empty", () => {
+				const ll = new LinkedList();
+				expect(ll.shift()).toBeUndefined();
+			});
+
+			it("should remove all the values from the list", () => {
+				const ll = new LinkedList([10, 20, 30]);
+
+				expect(ll.shift()).toBe(10);
+				expect(ll.shift()).toBe(20);
+				expect(ll.shift()).toBe(30);
+
 				expect(ll.size).toBe(0);
 				expect(ll.head).toBeNull();
 				expect(ll.tail).toBeNull();
@@ -292,7 +266,7 @@ describe("DataStructures/LinkedList.js", () => {
 				expect(ll.tail).toBeNull();
 				expect(ll.toArray()).toEqual([]);
 
-				expect(ll.pop()).toBe(undefined);
+				expect(ll.pop()).toBeUndefined();
 				expect(ll.size).toBe(0);
 				expect(ll.head).toBeNull();
 				expect(ll.tail).toBeNull();
@@ -301,67 +275,96 @@ describe("DataStructures/LinkedList.js", () => {
 		});
 
 		describe("remove()", () => {
-			it("removes a item in the list by the index", () => {
-				const ll = new LinkedList(100);
-				ll.push(50);
-				ll.push(25);
-				ll.push(42);
-				ll.push(0);
-				ll.push(123);
-				expect(ll.toArray()).toEqual([100, 50, 25, 42, 0, 123]);
+			it("should remove the node at the given index", () => {
+				const ll = new LinkedList([10, 20, 30, 40, 50]);
 
-				ll.remove(2);
-				expect(ll.toArray()).toEqual([100, 50, 42, 0, 123]);
-				expect(ll.size).toEqual(5);
-
-				ll.remove(3);
-				expect(ll.toArray()).toEqual([100, 50, 42, 123]);
-				expect(ll.size).toEqual(4);
+				expect(ll.remove(2)).toBe(30);
+				expect(ll.size).toBe(4);
+				expect(ll.toArray()).toEqual([10, 20, 40, 50]);
 			});
 
-			it("should remove a item in the list at the start and a the end", () => {
-				const ll = new LinkedList(1);
-				ll.push(2);
-				ll.push(3);
-				ll.push(4);
-				ll.push(5);
+			it("should remove the first node", () => {
+				const ll = new LinkedList([10, 20, 30]);
 
-				ll.remove(4);
-				ll.remove(0);
-
-				expect(ll.toArray()).toEqual([2, 3, 4]);
-				expect(ll.size).toEqual(3);
+				expect(ll.remove(0)).toBe(10);
+				expect(ll.size).toBe(2);
+				expect(ll.toArray()).toEqual([20, 30]);
 			});
 
-			it("should not remove any items if the index is not valid", () => {
-				const ll = new LinkedList(0);
-				ll.push(100);
-				ll.push(20);
+			it("should remove the last node", () => {
+				const ll = new LinkedList([10, 20, 30]);
 
-				expect(ll.remove(-1)).toBe(undefined);
-				expect(ll.remove(-10)).toBe(undefined);
+				expect(ll.remove(2)).toBe(30);
+				expect(ll.size).toBe(2);
+				expect(ll.toArray()).toEqual([10, 20]);
+			});
 
-				expect(ll.remove(4)).toBe(undefined);
-				expect(ll.remove(10)).toBe(undefined);
 
-				expect(ll.toArray()).toEqual([0, 100, 20]);
-				expect(ll.size).toEqual(3);
+			it("should clear the list if it's the last node", () => {
+				const ll = new LinkedList(10);
+
+				expect(ll.remove(0)).toBe(10);
+				expect(ll.toArray()).toEqual([]);
+				expect(ll.head).toBeNull();
+				expect(ll.tail).toBeNull();
+			});
+
+			it("should return undefined if the index is out of bounds", () => {
+				const ll = new LinkedList([10, 20, 30]);
+
+				expect(ll.remove(4)).toBeUndefined();
+				expect(ll.size).toBe(3);
+				expect(ll.toArray()).toEqual([10, 20, 30]);
 			});
 		});
 
 		describe("reverse()", () => {
-			it("should reverse the linkedlist", () => {
-				const ll = new LinkedList(0);
-				ll.push(10);
-				ll.push(200);
-				ll.push(3000);
+			it("should reverse the list (5 elements)", () => {
+				const ll = new LinkedList([0, 10, 20, 30, 40]);
 
-				ll.reverse();
+				expect(ll.reverse()).toBeInstanceOf(LinkedList);
 
-				expect(ll.head.value).toBe(3000);
+				expect(ll.head.value).toBe(40);
 				expect(ll.tail.value).toBe(0);
 
-				expect(ll.toArray()).toEqual([3000, 200, 10, 0]);
+				expect(ll.toArray()).toEqual([40, 30, 20, 10, 0]);
+			});
+
+			it("should reverse the list (2 elements)", () => {
+				const ll = new LinkedList([10, 20]);
+
+				ll.reverse();
+				expect(ll.toArray()).toEqual([20, 10]);
+			});
+
+			test("does nothing on a list with only one element", () => {
+				const ll = new LinkedList(0);
+				ll.reverse();
+
+				expect(ll.head.value).toBe(0);
+				expect(ll.tail.value).toBe(0);
+
+				expect(ll.toArray()).toEqual([0]);
+			});
+
+			test("does nothing if the list is empty", () => {
+				const ll = new LinkedList();
+				ll.reverse();
+
+				expect(ll.head).toBeNull();
+				expect(ll.tail).toBeNull();
+
+				expect(ll.toArray()).toEqual([]);
+			});
+
+			it("should reverse twice the list", () => {
+				const ll = new LinkedList([10, 20, 30]);
+
+				ll.reverse();
+				expect(ll.toArray()).toEqual([30, 20, 10]);
+
+				ll.reverse();
+				expect(ll.toArray()).toEqual([10, 20, 30]);
 			});
 		});
 

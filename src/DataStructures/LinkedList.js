@@ -26,16 +26,12 @@ class LinkedList {
 	 * @param {*} value - The value to initialize the list with (optional).
 	 */
 	constructor(value) {
-		if (value !== undefined) {
-			const newNode = new Node(value);
-			this.head = newNode; // first node to be added
-			this.tail = newNode; // last node to be added
-			this.size = 1;
-		} else {
-			this.head = null;
-			this.tail = null;
-			this.size = 0;
-		}
+		this.head = null; // first node to be added
+		this.tail = null;  // last node to be added
+		this.size = 0;
+
+		if (Array.isArray(value)) value.forEach((v) => this.push(v));
+		else if (value !== undefined) this.push(value);
 	}
 
 	/**
@@ -96,15 +92,12 @@ class LinkedList {
 	get(index, returnNode = false) {
 		if (index < 0 || index >= this.size) return undefined;
 
-		let count = 0;
 		let temp = this.head;
-		while (temp !== null) {
-			if (count === index) return returnNode ? temp : temp.value;
+		for (let i = 0; i < index; i++) {
 			temp = temp.next;
-			count++;
 		}
 
-		return temp; // Should never reach here
+		return returnNode ? temp : temp.value;
 	}
 
 	/**

@@ -1,13 +1,5 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`DataStructures/DoublyLinkedList.js > DoublyLinkedList > Node > creates a new Node with a value 1`] = `
-Node {
-  "next": null,
-  "prev": null,
-  "value": 10,
-}
-`;
-
 exports[`DataStructures/DoublyLinkedList.js > DoublyLinkedList > constructor() > creates a new DoublyLinkedList, starting with a value 1`] = `
 DoublyLinkedList {
   "head": Node {
@@ -253,5 +245,13 @@ DoublyLinkedList {
     "prev": null,
     "value": 10,
   },
+}
+`;
+
+exports[`DataStructures/DoublyLinkedList.js > Node > creates a new Node with a value 1`] = `
+Node {
+  "next": null,
+  "prev": null,
+  "value": 10,
 }
 `;
