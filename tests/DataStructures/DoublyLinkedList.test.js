@@ -376,20 +376,20 @@ describe("DataStructures/DoublyLinkedList.js", () => {
 				expect(dll.toArray()).toEqual([]);
 			});
 		});
+	});
 
-		describe("Node", () => {
-			it("creates a new Node with a value", () => {
-				const node = new Node(10);
+	describe("Node", () => {
+		it("creates a new Node with a value", () => {
+			const node = new Node(10);
 
-				expect(node.value).toBe(10);
-				expect(node.next).toBeNull();
-				expect(node.prev).toBeNull();
-				expect(node).toMatchSnapshot();
-			});
+			expect(node.value).toBe(10);
+			expect(node.next).toBeNull();
+			expect(node.prev).toBeNull();
+			expect(node).toMatchSnapshot();
+		});
 
-			it("should return a error if the value is not provided", () => {
-				expect(() => new Node()).toThrowError("Node value cannot be undefined.");
-			});
+		it("should return a error if the value is not provided", () => {
+			expect(() => new Node()).toThrowError("Node value cannot be undefined.");
 		});
 	});
 });
