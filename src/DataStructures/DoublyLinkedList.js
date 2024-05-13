@@ -1,8 +1,7 @@
 /**
- * @class DLLNode
+ * @class
+ * @name DLLNode
  * @classdesc Represents a node in a doubly linked list.
- * 
- * @memberof DataStructures
  */
 class Node {
 	/**
@@ -19,21 +18,21 @@ class Node {
 }
 
 /**
+ * @class
+ * @name DoublyLinkedList
+ * @classdesc
  * Represents a doubly linked list data structure.
  * 
- * @memberof DataStructures
+ * @see https://en.wikipedia.org/wiki/Doubly_linked_list
+ * 
+ * @example
+ * new DoublyLinkedList();
+ * new DoublyLinkedList("Beep");
+ * new DoublyLinkedList([10,20,30]);
+ * 
+ * @param {Array|*} value - The value to initialize the list with (optional).
  */
 class DoublyLinkedList {
-	/**
-	 * Creates a new DoublyLinkedList instance.
-	 * 
-	 * @example
-	 * new DoublyLinkedList();
-	 * new DoublyLinkedList("Beep");
-	 * new DoublyLinkedList([10,20,30]);
-	 * 
-	 * @param {Array|*} value - The value to initialize the list with (optional).
-	 */
 	constructor(value) {
 		this.head = null; // first node to be added
 		this.tail = null;  // last node to be added
@@ -53,7 +52,6 @@ class DoublyLinkedList {
 	 * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
 	 * 
 	 * @memberof DoublyLinkedList
-	 * @method print
 	 */
 	print() {
 		let temp = this.head;
@@ -75,7 +73,6 @@ class DoublyLinkedList {
 	 * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
 	 * 
 	 * @memberof DoublyLinkedList
-	 * @method clear
 	 */
 	clear() {
 		this.head = null;
@@ -96,7 +93,6 @@ class DoublyLinkedList {
 	 * @returns {Number|Node} The value at the specified index, or the Node if returnNode is true.
 	 * 
 	 * @memberof DoublyLinkedList
-	 * @method get
 	 */
 	get(index, returnNode = false) {
 		if (index < 0 || index >= this.size) return undefined;
@@ -129,7 +125,6 @@ class DoublyLinkedList {
 	 * @returns {Boolean} True if the value was set successfully, false otherwise.
 	 * 
 	 * @memberof DoublyLinkedList
-	 * @method set
 	 */
 	set(index, value) {
 		const node = this.get(index, true);
@@ -150,7 +145,6 @@ class DoublyLinkedList {
 	 * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
 	 * 
 	 * @memberof DoublyLinkedList
-	 * @method unshift
 	 */
 	unshift(value) {
 		if (!this.head) return this.push(value);
@@ -176,7 +170,6 @@ class DoublyLinkedList {
 	 * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
 	 * 
 	 * @memberof DoublyLinkedList
-	 * @method push
 	 */
 	push(value) {
 		const newNode = new Node(value);
@@ -206,7 +199,6 @@ class DoublyLinkedList {
 	 * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
 	 * 
 	 * @memberof DoublyLinkedList
-	 * @method insert
 	 */
 	insert(index, value) {
 		if (index === 0) return this.unshift(value);
@@ -236,7 +228,6 @@ class DoublyLinkedList {
 	 * @returns {Number} The value that was removed.
 	 * 
 	 * @memberof DoublyLinkedList
-	 * @method shift
 	 */
 	shift() {
 		if (this.size === 0) return;
@@ -265,7 +256,6 @@ class DoublyLinkedList {
 	 * @returns {Number} The value that was removed.
 	 * 
 	 * @memberof DoublyLinkedList
-	 * @method pop
 	 */
 	pop() {
 		if (this.size === 0) return;
@@ -295,7 +285,6 @@ class DoublyLinkedList {
 	 * @returns {Number} The value that was removed.
 	 * 
 	 * @memberof DoublyLinkedList
-	 * @method remove
 	 */
 	remove(index) {
 		if (index < 0 || index >= this.size) return false;
@@ -332,7 +321,6 @@ class DoublyLinkedList {
 	 * @returns {Array} The array representation of the linked list.
 	 * 
 	 * @memberof DoublyLinkedList
-	 * @method toArray
 	 */
 	toArray() {
 		const arr = [];

@@ -1,0 +1,42 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DataStructures/Queue.js > Node > creates a new Node with a value 1`] = `
+Node {
+  "next": null,
+  "value": 10,
+}
+`;
+
+exports[`DataStructures/Queue.js > Queue > constructor() > creates a new Queue, starting with a value 1`] = `
+Queue {
+  "first": Node {
+    "next": null,
+    "value": 100,
+  },
+  "last": Node {
+    "next": null,
+    "value": 100,
+  },
+  "size": 1,
+}
+`;
+
+exports[`DataStructures/Queue.js > Queue > constructor() > creates a new Queue, starting with an array 1`] = `
+Queue {
+  "first": Node {
+    "next": Node {
+      "next": Node {
+        "next": null,
+        "value": 30,
+      },
+      "value": 20,
+    },
+    "value": 10,
+  },
+  "last": Node {
+    "next": null,
+    "value": 30,
+  },
+  "size": 3,
+}
+`;
