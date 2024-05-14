@@ -1,8 +1,7 @@
 /**
- * @class LLNode
+ * @class
+ * @name LLNode
  * @classdesc Represents a node in a linked list.
- * 
- * @memberof DataStructures
  */
 class Node {
 	/**
@@ -16,15 +15,20 @@ class Node {
 }
 
 /**
+ * @class
+ * @name LinkedList
+ * @classdesc
  * Represents a linked list data structure.
  * 
- * @memberof DataStructures
+ * @see https://en.wikipedia.org/wiki/Linked_list
+ * 
+ * @param {*} value - The value to initialize the list with (optional).
+ * 
+ * @property {LLNode} head - The first node in the list
+ * @property {LLNode} tail - The last node in the list
+ * @property {Number} size - The number of nodes in the list
  */
 class LinkedList {
-	/**
-	 * Creates a new LinkedList instance.
-	 * @param {*} value - The value to initialize the list with (optional).
-	 */
 	constructor(value) {
 		this.head = null; // first node to be added
 		this.tail = null;  // last node to be added

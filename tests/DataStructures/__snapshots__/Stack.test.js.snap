@@ -1,0 +1,34 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DataStructures/Stack.js > Node > creates a new Node with a value 1`] = `
+Node {
+  "next": null,
+  "value": 10,
+}
+`;
+
+exports[`DataStructures/Stack.js > Stack > constructor() > creates a new Stack, starting with a value 1`] = `
+Stack {
+  "size": 1,
+  "top": Node {
+    "next": null,
+    "value": 100,
+  },
+}
+`;
+
+exports[`DataStructures/Stack.js > Stack > constructor() > creates a new Stack, starting with an array 1`] = `
+Stack {
+  "size": 3,
+  "top": Node {
+    "next": Node {
+      "next": Node {
+        "next": null,
+        "value": 10,
+      },
+      "value": 20,
+    },
+    "value": 30,
+  },
+}
+`;
