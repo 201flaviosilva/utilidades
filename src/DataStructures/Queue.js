@@ -1,14 +1,15 @@
 /**
+ * @class
  * @name QueueNode
  * @classdesc Represents a node to be used in a Queue class
+ * 
+ * @param {*} [value] - The value to be stored in the node
+ * 
+ * @property {*} value - The value stored in the node
+ * @property {QueueNode} next - The next node in the queue
  */
 export class Node {
-	/**
-	 * Creates a new Node instance.
-	 * @param {*} value - The value to be stored in the node.
-	 */
 	constructor(value) {
-		if (!value) throw new Error("Node value cannot be undefined.");
 		this.value = value;
 		this.next = null;
 	}
@@ -52,8 +53,6 @@ export class Queue {
 	 * 
 	 * @param {Number} value - The value to add.
 	 * @returns {Queue} The current Queue instance.
-	 * 
-	 * @memberof Queue
 	 */
 	enqueue(value) {
 		const newNode = new Node(value);
@@ -78,8 +77,6 @@ export class Queue {
 	 * q.dequeue(); // [20,30]
 	 * 
 	 * @returns {Queue} The current Queue instance.
-	 * 
-	 * @memberof Queue
 	 */
 	dequeue(returnNode = false) {
 		let temp = this.first;
@@ -105,9 +102,7 @@ export class Queue {
 	 * q.peek(); // 10
 	 * 
 	 * @param {Boolean} returnNode - Whether to return the node or just the value.
-	 * @returns {*|Node} The value in the first node.
-	 * 
-	 * @memberof Queue
+	 * @returns {*|QueueNode} The value in the first node.
 	 */
 	peek(returnNode = false) {
 		if (this.size === 0) return undefined;
@@ -121,8 +116,6 @@ export class Queue {
 	 * const q = new Queue([10,20,30]);
 	 * q.clear(); // []
 	 * 
-	 * @returns {Queue} The current Queue instance.
-	 * @memberof Queue
 	 */
 	clear() {
 		this.first = null;
@@ -140,8 +133,6 @@ export class Queue {
 	 * q.print(); // 10,20,30
 	 * 
 	 * @returns {Queue} The current Queue instance.
-	 * 
-	 * @memberof Queue
 	 */
 	print() {
 		let node = this.first;
@@ -162,8 +153,6 @@ export class Queue {
 	 * q.isEmpty(); // false
 	 * 
 	 * @returns {Boolean} Whether or not the queue is empty.
-	 * 
-	 * @memberof Queue
 	 */
 	isEmpty() {
 		return this.size === 0;
@@ -177,8 +166,6 @@ export class Queue {
 	 * q.toArray(); // [10,20,30]
 	 * 
 	 * @returns {Array} An array of the values in the queue.
-	 * 
-	 * @memberof Queue
 	 */
 	toArray() {
 		const arr = [];

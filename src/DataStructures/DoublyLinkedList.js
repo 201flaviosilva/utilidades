@@ -2,15 +2,14 @@
  * @class
  * @name DLLNode
  * @classdesc Represents a node in a doubly linked list.
+ * 
+ * @param {*} [value] - The value to be stored in the node.
+ * 
+ * @property {*} value - The value stored in the node
+ * @property {DLLNode|null} next - The next node in the list
  */
 class Node {
-	/**
-	 * Creates a new Node instance.
-	 * @param {*} value - The value to be stored in the node.
-	 */
 	constructor(value) {
-		if (!value) throw new Error("Node value cannot be undefined.");
-
 		this.value = value;
 		this.next = null;
 		this.prev = null;
@@ -31,6 +30,10 @@ class Node {
  * new DoublyLinkedList([10,20,30]);
  * 
  * @param {Array|*} value - The value to initialize the list with (optional).
+ * 
+ * @property {DLLNode} head - The first node in the list
+ * @property {DLLNode} tail - The last node in the list
+ * @property {Number} size - The number of nodes in the list
  */
 class DoublyLinkedList {
 	constructor(value) {
@@ -50,8 +53,6 @@ class DoublyLinkedList {
 	 * dll.print(); // 10,20,30
 	 * 
 	 * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
-	 * 
-	 * @memberof DoublyLinkedList
 	 */
 	print() {
 		let temp = this.head;
@@ -71,8 +72,6 @@ class DoublyLinkedList {
 	 * dll.toArray(); // []
 	 * 
 	 * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
-	 * 
-	 * @memberof DoublyLinkedList
 	 */
 	clear() {
 		this.head = null;
@@ -90,9 +89,7 @@ class DoublyLinkedList {
 	 * 
 	 * @param {Number} index - The index of the value to retrieve.
 	 * @param {Boolean} returnNode - Whether to return the Node or the value.
-	 * @returns {Number|Node} The value at the specified index, or the Node if returnNode is true.
-	 * 
-	 * @memberof DoublyLinkedList
+	 * @returns {Number|DLLNode} The value at the specified index, or the Node if returnNode is true.
 	 */
 	get(index, returnNode = false) {
 		if (index < 0 || index >= this.size) return undefined;
@@ -123,8 +120,6 @@ class DoublyLinkedList {
 	 * @param {Number} index - The index of the value to set.
 	 * @param {Number} value - The new value to set.
 	 * @returns {Boolean} True if the value was set successfully, false otherwise.
-	 * 
-	 * @memberof DoublyLinkedList
 	 */
 	set(index, value) {
 		const node = this.get(index, true);
@@ -143,8 +138,6 @@ class DoublyLinkedList {
 	 * 
 	 * @param {Number} value - The value to add.
 	 * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
-	 * 
-	 * @memberof DoublyLinkedList
 	 */
 	unshift(value) {
 		if (!this.head) return this.push(value);
@@ -168,8 +161,6 @@ class DoublyLinkedList {
 	 * 
 	 * @param {Number} value - The value to add.
 	 * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
-	 * 
-	 * @memberof DoublyLinkedList
 	 */
 	push(value) {
 		const newNode = new Node(value);
@@ -197,8 +188,6 @@ class DoublyLinkedList {
 	 * @param {Number} index - The index to insert the value at.
 	 * @param {Number} value - The value to insert.
 	 * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
-	 * 
-	 * @memberof DoublyLinkedList
 	 */
 	insert(index, value) {
 		if (index === 0) return this.unshift(value);
@@ -226,8 +215,6 @@ class DoublyLinkedList {
 	 * dll.shift(); // 20,30
 	 * 
 	 * @returns {Number} The value that was removed.
-	 * 
-	 * @memberof DoublyLinkedList
 	 */
 	shift() {
 		if (this.size === 0) return;
@@ -254,8 +241,6 @@ class DoublyLinkedList {
 	 * dll.pop(); // 10,20
 	 * 
 	 * @returns {Number} The value that was removed.
-	 * 
-	 * @memberof DoublyLinkedList
 	 */
 	pop() {
 		if (this.size === 0) return;
@@ -283,8 +268,6 @@ class DoublyLinkedList {
 	 * 
 	 * @param {Number} index - The index of the value to remove.
 	 * @returns {Number} The value that was removed.
-	 * 
-	 * @memberof DoublyLinkedList
 	 */
 	remove(index) {
 		if (index < 0 || index >= this.size) return false;
@@ -319,8 +302,6 @@ class DoublyLinkedList {
 	 * dll.toArray(); // [10,20,30]
 	 * 
 	 * @returns {Array} The array representation of the linked list.
-	 * 
-	 * @memberof DoublyLinkedList
 	 */
 	toArray() {
 		const arr = [];
