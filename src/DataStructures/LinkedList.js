@@ -2,12 +2,13 @@
  * @class
  * @name LLNode
  * @classdesc Represents a node in a linked list.
+ * 
+ * @param {*} [value] - The value to be stored in the node.
+ * 
+ * @property {*} value - The value stored in the node
+ * @property {LLNode} next - The next node in the list
  */
 class Node {
-	/**
-	 * Creates a new Node instance.
-	 * @param {*} value - The value to be stored in the node.
-	 */
 	constructor(value) {
 		this.value = value;
 		this.next = null;
@@ -22,7 +23,7 @@ class Node {
  * 
  * @see https://en.wikipedia.org/wiki/Linked_list
  * 
- * @param {*} value - The value to initialize the list with (optional).
+ * @param {*} [value] - The value to initialize the list with (optional).
  * 
  * @property {LLNode} head - The first node in the list
  * @property {LLNode} tail - The last node in the list
@@ -50,8 +51,6 @@ class LinkedList {
 	 * ll.print(); // Apple, Banana, Cherry
 	 * 
 	 * @returns {LinkedList} The current LinkedList instance.
-	 * 
-	 * @memberof LinkedList
 	 */
 	print() {
 		let temp = this.head;
@@ -66,8 +65,6 @@ class LinkedList {
 	 * Clears the linked list, removing all elements.
 	 * 
 	 * @returns {LinkedList} The current LinkedList instance.
-	 * 
-	 * @memberof LinkedList
 	 */
 	clear() {
 		this.head = null;
@@ -90,8 +87,6 @@ class LinkedList {
 	 * @param {number} index - The index of the value to retrieve.
 	 * @param {boolean} [returnNode=false] - Specifies whether to return the Node instead of the value.
 	 * @returns {*} The value at the specified index, or undefined if index is out of bounds.
-	 * 
-	 * @memberof LinkedList
 	 */
 	get(index, returnNode = false) {
 		if (index < 0 || index >= this.size) return undefined;
@@ -118,8 +113,6 @@ class LinkedList {
 	 * @param {number} index - The index of the value to set.
 	 * @param {*} value - The new value to set.
 	 * @returns {boolean} True if the value was set successfully, false otherwise.
-	 * 
-	 * @memberof LinkedList
 	 */
 	set(index, value) {
 		const node = this.get(index, true);
@@ -143,8 +136,6 @@ class LinkedList {
 	 * 
 	 * @param {*} value - The value to add.
 	 * @returns {LinkedList} The current LinkedList instance.
-	 * 
-	 * @memberof LinkedList
 	 */
 	unshift(value) {
 		const newNode = new Node(value);
@@ -169,8 +160,6 @@ class LinkedList {
 	 * 
 	 * @param {*} value - The value to add.
 	 * @returns {LinkedList} The current LinkedList instance.
-	 * 
-	 * @memberof LinkedList
 	 */
 	push(value) {
 		const newNode = new Node(value);
@@ -200,8 +189,6 @@ class LinkedList {
 	 * @param {number} index - The index at which to add the value.
 	 * @param {*} value - The value to add.
 	 * @returns {boolean} True if the value was added successfully, false otherwise.
-	 * 
-	 * @memberof LinkedList
 	 */
 	insert(index, value) {
 		if (index === 0) return this.unshift(value);
@@ -230,8 +217,6 @@ class LinkedList {
 	 * ll.shift(); // 20,30
 	 * 
 	 * @returns {*} The removed value, or undefined if the list is empty.
-	 * 
-	 * @memberof LinkedList
 	 */
 	shift() {
 		if (!this.size) return undefined;
@@ -258,8 +243,6 @@ class LinkedList {
 	 * ll.pop(); // 10,20
 	 * 
 	 * @returns {*} The removed value, or undefined if the list is empty.
-	 * 
-	 * @memberof LinkedList
 	 */
 	pop() {
 		if (this.size === 0) return undefined;
@@ -293,8 +276,6 @@ class LinkedList {
 	 * 
 	 * @param {number} index - The index at which to remove the value.
 	 * @returns {*} The removed value, or undefined if the index is out of bounds.
-	 * 
-	 * @memberof LinkedList
 	 */
 	remove(index) {
 		if (index === 0) return this.shift();
@@ -322,8 +303,6 @@ class LinkedList {
 	 * ll.reverse(); // 30,20,10
 	 * 
 	 * @returns {LinkedList} The current LinkedList instance.
-	 * 
-	 * @memberof LinkedList
 	 */
 	reverse() {
 		let temp = this.head;
@@ -358,8 +337,6 @@ class LinkedList {
 	 * ll.toArray(); // [10,20,30]
 	 * 
 	 * @returns {Array} An array containing the values of the linked list.
-	 * 
-	 * @memberof LinkedList
 	 */
 	toArray() {
 		const result = [];

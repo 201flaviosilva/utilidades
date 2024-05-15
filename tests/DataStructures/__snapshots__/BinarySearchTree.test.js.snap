@@ -1,0 +1,55 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`BinarySearchTree.js > BinarySearchTree > constructor() > should match a full tree with the snapshot 1`] = `
+BinarySearchTree {
+  "count": 8,
+  "root": Node {
+    "left": Node {
+      "left": null,
+      "right": Node {
+        "left": Node {
+          "left": null,
+          "right": null,
+          "value": 66,
+        },
+        "right": Node {
+          "left": null,
+          "right": null,
+          "value": 88,
+        },
+        "value": 75,
+      },
+      "value": 50,
+    },
+    "right": Node {
+      "left": Node {
+        "left": null,
+        "right": null,
+        "value": 111,
+      },
+      "right": Node {
+        "left": null,
+        "right": null,
+        "value": 150,
+      },
+      "value": 125,
+    },
+    "value": 100,
+  },
+}
+`;
+
+exports[`BinarySearchTree.js > BinarySearchTree > constructor() > should the root be null 1`] = `
+BinarySearchTree {
+  "count": 0,
+  "root": null,
+}
+`;
+
+exports[`BinarySearchTree.js > Node > should have a value 1`] = `
+Node {
+  "left": null,
+  "right": null,
+  "value": 100,
+}
+`;

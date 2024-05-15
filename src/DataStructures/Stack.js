@@ -4,15 +4,13 @@
  * @classdesc
  * Represents a node to be used in a Stack class
  * 
- * @param {*} value - The value to be stored in the node
+ * @param {*} [value] - The value to be stored in the node
  * 
  * @property {StackNode} next - The next node in the stack
  * @property {*} value - The value stored in the node
  */
 export class Node {
 	constructor(value) {
-		if (!value) throw new Error("Node value cannot be undefined.");
-
 		this.value = value;
 		this.next = null;
 	}
@@ -54,8 +52,6 @@ export class Stack {
 	 * 
 	 * @param {Number} value - The value to add.
 	 * @returns {Stack} The current Stack instance.
-	 * 
-	 * @memberof Stack
 	 */
 	push(value) {
 		const newNode = new Node(value);
@@ -80,8 +76,6 @@ export class Stack {
 	 * 
 	 * @param {Boolean} returnNode - Whether to return the node or just the value.
 	 * @returns {Stack|*} The current Stack instance.
-	 * 
-	 * @memberof Stack
 	 */
 	pop(returnNode = false) {
 		if (this.size === 0) return undefined;
@@ -102,8 +96,6 @@ export class Stack {
 	 * s.clear(); // []
 	 * 
 	 * @returns {Stack} The current Stack instance.
-	 * 
-	 * @memberof Stack
 	 */
 	clear() {
 		this.top = null;
@@ -121,8 +113,6 @@ export class Stack {
 	 * 
 	 * @param {Boolean} returnNode - Whether to return the node or just the value.
 	 * @returns {*|StackNode} The value in the first node.
-	 * 
-	 * @memberof Stack
 	 */
 	peek(returnNode = false) {
 		if (this.size === 0) return undefined;
@@ -137,8 +127,6 @@ export class Stack {
 	 * s.print(); // 10,20,30
 	 * 
 	 * @returns {Stack} The current Stack instance.
-	 * 
-	 * @memberof Stack
 	 */
 	print() {
 		let node = this.top;
@@ -159,8 +147,6 @@ export class Stack {
 	 * s.isEmpty(); // true
 	 * 
 	 * @returns {Boolean} Whether or not the stack is empty.
-	 * 
-	 * @memberof Stack
 	 */
 	isEmpty() {
 		return this.size === 0;
@@ -174,8 +160,6 @@ export class Stack {
 	 * s.toArray(); // [10,20,30]
 	 * 
 	 * @returns {Number} The number of nodes in the stack.
-	 * 
-	 * @memberof Stack
 	 */
 	toArray() {
 		const arr = [];

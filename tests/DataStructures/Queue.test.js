@@ -200,9 +200,5 @@ describe("DataStructures/Queue.js", () => {
 			expect(node.next).toBeNull();
 			expect(node).toMatchSnapshot();
 		});
-
-		it("should return a error if the value is not provided", () => {
-			expect(() => new Node()).toThrowError("Node value cannot be undefined.");
-		});
 	});
 });

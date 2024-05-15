@@ -1,96 +1,110 @@
-import { Node } from "./src/DataStructures/BinarySearchTree.js";
+import { describe, expect, it, test } from "vitest";
 import { DataStructures } from "./src/main";
-const { BinarySearchTree, BinarySearchTreeInstance } = DataStructures;
+const { BinarySearchTree, BinarySearchTreeInstance, BSTNode: Node } = DataStructures;
 
-describe.skip("BinarySearchTree.js", () => {
+describe("BinarySearchTree.js", () => {
+	/**
+	 * 						100
+	 * 					/		\
+	 * 				50			125
+	 *		          \			/   \
+	 * 				  75	  111	150		
+	 * 				 /  \
+	 * 				66   88
+	 */
+	const values = [100, 50, 125, 111, 75, 66, 150, 88];
+
 	describe("BinarySearchTree", () => {
 		describe("constructor()", () => {
 			it("should the root be null", () => {
 				const bst = new BinarySearchTree();
+
 				expect(bst.root).toBe(null);
 				expect(bst.count).toBe(0);
+				expect(bst).toMatchSnapshot();
 			});
 
 			it("should the root node have the given value", () => {
 				const bst = new BinarySearchTree(100);
+
 				expect(bst.root).toBeInstanceOf(Node);
 				expect(bst.root.value).toBe(100);
 				expect(bst.root.left).toBe(null);
 				expect(bst.root.right).toBe(null);
-				expect(bst.root.parent).toBe(null);
 
 				expect(bst.count).toBe(1);
 			});
-		});
 
-		describe("size()", () => {
-			it("should the size of the tree be 0 at the start", () => {
-				const bst = new BinarySearchTree();
-				expect(bst.size()).toBe(0);
+			it("should the root node have the given array [100, 50, 125]", () => {
+				const bst = new BinarySearchTree([100, 50, 125]);
+
+				expect(bst.root).toBeInstanceOf(Node);
+				expect(bst.root.value).toBe(100);
+				expect(bst.root.left.value).toBe(50);
+				expect(bst.root.right.value).toBe(125);
+
+				expect(bst.count).toBe(3);
 			});
 
-			it("should add a initial value and the size of the tree be 1 at the start", () => {
-				const bst = new BinarySearchTree(100);
-				expect(bst.size()).toBe(1);
+			it("should throw an error if the value is not a number", () => {
+				expect(() => new BinarySearchTree("A")).toThrow("Node value must be a number.");
 			});
 
-			it("should add 3 values and the size of the tree should be 3", () => {
-				const bst = new BinarySearchTree();
-				expect(bst.size()).toBe(0);
+			it("should match a full tree with the snapshot", () => {
+				const bst = new BinarySearchTree(values);
 
-				bst.add(100);
-				expect(bst.size()).toBe(1);
-
-				bst.add(50);
-				expect(bst.size()).toBe(2);
-
-				bst.add(150);
-				expect(bst.size()).toBe(3);
+				expect(bst).toMatchSnapshot();
 			});
 		});
 
 		describe("add()", () => {
-			it("should add multiple values to the left [0, -1, -2, -3]", () => {
-				const bst = new BinarySearchTree(0);
-
-				bst.add(-1);
-				bst.add(-2);
-				bst.add(-3);
+			it("should add a single value to the left [10, 5]", () => {
+				const bst = new BinarySearchTree(10);
 
 				const root = bst.root;
-				expect(root.value).toBe(0);
+				expect(root.value).toBe(10);
 
-				const v1 = root.left;
-				expect(v1.value).toBe(-1);
-
-				const v2 = v1.left;
-				expect(v2.value).toBe(-2);
-
-				const v3 = v2.left;
-				expect(v3.value).toBe(-3);
+				bst.add(5);
+				const n1 = root.left;
+				expect(n1.value).toBe(5);
 			});
 
-			it("should add multiple values to the right [0, 1, 2, 3]", () => {
-				const bst = new BinarySearchTree(0);
-
-				bst.add(1);
-				bst.add(2);
-				bst.add(3);
+			it("should add a single value to the right [10, 20]", () => {
+				const bst = new BinarySearchTree(10);
 
 				const root = bst.root;
-				expect(root.value).toBe(0);
+				expect(root.value).toBe(10);
 
-				const v1 = root.right;
-				expect(v1.value).toBe(1);
-
-				const v2 = v1.right;
-				expect(v2.value).toBe(2);
-
-				const v3 = v2.right;
-				expect(v3.value).toBe(3);
+				bst.add(20);
+				const n1 = root.right;
+				expect(n1.value).toBe(20);
 			});
 
-			it("should add multiples mixed values: [100, 50, 125, 111, 75, 66, 150, 88]", () => {
+			it("should add a single value to the left and right [10, 5, 20]", () => {
+				const bst = new BinarySearchTree(10);
+
+				const root = bst.root;
+				expect(root.value).toBe(10);
+
+				bst.add(5);
+				const l1 = root.left;
+				expect(l1.value).toBe(5);
+
+				bst.add(20);
+				const r1 = root.right;
+				expect(r1.value).toBe(20);
+			});
+
+			it("should not add a value that already exists", () => {
+				const bst = new BinarySearchTree(0);
+
+				bst.add(0);
+				expect(bst.root.value).toBe(0);
+				expect(bst.root.left).toBe(null);
+				expect(bst.root.right).toBe(null);
+			});
+
+			test("[E2E] should add multiples mixed values: [100, 50, 125, 111, 75, 66, 150, 88]", () => {
 				const bst = new BinarySearchTree();
 
 				bst.add(100);
@@ -126,310 +140,197 @@ describe.skip("BinarySearchTree.js", () => {
 				const leftRightRight = leftRight.right;
 				expect(leftRightRight.value).toBe(88);
 			});
-
-			it("should not add a value that already exists", () => {
-				const bst = new BinarySearchTree(0);
-
-				expect(bst.root.value).toBe(0);
-				expect(bst.root.left).toBe(null);
-				expect(bst.root.right).toBe(null);
-
-				bst.add(0);
-				expect(bst.root.value).toBe(0);
-				expect(bst.root.left).toBe(null);
-				expect(bst.root.right).toBe(null);
-			});
 		});
 
 		describe("smaller()", () => {
+			it("should return the smallest value in the tree", () => {
+				const bst = new BinarySearchTree(values);
+				expect(bst.smaller()).toBe(50);
+			});
+
+			it("should return the smallest value in the tree from a given value", () => {
+				const bst = new BinarySearchTree(values);
+				expect(bst.smaller(100)).toBe(50);
+				expect(bst.smaller(50)).toBe(50);
+				expect(bst.smaller(125)).toBe(111);
+				expect(bst.smaller(111)).toBe(111);
+				expect(bst.smaller(75)).toBe(66);
+				expect(bst.smaller(66)).toBe(66);
+				expect(bst.smaller(150)).toBe(150);
+				expect(bst.smaller(88)).toBe(88);
+			});
+
 			it("should return undefined if the tree is empty", () => {
 				const bst = new BinarySearchTree();
-				expect(bst.smaller()).toBe(undefined);
+				expect(bst.smaller()).toBeUndefined();
 			});
 
-			it("should add multiples mixed values and return the smaller (-100): [0, 100, 50, -50, -4, -49, -100, -88]", () => {
-				const bst = new BinarySearchTree(0);
-				expect(bst.smaller()).toBe(0);
+			it("should return null if the value is not in the tree", () => {
+				const bst = new BinarySearchTree(values);
 
-				bst.add(100);
-				expect(bst.smaller()).toBe(0);
-
-				bst.add(50);
-				expect(bst.smaller()).toBe(0);
-
-				bst.add(-50);
-				expect(bst.smaller()).toBe(-50);
-
-				bst.add(-51);
-				expect(bst.smaller()).toBe(-51);
-
-				bst.add(-49);
-				expect(bst.smaller()).toBe(-51);
-
-				bst.add(-100);
-				expect(bst.smaller()).toBe(-100);
-
-				bst.add(-88);
-				expect(bst.smaller()).toBe(-100);
-			});
-
-			it("should add multiples mixed values and return the smaller from a given value", () => {
-				const bst = new BinarySearchTree(100);
-
-				bst.add(50);
-				bst.add(200);
-
-				bst.add(25);
-				bst.add(75);
-				bst.add(150);
-
-				bst.add(13);
-				bst.add(38);
-				bst.add(66);
-				bst.add(88);
-				bst.add(125);
-				bst.add(175);
-
-				bst.add(7);
-				bst.add(16);
-				bst.add(33);
-				bst.add(45);
-				bst.add(57);
-				bst.add(67);
-				bst.add(80);
-				bst.add(90);
-				bst.add(166);
-				bst.add(180);
-
-				bst.add(40);
-				bst.add(89);
-				bst.add(95);
-				bst.add(177);
-				bst.add(185);
-
-				bst.add(93);
-
-				expect(bst.smaller()).toBe(7);
-				expect(bst.smaller(7)).toBe(7);
-				expect(bst.smaller(50)).toBe(7);
-				expect(bst.smaller(38)).toBe(33);
-				expect(bst.smaller(33)).toBe(33);
-				expect(bst.smaller(75)).toBe(57);
-				expect(bst.smaller(80)).toBe(80);
-				expect(bst.smaller(90)).toBe(89);
-
-				expect(bst.smaller(200)).toBe(125);
-				expect(bst.smaller(175)).toBe(166);
-				expect(bst.smaller(180)).toBe(177);
-
-				expect(bst.smaller(-100)).toBe(undefined); // Value not exists in the tree
-				expect(bst.smaller(55)).toBe(undefined); // Value not exists in the tree
-				expect(bst.smaller(1000)).toBe(undefined); // Value not exists in the tree
+				expect(bst.smaller(0)).toBeNull();
+				expect(bst.smaller(-100)).toBeNull();
+				expect(bst.smaller(55)).toBeNull();
+				expect(bst.smaller(1000)).toBeNull();
 			});
 		});
 
 		describe("larger()", () => {
+			it("should return the largest value in the tree", () => {
+				const bst = new BinarySearchTree(values);
+				expect(bst.larger()).toBe(150);
+			});
+
+			it("should return the largest value in the tree from a given value", () => {
+				const bst = new BinarySearchTree(values);
+				expect(bst.larger(100)).toBe(150);
+				expect(bst.larger(50)).toBe(88);
+				expect(bst.larger(125)).toBe(150);
+				expect(bst.larger(111)).toBe(111);
+				expect(bst.larger(75)).toBe(88);
+				expect(bst.larger(66)).toBe(66);
+				expect(bst.larger(150)).toBe(150);
+				expect(bst.larger(88)).toBe(88);
+			});
+
 			it("should return undefined if the tree is empty", () => {
 				const bst = new BinarySearchTree();
-				expect(bst.larger()).toBe(undefined);
+				expect(bst.larger()).toBeUndefined();
 			});
 
-			it("should add multiples mixed values and return the larger (250): [100, 200, 55, 175, 250]", () => {
-				const bst = new BinarySearchTree(100);
-				expect(bst.larger()).toBe(100);
+			it("should return null if the value is not in the tree", () => {
+				const bst = new BinarySearchTree(values);
 
-				bst.add(200);
-				expect(bst.larger()).toBe(200);
-
-				bst.add(55);
-				expect(bst.larger()).toBe(200);
-
-				bst.add(175);
-				expect(bst.larger()).toBe(200);
-
-				bst.add(250);
-				expect(bst.larger()).toBe(250);
-			});
-
-			it("should add multiples mixed values and return the smaller from a given value", () => {
-				const bst = new BinarySearchTree(100);
-
-				bst.add(200);
-				bst.add(55);
-
-				bst.add(75);
-				bst.add(175);
-				bst.add(250);
-
-				bst.add(66);
-				bst.add(90);
-				bst.add(180);
-
-				bst.add(70);
-				bst.add(80);
-				bst.add(95);
-
-				bst.add(85);
-				bst.add(93);
-
-				expect(bst.larger()).toBe(250);
-				expect(bst.larger(100)).toBe(250);
-
-				expect(bst.larger(55)).toBe(95);
-				expect(bst.larger(75)).toBe(95);
-				expect(bst.larger(90)).toBe(95);
-
-				expect(bst.larger(66)).toBe(70);
-				expect(bst.larger(70)).toBe(70);
-
-				expect(bst.larger(80)).toBe(85);
-				expect(bst.larger(85)).toBe(85);
-
-				expect(bst.larger(200)).toBe(250);
-				expect(bst.larger(175)).toBe(180);
-				expect(bst.larger(180)).toBe(180);
-			});
+				expect(bst.larger(0)).toBeNull();
+				expect(bst.larger(-100)).toBeNull();
+				expect(bst.larger(55)).toBeNull();
+				expect(bst.larger(1000)).toBeNull();
+			})
 		});
 
 		describe("search()", () => {
+			it("should return the node/value", () => {
+				const bst = new BinarySearchTree(values);
+
+				expect(bst.search(100)).toBeInstanceOf(Node);
+
+				expect(bst.search(100).value).toBe(100);
+				expect(bst.search(50).value).toBe(50);
+				expect(bst.search(125).value).toBe(125);
+				expect(bst.search(150).value).toBe(150);
+				expect(bst.search(88).value).toBe(88);
+
+				expect(bst.search(100, false)).toBe(true);
+				expect(bst.search(50, false)).toBe(true);
+				expect(bst.search(125, false)).toBe(true);
+			});
+
 			it("should return undefined if the tree is empty", () => {
 				const bst = new BinarySearchTree();
-				expect(bst.search()).toBe(undefined);
+				expect(bst.search()).toBeUndefined();
 			});
 
-			it("should throw a error if the given value is not a number", () => {
-				const bst = new BinarySearchTree(10);
-				// expect(bst.search("10")).toThrowError("Value need to be a number!");
+			it("should return null if the value is not in the tree", () => {
+				const bst = new BinarySearchTree(values);
+
+				expect(bst.search(0)).toBeNull();
+				expect(bst.search(-100)).toBeNull();
+				expect(bst.search(55)).toBeNull();
+				expect(bst.search(1000)).toBeNull();
 			});
 
-			it("should return a error if the given value is not a number", () => {
-				const bst = new BinarySearchTree(10);
+			it("should return a error if the value is not a number", () => {
+				const bst = new BinarySearchTree(values);
 
-				bst.add(5);
-				bst.add(15);
-				bst.add(20);
-
-				expect(bst.search(10)).toBeInstanceOf(Node);
-				expect(bst.search(5)).toBeInstanceOf(Node);
-				expect(bst.search(15)).toBeInstanceOf(Node);
-				expect(bst.search(20)).toBeInstanceOf(Node);
-
-				expect(bst.search(10).value).toBe(10);
-				expect(bst.search(5).value).toBe(5);
-				expect(bst.search(15).value).toBe(15);
-				expect(bst.search(20).value).toBe(20);
+				expect(() => bst.search("A")).toThrowError("Value need to be a number!");
 			});
 		});
 
 		describe("delete()", () => {
-			it("should return false if node is not found", () => {
+			it("should remove the root node", () => {
 				const bst = new BinarySearchTree(100);
-				bst.add(50);
 
-				expect(bst.delete(0)).toBe(false);
+				bst.delete(100);
+				expect(bst.search(100)).toBeUndefined();
+				expect(bst.count).toBe(0);
 			});
 
-			it("should delete a given value with no children's", () => {
-				const bst = new BinarySearchTree(100);
+			it("should remove an no child node", () => {
+				const bst = new BinarySearchTree([100, 50, 150]);
 
 				// Left
-				bst.add(50);
-				expect(bst.root.left.value).toBe(50);
-
 				bst.delete(50);
-				expect(bst.root.left).toBe(null);
+				expect(bst.search(50)).toBeNull();
+				expect(bst.count).toBe(2);
 
 				// Right
-				bst.add(150);
-				expect(bst.root.right.value).toBe(150);
-
 				bst.delete(150);
-				expect(bst.root.right).toBe(null);
+				expect(bst.search(150)).toBeNull();
+				expect(bst.count).toBe(1);
 			});
 
-			it("should delete a given value with a left child", () => {
-				const bst = new BinarySearchTree(100);
-				bst.add(50);
-				expect(bst.root.left.value).toBe(50);
+			it("should remove the root node with one left child", () => {
+				const bst = new BinarySearchTree([100, 50]);
 
-				bst.add(25);
-				expect(bst.root.left.left.value).toBe(25);
+				bst.delete(100);
+				expect(bst.search(100)).toBeNull();
+				expect(bst.root.value).toBe(50);
+				expect(bst.count).toBe(1);
+			});
+
+			it("should remove an one child node on the left", () => {
+				const bst = new BinarySearchTree([100, 50, 25]);
 
 				bst.delete(50);
+				expect(bst.search(50)).toBeNull();
+
 				expect(bst.root.left.value).toBe(25);
-				expect(bst.root.left.left).toBe(null);
+				expect(bst.count).toBe(2);
 			});
 
-			it("should delete a given value with a right child", () => {
-				const bst = new BinarySearchTree(100);
-				bst.add(150);
+			it("should remove an one child node on the right", () => {
+				const bst = new BinarySearchTree([100, 125, 150]);
+
+				bst.delete(125);
+				expect(bst.search(125)).toBeNull();
+
 				expect(bst.root.right.value).toBe(150);
-
-				bst.add(175);
-				expect(bst.root.right.right.value).toBe(175);
-
-				bst.delete(150);
-				expect(bst.root.right.value).toBe(175);
-				expect(bst.root.right.right).toBe(null);
+				expect(bst.count).toBe(2);
 			});
 
-			it("should delete a given value with a left and right child (add value to the left)", () => {
-				const bst = new BinarySearchTree(100);
-				bst.add(50);
-				bst.add(25);
-				bst.add(75);
-				expect(bst.root.left.value).toBe(50);
-				expect(bst.root.left.left.value).toBe(25);
-				expect(bst.root.left.right.value).toBe(75);
+			it("should remove a node with two children", () => {
+				const bst = new BinarySearchTree(values);
 
-				bst.delete(50);
-				expect(bst.root.left.value).toBe(25);
-				expect(bst.root.left.left).toBe(null);
-				expect(bst.root.left.right.value).toBe(75);
+				bst.delete(125);
+				expect(bst.search(125)).toBeNull();
+
+				expect(bst.root.right.value).toBe(111);
+				expect(bst.root.right.left).toBeNull();
+				expect(bst.root.right.right.value).toBe(150);
+				expect(bst.count).toBe(7);
 			});
 
-			it("should delete a given value with a left and right child (add value to the right)", () => {
-				const bst = new BinarySearchTree(100);
-				bst.add(150);
-				bst.add(125);
-				bst.add(175);
-				expect(bst.root.right.value).toBe(150);
-				expect(bst.root.right.left.value).toBe(125);
-				expect(bst.root.right.right.value).toBe(175);
-
-				bst.delete(150);
-				expect(bst.root.right.value).toBe(125);
-				expect(bst.root.right.left).toBe(null);
-				expect(bst.root.right.right.value).toBe(175);
+			it("should return null if node is not found", () => {
+				const bst = new BinarySearchTree(values);
+				expect(bst.delete(0, true)).toBeNull();
 			});
+		})
+	});
 
-			it("should delete multiple children's", () => {
-				const bst = new BinarySearchTree(100);
-				bst.add(50);
-				bst.add(25);
-				bst.add(75);
-				expect(bst.root.left.value).toBe(50);
-				expect(bst.root.left.left.value).toBe(25);
-				expect(bst.root.left.right.value).toBe(75);
+	describe("Node", () => {
+		it("should have a value", () => {
+			const node = new Node(100);
 
-				bst.add(15);
-				bst.add(30);
-				expect(bst.root.left.left.left.value).toBe(15);
-				expect(bst.root.left.left.right.value).toBe(30);
+			expect(node.value).toBe(100);
+			expect(node.left).toBeNull();
+			expect(node.right).toBeNull();
+			expect(node).toMatchSnapshot();
+		});
 
-				bst.delete(50);
-				expect(bst.root.left.value).toBe(30);
-				expect(bst.root.left.left.value).toBe(25);
-				expect(bst.root.left.right.value).toBe(75);
-
-				expect(bst.root.left.left.left.value).toBe(15);
-				expect(bst.root.left.left.right).toBe(null);
-
-				bst.delete(30);
-				expect(bst.root.left.value).toBe(25);
-				// expect(bst.root.left.left).toBe(15);
-				expect(bst.root.left.right.value).toBe(75);
-			});
+		it("should return a error if the value is not a number", () => {
+			expect(() => new Node()).toThrowError("Node value cannot be undefined.");
+			expect(() => new Node(false)).toThrowError("Node value must be a number.");
+			expect(() => new Node("A")).toThrowError("Node value must be a number.");
 		});
 	});
 });

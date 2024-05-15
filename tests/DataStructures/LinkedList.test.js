@@ -370,15 +370,8 @@ describe("DataStructures/LinkedList.js", () => {
 
 		describe("toArray()", () => {
 			it("should return an array with the values of the linked list", () => {
-				const ll = new LinkedList(0);
-				ll.push(10);
-				ll.push(20);
-				ll.push(30);
-
-				const result = ll.toArray();
-
-				expect(Array.isArray(result)).toBe(true);
-				expect(result).toEqual([0, 10, 20, 30]);
+				const ll = new LinkedList([0, 10, 20, 30]);
+				expect(ll.toArray()).toEqual([0, 10, 20, 30]);
 			});
 		});
 
