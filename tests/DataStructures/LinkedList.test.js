@@ -368,6 +368,33 @@ describe("DataStructures/LinkedList.js", () => {
 			});
 		});
 
+		describe("sort()", () => {
+			it("should sort the list", () => {
+				const ll = new LinkedList([50, 20, 40, 10, 30]);
+
+				expect(ll.sort()).toBeInstanceOf(LinkedList);
+				expect(ll.toArray()).toEqual([10, 20, 30, 40, 50]);
+			});
+
+			it("should sort an already sorted list", () => {
+				const ll = new LinkedList([10, 20, 30]);
+				ll.sort();
+				expect(ll.toArray()).toEqual([10, 20, 30]);
+			});
+
+			it("should sort a list with only one element", () => {
+				const ll = new LinkedList(10);
+				ll.sort();
+				expect(ll.toArray()).toEqual([10]);
+			});
+
+			it("should sort an empty list", () => {
+				const ll = new LinkedList();
+				ll.sort();
+				expect(ll.toArray()).toEqual([]);
+			});
+		});
+
 		describe("toArray()", () => {
 			it("should return an array with the values of the linked list", () => {
 				const ll = new LinkedList([0, 10, 20, 30]);

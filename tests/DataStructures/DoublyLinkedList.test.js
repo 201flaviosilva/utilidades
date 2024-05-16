@@ -365,6 +365,83 @@ describe("DataStructures/DoublyLinkedList.js", () => {
 			});
 		});
 
+		describe("reverse()", () => {
+			it("should reverse the list (5 elements)", () => {
+				const dll = new DoublyLinkedList([0, 10, 20, 30, 40]);
+
+				expect(dll.reverse()).toBeInstanceOf(DoublyLinkedList);
+
+				expect(dll.head.value).toBe(40);
+				expect(dll.tail.value).toBe(0);
+
+				expect(dll.toArray()).toEqual([40, 30, 20, 10, 0]);
+			});
+
+			it("should reverse the list (2 elements)", () => {
+				const dll = new DoublyLinkedList([10, 20]);
+				dll.reverse();
+
+				expect(dll.toArray()).toEqual([20, 10]);
+			});
+
+			test("does nothing on a list with only one element", () => {
+				const dll = new DoublyLinkedList(0);
+				dll.reverse();
+
+				expect(dll.head.value).toBe(0);
+				expect(dll.tail.value).toBe(0);
+
+				expect(dll.toArray()).toEqual([0]);
+			});
+
+			test("does nothing if the list is empty", () => {
+				const dll = new DoublyLinkedList();
+				dll.reverse();
+
+				expect(dll.head).toBeNull();
+				expect(dll.tail).toBeNull();
+
+				expect(dll.toArray()).toEqual([]);
+			});
+
+			it("should reverse twice the list", () => {
+				const dll = new DoublyLinkedList([10, 20, 30]);
+
+				dll.reverse();
+				expect(dll.toArray()).toEqual([30, 20, 10]);
+
+				dll.reverse();
+				expect(dll.toArray()).toEqual([10, 20, 30]);
+			});
+		});
+
+		describe("sort()", () => {
+			it("should sort the list", () => {
+				const dll = new DoublyLinkedList([50, 20, 40, 10, 30]);
+
+				expect(dll.sort()).toBeInstanceOf(DoublyLinkedList);
+				expect(dll.toArray()).toEqual([10, 20, 30, 40, 50]);
+			});
+
+			it("should sort an already sorted list", () => {
+				const dll = new DoublyLinkedList([10, 20, 30]);
+				dll.sort();
+				expect(dll.toArray()).toEqual([10, 20, 30]);
+			});
+
+			it("should sort a list with only one element", () => {
+				const dll = new DoublyLinkedList(10);
+				dll.sort();
+				expect(dll.toArray()).toEqual([10]);
+			});
+
+			it("should sort an empty list", () => {
+				const dll = new DoublyLinkedList();
+				dll.sort();
+				expect(dll.toArray()).toEqual([]);
+			});
+		});
+
 		describe("toArray()", () => {
 			it("should convert the list to an array", () => {
 				const dll = new DoublyLinkedList([10, 20, 30]);
