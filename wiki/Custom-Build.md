@@ -27,7 +27,7 @@ git clone https://github.com/201flaviosilva-labs/utilidades.git
 #### Move to the project folder
 After clone the repository, you need to move to the project folder to start working :)
 ```sh
-cd utilsjs
+cd utilidades
 ```
 
 #### Install
