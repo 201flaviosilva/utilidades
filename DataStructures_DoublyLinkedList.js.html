@@ -290,11 +290,51 @@ class DoublyLinkedList {
 		return node.value;
 	}
 
-	// TODO: Implement reverse()
-	reverse() { }
+	/**
+	 * Reverses the linked list.
+	 * 
+	 * @example
+	 * const dll = new DoublyLinkedList([10,20,30]);
+	 * dll.reverse(); // 30,20,10
+	 * 
+	 * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
+	 */
+	reverse() {
+		if (this.head === null || this.head === this.tail) return this;
 
-	// TODO: Implement sort()
-	sort() { }
+		let temp = this.head;
+		this.head = this.tail;
+		this.tail = temp;
+
+		let prev = null;
+		let next = null;
+
+		for (let i = 0; i &lt; this.size; i++) {
+			next = temp.next;
+			temp.next = prev;
+			prev = temp;
+			temp = next;
+		}
+
+		return this;
+	}
+
+	/**
+	 * Sorts the linked list in ascending order.
+	 * 
+	 * @example
+	 * const dll = new DoublyLinkedList([50,20,40,10,30]);
+	 * dll.sort(); // 10,20,30,40,50
+	 * 
+	 * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
+	 */
+	sort() {
+		const arr = this.toArray();
+		arr.sort((a, b) => a - b);
+		this.clear();
+		arr.forEach(el => this.push(el));
+		return this;
+	}
 
 	/**
 	 * Returns an array representation of the linked list.

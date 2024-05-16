@@ -324,8 +324,22 @@ class LinkedList {
 		return this;
 	}
 
-	// TODO: Implement sort()
-	sort() { }
+	/**
+	 * Sorts the linked list in ascending order.
+	 * 
+	 * @example
+	 * const ll = new LinkedList([50,20,40,10,30]);
+	 * ll.sort(); // 10,20,30,40,50
+	 * 
+	 * @returns {LinkedList} The current LinkedList instance.
+	 */
+	sort() {
+		const arr = this.toArray();
+		arr.sort((a, b) => a - b);
+		this.clear();
+		arr.forEach(el => this.push(el));
+		return this;
+	}
 
 	/**
 	 * Converts the linked list to an array.
