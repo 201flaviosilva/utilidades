@@ -3,7 +3,7 @@
  * Returns the current version of the library
  *
  * @example
- * getVersion(); // "1.2.10"
+ * getVersion(); // "1.4.0"
  *
  * @returns {String}
  */

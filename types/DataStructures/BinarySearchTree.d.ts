@@ -1,16 +1,23 @@
 /**
- * @class Node
+ * @class
+ * @name BSTNode
  * @classdesc Create a node for BinarySearchTree
+ *
+ * @param {number} value - The value to be stored in the node
+ *
+ * @property {number} value - The value stored in the node
+ * @property {BSTNode|null} left - The left node in the tree
+ * @property {BSTNode|null} right - The right node in the tree
  */
 export class Node {
     constructor(value: any);
     value: any;
     left: any;
     right: any;
-    parent: any;
 }
 /**
- * @class BinarySearchTree
+ * @class
+ * @name BinarySearchTree
  * @classdesc
  * Starts a Binary Search Tree algorithm
  *
@@ -25,26 +32,15 @@ export class Node {
  * bst.add(0);
  * bst.delete(0);
  *
- * @constructor
+ * @param {number[]|number} [value] - The value to start the tree
+ *
+ * @property {BSTNode|null} root - The root node of the tree
+ * @property {number} count - The number of nodes in the tree
  */
 export class BinarySearchTree {
-    constructor(startValue: any);
-    root: Node;
+    constructor(value: any);
+    root: any;
     count: number;
-    /**
-     * Returns the number of nodes in the tree
-     *
-     * @example
-     * const bst = new BinarySearchTree();
-     * bst.add(1);
-     * bst.add(0);
-     * bst.add(2);
-     * bst.size(); // 3
-     *
-     * @returns {number} Number of nodes
-     * @memberof BinarySearchTree
-     */
-    size(): number;
     /**
      * Add a new value to the Tree
      *
@@ -54,20 +50,18 @@ export class BinarySearchTree {
      * bst.add(100);
      *
      * @param {number} value - a number to add
-     * @memberof BinarySearchTree
      */
-    add(value: number): void;
+    add(value: number): this;
     /**
      * Finds the smallest value in the tree.
      *
      * - If a value is passed it will look for the smallest value from that branch;
      * - If no value is passed, it will start from the root;
      *
-     * @param {number} value - the value to start searching
-     * @returns {number|undefined} smaller value
-     * @memberof BinarySearchTree
+     * @param {number|undefined} [value] - the value to start searching
+     * @returns {number|undefined|null} smaller value
      */
-    smaller(value: number): number | undefined;
+    smaller(value?: number | undefined): number | undefined | null;
     /**
      * Finds the largest value in the tree.
      *
@@ -75,27 +69,53 @@ export class BinarySearchTree {
      * - If no value is passed, it will start from the root;
      *
      * @param {number} value - the value to start searching
-     * @returns {number|undefined} largest value
-     * @memberof BinarySearchTree
+     * @returns {number|undefined|null} largest value
      */
-    larger(value: number): number | undefined;
+    larger(value: number): number | undefined | null;
     /**
      * - Returns `false` if the number does not exist or if there is an error
-     * - If the number exists, return its node
+     * - If the number exists, return its node/true
      *
      * @param {number} value - the value to find
-     * @returns {Node} if the value is in the Tree
-     * @memberof BinarySearchTree
+     * @param {boolean} [returnNode=true] - if the node should be returned
+     * @returns {BSTNode|null} if the value is in the Tree
      */
-    search(value: number): Node;
+    search(value: number, returnNode?: boolean): BSTNode | null;
     /**
      * Delete the node with the given value
      *
      * @param {number} value - the value to delete
-     * @returns {boolean} if the node was deleted
-     * @memberof BinarySearchTree
+     * @param {boolean} [returnNode=false] - if the node should be returned
+     * @returns {BSTNode|BinarySearchTree} if the value is in the Tree
      */
-    delete(value: number): boolean;
+    delete(value: number, returnNode?: boolean): BSTNode | BinarySearchTree;
+    /**
+     * Returns a string representation of the tree
+     *
+     * @returns {string} the string representation
+     */
+    toString(): string;
+    /**
+     * Inserts a new node into the tree
+     *
+     * Note 1: This is a recursive function
+     * Note 2: This function is used in the add method
+     *
+     * @param {BSTNode} node - the node to insert
+     * @param {BSTNode} newNode - the new node
+     *
+     * @private
+     */
+    private _insertNode;
+    /**
+     * This function finds the parent of the given node
+     *
+     * @param {BSTNode} node - the node to find the parent
+     * @returns {BSTNode|null} the parent of the given node
+     *
+     * @private
+     */
+    private _findParent;
 }
 /**
  *

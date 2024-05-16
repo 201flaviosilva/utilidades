@@ -1,20 +1,24 @@
 /**
+ * @class
+ * @name DoublyLinkedList
+ * @classdesc
  * Represents a doubly linked list data structure.
  *
- * @memberof DataStructures
+ * @see https://en.wikipedia.org/wiki/Doubly_linked_list
+ *
+ * @example
+ * new DoublyLinkedList();
+ * new DoublyLinkedList("Beep");
+ * new DoublyLinkedList([10,20,30]);
+ *
+ * @param {Array|*} value - The value to initialize the list with (optional).
+ *
+ * @property {DLLNode} head - The first node in the list
+ * @property {DLLNode} tail - The last node in the list
+ * @property {Number} size - The number of nodes in the list
  */
 export class DoublyLinkedList {
-    /**
-     * Creates a new DoublyLinkedList instance.
-     *
-     * @example
-     * new DoublyLinkedList();
-     * new DoublyLinkedList("Beep");
-     * new DoublyLinkedList([10,20,30]);
-     *
-     * @param {Array|*} value - The value to initialize the list with (optional).
-     */
-    constructor(value: any[] | any);
+    constructor(value: any);
     head: any;
     tail: any;
     size: number;
@@ -26,9 +30,6 @@ export class DoublyLinkedList {
      * dll.print(); // 10,20,30
      *
      * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
-     *
-     * @memberof DoublyLinkedList
-     * @method print
      */
     print(): DoublyLinkedList;
     /**
@@ -40,9 +41,6 @@ export class DoublyLinkedList {
      * dll.toArray(); // []
      *
      * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
-     *
-     * @memberof DoublyLinkedList
-     * @method clear
      */
     clear(): DoublyLinkedList;
     /**
@@ -54,12 +52,9 @@ export class DoublyLinkedList {
      *
      * @param {Number} index - The index of the value to retrieve.
      * @param {Boolean} returnNode - Whether to return the Node or the value.
-     * @returns {Number|Node} The value at the specified index, or the Node if returnNode is true.
-     *
-     * @memberof DoublyLinkedList
-     * @method get
+     * @returns {Number|DLLNode} The value at the specified index, or the Node if returnNode is true.
      */
-    get(index: number, returnNode?: boolean): number | Node;
+    get(index: number, returnNode?: boolean): number | DLLNode;
     /**
      * Sets the value at the specified index in the linked list.
      *
@@ -70,9 +65,6 @@ export class DoublyLinkedList {
      * @param {Number} index - The index of the value to set.
      * @param {Number} value - The new value to set.
      * @returns {Boolean} True if the value was set successfully, false otherwise.
-     *
-     * @memberof DoublyLinkedList
-     * @method set
      */
     set(index: number, value: number): boolean;
     /**
@@ -84,9 +76,6 @@ export class DoublyLinkedList {
      *
      * @param {Number} value - The value to add.
      * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
-     *
-     * @memberof DoublyLinkedList
-     * @method unshift
      */
     unshift(value: number): DoublyLinkedList;
     /**
@@ -98,9 +87,6 @@ export class DoublyLinkedList {
      *
      * @param {Number} value - The value to add.
      * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
-     *
-     * @memberof DoublyLinkedList
-     * @method push
      */
     push(value: number): DoublyLinkedList;
     /**
@@ -113,9 +99,6 @@ export class DoublyLinkedList {
      * @param {Number} index - The index to insert the value at.
      * @param {Number} value - The value to insert.
      * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
-     *
-     * @memberof DoublyLinkedList
-     * @method insert
      */
     insert(index: number, value: number): DoublyLinkedList;
     /**
@@ -126,9 +109,6 @@ export class DoublyLinkedList {
      * dll.shift(); // 20,30
      *
      * @returns {Number} The value that was removed.
-     *
-     * @memberof DoublyLinkedList
-     * @method shift
      */
     shift(): number;
     /**
@@ -139,9 +119,6 @@ export class DoublyLinkedList {
      * dll.pop(); // 10,20
      *
      * @returns {Number} The value that was removed.
-     *
-     * @memberof DoublyLinkedList
-     * @method pop
      */
     pop(): number;
     /**
@@ -153,13 +130,28 @@ export class DoublyLinkedList {
      *
      * @param {Number} index - The index of the value to remove.
      * @returns {Number} The value that was removed.
-     *
-     * @memberof DoublyLinkedList
-     * @method remove
      */
     remove(index: number): number;
-    reverse(): void;
-    sort(): void;
+    /**
+     * Reverses the linked list.
+     *
+     * @example
+     * const dll = new DoublyLinkedList([10,20,30]);
+     * dll.reverse(); // 30,20,10
+     *
+     * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
+     */
+    reverse(): DoublyLinkedList;
+    /**
+     * Sorts the linked list in ascending order.
+     *
+     * @example
+     * const dll = new DoublyLinkedList([50,20,40,10,30]);
+     * dll.sort(); // 10,20,30,40,50
+     *
+     * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
+     */
+    sort(): DoublyLinkedList;
     /**
      * Returns an array representation of the linked list.
      *
@@ -168,23 +160,20 @@ export class DoublyLinkedList {
      * dll.toArray(); // [10,20,30]
      *
      * @returns {Array} The array representation of the linked list.
-     *
-     * @memberof DoublyLinkedList
-     * @method toArray
      */
     toArray(): any[];
 }
 /**
- * @class DLLNode
+ * @class
+ * @name DLLNode
  * @classdesc Represents a node in a doubly linked list.
  *
- * @memberof DataStructures
+ * @param {*} [value] - The value to be stored in the node.
+ *
+ * @property {*} value - The value stored in the node
+ * @property {DLLNode|null} next - The next node in the list
  */
 export class Node {
-    /**
-     * Creates a new Node instance.
-     * @param {*} value - The value to be stored in the node.
-     */
     constructor(value: any);
     value: any;
     next: any;

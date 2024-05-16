@@ -1,7 +1,12 @@
 import { BinarySearchTree } from "./BinarySearchTree.js";
 import { BinarySearchTreeInstance } from "./BinarySearchTree.js";
+import { Node as BSTNode } from "./BinarySearchTree.js";
 import { Node as DLLNode } from "./DoublyLinkedList.js";
 import { DoublyLinkedList } from "./DoublyLinkedList.js";
-import { Node as LLNode } from "./LinkedList.js";
 import { LinkedList } from "./LinkedList.js";
-export { BinarySearchTree, BinarySearchTreeInstance, DLLNode, DoublyLinkedList, LLNode, LinkedList };
+import { Node as LLNode } from "./LinkedList.js";
+import { Queue } from "./Queue.js";
+import { Node as QueueNode } from "./Queue.js";
+import { Stack } from "./Stack.js";
+import { Node as StackNode } from "./Stack.js";
+export { BinarySearchTree, BinarySearchTreeInstance, BSTNode, DLLNode, DoublyLinkedList, LinkedList, LLNode, Queue, QueueNode, Stack, StackNode };

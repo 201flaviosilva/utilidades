@@ -1,5 +1,5 @@
 /**
- * @class Vector2
+ * @class
  * @classdesc
  * Constructs a new vector with given x, y components.
  * Code adapted from {@link https://gist.github.com/Dalimil/3daf2a0c531d7d030deb37a7bfeff454}
@@ -12,6 +12,9 @@
  *
  * @example new Vector2(56, 78); // (56, 78)
  * @example Vector2.zero(); // (0,0)
+ *
+ * @property {number} [x=0] - The x value
+ * @property {number} [y=x] - The y value
  *
  * @constructor
  */
@@ -95,21 +98,7 @@ export class Vector2 {
      */
     static random(): Vector2;
     constructor(x?: number, y?: number);
-    /**
-     * x value
-     *
-     * @name Vector2#x
-     * @type {number}
-     * @default 0
-     */
     x: number;
-    /**
-     * y value
-     *
-     * @name Vector2#y
-     * @type {number}
-     * @default 0
-     */
     y: number;
     /**
      * Set x and y components of an existing Vector2.

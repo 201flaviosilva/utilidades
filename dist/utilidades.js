@@ -1,133 +1,124 @@
-function L(e) {
+function W(e) {
   return e.every((t) => JSON.stringify(t) === JSON.stringify(e[0]));
 }
-function J(e = 0, t = 1, n = 2) {
+function X(e = 0, t = 1, n = 2) {
   return t === void 0 && (t = e, e = 0), parseFloat((Math.random() * (t - e) + e).toFixed(n));
 }
-function h(e, t) {
+function o(e, t) {
   return t === void 0 && (t = e, e = 0), Math.round(e + Math.random() * (t - e));
 }
-function pe(e, t) {
-  return J(e, t);
+function be(e, t) {
+  return X(e, t);
 }
-function N(e) {
-  return e[h(e.length)];
+function z(e) {
+  return e[o(e.length)];
 }
-function Y(e, t = 1) {
+function H(e, t = 1) {
   const n = [];
   for (let i = 0; i < e.length; i += t)
     n.push(e.slice(i, i + t));
   return n;
 }
-function G(e, t, n = !1) {
-  const i = Math.max(...e.map((r) => r[t]));
-  return n ? i : e.find((r) => r[t] === i);
+function Q(e, t, n = !1) {
+  const i = Math.max(...e.map((s) => s[t]));
+  return n ? i : e.find((s) => s[t] === i);
 }
-function W(e, t, n = !1) {
-  const i = Math.min(...e.map((r) => r[t]));
-  return n ? i : e.find((r) => r[t] === i);
+function K(e, t, n = !1) {
+  const i = Math.min(...e.map((s) => s[t]));
+  return n ? i : e.find((s) => s[t] === i);
 }
-function X(e = []) {
+function U(e = []) {
   for (let t = 0; t < e.length - 1; t++)
     if (e[t] > e[t + 1])
       return !1;
   return !0;
 }
-function H(e = [], t = 1) {
+function V(e = [], t = 1) {
   for (let n = 0; n < t; n++) {
     let i = e[e.length - 1];
-    for (let r = e.length - 2; r >= 0; r--) {
-      const s = e[r];
-      e[r] = i, i = s;
+    for (let s = e.length - 2; s >= 0; s--) {
+      const r = e[s];
+      e[s] = i, i = r;
     }
     e[e.length - 1] = i;
   }
   return e;
 }
-function K(e = [], t = 1) {
+function Z(e = [], t = 1) {
   for (let n = 0; n < t; n++) {
     let i = e[0];
-    for (let r = 1; r < e.length; r++) {
-      const s = e[r];
-      e[r] = i, i = s;
+    for (let s = 1; s < e.length; s++) {
+      const r = e[s];
+      e[s] = i, i = r;
     }
     e[0] = i;
   }
   return e;
 }
-function U(e, t) {
+function tt(e, t) {
   const n = /* @__PURE__ */ new Set();
   return e.filter((i) => {
-    const r = i[t];
-    return n.has(r) ? !1 : (n.add(r), !0);
+    const s = i[t];
+    return n.has(s) ? !1 : (n.add(s), !0);
   });
 }
-function Q(e) {
+function et(e) {
   return JSON.parse(JSON.stringify(e));
 }
-function V(e, t = !0) {
+function nt(e, t = !0) {
   if (t)
     return e.sort(() => Math.random() - 0.5);
-  const n = Q(e), i = [];
+  const n = et(e), i = [];
   for (; n.length; ) {
-    const r = h(n.length);
-    i.push(n[r]), n.splice(r, 1);
+    const s = o(n.length);
+    i.push(n[s]), n.splice(s, 1);
   }
   return i;
 }
-function z(e, t = !1) {
+function S(e, t = !1) {
   return t ? e.sort((n, i) => n - i) : [...e].sort((n, i) => n - i);
 }
-function Z(e, t, n = !1) {
-  return n ? e.sort((i, r) => i[t] - r[t]) : [...e].sort((i, r) => i[t] - r[t]);
+function it(e, t, n = !1) {
+  return n ? e.sort((i, s) => i[t] - s[t]) : [...e].sort((i, s) => i[t] - s[t]);
 }
-function tt(e, t = !1) {
+function st(e, t = !1) {
   return t ? e.sort((n, i) => i - n) : [...e].sort((n, i) => i - n);
 }
-function et(e, t, n = !1) {
-  return n ? e.sort((i, r) => r[t] - i[t]) : [...e].sort((i, r) => r[t] - i[t]);
+function rt(e, t, n = !1) {
+  return n ? e.sort((i, s) => s[t] - i[t]) : [...e].sort((i, s) => s[t] - i[t]);
 }
-const xe = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const Me = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  allEqual: L,
-  choice: N,
-  chunk: Y,
-  findBigObject: G,
-  findLowObject: W,
-  isSorted: X,
-  moveLeft: H,
-  moveRight: K,
-  removeDuplicatesObj: U,
-  shuffle: V,
-  sortAscending: z,
-  sortAscendingObject: Z,
-  sortDescending: tt,
-  sortDescendingObject: et
+  allEqual: W,
+  choice: z,
+  chunk: H,
+  findBigObject: Q,
+  findLowObject: K,
+  isSorted: U,
+  moveLeft: V,
+  moveRight: Z,
+  removeDuplicatesObj: tt,
+  shuffle: nt,
+  sortAscending: S,
+  sortAscendingObject: it,
+  sortDescending: st,
+  sortDescendingObject: rt
 }, Symbol.toStringTag, { value: "Module" }));
-let nt = class {
+function y(e) {
+  return typeof e == "number" && !isNaN(e);
+}
+let D = class {
   constructor(t) {
-    this.value = t, this.left = null, this.right = null, this.parent = null;
+    if (t === void 0)
+      throw new Error("Node value cannot be undefined.");
+    if (!y(t))
+      throw new Error("Node value must be a number.");
+    this.value = t, this.left = null, this.right = null;
   }
 };
-class D {
+class O {
   constructor(t) {
-    this.root = null, this.count = 0, t !== void 0 && this.add(t);
-  }
-  /**
-   * Returns the number of nodes in the tree
-   * 
-   * @example 
-   * const bst = new BinarySearchTree();
-   * bst.add(1);
-   * bst.add(0);
-   * bst.add(2);
-   * bst.size(); // 3
-   * 
-   * @returns {number} Number of nodes
-   * @memberof BinarySearchTree
-   */
-  size() {
-    return this.count;
+    this.root = null, this.count = 0, Array.isArray(t) ? t.forEach((n) => this.add(n)) : t !== void 0 && this.add(t);
   }
   /**
    * Add a new value to the Tree
@@ -138,34 +129,12 @@ class D {
    * bst.add(100);
    * 
    * @param {number} value - a number to add
-   * @memberof BinarySearchTree
    */
   add(t) {
-    if (typeof t != "number" || isNaN(t)) {
-      console.error("Value need to be a number!");
-      return;
-    }
-    const n = new nt(t);
-    if (this.root === null) {
-      this.count++, this.root = n;
-      return;
-    }
-    let i = this.root;
-    for (; i; ) {
-      if (t === i.value)
-        return;
-      if (i.value > t)
-        if (i.left === null) {
-          n.parent = i, i.left = n, this.count++;
-          break;
-        } else
-          i = i.left;
-      else if (i.right === null) {
-        n.parent = i, i.right = n, this.count++;
-        break;
-      } else
-        i = i.right;
-    }
+    if (!y(t))
+      throw new Error("Node value must be a number.");
+    const n = new D(t);
+    return this.root === null ? this.root = n : this._insertNode(this.root, n), this.count++, this;
   }
   /**
    * Finds the smallest value in the tree.
@@ -173,14 +142,15 @@ class D {
    * - If a value is passed it will look for the smallest value from that branch;
    * - If no value is passed, it will start from the root;
    * 
-   * @param {number} value - the value to start searching
-   * @returns {number|undefined} smaller value
-   * @memberof BinarySearchTree
+   * @param {number|undefined} [value] - the value to start searching
+   * @returns {number|undefined|null} smaller value
    */
   smaller(t) {
     if (!this.root)
       return;
-    let n = this.search(t || this.root.value);
+    let n = this.search(t ?? this.root.value);
+    if (!n)
+      return null;
     do {
       if (n.left === null)
         return n.value;
@@ -194,13 +164,14 @@ class D {
    * - If no value is passed, it will start from the root;
    * 
    * @param {number} value - the value to start searching
-   * @returns {number|undefined} largest value
-   * @memberof BinarySearchTree
+   * @returns {number|undefined|null} largest value
    */
   larger(t) {
     if (!this.root)
       return;
-    let n = this.search(t || this.root.value);
+    let n = this.search(t ?? this.root.value);
+    if (!n)
+      return null;
     do {
       if (n.right === null)
         return n.value;
@@ -209,79 +180,100 @@ class D {
   }
   /**
    * - Returns `false` if the number does not exist or if there is an error
-   * - If the number exists, return its node
+   * - If the number exists, return its node/true
    * 
    * @param {number} value - the value to find
-   * @returns {Node} if the value is in the Tree
-   * @memberof BinarySearchTree
+   * @param {boolean} [returnNode=true] - if the node should be returned
+   * @returns {BSTNode|null} if the value is in the Tree
    */
-  search(t) {
+  search(t, n = !0) {
     if (!this.root)
       return;
-    if (typeof t != "number")
+    if (!y(t))
       throw new Error("Value need to be a number!");
-    let n = this.root;
-    for (; n; ) {
-      if (t === n.value)
-        return n;
-      if (n.value > t) {
-        if (n.left === null)
-          return !1;
-        n = n.left;
-      } else {
-        if (n.right === null)
-          return !1;
-        n = n.right;
-      }
+    let i = this.root;
+    for (; i; ) {
+      if (t === i.value)
+        return n ? i : !0;
+      i.value > t ? i = i.left : i = i.right;
     }
+    return null;
   }
   /**
    * Delete the node with the given value
    * 
    * @param {number} value - the value to delete
-   * @returns {boolean} if the node was deleted
-   * @memberof BinarySearchTree
+   * @param {boolean} [returnNode=false] - if the node should be returned
+   * @returns {BSTNode|BinarySearchTree} if the value is in the Tree
    */
-  delete(t) {
-    var i, r;
-    const n = this.search(t);
-    if (!n)
-      return !1;
-    if (n.left === null && n.right === null)
-      ((i = n.parent.left) == null ? void 0 : i.value) === n.value ? n.parent.left = null : n.parent.right = null;
-    else if (n.left !== null && n.right === null || n.left === null && n.right !== null) {
-      const s = n.left || n.right;
-      s.parent = n.parent, ((r = n.parent.left) == null ? void 0 : r.value) === n.value ? n.parent.left = s : n.parent.right = s;
-    } else if (n.left !== null && n.right !== null) {
-      const s = this.search(this.larger(n.left.value));
-      s.value === n.left.value ? n.left = null : s.parent.right = null, n.value = s.value;
-    } else
-      throw new Error("Error deleting value");
+  delete(t, n = !1) {
+    const i = this.search(t);
+    if (!i)
+      return n ? i : this;
+    const s = this._findParent(i);
+    if (i.left === null && i.right === null)
+      s ? s.left === i ? s.left = null : s.right = null : this.root = null;
+    else if (i.left === null || i.right === null)
+      s ? s.left === i ? s.left = i.left || i.right : s.right = i.left || i.right : this.root = i.left || i.right;
+    else {
+      const r = this.smaller(i.value);
+      return this.delete(r), s.left === i ? s.left.value = r : s.right.value = r, n ? i : this;
+    }
+    return this.count--, n ? i : this;
+  }
+  /**
+   * Returns a string representation of the tree
+   * 
+   * @returns {string} the string representation
+   */
+  toString() {
+    return JSON.stringify(this, null, 2);
+  }
+  /**
+   * Inserts a new node into the tree
+   * 
+   * Note 1: This is a recursive function
+   * Note 2: This function is used in the add method
+   * 
+   * @param {BSTNode} node - the node to insert
+   * @param {BSTNode} newNode - the new node
+   * 
+   * @private
+   */
+  _insertNode(t, n) {
+    return n.value === t.value ? this : (n.value < t.value ? t.left === null ? t.left = n : this._insertNode(t.left, n) : t.right === null ? t.right = n : this._insertNode(t.right, n), this);
+  }
+  /**
+   * This function finds the parent of the given node
+   * 
+   * @param {BSTNode} node - the node to find the parent
+   * @returns {BSTNode|null} the parent of the given node
+   * 
+   * @private
+   */
+  _findParent({ value: t }) {
+    let n = this.root;
+    for (; n; )
+      if (t > n.value) {
+        if (n.right.value === t)
+          return n;
+        n = n.right;
+      } else if (t < n.value) {
+        if (n.left.value === t)
+          return n;
+        n = n.left;
+      } else
+        return null;
+    return null;
   }
 }
-const it = new D();
+const ut = new O();
 let d = class {
-  /**
-   * Creates a new Node instance.
-   * @param {*} value - The value to be stored in the node.
-   */
   constructor(t) {
-    if (!t)
-      throw new Error("Node value cannot be undefined.");
     this.value = t, this.next = null, this.prev = null;
   }
 };
-class rt {
-  /**
-   * Creates a new DoublyLinkedList instance.
-   * 
-   * @example
-   * new DoublyLinkedList();
-   * new DoublyLinkedList("Beep");
-   * new DoublyLinkedList([10,20,30]);
-   * 
-   * @param {Array|*} value - The value to initialize the list with (optional).
-   */
+class lt {
   constructor(t) {
     this.head = null, this.tail = null, this.size = 0, Array.isArray(t) ? t.forEach((n) => this.push(n)) : t !== void 0 && this.push(t);
   }
@@ -293,9 +285,6 @@ class rt {
    * dll.print(); // 10,20,30
    * 
    * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
-   * 
-   * @memberof DoublyLinkedList
-   * @method print
    */
   print() {
     let t = this.head;
@@ -312,9 +301,6 @@ class rt {
    * dll.toArray(); // []
    * 
    * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
-   * 
-   * @memberof DoublyLinkedList
-   * @method clear
    */
   clear() {
     return this.head = null, this.tail = null, this.size = 0, this;
@@ -328,21 +314,18 @@ class rt {
    * 
    * @param {Number} index - The index of the value to retrieve.
    * @param {Boolean} returnNode - Whether to return the Node or the value.
-   * @returns {Number|Node} The value at the specified index, or the Node if returnNode is true.
-   * 
-   * @memberof DoublyLinkedList
-   * @method get
+   * @returns {Number|DLLNode} The value at the specified index, or the Node if returnNode is true.
    */
   get(t, n = !1) {
     if (t < 0 || t >= this.size)
       return;
     let i = this.head;
     if (t < this.size / 2)
-      for (let r = 0; r < t; r++)
+      for (let s = 0; s < t; s++)
         i = i.next;
     else {
       i = this.tail;
-      for (let r = this.size - 1; r > t; r--)
+      for (let s = this.size - 1; s > t; s--)
         i = i.prev;
     }
     return n ? i : i.value;
@@ -357,9 +340,6 @@ class rt {
    * @param {Number} index - The index of the value to set.
    * @param {Number} value - The new value to set.
    * @returns {Boolean} True if the value was set successfully, false otherwise.
-   * 
-   * @memberof DoublyLinkedList
-   * @method set
    */
   set(t, n) {
     const i = this.get(t, !0);
@@ -374,9 +354,6 @@ class rt {
    * 
    * @param {Number} value - The value to add.
    * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
-   * 
-   * @memberof DoublyLinkedList
-   * @method unshift
    */
   unshift(t) {
     if (!this.head)
@@ -393,9 +370,6 @@ class rt {
    * 
    * @param {Number} value - The value to add.
    * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
-   * 
-   * @memberof DoublyLinkedList
-   * @method push
    */
   push(t) {
     const n = new d(t);
@@ -411,9 +385,6 @@ class rt {
    * @param {Number} index - The index to insert the value at.
    * @param {Number} value - The value to insert.
    * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
-   * 
-   * @memberof DoublyLinkedList
-   * @method insert
    */
   insert(t, n) {
     if (t === 0)
@@ -422,8 +393,8 @@ class rt {
       return this.push(n);
     if (t < 0 || t > this.size)
       return !1;
-    const i = new d(n), r = this.get(t - 1, !0);
-    return i.prev = r, i.next = r.next, r.next.prev = i, r.next = i, this.size++, this;
+    const i = new d(n), s = this.get(t - 1, !0);
+    return i.prev = s, i.next = s.next, s.next.prev = i, s.next = i, this.size++, this;
   }
   /**
    * Removes the value at the start of the linked list.
@@ -433,9 +404,6 @@ class rt {
    * dll.shift(); // 20,30
    * 
    * @returns {Number} The value that was removed.
-   * 
-   * @memberof DoublyLinkedList
-   * @method shift
    */
   shift() {
     if (this.size === 0)
@@ -451,9 +419,6 @@ class rt {
    * dll.pop(); // 10,20
    * 
    * @returns {Number} The value that was removed.
-   * 
-   * @memberof DoublyLinkedList
-   * @method pop
    */
   pop() {
     if (this.size === 0)
@@ -470,9 +435,6 @@ class rt {
    * 
    * @param {Number} index - The index of the value to remove.
    * @returns {Number} The value that was removed.
-   * 
-   * @memberof DoublyLinkedList
-   * @method remove
    */
   remove(t) {
     if (t < 0 || t >= this.size)
@@ -481,14 +443,40 @@ class rt {
       return this.shift();
     if (t === this.size - 1)
       return this.pop();
-    const n = this.get(t, !0), i = n.prev, r = n.next;
-    return i.next = r, r.prev = i, n.prev = null, n.next = null, this.size--, n.value;
+    const n = this.get(t, !0), i = n.prev, s = n.next;
+    return i.next = s, s.prev = i, n.prev = null, n.next = null, this.size--, n.value;
   }
-  // TODO: Implement reverse()
+  /**
+   * Reverses the linked list.
+   * 
+   * @example
+   * const dll = new DoublyLinkedList([10,20,30]);
+   * dll.reverse(); // 30,20,10
+   * 
+   * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
+   */
   reverse() {
+    if (this.head === null || this.head === this.tail)
+      return this;
+    let t = this.head;
+    this.head = this.tail, this.tail = t;
+    let n = null, i = null;
+    for (let s = 0; s < this.size; s++)
+      i = t.next, t.next = n, n = t, t = i;
+    return this;
   }
-  // TODO: Implement sort()
+  /**
+   * Sorts the linked list in ascending order.
+   * 
+   * @example
+   * const dll = new DoublyLinkedList([50,20,40,10,30]);
+   * dll.sort(); // 10,20,30,40,50
+   * 
+   * @returns {DoublyLinkedList} The current DoublyLinkedList instance.
+   */
   sort() {
+    const t = this.toArray();
+    return t.sort((n, i) => n - i), this.clear(), t.forEach((n) => this.push(n)), this;
   }
   /**
    * Returns an array representation of the linked list.
@@ -498,9 +486,6 @@ class rt {
    * dll.toArray(); // [10,20,30]
    * 
    * @returns {Array} The array representation of the linked list.
-   * 
-   * @memberof DoublyLinkedList
-   * @method toArray
    */
   toArray() {
     const t = [];
@@ -510,20 +495,12 @@ class rt {
     return t;
   }
 }
-class g {
-  /**
-   * Creates a new Node instance.
-   * @param {*} value - The value to be stored in the node.
-   */
+let g = class {
   constructor(t) {
     this.value = t, this.next = null;
   }
-}
-class st {
-  /**
-   * Creates a new LinkedList instance.
-   * @param {*} value - The value to initialize the list with (optional).
-   */
+};
+class ht {
   constructor(t) {
     this.head = null, this.tail = null, this.size = 0, Array.isArray(t) ? t.forEach((n) => this.push(n)) : t !== void 0 && this.push(t);
   }
@@ -539,8 +516,6 @@ class st {
    * ll.print(); // Apple, Banana, Cherry
    * 
    * @returns {LinkedList} The current LinkedList instance.
-   * 
-   * @memberof LinkedList
    */
   print() {
     let t = this.head;
@@ -552,8 +527,6 @@ class st {
    * Clears the linked list, removing all elements.
    * 
    * @returns {LinkedList} The current LinkedList instance.
-   * 
-   * @memberof LinkedList
    */
   clear() {
     return this.head = null, this.tail = null, this.size = 0, this;
@@ -572,14 +545,12 @@ class st {
    * @param {number} index - The index of the value to retrieve.
    * @param {boolean} [returnNode=false] - Specifies whether to return the Node instead of the value.
    * @returns {*} The value at the specified index, or undefined if index is out of bounds.
-   * 
-   * @memberof LinkedList
    */
   get(t, n = !1) {
     if (t < 0 || t >= this.size)
       return;
     let i = this.head;
-    for (let r = 0; r < t; r++)
+    for (let s = 0; s < t; s++)
       i = i.next;
     return n ? i : i.value;
   }
@@ -597,8 +568,6 @@ class st {
    * @param {number} index - The index of the value to set.
    * @param {*} value - The new value to set.
    * @returns {boolean} True if the value was set successfully, false otherwise.
-   * 
-   * @memberof LinkedList
    */
   set(t, n) {
     const i = this.get(t, !0);
@@ -618,8 +587,6 @@ class st {
    * 
    * @param {*} value - The value to add.
    * @returns {LinkedList} The current LinkedList instance.
-   * 
-   * @memberof LinkedList
    */
   unshift(t) {
     const n = new g(t);
@@ -636,8 +603,6 @@ class st {
    * 
    * @param {*} value - The value to add.
    * @returns {LinkedList} The current LinkedList instance.
-   * 
-   * @memberof LinkedList
    */
   push(t) {
     const n = new g(t);
@@ -657,8 +622,6 @@ class st {
    * @param {number} index - The index at which to add the value.
    * @param {*} value - The value to add.
    * @returns {boolean} True if the value was added successfully, false otherwise.
-   * 
-   * @memberof LinkedList
    */
   insert(t, n) {
     if (t === 0)
@@ -667,8 +630,8 @@ class st {
       return this.push(n);
     if (t < 0 || t > this.size)
       return !1;
-    const i = new g(n), r = this.get(t - 1, !0);
-    return i.next = r.next, r.next = i, this.size++, this;
+    const i = new g(n), s = this.get(t - 1, !0);
+    return i.next = s.next, s.next = i, this.size++, this;
   }
   /**
    * Removes the value at the start of the linked list.
@@ -682,8 +645,6 @@ class st {
    * ll.shift(); // 20,30
    * 
    * @returns {*} The removed value, or undefined if the list is empty.
-   * 
-   * @memberof LinkedList
    */
   shift() {
     if (!this.size)
@@ -703,8 +664,6 @@ class st {
    * ll.pop(); // 10,20
    * 
    * @returns {*} The removed value, or undefined if the list is empty.
-   * 
-   * @memberof LinkedList
    */
   pop() {
     if (this.size === 0)
@@ -727,8 +686,6 @@ class st {
    * 
    * @param {number} index - The index at which to remove the value.
    * @returns {*} The removed value, or undefined if the index is out of bounds.
-   * 
-   * @memberof LinkedList
    */
   remove(t) {
     if (t === 0)
@@ -752,19 +709,27 @@ class st {
    * ll.reverse(); // 30,20,10
    * 
    * @returns {LinkedList} The current LinkedList instance.
-   * 
-   * @memberof LinkedList
    */
   reverse() {
     let t = this.head;
     this.head = this.tail, this.tail = t;
     let n = null, i = null;
-    for (let r = 0; r < this.size; r++)
+    for (let s = 0; s < this.size; s++)
       i = t.next, t.next = n, n = t, t = i;
     return this;
   }
-  // TODO: Implement sort()
+  /**
+   * Sorts the linked list in ascending order.
+   * 
+   * @example
+   * const ll = new LinkedList([50,20,40,10,30]);
+   * ll.sort(); // 10,20,30,40,50
+   * 
+   * @returns {LinkedList} The current LinkedList instance.
+   */
   sort() {
+    const t = this.toArray();
+    return t.sort((n, i) => n - i), this.clear(), t.forEach((n) => this.push(n)), this;
   }
   /**
    * Converts the linked list to an array.
@@ -778,8 +743,6 @@ class st {
    * ll.toArray(); // [10,20,30]
    * 
    * @returns {Array} An array containing the values of the linked list.
-   * 
-   * @memberof LinkedList
    */
   toArray() {
     const t = [];
@@ -789,34 +752,254 @@ class st {
     return t;
   }
 }
-const be = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+let A = class {
+  constructor(t) {
+    this.value = t, this.next = null;
+  }
+};
+class ot {
+  constructor(t) {
+    this.first = null, this.last = null, this.size = 0, Array.isArray(t) ? t.forEach((n) => this.enqueue(n)) : t !== void 0 && this.enqueue(t);
+  }
+  /**
+   * Adds a new value to the end of the queue
+   * 
+   * @example
+   * const q = new Queue([10,20]);
+   * q.enqueue(30); // [10,20,30]
+   * 
+   * @param {Number} value - The value to add.
+   * @returns {Queue} The current Queue instance.
+   */
+  enqueue(t) {
+    const n = new A(t);
+    return this.size === 0 ? (this.first = n, this.last = n) : (this.last.next = n, this.last = n), this.size++, this;
+  }
+  /**
+   * Removes and returns the first value in the queue
+   * 
+   * @example
+   * const q = new Queue([10,20,30]);
+   * q.dequeue(); // [20,30]
+   * 
+   * @returns {Queue} The current Queue instance.
+   */
+  dequeue(t = !1) {
+    let n = this.first;
+    if (this.size !== 0)
+      return this.size === 1 ? (this.first = null, this.last = null) : (this.first = this.first.next, n.next = null), this.size--, t ? n : n.value;
+  }
+  /**
+   * Returns the first value in the queue
+   * 
+   * @example
+   * const q = new Queue([10,20,30]);
+   * q.peek(); // 10
+   * 
+   * @param {Boolean} returnNode - Whether to return the node or just the value.
+   * @returns {*|QueueNode} The value in the first node.
+   */
+  peek(t = !1) {
+    if (this.size !== 0)
+      return t ? this.first : this.first.value;
+  }
+  /**
+   * Clears the queue
+   * 
+   * @example
+   * const q = new Queue([10,20,30]);
+   * q.clear(); // []
+   * 
+   */
+  clear() {
+    return this.first = null, this.last = null, this.size = 0, this;
+  }
+  /**
+   * Prints the values of the queue
+   * 
+   * @example
+   * const q = new Queue([10,20,30]);
+   * q.print(); // 10,20,30
+   * 
+   * @returns {Queue} The current Queue instance.
+   */
+  print() {
+    let t = this.first;
+    for (; t; )
+      console.log(t.value), t = t.next;
+    return this;
+  }
+  /**
+   * Checks if the queue is empty
+   * 
+   * @example
+   * const q = new Queue([10,20,30]);
+   * q.isEmpty(); // false
+   * 
+   * @returns {Boolean} Whether or not the queue is empty.
+   */
+  isEmpty() {
+    return this.size === 0;
+  }
+  /**
+   * Returns a new array of the values in the queue
+   * 
+   * @example
+   * const q = new Queue([10,20,30]);
+   * q.toArray(); // [10,20,30]
+   * 
+   * @returns {Array} An array of the values in the queue.
+   */
+  toArray() {
+    const t = [];
+    let n = this.first;
+    for (let i = 0; i < this.size; i++)
+      t.push(n.value), n = n.next;
+    return t;
+  }
+}
+class j {
+  constructor(t) {
+    this.value = t, this.next = null;
+  }
+}
+class at {
+  constructor(t) {
+    this.top = null, this.size = 0, Array.isArray(t) ? t.forEach((n) => this.push(n)) : t !== void 0 && this.push(t);
+  }
+  /**
+   * Adds a new value to the top of the stack
+   * 
+   * @example
+   * const s = new Stack([10,20]);
+   * s.push(30); // [10,20,30]
+   * 
+   * @param {Number} value - The value to add.
+   * @returns {Stack} The current Stack instance.
+   */
+  push(t) {
+    const n = new j(t);
+    return this.size === 0 ? this.top = n : (n.next = this.top, this.top = n), this.size++, this;
+  }
+  /**
+   * Removes the top value from the stack
+   * 
+   * @example
+   * const s = new Stack([10,20,30]);
+   * s.pop(); // [10,20]
+   * 
+   * @param {Boolean} returnNode - Whether to return the node or just the value.
+   * @returns {Stack|*} The current Stack instance.
+   */
+  pop(t = !1) {
+    if (this.size === 0)
+      return;
+    const n = this.top;
+    return this.top = n.next, this.size--, t ? n : n.value;
+  }
+  /**
+   * Removes all values from the stack
+   * 
+   * @example
+   * const s = new Stack([10,20,30]);
+   * s.clear(); // []
+   * 
+   * @returns {Stack} The current Stack instance.
+   */
+  clear() {
+    return this.top = null, this.size = 0, this;
+  }
+  /**
+   * Returns the first value in the stack
+   * 
+   * @example
+   * const s = new Stack([10,20,30]);
+   * s.peek(); // 10
+   * 
+   * @param {Boolean} returnNode - Whether to return the node or just the value.
+   * @returns {*|StackNode} The value in the first node.
+   */
+  peek(t = !1) {
+    if (this.size !== 0)
+      return t ? this.top : this.top.value;
+  }
+  /**
+   * Prints the values in the stack
+   * 
+   * @example
+   * const s = new Stack([10,20,30]);
+   * s.print(); // 10,20,30
+   * 
+   * @returns {Stack} The current Stack instance.
+   */
+  print() {
+    let t = this.top;
+    for (; t; )
+      console.log(t.value), t = t.next;
+    return this;
+  }
+  /**
+   * Checks if the stack is empty
+   * 
+   * @example
+   * const s = new Stack();
+   * s.isEmpty(); // true
+   * 
+   * @returns {Boolean} Whether or not the stack is empty.
+   */
+  isEmpty() {
+    return this.size === 0;
+  }
+  /**
+   * Returns the number of nodes in the stack
+   * 
+   * @example
+   * const s = new Stack([10,20,30]);
+   * s.toArray(); // [10,20,30]
+   * 
+   * @returns {Number} The number of nodes in the stack.
+   */
+  toArray() {
+    const t = [];
+    let n = this.top;
+    for (let i = 0; i < this.size; i++)
+      t.push(n.value), n = n.next;
+    return t;
+  }
+}
+const Oe = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  BinarySearchTree: D,
-  BinarySearchTreeInstance: it,
+  BSTNode: D,
+  BinarySearchTree: O,
+  BinarySearchTreeInstance: ut,
   DLLNode: d,
-  DoublyLinkedList: rt,
+  DoublyLinkedList: lt,
   LLNode: g,
-  LinkedList: st
+  LinkedList: ht,
+  Queue: ot,
+  QueueNode: A,
+  Stack: at,
+  StackNode: j
 }, Symbol.toStringTag, { value: "Module" }));
-function S(...e) {
+function E(...e) {
   return e.reduce((t, n) => t + n, 0);
 }
-function ut(...e) {
-  return e.length ? S(...e) / e.length : 0;
+function ct(...e) {
+  return e.length ? E(...e) / e.length : 0;
 }
 function a(e, t = 0, n = 1) {
   return Math.min(n, Math.max(t, e));
 }
-function lt(e) {
+function ft(e) {
   return e * (Math.PI / 180);
 }
-function ot(e = 0, t = 10, n = 5) {
-  const i = [], r = (t - e) / (n - 1);
-  for (let s = 0; s < n; s++)
-    i.push(e + r * s);
+function dt(e = 0, t = 10, n = 5) {
+  const i = [], s = (t - e) / (n - 1);
+  for (let r = 0; r < n; r++)
+    i.push(e + s * r);
   return i;
 }
-function ht(e = 3, t = 5) {
+function gt(e = 3, t = 5) {
   if (e <= 1)
     return [0];
   const n = [];
@@ -824,7 +1007,7 @@ function ht(e = 3, t = 5) {
     n.push(-t + i * (2 * t) / (e - 1));
   return n;
 }
-function at(...e) {
+function yt(...e) {
   if (e.length) {
     if (e.length === 1)
       return e[0];
@@ -835,86 +1018,83 @@ function at(...e) {
     t /= e[n];
   return t;
 }
-function O(e) {
-  return e <= 1 ? e : e * O(e - 1);
+function T(e) {
+  return e <= 1 ? e : e * T(e - 1);
 }
-function ct(e, t, n = { x: 0, y: 0 }) {
+function mt(e, t, n = { x: 0, y: 0 }) {
   return {
     x: t * Math.cos(e) + n.x,
     y: t * Math.sin(e) + n.y
   };
 }
-function ft(e, t, n) {
+function pt(e, t, n) {
   return a((e - t) / (n - t));
 }
-function dt(e) {
+function xt(e) {
   if (typeof e != "number" || isNaN(e) || !isFinite(e))
     throw new Error("Input must be a finite number");
   return e % 1 !== 0;
 }
-function j(e) {
+function B(e) {
   return e % 2 == 0;
 }
-function gt(e) {
+function wt(e) {
   return e % 2 == 1;
 }
-function mt(e, t) {
+function vt(e, t) {
   return e % t == 0;
 }
-function yt(e) {
+function bt(e) {
   const t = String(e);
   let n = 0;
   for (let i = 0; i < t.length; i++)
     n += Math.pow(t[i], t.length);
   return n === e;
 }
-function pt(e) {
-  return typeof e == "number" && !isNaN(e);
-}
-function xt(e, t, n) {
+function Mt(e, t, n) {
   return t + (n - t) * e;
 }
-function wt(e, t, n, i, r) {
-  return (e - t) * (r - i) / (n - t) + i;
+function Nt(e, t, n, i, s) {
+  return (e - t) * (s - i) / (n - t) + i;
 }
-function vt(...e) {
+function zt(...e) {
   const { length: t } = e;
-  return t ? (z(e, !0), j(t) ? (e[t / 2 - 1] + e[t / 2]) / 2 : e[(t - 1) / 2]) : 0;
+  return t ? (S(e, !0), B(t) ? (e[t / 2 - 1] + e[t / 2]) / 2 : e[(t - 1) / 2]) : 0;
 }
-function bt(...e) {
+function St(...e) {
   if (e.length === 1)
     return e[0];
   const t = {};
   let n = e[0], i = 0;
-  for (let r = 0; r < e.length; r++) {
-    const s = e[r];
-    t[s] ? t[s]++ : t[s] = 1, i < t[s] && (n = s, i = t[s]);
+  for (let s = 0; s < e.length; s++) {
+    const r = e[s];
+    t[r] ? t[r]++ : t[r] = 1, i < t[r] && (n = r, i = t[r]);
   }
   return n;
 }
-function Mt(...e) {
+function Dt(...e) {
   return e.reduce((t, n) => t * n, 1);
 }
-function y(e) {
+function p(e) {
   return e === 0 ? 0 : -Math.abs(e);
 }
-function Nt(e, t) {
+function Ot(e, t) {
   return 100 * e / t;
 }
 function m(e) {
   return e * (180 / Math.PI);
 }
-function zt(e, t, n = 1, i = []) {
-  const r = [];
-  for (let s = e; s < t + 1; s += n) {
+function At(e, t, n = 1, i = []) {
+  const s = [];
+  for (let r = e; r < t + 1; r += n) {
     let l = !1;
     i.forEach(({ start: u, end: c }) => {
-      s >= u && s <= c && (l = !0);
-    }), l || r.push(s);
+      r >= u && r <= c && (l = !0);
+    }), l || s.push(r);
   }
-  return r;
+  return s;
 }
-function Dt(e, t = 2) {
+function jt(e, t = 2) {
   if (typeof e != "number")
     throw new TypeError("The `num` parameter must be a number");
   if (typeof t != "number")
@@ -924,7 +1104,7 @@ function Dt(e, t = 2) {
   const n = e.toString().indexOf(".") + 1;
   return n > 0 && e.toString().substring(n).length > t ? parseFloat(e.toFixed(t)) : e;
 }
-function St(...e) {
+function Et(...e) {
   if (e.length) {
     if (e.length === 1)
       return e[0];
@@ -938,92 +1118,92 @@ function St(...e) {
   }
   return t;
 }
-const Me = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const Ae = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  average: ut,
+  average: ct,
   clamp: a,
-  degreesToRadians: lt,
-  divideEvenly: ot,
-  divideEvenlyWithSpread: ht,
-  division: at,
-  factorial: O,
-  getPositionWithAngleDistance: ct,
-  invertedLerp: ft,
-  isDecimal: dt,
-  isEven: j,
-  isMultipleOf: mt,
-  isNarcissisticNumber: yt,
-  isOdd: gt,
-  isValidNumber: pt,
-  lerp: xt,
-  map: wt,
-  median: vt,
-  mode: bt,
-  multiplication: Mt,
-  negative: y,
-  percentage: Nt,
+  degreesToRadians: ft,
+  divideEvenly: dt,
+  divideEvenlyWithSpread: gt,
+  division: yt,
+  factorial: T,
+  getPositionWithAngleDistance: mt,
+  invertedLerp: pt,
+  isDecimal: xt,
+  isEven: B,
+  isMultipleOf: vt,
+  isNarcissisticNumber: bt,
+  isOdd: wt,
+  isValidNumber: y,
+  lerp: Mt,
+  map: Nt,
+  median: zt,
+  mode: St,
+  multiplication: Dt,
+  negative: p,
+  percentage: Ot,
   radiansToDegrees: m,
-  range: zt,
-  roundNumber: Dt,
-  subtraction: St,
-  sum: S
+  range: At,
+  roundNumber: jt,
+  subtraction: Et,
+  sum: E
 }, Symbol.toStringTag, { value: "Module" }));
-function p(e, t, n, i) {
+function x(e, t, n, i) {
   return Math.atan2(i - t, n - e);
 }
-function Ot(e, t) {
-  return p(e.x, e.y, t.x, t.y);
+function Tt(e, t) {
+  return x(e.x, e.y, t.x, t.y);
 }
-function T(e, t, n, i) {
-  return m(p(e, t, n, i));
+function F(e, t, n, i) {
+  return m(x(e, t, n, i));
 }
-function jt(e, t) {
-  return T(e.x, e.y, t.x, t.y);
+function Bt(e, t) {
+  return F(e.x, e.y, t.x, t.y);
 }
-function B(e, t) {
+function q(e, t) {
   const n = Math.min(e.x + e.width, t.x + t.width) - Math.max(e.x, t.x), i = Math.min(e.y + e.height, t.y + t.height) - Math.max(e.y, t.y);
   return Math.atan2(i, n);
 }
-function Tt(e, t, n, i, r, s, l, u) {
-  return B(
+function Ft(e, t, n, i, s, r, l, u) {
+  return q(
     { x: e + n / 2, y: t + i / 2, width: n, height: i },
-    { x: r + l / 2, y: s + u / 2, width: l, height: u }
+    { x: s + l / 2, y: r + u / 2, width: l, height: u }
   );
 }
-function Bt(e) {
+function qt(e) {
   return Math.PI * e * e;
 }
-function Et(e, t) {
+function _t(e, t) {
   return e * t;
 }
-function Ft(e) {
+function Ct(e) {
   return 2 * Math.PI * e;
 }
-function E(e, t) {
+function _(e, t) {
   return 2 * (e + t);
 }
-function At(e) {
-  return E(e.x, e.y, e.width, e.height);
-}
-function x(e, t) {
-  return e + t / 2;
+function Pt(e) {
+  return _(e.x, e.y, e.width, e.height);
 }
 function w(e, t) {
   return e + t / 2;
 }
-function F(e, t, n, i) {
-  return { x: x(e, n), y: w(t, i) };
+function v(e, t) {
+  return e + t / 2;
 }
-function Ct(e) {
-  return x(e.x, e.width);
+function C(e, t, n, i) {
+  return { x: w(e, n), y: v(t, i) };
 }
 function It(e) {
-  return w(e.y, e.height);
+  return w(e.x, e.width);
 }
-function qt(e) {
-  return F(e.x, e.y, e.width, e.height);
+function Rt(e) {
+  return v(e.y, e.height);
 }
-function A(e, t, n, i) {
+function kt(e) {
+  return C(e.x, e.y, e.width, e.height);
+}
+function P(e, t, n, i) {
   return [
     { x: e, y: t },
     { x: e + n, y: t },
@@ -1031,41 +1211,41 @@ function A(e, t, n, i) {
     { x: e, y: t + i }
   ];
 }
-function Pt(e) {
-  return A(e.x, e.y, e.width, e.height);
+function $t(e) {
+  return P(e.x, e.y, e.width, e.height);
 }
-function v(e, t, n, i) {
+function b(e, t, n, i) {
   return Math.sqrt((e - n) * (e - n) + (t - i) * (t - i));
 }
-function Rt(e, t) {
-  return v(e.x, e.y, t.x, t.y);
-}
-function C(e, t) {
-  return v(e.x, e.y, t.x, t.y) - (e.radius + t.radius);
-}
-function _t(e, t, n, i, r, s) {
-  return C(
-    { x: e, y: t, radius: n },
-    { x: i, y: r, radius: s }
-  );
+function Lt(e, t) {
+  return b(e.x, e.y, t.x, t.y);
 }
 function I(e, t) {
+  return b(e.x, e.y, t.x, t.y) - (e.radius + t.radius);
+}
+function Jt(e, t, n, i, s, r) {
+  return I(
+    { x: e, y: t, radius: n },
+    { x: i, y: s, radius: r }
+  );
+}
+function R(e, t) {
   const n = Math.min(e.x + e.width, t.x + t.width) - Math.max(e.x, t.x), i = Math.min(e.y + e.height, t.y + t.height) - Math.max(e.y, t.y);
   return n * i;
 }
-function kt(e, t, n, i, r, s, l, u) {
-  return I(
+function Yt(e, t, n, i, s, r, l, u) {
+  return R(
     { x: e + n / 2, y: t + i / 2, width: n, height: i },
-    { x: r + l / 2, y: s + u / 2, width: l, height: u }
+    { x: s + l / 2, y: r + u / 2, width: l, height: u }
   );
 }
-function $t({
+function Gt({
   keys: e = { forward: !1, left: !1, right: !1, reverse: !1 },
   x: t,
   y: n,
   speed: i,
-  acceleration: r,
-  maxSpeed: s = 1 / 0,
+  acceleration: s,
+  maxSpeed: r = 1 / 0,
   friction: l = 0,
   rotation: u,
   rotationSpeed: c,
@@ -1074,21 +1254,21 @@ function $t({
     y: { min: -1 / 0, max: 1 / 0 }
   }
 }) {
-  e.forward ? i += r : e.reverse && (i -= r);
-  const _ = Number(e.reverse) + 1;
-  if (i > s ? i = s / _ : i < -s / 2 && (i = -s / 2), i > 0 ? i -= l : i < 0 && (i += l), Math.abs(i) < l && (i = 0), i) {
-    const b = i > 0 ? 1 : -1;
-    e.left && (u -= c * b), e.right && (u += c * b);
+  e.forward ? i += s : e.reverse && (i -= s);
+  const J = Number(e.reverse) + 1;
+  if (i > r ? i = r / J : i < -r / 2 && (i = -r / 2), i > 0 ? i -= l : i < 0 && (i += l), Math.abs(i) < l && (i = 0), i) {
+    const M = i > 0 ? 1 : -1;
+    e.left && (u -= c * M), e.right && (u += c * M);
   }
-  const k = t + Math.sin(u) * i, $ = n - Math.cos(u) * i;
+  const Y = t + Math.sin(u) * i, G = n - Math.cos(u) * i;
   return {
-    x: a(k, f.x.min, f.x.max),
-    y: a($, f.y.min, f.y.max),
+    x: a(Y, f.x.min, f.x.max),
+    y: a(G, f.y.min, f.y.max),
     speed: i,
     rotation: u
   };
 }
-class o {
+class h {
   constructor(t = 0, n = t) {
     this.x = 0, this.y = 0, this.set(t, n);
   }
@@ -1116,7 +1296,7 @@ class o {
    * @memberof Vector2
    */
   clone() {
-    return new o(this.x, this.y);
+    return new h(this.x, this.y);
   }
   /**
    * Add the values of this vector 2 with the values of the given vector2
@@ -1204,10 +1384,10 @@ class o {
    * @returns {Vector2} this vector changed
    * @memberof Vector2
    */
-  moveTowards(t = o.zero(), n = 1) {
+  moveTowards(t = h.zero(), n = 1) {
     n = a(n, 0, 1);
-    const r = t.subtract(this).scale(n);
-    return this.add(r);
+    const s = t.subtract(this).scale(n);
+    return this.add(s);
   }
   /**
    * Returns the length of this vector.
@@ -1247,7 +1427,7 @@ class o {
    * @returns {number}
    * @memberof Vector2
    */
-  distance(t = o.zero()) {
+  distance(t = h.zero()) {
     const n = this.x - t.x, i = this.y - t.y;
     return n * n + i * i;
   }
@@ -1312,8 +1492,8 @@ class o {
    * @returns {Vector2}
    */
   rotate(t = 0) {
-    const n = Math.cos(t), i = Math.sin(t), r = this.x * n - this.y * i, s = this.x * i + this.y * n;
-    return this.set(r, s);
+    const n = Math.cos(t), i = Math.sin(t), s = this.x * n - this.y * i, r = this.x * i + this.y * n;
+    return this.set(s, r);
   }
   /**
    * Fix the precision to the given decimal places
@@ -1370,7 +1550,7 @@ class o {
    * @memberof Vector2
    */
   negative() {
-    return this.x = y(this.x), this.y = y(this.y), this;
+    return this.x = p(this.x), this.y = p(this.y), this;
   }
   /**
    * Negate the `x` and `y` components of this Vector.
@@ -1404,7 +1584,7 @@ class o {
    * @memberof Vector2
    */
   static zero() {
-    return new o(0);
+    return new h(0);
   }
   /**
    * Shorthand for writing Vector2(1, 1).
@@ -1415,7 +1595,7 @@ class o {
    * @memberof Vector2
    */
   static one() {
-    return new o(1);
+    return new h(1);
   }
   /**
   	* Shorthand for writing Vector2(Infinity, Infinity).
@@ -1426,7 +1606,7 @@ class o {
   	* @memberof Vector2
   	*/
   static positiveInfinity() {
-    return new o(1 / 0);
+    return new h(1 / 0);
   }
   /**
   	* Shorthand for writing Vector2(-Infinity, -Infinity).
@@ -1437,7 +1617,7 @@ class o {
   	* @memberof Vector2
   	*/
   static negativeInfinity() {
-    return new o(-1 / 0);
+    return new h(-1 / 0);
   }
   /**
   	* Shorthand for writing Vector2(0, -1).
@@ -1448,7 +1628,7 @@ class o {
   	* @memberof Vector2
   	*/
   static up() {
-    return new o(0, -1);
+    return new h(0, -1);
   }
   /**
   	* Shorthand for writing Vector2(0, 1).
@@ -1459,7 +1639,7 @@ class o {
   	* @memberof Vector2
   	*/
   static down() {
-    return new o(0, 1);
+    return new h(0, 1);
   }
   /**
   	* Shorthand for writing Vector2(-1, 0).
@@ -1470,7 +1650,7 @@ class o {
   	* @memberof Vector2
   	*/
   static left() {
-    return new o(-1, 0);
+    return new h(-1, 0);
   }
   /**
   	* Shorthand for writing Vector2(1, 0).
@@ -1481,7 +1661,7 @@ class o {
   	* @memberof Vector2
   	*/
   static right() {
-    return new o(1, 0);
+    return new h(1, 0);
   }
   /**
    * Creates a random vector with random normalized values
@@ -1489,40 +1669,40 @@ class o {
    * @returns {Vector2}
    */
   static random() {
-    return new o(Math.random(), Math.random());
+    return new h(Math.random(), Math.random());
   }
 }
-const Ne = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const je = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  Vector2: o,
-  calcAngleBetweenRectangles: B,
-  calcAngleBetweenRectanglesByCoordinates: Tt,
-  calcAngleBetweenTwoPoints: p,
-  calcAngleBetweenTwoPointsDegrees: T,
-  calcAngleBetweenTwoPointsVector2: Ot,
-  calcAngleBetweenTwoPointsVector2Degrees: jt,
-  calcCircleArea: Bt,
-  calcCirclePerimeter: Ft,
-  calcDistanceBetweenCircles: C,
-  calcDistanceBetweenCirclesByCoordinates: _t,
-  calcDistanceBetweenTwoPointObjects: Rt,
-  calcDistanceBetweenTwoPoints: v,
-  calcOverlapBetweenRectangles: I,
-  calcOverlapBetweenRectanglesByCoordinates: kt,
-  calcRectangleArea: Et,
-  calcRectangleCenter: F,
-  calcRectangleCenterFromBounds: qt,
-  calcRectangleCenterX: x,
-  calcRectangleCenterXFromBounds: Ct,
-  calcRectangleCenterY: w,
-  calcRectangleCenterYFromBounds: It,
-  calcRectanglePerimeter: At,
-  calcRectanglePerimeterByDimensions: E,
-  calcRectangleVertices: A,
-  calcVerticesFromRectangleBounds: Pt,
-  topDownCarMovimentation: $t
+  Vector2: h,
+  calcAngleBetweenRectangles: q,
+  calcAngleBetweenRectanglesByCoordinates: Ft,
+  calcAngleBetweenTwoPoints: x,
+  calcAngleBetweenTwoPointsDegrees: F,
+  calcAngleBetweenTwoPointsVector2: Tt,
+  calcAngleBetweenTwoPointsVector2Degrees: Bt,
+  calcCircleArea: qt,
+  calcCirclePerimeter: Ct,
+  calcDistanceBetweenCircles: I,
+  calcDistanceBetweenCirclesByCoordinates: Jt,
+  calcDistanceBetweenTwoPointObjects: Lt,
+  calcDistanceBetweenTwoPoints: b,
+  calcOverlapBetweenRectangles: R,
+  calcOverlapBetweenRectanglesByCoordinates: Yt,
+  calcRectangleArea: _t,
+  calcRectangleCenter: C,
+  calcRectangleCenterFromBounds: kt,
+  calcRectangleCenterX: w,
+  calcRectangleCenterXFromBounds: It,
+  calcRectangleCenterY: v,
+  calcRectangleCenterYFromBounds: Rt,
+  calcRectanglePerimeter: Pt,
+  calcRectanglePerimeterByDimensions: _,
+  calcRectangleVertices: P,
+  calcVerticesFromRectangleBounds: $t,
+  topDownCarMovimentation: Gt
 }, Symbol.toStringTag, { value: "Module" }));
-class Lt {
+class Wt {
   constructor() {
     this.events = {};
   }
@@ -1577,8 +1757,8 @@ class Lt {
    * @memberof EventSystem
    */
   once(t, n) {
-    let i = (...r) => {
-      n(...r), this.off(t);
+    let i = (...s) => {
+      n(...s), this.off(t);
     };
     this.on(t, i);
   }
@@ -1603,8 +1783,8 @@ class Lt {
     return this.events[t] !== void 0;
   }
 }
-const ze = new Lt();
-class De {
+const Ee = new Wt();
+class Te {
   constructor() {
     this._lastNumber = 0, this._currentNumber = 1, this.sequence = [0];
   }
@@ -1648,13 +1828,13 @@ class De {
       return this._lastNumber = this._currentNumber - this._lastNumber, this._currentNumber = this._currentNumber - this._lastNumber, this.sequence.pop(), this._currentNumber;
   }
 }
-function Se(e = 20) {
+function Be(e = 20) {
   const t = [0, 1];
   for (; t.length < e; )
     t.push(t[t.length - 2] + t[t.length - 1]);
   return t;
 }
-function Oe(e = 100) {
+function Fe(e = 100) {
   const t = [0, 1];
   do {
     if (t[t.length - 2] + t[t.length - 1] >= e)
@@ -1662,92 +1842,92 @@ function Oe(e = 100) {
     t.push(t[t.length - 2] + t[t.length - 1]);
   } while (t[t.length - 1] < e);
 }
-function je(e = 1, t = 100) {
+function qe(e = 1, t = 100) {
   const n = [];
-  let i = 0, r = e;
-  for (; r <= t; ) {
-    const s = r + i;
-    i = r, r = s, n.push(r);
+  let i = 0, s = e;
+  for (; s <= t; ) {
+    const r = s + i;
+    i = s, s = r, n.push(s);
   }
   return n;
 }
-function M(e = 10) {
-  return e <= 1 ? e : M(e - 1) + M(e - 2);
+function N(e = 10) {
+  return e <= 1 ? e : N(e - 1) + N(e - 2);
 }
-function Te(e) {
+function _e(e) {
   for (let t = 1; t < e.length; t++)
     if (e[0] != e[t])
       return !1;
   return !0;
 }
-function Be(e) {
+function Ce(e) {
   if (typeof e == "string")
     return parseInt(e, 2);
 }
-function Ee(e = [0.25, 0.5, 0.25]) {
+function Pe(e = [0.25, 0.5, 0.25]) {
   let t = 0;
   const n = Math.random();
   for (let i = 0; i < e.length; i++)
     if (t += e[i], n <= t)
       return i;
 }
-function Fe(e, t) {
+function Ie(e, t) {
   return JSON.stringify(e) === JSON.stringify(t);
 }
-const Ae = 1024;
-function Ce(e) {
+const Re = 1024;
+function ke(e) {
   return Number(e).toString(2);
 }
-function Ie() {
+function $e() {
   return {
-    time: Jt(),
-    milliseconds: Yt(),
-    seconds: Gt(),
-    minutes: Wt(),
-    hours: Xt(),
-    day: q(),
-    weekDay: Ht(),
-    week: Kt(),
-    month: P(),
-    year: R(),
-    dateFormatted: Ut()
+    time: Xt(),
+    milliseconds: Ht(),
+    seconds: Qt(),
+    minutes: Kt(),
+    hours: Ut(),
+    day: k(),
+    weekDay: Vt(),
+    week: Zt(),
+    month: $(),
+    year: L(),
+    dateFormatted: te()
   };
 }
-function Jt() {
+function Xt() {
   return (/* @__PURE__ */ new Date()).getTime();
 }
-function Yt() {
+function Ht() {
   return (/* @__PURE__ */ new Date()).getMilliseconds();
 }
-function Gt() {
+function Qt() {
   return (/* @__PURE__ */ new Date()).getSeconds();
 }
-function Wt() {
+function Kt() {
   return (/* @__PURE__ */ new Date()).getMinutes();
 }
-function Xt() {
+function Ut() {
   return (/* @__PURE__ */ new Date()).getHours();
 }
-function q() {
+function k() {
   return (/* @__PURE__ */ new Date()).getDate();
 }
-function Ht() {
+function Vt() {
   return (/* @__PURE__ */ new Date()).getDay() + 1;
 }
-function Kt() {
+function Zt() {
   const e = /* @__PURE__ */ new Date(), t = new Date(e.getFullYear(), 0, 1), n = Math.floor((e - t) / (24 * 60 * 60 * 1e3));
   return Math.ceil(n / 7);
 }
-function P() {
+function $() {
   return (/* @__PURE__ */ new Date()).getMonth() + 1;
 }
-function R() {
+function L() {
   return (/* @__PURE__ */ new Date()).getFullYear();
 }
-function Ut() {
-  return q() + "/" + P() + "/" + R();
+function te() {
+  return k() + "/" + $() + "/" + L();
 }
-const Qt = "utilidades", Vt = "1.3.2", Zt = "Just simple utils for javascript :)", te = "https://201flaviosilva-labs.github.io/utilidades/", ee = "201flaviosilva", ne = "MIT", ie = "module", re = "./dist/utilidades.umd.cjs", se = "./dist/utilidades.js", ue = "./types/main.d.ts", le = {
+const ee = "utilidades", ne = "1.3.3", ie = "Just simple utils for javascript :)", se = "https://201flaviosilva-labs.github.io/utilidades/", re = "201flaviosilva", ue = "MIT", le = "module", he = "./dist/utilidades.umd.cjs", oe = "./dist/utilidades.js", ae = "./types/main.d.ts", ce = {
   clear: "rm -rf types && rm -rf docs && rm -rf build && rm -rf dist",
   dev: "vite",
   test: "vitest --watch=false",
@@ -1758,7 +1938,7 @@ const Qt = "utilidades", Vt = "1.3.2", Zt = "Just simple utils for javascript :)
   compile: "vite build",
   build: "npm run clear && npm run compile && npm run jsdoc && npm run types",
   bump: "npm run build && np --no-cleanup --any-branch"
-}, oe = {
+}, fe = {
   "@vitest/coverage-c8": "^0.31.4",
   "clean-jsdoc-theme": "^4.3.0",
   jsdoc: "^4.0.3",
@@ -1766,54 +1946,54 @@ const Qt = "utilidades", Vt = "1.3.2", Zt = "Just simple utils for javascript :)
   typescript: "^5.4.5",
   vite: "^4.5.3",
   vitest: "^0.31.4"
-}, he = [
+}, de = [
   "README.md",
   "CHANGELOG.md",
   "package.json",
   "dist",
   "types",
   "index.d.ts"
-], ae = {
+], ge = {
   types: "./types/main.d.ts",
   import: "./dist/utilidades.js",
   require: "./dist/utilidades.umd.cjs"
-}, ce = {
+}, ye = {
   node: ">=16.0.0",
   npm: ">=7.0.0"
-}, fe = [
+}, me = [
   "utils"
-], de = {
+], pe = {
   type: "git",
   url: "git+https://github.com/201flaviosilva-labs/utilidades.git"
-}, ge = {
+}, xe = {
   url: "https://github.com/201flaviosilva-labs/utilidades/issues"
-}, me = {
-  name: Qt,
-  version: Vt,
-  description: Zt,
-  homepage: te,
-  author: ee,
-  license: ne,
-  type: ie,
-  main: re,
-  module: se,
-  types: ue,
-  scripts: le,
-  devDependencies: oe,
-  files: he,
-  exports: ae,
-  engines: ce,
-  keywords: fe,
-  repository: de,
-  bugs: ge
+}, we = {
+  name: ee,
+  version: ne,
+  description: ie,
+  homepage: se,
+  author: re,
+  license: ue,
+  type: le,
+  main: he,
+  module: oe,
+  types: ae,
+  scripts: ce,
+  devDependencies: fe,
+  files: de,
+  exports: ge,
+  engines: ye,
+  keywords: me,
+  repository: pe,
+  bugs: xe
 };
-function qe() {
-  return me.version;
+function Le() {
+  return we.version;
 }
-function Pe(e) {
+function Je(e) {
   return Object.keys(e).length === 0;
 }
-function ye(e) {
+function ve(e) {
   try {
     if (!e || typeof e == "object" && Object.keys(e).length == 0)
       return !0;
@@ -1822,100 +2002,100 @@ function ye(e) {
   }
   return !1;
 }
-function Re(e) {
-  return !ye(e);
+function Ye(e) {
+  return !ve(e);
 }
-function _e(...e) {
+function Ge(...e) {
   for (let t = 0; t < e.length; t++)
     if (!e[t])
       return !1;
   return !0;
 }
-function ke(...e) {
+function We(...e) {
   return !!e.find((t) => !!t);
 }
-function $e(e, t) {
+function Xe(e, t) {
   return !!e != !!t;
 }
-function Le() {
+function He() {
   return "#" + (Math.random() * 16777215 << 0).toString(16);
 }
-function Je() {
+function Qe() {
   return `0x${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
-function Ye() {
-  return `rgb(${h(255)}, ${h(255)}, ${h(255)})`;
+function Ke() {
+  return `rgb(${o(255)}, ${o(255)}, ${o(255)})`;
 }
-function Ge() {
-  return `rgba(${h(255)}, ${h(255)}, ${h(255)}, ${Math.random().toFixed(5)})`;
+function Ue() {
+  return `rgba(${o(255)}, ${o(255)}, ${o(255)}, ${Math.random().toFixed(5)})`;
 }
-function We(e = {
+function Ve(e = {
   numberCharacters: 12,
   numbers: !0,
   symbols: !0,
   capital: !0,
   small: !0
 }) {
-  const t = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "y", "Z"], n = ["a", "b", "c", "d", "e", "f", "G", "H", "I", "J", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"], i = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"], r = ["!", '"', "@", "#", "€", "$", "£", "%", "‰", "&", "¶", "/", "(", "[", ")", "]", "=", "≠", "'", "?", "+", "*"];
-  let s = [];
-  s = e.capital ? [...s, ...t] : [...s], s = e.small ? [...s, ...n] : [...s], s = e.numbers ? [...s, ...i] : [...s], s = e.symbols ? [...s, ...r] : [...s];
+  const t = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "y", "Z"], n = ["a", "b", "c", "d", "e", "f", "G", "H", "I", "J", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"], i = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"], s = ["!", '"', "@", "#", "€", "$", "£", "%", "‰", "&", "¶", "/", "(", "[", ")", "]", "=", "≠", "'", "?", "+", "*"];
+  let r = [];
+  r = e.capital ? [...r, ...t] : [...r], r = e.small ? [...r, ...n] : [...r], r = e.numbers ? [...r, ...i] : [...r], r = e.symbols ? [...r, ...s] : [...r];
   let l = "";
   for (let u = 0; u < e.numberCharacters; u++)
-    l += N(s);
+    l += z(r);
   return l;
 }
-function Xe(e, t = 2) {
+function Ze(e, t = 2) {
   let n = new Array(t).fill(0);
   for (let i = 0; i < e; i++) {
-    const r = Math.random(), s = Math.floor(r * t);
-    r < 0.5 ? n[s]++ : n[s]--;
+    const s = Math.random(), r = Math.floor(s * t);
+    s < 0.5 ? n[r]++ : n[r]--;
   }
   return n;
 }
-function He(e) {
+function tn(e) {
   return e.split("").reverse().join("");
 }
-async function Ke(e = 1e3) {
+async function en(e = 1e3) {
   if (typeof e != "number" || e < 0 || isNaN(e))
     throw new Error("Time must be a non-negative number");
   return new Promise((t) => setTimeout(t, e));
 }
 export {
-  xe as Arrays,
-  be as DataStructures,
-  Lt as EventSystem,
-  ze as EventSystemInstance,
-  De as Fibonacci,
-  Ae as MEGABYTE_IN_KILOBYTES,
-  Me as Maths,
-  Ne as Physics,
-  Te as allCharactersSame,
-  _e as and,
-  Be as binary2Decimal,
-  Ee as choiceTrend,
-  Q as clone,
-  Fe as compare2Objects,
-  Ce as decimal2Binary,
-  je as fibonacciCustomSequence,
-  Se as fibonacciSequence,
-  Oe as fibonacciUntil,
-  Ie as getDate,
-  qe as getVersion,
-  ye as isFalsy,
-  Pe as isObjectEmpty,
-  Re as isTruthy,
-  ke as or,
-  Le as randomColor,
-  Je as randomColor0X,
-  J as randomFloat,
-  h as randomInt,
-  pe as randomNumber,
-  Ge as randomRGBAColor,
-  Ye as randomRGBColor,
-  We as randomString,
-  Xe as randomWalk,
-  M as recursiveFibonacci,
-  He as reverseString,
-  Ke as sleep,
-  $e as xor
+  Me as Arrays,
+  Oe as DataStructures,
+  Wt as EventSystem,
+  Ee as EventSystemInstance,
+  Te as Fibonacci,
+  Re as MEGABYTE_IN_KILOBYTES,
+  Ae as Maths,
+  je as Physics,
+  _e as allCharactersSame,
+  Ge as and,
+  Ce as binary2Decimal,
+  Pe as choiceTrend,
+  et as clone,
+  Ie as compare2Objects,
+  ke as decimal2Binary,
+  qe as fibonacciCustomSequence,
+  Be as fibonacciSequence,
+  Fe as fibonacciUntil,
+  $e as getDate,
+  Le as getVersion,
+  ve as isFalsy,
+  Je as isObjectEmpty,
+  Ye as isTruthy,
+  We as or,
+  He as randomColor,
+  Qe as randomColor0X,
+  X as randomFloat,
+  o as randomInt,
+  be as randomNumber,
+  Ue as randomRGBAColor,
+  Ke as randomRGBColor,
+  Ve as randomString,
+  Ze as randomWalk,
+  N as recursiveFibonacci,
+  tn as reverseString,
+  en as sleep,
+  Xe as xor
 };

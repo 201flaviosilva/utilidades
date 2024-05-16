@@ -1,13 +1,18 @@
 /**
+ * @class
+ * @name LinkedList
+ * @classdesc
  * Represents a linked list data structure.
  *
- * @memberof DataStructures
+ * @see https://en.wikipedia.org/wiki/Linked_list
+ *
+ * @param {*} [value] - The value to initialize the list with (optional).
+ *
+ * @property {LLNode} head - The first node in the list
+ * @property {LLNode} tail - The last node in the list
+ * @property {Number} size - The number of nodes in the list
  */
 export class LinkedList {
-    /**
-     * Creates a new LinkedList instance.
-     * @param {*} value - The value to initialize the list with (optional).
-     */
     constructor(value: any);
     head: any;
     tail: any;
@@ -24,16 +29,12 @@ export class LinkedList {
      * ll.print(); // Apple, Banana, Cherry
      *
      * @returns {LinkedList} The current LinkedList instance.
-     *
-     * @memberof LinkedList
      */
     print(): LinkedList;
     /**
      * Clears the linked list, removing all elements.
      *
      * @returns {LinkedList} The current LinkedList instance.
-     *
-     * @memberof LinkedList
      */
     clear(): LinkedList;
     /**
@@ -50,8 +51,6 @@ export class LinkedList {
      * @param {number} index - The index of the value to retrieve.
      * @param {boolean} [returnNode=false] - Specifies whether to return the Node instead of the value.
      * @returns {*} The value at the specified index, or undefined if index is out of bounds.
-     *
-     * @memberof LinkedList
      */
     get(index: number, returnNode?: boolean): any;
     /**
@@ -68,8 +67,6 @@ export class LinkedList {
      * @param {number} index - The index of the value to set.
      * @param {*} value - The new value to set.
      * @returns {boolean} True if the value was set successfully, false otherwise.
-     *
-     * @memberof LinkedList
      */
     set(index: number, value: any): boolean;
     /**
@@ -86,8 +83,6 @@ export class LinkedList {
      *
      * @param {*} value - The value to add.
      * @returns {LinkedList} The current LinkedList instance.
-     *
-     * @memberof LinkedList
      */
     unshift(value: any): LinkedList;
     /**
@@ -101,8 +96,6 @@ export class LinkedList {
      *
      * @param {*} value - The value to add.
      * @returns {LinkedList} The current LinkedList instance.
-     *
-     * @memberof LinkedList
      */
     push(value: any): LinkedList;
     /**
@@ -119,8 +112,6 @@ export class LinkedList {
      * @param {number} index - The index at which to add the value.
      * @param {*} value - The value to add.
      * @returns {boolean} True if the value was added successfully, false otherwise.
-     *
-     * @memberof LinkedList
      */
     insert(index: number, value: any): boolean;
     /**
@@ -135,8 +126,6 @@ export class LinkedList {
      * ll.shift(); // 20,30
      *
      * @returns {*} The removed value, or undefined if the list is empty.
-     *
-     * @memberof LinkedList
      */
     shift(): any;
     /**
@@ -151,8 +140,6 @@ export class LinkedList {
      * ll.pop(); // 10,20
      *
      * @returns {*} The removed value, or undefined if the list is empty.
-     *
-     * @memberof LinkedList
      */
     pop(): any;
     /**
@@ -168,8 +155,6 @@ export class LinkedList {
      *
      * @param {number} index - The index at which to remove the value.
      * @returns {*} The removed value, or undefined if the index is out of bounds.
-     *
-     * @memberof LinkedList
      */
     remove(index: number): any;
     /**
@@ -184,11 +169,18 @@ export class LinkedList {
      * ll.reverse(); // 30,20,10
      *
      * @returns {LinkedList} The current LinkedList instance.
-     *
-     * @memberof LinkedList
      */
     reverse(): LinkedList;
-    sort(): void;
+    /**
+     * Sorts the linked list in ascending order.
+     *
+     * @example
+     * const ll = new LinkedList([50,20,40,10,30]);
+     * ll.sort(); // 10,20,30,40,50
+     *
+     * @returns {LinkedList} The current LinkedList instance.
+     */
+    sort(): LinkedList;
     /**
      * Converts the linked list to an array.
      *
@@ -201,22 +193,20 @@ export class LinkedList {
      * ll.toArray(); // [10,20,30]
      *
      * @returns {Array} An array containing the values of the linked list.
-     *
-     * @memberof LinkedList
      */
     toArray(): any[];
 }
 /**
- * @class LLNode
+ * @class
+ * @name LLNode
  * @classdesc Represents a node in a linked list.
  *
- * @memberof DataStructures
+ * @param {*} [value] - The value to be stored in the node.
+ *
+ * @property {*} value - The value stored in the node
+ * @property {LLNode} next - The next node in the list
  */
 export class Node {
-    /**
-     * Creates a new Node instance.
-     * @param {*} value - The value to be stored in the node.
-     */
     constructor(value: any);
     value: any;
     next: any;
