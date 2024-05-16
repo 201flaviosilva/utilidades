@@ -1927,7 +1927,7 @@ function L() {
 function te() {
   return k() + "/" + $() + "/" + L();
 }
-const ee = "utilidades", ne = "1.3.3", ie = "Just simple utils for javascript :)", se = "https://201flaviosilva-labs.github.io/utilidades/", re = "201flaviosilva", ue = "MIT", le = "module", he = "./dist/utilidades.umd.cjs", oe = "./dist/utilidades.js", ae = "./types/main.d.ts", ce = {
+const ee = "utilidades", ne = "1.4.0", ie = "Just simple utils for javascript :)", se = "https://201flaviosilva.github.io/utilidades/", re = "201flaviosilva", ue = "MIT", le = "module", he = "./dist/utilidades.umd.cjs", oe = "./dist/utilidades.js", ae = "./types/main.d.ts", ce = {
   clear: "rm -rf types && rm -rf docs && rm -rf build && rm -rf dist",
   dev: "vite",
   test: "vitest --watch=false",
@@ -1964,9 +1964,9 @@ const ee = "utilidades", ne = "1.3.3", ie = "Just simple utils for javascript :)
   "utils"
 ], pe = {
   type: "git",
-  url: "git+https://github.com/201flaviosilva-labs/utilidades.git"
+  url: "git+https://github.com/201flaviosilva/utilidades.git"
 }, xe = {
-  url: "https://github.com/201flaviosilva-labs/utilidades/issues"
+  url: "https://github.com/201flaviosilva/utilidades/issues"
 }, we = {
   name: ee,
   version: ne,

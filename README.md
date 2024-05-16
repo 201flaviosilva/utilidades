@@ -13,7 +13,7 @@ npm i utilidades
 
 or
 ```sh
-npm i https://github.com/201flaviosilva-labs/utilidades#v1.3.3
+npm i https://github.com/201flaviosilva/utilidades#v1.4.1
 ```
 
 #### Import to the project
@@ -25,7 +25,7 @@ console.log(randomNumber(1, 20));
 
 ### Using CDN (jsdelivr)
 ```html
-<script src="https://cdn.jsdelivr.net/npm/utilidades@1.3.3/build/utils.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/utilidades@1.4.1/build/utils.min.js"></script>
 <script src="./your-js-file.js"></script>
 ```
 
@@ -47,16 +47,15 @@ console.log(randomNumber(1, 20));
 | `npm run bump`    | Update lib in the npm                                             |
 
 ## Links
-- [WebPage (Documentation)](https://201flaviosilva-labs.github.io/utilidades/);
+- [WebPage (Documentation)](https://201flaviosilva.github.io/utilidades/);
 - [Package](https://www.npmjs.com/package/utilidades);
-- [GitHub](https://github.com/201flaviosilva-labs/utilidades);
-  - [Wiki](https://github.com/201flaviosilva-labs/utilidades/wiki);
-	- [Issues](https://github.com/201flaviosilva-labs/utilidades/issues);
-	- [Snippets (More Utils)](https://github.com/201flaviosilva-labs/utilidades/tree/main/snippets);
-	- [Releases](https://github.com/201flaviosilva-labs/utilidades/releases);
+- [GitHub](https://github.com/201flaviosilva/utilidades);
+  - [Wiki](https://github.com/201flaviosilva/utilidades/wiki);
+	- [Issues](https://github.com/201flaviosilva/utilidades/issues);
+	- [Releases](https://github.com/201flaviosilva/utilidades/releases);
 
 ## Examples
 - [Code Sandbox](https://codesandbox.io/examples/package/utilidades);
 - [Code Sandbox](https://codesandbox.io/examples/package/utilidades);
   - [Code Sandbox (old lib)](https://codesandbox.io/examples/package/201flaviosilva-utils);
-- [GitHub Repositories](https://github.com/201flaviosilva-labs/utilidades/network/dependents);
+- [GitHub Repositories](https://github.com/201flaviosilva/utilidades/network/dependents);

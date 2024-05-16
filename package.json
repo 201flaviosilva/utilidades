@@ -2,7 +2,7 @@
   "name": "utilidades",
   "version": "1.4.0",
   "description": "Just simple utils for javascript :)",
-  "homepage": "https://201flaviosilva-labs.github.io/utilidades/",
+  "homepage": "https://201flaviosilva.github.io/utilidades/",
   "author": "201flaviosilva",
   "license": "MIT",
   "type": "module",
@@ -52,9 +52,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/201flaviosilva-labs/utilidades.git"
+    "url": "git+https://github.com/201flaviosilva/utilidades.git"
   },
   "bugs": {
-    "url": "https://github.com/201flaviosilva-labs/utilidades/issues"
+    "url": "https://github.com/201flaviosilva/utilidades/issues"
   }
 }
