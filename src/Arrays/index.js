@@ -3,6 +3,7 @@ import { choice } from "./choice.js";
 import { chunk } from "./chunk.js";
 import { findBigObject } from "./findBigObject.js";
 import { findLowObject } from "./findLowObject.js";
+import { isItemInCommon } from "./isItemInCommon.js";
 import { isSorted } from "./isSorted.js";
 import { moveLeft, moveRight } from "./move.js";
 import { removeDuplicatesObj } from "./removeDuplicatesObj.js";
@@ -22,11 +23,9 @@ export {
 	choice,
 	chunk,
 	findBigObject,
-	findLowObject,
-	isSorted,
-	moveLeft, moveRight,
+	findLowObject, isItemInCommon, isSorted, moveLeft, moveRight,
 	removeDuplicatesObj,
 	shuffle,
 	sortAscending, sortAscendingObject,
-	sortDescending, sortDescendingObject,
+	sortDescending, sortDescendingObject
 };
