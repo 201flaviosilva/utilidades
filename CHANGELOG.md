@@ -11,10 +11,17 @@ This file was based on [this template](https://gist.github.com/juampynr/4c18214a
 ----
 ## [1.4 - New utils](https://github.com/201flaviosilva/utilidades/milestone/3)
 
-### [1.4.1] - 16-05-2023
- - Move repository to a new Github organization;
+### [1.4.2] - XX-XX-2024 (WIP)
+#### Added
+- `Arrays/isItemInCommon` - Checks if an item is in common between two arrays
 
-### [1.4.0] - 16-05-2023
+
+### [1.4.1] - 16-05-2024
+
+- Move repository to a new Github organization;
+
+-----
+### [1.4.0] - 16-05-2024
 
 ## Fixed
 - DataStructures/BinarySearchTree;
@@ -26,7 +33,7 @@ This file was based on [this template](https://gist.github.com/juampynr/4c18214a
 ----
 ## [1.3 - Tests and some Data Structures](https://github.com/201flaviosilva/utilidades/milestone/4)
 
-### [1.3.3] - 13-05-2023
+### [1.3.3] - 13-05-2024
  
 #### Added
 - randomWalk function;

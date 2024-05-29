@@ -1,6 +1,5 @@
 
 /**
- * 
  * Splits an array into smaller arrays of a specified size.
  * 
  * @example chunk(["A", "B", "C", "D", "E", "F", "G"], 2); // [["A", "B"], ["C", "D"], ["E", "F"], ["G"]]
