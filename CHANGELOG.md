@@ -11,9 +11,10 @@ This file was based on [this template](https://gist.github.com/juampynr/4c18214a
 ----
 ## [1.4 - New utils](https://github.com/201flaviosilva/utilidades/milestone/3)
 
-### [1.4.2] - XX-XX-2024 (WIP)
+### [1.4.2] - XX-XX-2025 (WIP)
 #### Added
-- `Arrays/isItemInCommon` - Checks if an item is in common between two arrays
+- `Arrays/isItemInCommon` - Checks if an item is in common between two arrays;
+- `Strings/capitalize` - Capitalizes the first letter of a string;
 
 
 ### [1.4.1] - 16-05-2024
