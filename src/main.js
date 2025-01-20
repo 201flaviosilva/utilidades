@@ -2,6 +2,7 @@ import * as Arrays from "./Arrays/index.js";
 import * as DataStructures from "./DataStructures/index.js";
 import * as Maths from "./Maths/index.js";
 import * as Physics from "./Physics/index.js";
+import * as Strings from "./Strings/index.js";
 
 import { EventSystem, EventSystemInstance } from "./EventSystem.js";
 import { Fibonacci, fibonacciCustomSequence, fibonacciSequence, fibonacciUntil, recursiveFibonacci } from "./Fibonacci.js";
@@ -29,6 +30,7 @@ export {
 	DataStructures,
 	Maths,
 	Physics,
+	Strings,
 
 	// Class
 	EventSystem, EventSystemInstance,
